@@ -46,6 +46,7 @@ public class CTPServiceAction {
 				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getErrorStream())));
 				while ((output = br.readLine()) != null) {
 					result.append(output);
+					return "false";
 				}
 			}
 			conn.disconnect();
@@ -57,3 +58,4 @@ public class CTPServiceAction {
 	}
 
 }
+
