@@ -16,37 +16,65 @@ import service.CTPServiceAction;
 
 @Controller
 @RequestMapping("/webhook")
-public class HelloWorldController 
-{
+public class HelloWorldController {
 
 	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession){
-		String speech=null;
+	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) {
+		String speech = null;
 		try {
-			//if(action.equals("PolicyNumberValidation")){
-			//System.out.println("input request --Query param :$$$$$$$$$: "+input);
+			// if(action.equals("PolicyNumberValidation")){
+			// System.out.println("input request --Query param :$$$$$$$$$:
+			// "+input);
 
 			String serviceResp = null;
 
 			System.out.println(obj);
 
-			Map resjson=Commons.getGsonData(obj);
-			Map requestJsonObj=Commons.getGsonData(obj);
-			Map result=(Map)requestJsonObj.get("result");
-			Map parameters=(Map)result.get("parameters");
-			Map PolicyNumber=(Map)parameters.get("PolicyNumber");
-			String G_PolicyNumber=PolicyNumber.get("Given-PolicyNumber").toString();
-			System.out.println(G_PolicyNumber);
+			// Map resjson = Commons.getGsonData(obj);
+			Map requestJsonObj = Commons.getGsonData(obj);
+			Map result = (Map) requestJsonObj.get("result");
+			String action = result.get("action").toString();
+			if (action.equals("PolicyNumberValidation")) {
+				Map parameters = (Map) result.get("parameters");
+				Map PolicyNumber = (Map) parameters.get("PolicyNumber");
+				String G_PolicyNumber = PolicyNumber.get("Given-PolicyNumber").toString();
+				System.out.println(G_PolicyNumber);
 
-			CTPServiceAction ctpserviceAction = new CTPServiceAction();			
-			serviceResp = ctpserviceAction.getOTP(G_PolicyNumber);	
-			httpSession.setAttribute("CACHEOTP", serviceResp);
-			speech="OTP is sent to your Registered Mobile Number. Please provide your OTP for verification";
+				CTPServiceAction ctpserviceAction = new CTPServiceAction();
+				serviceResp = ctpserviceAction.getOTP(G_PolicyNumber);
+				if (serviceResp.equals("false")) {
+					speech = "Policy Number seems to be incorrect.Please provide valid Policy Number";
+				} else {
+					speech = "OTP is sent to your Registered Mobile Number. Please provide your OTP for verification";
+					if (httpSession.getAttribute("CACHEOTP_" + G_PolicyNumber) == null)
+						httpSession.setAttribute("CACHEOTP_" + G_PolicyNumber, serviceResp);
+				}
+			} else if (action.equals("OTPValidation")) {
+				String otp_session = null;
+				Map parameters = (Map) result.get("parameters");
+				Map PolicyNumber = (Map) parameters.get("PolicyNumber");
+
+				String G_PolicyNumber = PolicyNumber.get("Given-PolicyNumber").toString();
+				Map OTP_Number = (Map) parameters.get("OTP");
+				String OTP_request = OTP_Number.get("Provided-OTP").toString();
+				if (httpSession.getAttribute("CACHEOTP_" + G_PolicyNumber) != null) {
+					otp_session = httpSession.getAttribute("CACHEOTP_" + G_PolicyNumber).toString();
+					if (otp_session.equals(OTP_request)) {
+						speech = "OTP Validated";
+					} else {
+						speech = "OTP did not match";
+					}
+				} else {
+					speech = "OTP not found in session";
+
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(obj);
+		System.out.println(speech);
 		return new WebhookResponse(speech, speech);
 	}
 }
+
 
