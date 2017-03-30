@@ -50,13 +50,16 @@ public class HelloWorldController {
 						httpSession.setAttribute("CACHEOTP_" + G_PolicyNumber, serviceResp);
 				}
 			} else if (action.equals("OTPValidation")) {
+				speech="I am in OTPValidationAction";
 				String otp_session = null;
 				Map parameters = (Map) result.get("parameters");
 				Map PolicyNumber = (Map) parameters.get("PolicyNumber");
 
 				String G_PolicyNumber = PolicyNumber.get("Given-PolicyNumber").toString();
 				Map OTP_Number = (Map) parameters.get("OTP");
+				
 				String OTP_request = OTP_Number.get("Provided-OTP").toString();
+				speech="I am in OTPValidationAction. User agve this OTP-"+OTP_request+"--Policy--"+G_PolicyNumber;
 				if (httpSession.getAttribute("CACHEOTP_" + G_PolicyNumber) != null) {
 					otp_session = httpSession.getAttribute("CACHEOTP_" + G_PolicyNumber).toString();
 					if (otp_session.equals(OTP_request)) {
@@ -76,5 +79,6 @@ public class HelloWorldController {
 		return new WebhookResponse(speech, speech);
 	}
 }
+
 
 
