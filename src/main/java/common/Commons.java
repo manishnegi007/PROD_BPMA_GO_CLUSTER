@@ -187,7 +187,5 @@ public class Commons
 		System.out.println(data);			
 		return data;
 	}
-	public static void main(String ar[])
-	{
-	}
+	
 }
