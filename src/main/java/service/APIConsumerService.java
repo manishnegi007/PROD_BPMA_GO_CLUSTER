@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import common.Commons;
@@ -17,7 +18,7 @@ import common.XTrustProvider;
 @Component
 public class APIConsumerService
 {
-	//@Cacheable(value="maxserviceCache", key="#policyNo.concat('_OTP')", unless="#result == null")
+	@Cacheable(value="maxserviceCache", key="#policyNo.concat('_OTP')", unless="#result == null")
 	public String getPolicyOtp(String policyNo)
 	{
 		String output = new String();
@@ -113,4 +114,5 @@ public class APIConsumerService
 		return policyOtp;
 	}
 }
+
 
