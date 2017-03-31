@@ -1,4 +1,4 @@
-package serviceImpl;
+package service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,14 +10,13 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import common.Commons;
 import common.XTrustProvider;
-import service.APIConsumerService;
 
-@Service
-public class APIConsumerServiceImpl implements APIConsumerService
+@Component
+public class APIConsumerService
 {
 	@Cacheable(value="maxserviceCache", key="#policyNo.concat('_OTP')", unless="#result == null")
 	public String getPolicyOtp(String policyNo)
