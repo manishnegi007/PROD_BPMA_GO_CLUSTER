@@ -48,10 +48,11 @@ public class HelloWorldController
 
 				//CTPServiceAction ctpserviceAction = new CTPServiceAction();
 				serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber);
-				if (serviceResp.equals("false")) {
+				if (serviceResp.equals("")) {
 					speech = "Policy Number seems to be incorrect.Please provide valid Policy Number";
 				} else {
 					speech = "OTP is sent to your Registered Mobile Number. Please provide your OTP for verification";
+					System.out.println("OTP IS-------"+serviceResp);
 					/*if (httpSession.getAttribute("CACHEOTP_" + G_PolicyNumber) == null)
 						httpSession.setAttribute("CACHEOTP_" + G_PolicyNumber, serviceResp);*/
 				}
@@ -66,7 +67,7 @@ public class HelloWorldController
 				//String resultdata="{\"id\":\"c70014bb-ea19-4e2b-a70f-fadb9dcc649a\",\"timestamp\":\"2017-03-31T12:15:46.041Z\",\"lang\":\"en\",\"result\":{\"source\":\"agent\",\"resolvedQuery\":\"1452\",\"action\":\"OTPValidation\",\"actionIncomplete\":false,\"parameters\":{\"OTP\":{\"Provided-OTP\":\"1452\"}},\"contexts\":[{\"name\":\"policynumber\",\"parameters\":{\"CustomerRequest\":[],\"CustomerRequest.original\":\"\",\"PolicyNumber\":{\"Given-PolicyNumber.original\":\"719438228\",\"Given-PolicyNumber\":\"719438228\"},\"PolicyNumber.original\":\"719438228\",\"OTP.original\":\"1452\",\"OTP\":{\"Provided-OTP.original\":\"1452\",\"Provided-OTP\":\"1452\"}},\"lifespan\":5},{\"name\":\"otp\",\"parameters\":{\"OTP.original\":\"1452\",\"OTP\":{\"Provided-OTP.original\":\"1452\",\"Provided-OTP\":\"1452\"}},\"lifespan\":5}],\"metadata\":{\"intentId\":\"6ae37867-7943-452b-8bf8-1788ade079d5\",\"webhookUsed\":\"true\",\"webhookForSlotFillingUsed\":\"false\",\"intentName\":\"Policy.OTP.Validation\"},\"fulfillment\":{\"speech\":\"OTP not found in session\",\"source\":\"java-webhook\",\"displayText\":\"OTP not found in session\",\"messages\":[{\"type\":0,\"speech\":\"OTP not found in session\"}]},\"score\":0.75124997},\"status\":{\"code\":200,\"errorType\":\"success\"},\"sessionId\":\"ebdf7299-4e10-43bd-8bc9-193ec0b294a4\"}";
 				JSONObject resultdataJson=new JSONObject(obj);
 			    String requiredadata=resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").getJSONObject("PolicyNumber").get("Given-PolicyNumber.original")+"";
-				System.out.println(requiredadata);
+				System.out.println("policynumber is:*******"+requiredadata);
 				String OTP_request = OTP_Number.get("Provided-OTP").toString();
 				speech="I am in OTPValidationAction. User agve this OTP-"+OTP_request;
 				otp_session=apiConsumerService.getPolicyOtp(requiredadata);
@@ -88,6 +89,7 @@ public class HelloWorldController
 		return new WebhookResponse(speech, speech);
 	}
 }
+
 
 
 
