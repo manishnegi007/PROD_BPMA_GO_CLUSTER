@@ -45,7 +45,7 @@ public class HelloWorldController {
 			}
 			if ("PolicyNumberValidation".equals(action)) {
 				if (menuHashMap.get(VALID_POL) != null) {
-					speech = "OTP has been sent to your registered mobile number for policy number"
+					speech = "OTP has been sent to your registered mobile number for policy number "
 							+ menuHashMap.get(VALID_POL) + ", please provide the same for verification";
 				} else {
 					Map parameters = (Map) result.get("parameters");
@@ -57,6 +57,7 @@ public class HelloWorldController {
 					if (serviceResp.get("policyotp") != null) {
 						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
 						menuHashMap.put(VALID_POL, G_PolicyNumber);
+						System.out.println("OTP is **** "+serviceResp.get("policyotp"));
 					}
 				}
 			} else if (action.equals("OTPValidation")) {
@@ -113,6 +114,7 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
+
 
 
 
