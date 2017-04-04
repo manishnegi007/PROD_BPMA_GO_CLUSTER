@@ -5,11 +5,12 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import common.Commons;
@@ -18,19 +19,20 @@ import common.XTrustProvider;
 @Component
 public class APIConsumerService
 {
-	@Cacheable(value="maxserviceCache", key="#policyNo.concat('_OTP')", unless="#result == null")
-	public String getPolicyOtp(String policyNo)
+	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
+	//@Cacheable(value="maxserviceCache", key="#policyNo.concat('_OTP')", unless="#result == null" )
+	public Map<String,String> getPolicyOtp(String policyNo)
 	{
 		String output = new String();
 		StringBuilder result = new StringBuilder();
-		String DevMode = "Y";
+		//String DevMode = "Y";
 		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v1/real";
 		String soaCorrelationId="ApiConsumer-"+policyNo+"-"+System.currentTimeMillis();
 		String soaMsgVersion="1.0";
 		String soaAppID = "BOT";
 		String soaUserID = "BOTDEV123";
 		String soaUserPswd = "Qk9UMTIzREVW";
-		
+		Map<String,String> otpDescMap=new HashMap<String, String>();
 		String policyOtp="";
 
 		HttpURLConnection conn = null;
@@ -74,45 +76,90 @@ public class APIConsumerService
 			OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
 			writer.write(requestdata.toString());
 			writer.flush();
-			try {writer.close(); } catch (Exception e1) {}
+			try {
+				writer.close();
+			} catch (Exception e1) {
+			}
 
 			int apiResponseCode = conn.getResponseCode();
-			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-			while ((output = br.readLine()) != null) 
-			{
-				result.append(output);
-			}
-			conn.disconnect();
-			br.close();
-			//logger.info("apiResponseCode is : "+apiResponseCode+" Outpot is : "+result.toString());
-			if(apiResponseCode == 200)
-			{
+			
+			System.out.println("apiResponseCode is : " + apiResponseCode + " Output is : " + result.toString());
+			if (apiResponseCode == 200) {
+				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+				while ((output = br.readLine()) != null) {
+					result.append(output);
+				}
+				conn.disconnect();
+				br.close();
 				Map resultData = Commons.getGsonData(result.toString());
-				String soaStatusCode = ((Map)((Map)resultData.get("response")).get("responseData")).get("soaStatusCode").toString();
-				if(soaStatusCode!=null 
-						&& !soaStatusCode.equalsIgnoreCase("") 
-						&& soaStatusCode.equalsIgnoreCase("200")
-						)
+				String soaStatusCode = ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("soaStatusCode").toString();
+				if (soaStatusCode != null && !soaStatusCode.equalsIgnoreCase("")
+						&& soaStatusCode.equalsIgnoreCase("200")) {
+					policyOtp = ((Map) ((Map) resultData.get("response")).get("responseData")).get("otp").toString();
+					otpDescMap.put("policyotp", policyOtp);
+					otpDescMap.put("Message",resProp.getString("getOtpSuccessfully"));
+				} 
+				else if(soaStatusCode != null && !soaStatusCode.equalsIgnoreCase("")
+						&& soaStatusCode.equalsIgnoreCase("999")) 
 				{
-					policyOtp = ((Map)((Map)resultData.get("response")).get("responseData")).get("otp").toString();
+					String soaMessage=((Map) ((Map) resultData.get("response")).get("responseData"))
+							.get("soaMessage").toString();
+					if("Unable to fetch client Id from Policy Info backend service.".equals(soaMessage))
+					{
+						otpDescMap.put("Message","Policy number "+ policyNo+" "+resProp.getString("PolicyNumberNotFound"));
+					}
+					else if("Unable to fetch Mobile number from Client Info backend service.".equals(soaMessage))
+					{
+						otpDescMap.put("Message",resProp.getString("MobileNumberRegardingPolicy"));
+					}
+					// Set message if required
+					System.out.println("soaStatusCode is : " + soaStatusCode);
 				}
 				else
 				{
-					//Set message if required 
-					//logger.info("soaStatusCode is : "+soaStatusCode);
+					System.out.println("soaStatusCode is : " + soaStatusCode);
 				}
-			}
-			else
+				
+			} 
+			else 
 			{
-				//Set message if required 
+				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getErrorStream())));
+				while ((output = br.readLine()) != null) {
+					result.append(output);
+				}
+				conn.disconnect();
+				br.close();
+				Map resultData = Commons.getGsonData(result.toString());
+				String soaStatusCode = ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("soaStatusCode").toString();
+				if(soaStatusCode != null && !soaStatusCode.equalsIgnoreCase("")
+						&& soaStatusCode.equalsIgnoreCase("999")) 
+				{
+					String soaMessage=((Map) ((Map) resultData.get("response")).get("responseData"))
+							.get("soaMessage").toString();
+					if("Unable to fetch client Id from Policy Info backend service.".equals(soaMessage))
+					{
+						otpDescMap.put("Message","Policy number "+ policyNo+" "+resProp.getString("PolicyNumberNotFound"));
+					}
+					else if("Unable to fetch Mobile number from Client Info backend service.".equals(soaMessage))
+					{
+						otpDescMap.put("Message",resProp.getString("MobileNumberRegardingPolicy"));
+					}
+					// Set message if required
+					System.out.println("soaStatusCode is : " + soaStatusCode);
+				}
+				
+				// Set message if required
 			}
+		} catch (Exception e) {
+			System.out.println("We are in exception while calling API : " + soaCorrelationId + e);
 		}
-		catch (Exception e) 
-		{
-			System.out.println("We are in exception while calling API : "+soaCorrelationId+e);
-		}
-		return policyOtp;
+		
+		
+		return otpDescMap;
 	}
 }
+
 
 
