@@ -97,15 +97,19 @@ public class HelloWorldController {
 					}
 				}
 			} else if (action.equals("input.CTP")) {
+				System.out.println("i am in ctp action");
 				if (menuHashMap.get(VALID_POL) == null) {
 					speech = "Please Validate Customer identity first by giving correct Policy Number.";
 				} else if (menuHashMap.get(VALID_OTP) == null) {
 					speech = "Please Validate OTP by giving correct OTP for Policy Number" + menuHashMap.get(VALID_POL);
 				} else {
+					System.out.println("i am in ctp action 1");
 					Map data = (Map) menuHashMap.get(POL_DATA);
 					if (data.get("CTP") == null) {
+						System.out.println("i am in ctp action 2");
 						speech = ((Map) data.get("ErrorMessage")).get("Message").toString();
 					} else {
+						System.out.println("i am in ctp action 3");
 						Map ctp = (Map) data.get("CTP");
 						speech = ctp.get("Message").toString();
 					}
@@ -171,12 +175,3 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
-
-
-
-
-
-
-
-
-
