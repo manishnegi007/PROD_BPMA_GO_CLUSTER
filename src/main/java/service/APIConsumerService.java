@@ -184,9 +184,9 @@ public class APIConsumerService
 						new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
 				conn = (HttpURLConnection) url.openConnection(proxy);
 			} else {
-				conn = (HttpURLConnection) url.openConnection();
+				
 			}*/
-
+			conn = (HttpURLConnection) url.openConnection();
 			HttpsURLConnection.setFollowRedirects(true);
 			conn.setDoInput(true);
 			conn.setDoOutput(true);
@@ -311,6 +311,7 @@ public class APIConsumerService
 		return returnMap;
 	}
 }
+
 
 
 
