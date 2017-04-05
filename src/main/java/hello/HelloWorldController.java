@@ -20,11 +20,12 @@ import service.APIConsumerService;
 @Controller
 @RequestMapping("/webhook")
 public class HelloWorldController {
-	private static HashMap<String, String> menuHashMap = new HashMap<String, String>();
+	private static HashMap menuHashMap = new HashMap();
 	private static final String VALID_POL = "ValidPol";
 	private static final String VALID_OTP = "ValidOTP";
 	private static final String SESSION = "SessionID";
 	private static final String CACHE_OTP = "CacheOTP";
+	private static final String POL_DATA = "PolData";
 	@Autowired
 	APIConsumerService apiConsumerService;
 
@@ -37,7 +38,7 @@ public class HelloWorldController {
 			Map requestJsonObj = Commons.getGsonData(obj);
 			Map result = (Map) requestJsonObj.get("result");
 			String action = result.get("action").toString();
-			
+
 			if (menuHashMap.get(SESSION) == null
 					|| !menuHashMap.get(SESSION).equals(requestJsonObj.get("sessionId").toString())) {
 				menuHashMap.clear();
@@ -57,7 +58,7 @@ public class HelloWorldController {
 					if (serviceResp.get("policyotp") != null) {
 						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
 						menuHashMap.put(VALID_POL, G_PolicyNumber);
-						System.out.println("OTP is **** "+serviceResp.get("policyotp"));
+						System.out.println("OTP is **** " + serviceResp.get("policyotp"));
 					}
 				}
 			} else if (action.equals("OTPValidation")) {
@@ -76,10 +77,13 @@ public class HelloWorldController {
 
 					System.out.println("policynumber is:*******" + requiredadata);
 					speech = "I am in OTPValidationAction. User agve this OTP-" + OTP_request;
-					otp_session = menuHashMap.get(CACHE_OTP);
+					otp_session = menuHashMap.get(CACHE_OTP).toString();
 					if (otp_session != null) {
 						if (otp_session.equals(OTP_request)) {
 							speech = "Mr. Arun. What information you want to know about your policy";
+							Map data = apiConsumerService.getPolicyInfo(menuHashMap.get(VALID_POL).toString());
+							menuHashMap.put(POL_DATA, data);
+							menuHashMap.remove(CACHE_OTP);
 							// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").put("validOTP.original",
 							// otp_session.toString());
 							// resultdataJson.getJSONObject("result").getJSONObject("fulfillment").put("speech",
@@ -92,28 +96,82 @@ public class HelloWorldController {
 						speech = "You have not generated OTP.Please provide valid policy to generate OTP";
 					}
 				}
-			}
+			} else if (action.equals("input.CTP")) {
+				if (menuHashMap.get(VALID_POL) == null) {
+					speech = "Please Validate Customer identity first by giving correct Policy Number.";
+				} else if (menuHashMap.get(VALID_OTP) == null) {
+					speech = "Please Validate OTP by giving correct OTP for Policy Number" + menuHashMap.get(VALID_POL);
+				} else {
+					Map data = (Map) menuHashMap.get(POL_DATA);
+					if (data.get("CTP") == null) {
+						speech = ((Map) data.get("ErrorMessage")).get("Message").toString();
+					} else {
+						Map ctp = (Map) data.get("CTP");
+						speech = ctp.get("Message").toString();
+					}
+				}
+			} else if (action.equals("input.Maturity")) {
+				speech = "Maturity is 1234";
+			} else if (action.equals("input.Surrender")) {
+				if (menuHashMap.get(VALID_POL) == null) {
+					speech = "Please Validate Customer identity first by giving correct Policy Number.";
+				} else if (menuHashMap.get(VALID_OTP) == null) {
+					speech = "Please Validate OTP by giving correct OTP for Policy Number" + menuHashMap.get(VALID_POL);
+				} else {
+					Map data = (Map) menuHashMap.get(POL_DATA);
+					if (data.get("CSV") == null) {
+						if (data.get("ErrorMessage") == null) {
+							speech = "API need to be integrated";
+						}
+					} else {
+						Map csv = (Map) data.get("CSV");
+						speech = csv.get("Message").toString();
+					}
+				}
+			} else if (action.equals("input.Receipt")) {
+				speech = "payment reciept is sent to your email";
+			} else if (action.equals("input.Fund")) {
+				if (menuHashMap.get(VALID_POL) == null) {
+					speech = "Please Validate Customer identity first by giving correct Policy Number.";
+				} else if (menuHashMap.get(VALID_OTP) == null) {
+					speech = "Please Validate OTP by giving correct OTP for Policy Number" + menuHashMap.get(VALID_POL);
+				} else {
+					Map data = (Map) menuHashMap.get(POL_DATA);
+					if (data.get("FV") == null) {
+						speech = ((Map) data.get("ErrorMessage")).get("Message").toString();
+					} else {
+						Map fv = (Map) data.get("FV");
+						if (fv.get("fundValAsonDate") != null) {
+							String fvdata = fv.get("fundValAsonDate").toString();
+							speech = fv.get("Message").toString() + fvdata;
+						} else {
+							speech = fv.get("Message").toString();
+						}
 
+					}
+				}
+			} else if (action.equals("close.conversation")) {
+				menuHashMap.clear();
+				speech = "You can now start new conversation!";
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		System.out.println(speech);
-/*
-		Context context = new Context();
-		context.setLifespan("life ");
-		context.setName("Name");
-		Map parameters = new HashMap<String, String>();
-		parameters.put("", "");
-		parameters.put("", "");
-		ArrayList<Map> parameter = new ArrayList<>();
-		parameter.add(parameters);
-		context.setParameters(parameter);
-		List<Context> contextList = new ArrayList<Context>();
-		responseObj.setContextOut(contextList);*/
+		/*
+		 * Context context = new Context(); context.setLifespan("life ");
+		 * context.setName("Name"); Map parameters = new HashMap<String,
+		 * String>(); parameters.put("", ""); parameters.put("", "");
+		 * ArrayList<Map> parameter = new ArrayList<>();
+		 * parameter.add(parameters); context.setParameters(parameter);
+		 * List<Context> contextList = new ArrayList<Context>();
+		 * responseObj.setContextOut(contextList);
+		 */
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
 		return responseObj;
 	}
 }
+
 
 
 
