@@ -82,6 +82,7 @@ public class HelloWorldController {
 						if (otp_session.equals(OTP_request)) {
 							speech = "Mr. Arun. What information you want to know about your policy";
 							Map data = apiConsumerService.getPolicyInfo(menuHashMap.get(VALID_POL).toString());
+							menuHashMap.put(VALID_OTP, OTP_request);
 							menuHashMap.put(POL_DATA, data);
 							menuHashMap.remove(CACHE_OTP);
 							// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").put("validOTP.original",
@@ -175,3 +176,4 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
+
