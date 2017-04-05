@@ -98,7 +98,7 @@ public class APIConsumerService
 						&& soaStatusCode.equalsIgnoreCase("200")) {
 					policyOtp = ((Map) ((Map) resultData.get("response")).get("responseData")).get("otp").toString();
 					otpDescMap.put("policyotp", policyOtp);
-					otpDescMap.put("Message",resProp.getString("getOtpSuccessfully"));
+					otpDescMap.put("Message",resProp.getString("getOtpSuccessfully").concat(" "+policyOtp));
 				} 
 				else if(soaStatusCode != null && !soaStatusCode.equalsIgnoreCase("")
 						&& soaStatusCode.equalsIgnoreCase("999")) 
@@ -159,7 +159,159 @@ public class APIConsumerService
 		
 		return otpDescMap;
 	}
+	
+	public Map getPolicyInfo(String policyNo) {
+		String output = new String();
+		StringBuilder result = new StringBuilder();
+		//String DevMode = "Y";
+		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policy360/policy360/policyctp/v1";
+		String soaCorrelationId = "ApiConsumer-" + policyNo + "-" + System.currentTimeMillis();
+		String soaMsgVersion = "1.0";
+		String soaAppID = "BOT";
+		String soaUserID = "BOTDEV123";
+		String soaUserPswd = "Qk9UMTIzREVW";
+		Map<String, String> map = new HashMap();
+		String policyOtp = "";
+		Map<String,Map> returnMap=new HashMap<String,Map>();
+		HttpURLConnection conn = null;
+		try {
+			XTrustProvider trustProvider = new XTrustProvider();
+			trustProvider.install();
+			URL url = new URL(pUrl);
+
+			/*if (DevMode != null && !DevMode.equalsIgnoreCase("") && DevMode.equalsIgnoreCase("Y")) {
+				Proxy proxy = new Proxy(Proxy.Type.HTTP,
+						new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
+				conn = (HttpURLConnection) url.openConnection(proxy);
+			} else {
+				conn = (HttpURLConnection) url.openConnection();
+			}*/
+
+			HttpsURLConnection.setFollowRedirects(true);
+			conn.setDoInput(true);
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			StringBuilder requestdata = new StringBuilder();
+			requestdata.append(" 	{	 ");
+			requestdata.append(" 	   \"request\": {	 ");
+			requestdata.append(" 	      \"header\": {	 ");
+			requestdata.append(" 	         \"soaCorrelationId\": \"").append(soaCorrelationId).append("\",	 ");
+			requestdata.append(" 	         \"soaMsgVersion\": \"").append(soaMsgVersion).append("\",	 ");
+			requestdata.append(" 	         \"soaAppId\": \"").append(soaAppID).append("\",	 ");
+			requestdata.append(" 	         \"soaUserId\": \"").append(soaUserID).append("\",	 ");
+			requestdata.append(" 	         \"soaPassword\": \"").append(soaUserPswd).append("\"	 ");
+			requestdata.append(" 	      },	 ");
+			requestdata.append(" 	      \"requestData\": {	 ");
+			requestdata.append(" 	         \"policyNumber\": \"").append(policyNo).append("\"	 ");
+			requestdata.append(" 	      }	 ");
+			requestdata.append(" 	   }	 ");
+			requestdata.append(" 	}	 ");
+
+			OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
+			writer.write(requestdata.toString());
+			writer.flush();
+			try {
+				writer.close();
+			} catch (Exception e1) {
+			}
+
+			int apiResponseCode = conn.getResponseCode();
+			System.out.println("apiResponseCode is : " + apiResponseCode + " Outpot is : " + result.toString());
+			String responseString = result.toString();
+			if (apiResponseCode == 200) {
+				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+				while ((output = br.readLine()) != null) {
+					result.append(output);
+				}
+				conn.disconnect();
+				br.close();
+				Map resultData = Commons.getGsonData(result.toString());
+				String policyBasePlanIdDesc = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("BasicDetails")).get("policyBasePlanIdDesc").toString();
+				String ctpAmt = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("BasicDetails")).get("ctpAmt").toString();
+				String polDueDate = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("BasicDetails")).get("polDueDate").toString();
+				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
+				map.put("ctpAmt", ctpAmt);
+				map.put("polDueDate", polDueDate);
+				
+				//////////////////////*******************************////////////////////////////////////
+				String policyInsuranceTypeCd=((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("BasicDetails")).get("policyInsuranceTypeCd").toString();
+				
+				if("N".equals(policyInsuranceTypeCd)||"F".equals(policyInsuranceTypeCd)||"D".equals(policyInsuranceTypeCd)||"C".equals(policyInsuranceTypeCd))
+				{
+					Map<String,String> fvMap=new HashMap();
+					fvMap.put("fundValAsonDate", ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+							.get("PolicyMeasures")).get("fundValAsonDate").toString());
+					fvMap.put("discontinuanceFund", ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+							.get("BasicDetails")).get("discontinuanceFund").toString());
+					fvMap.put("Message",resProp.getString("InquiringFVTrue"));
+					returnMap.put("FV", fvMap);
+				}
+				else if("8".equals("policyInsuranceTypeCd")||"1".equals(policyInsuranceTypeCd))
+				{
+					Map<String,String> fvMap=new HashMap();
+					 fvMap.put("Message",resProp.getString("InquiringFVfalse"));
+					 returnMap.put("FV", fvMap);
+				}
+				else
+				{    Map<String,String> fvMap=new HashMap();
+					 fvMap.put("Message",resProp.getString("InquiringFVfalse"));
+					 returnMap.put("FV", fvMap);
+				}
+				
+				if("8".equals("policyInsuranceTypeCd")||"1".equals(policyInsuranceTypeCd))
+				{
+					Map<String,String> csv=new HashMap();
+					csv.put("Message",resProp.getString("cashSurrenderNotApplicable") );
+					returnMap.put("CSV",csv);
+					
+				}
+				
+				try
+				{
+				if(Integer.parseInt(ctpAmt)==0)
+				{
+					Map<String,String> fvMap=new HashMap();
+					fvMap.put("Message",resProp.getString("nextPremium1")+" "+polDueDate+" "+resProp.getString("nextPremium2"));
+					returnMap.put("CTP",fvMap);
+				}
+				else
+				{
+					Map<String,String> fvMap=new HashMap();
+					
+					fvMap.put("Message",resProp.getString("dueAmountPolicy1")+" "+policyNo+" "+resProp.getString("dueAmountPolicy2")+" "+ctpAmt+resProp.getString("dueAmountPolicy3")+" "+polDueDate);
+					fvMap.put("ctpAmt",ctpAmt);
+					fvMap.put("polDueDate",polDueDate);
+					returnMap.put("CTP",fvMap);
+				}
+				
+				
+				
+				
+				}
+				catch(Exception ec)
+				{
+					System.out.println(ec.getMessage());
+				}
+			    //////////////////////*******************************////////////////////////////////////
+			} else 
+			{
+				
+				Map<String,String> fvMap=new HashMap();
+				fvMap.put("Message", "Getting error :"+apiResponseCode+" while calling backend service");
+				returnMap.put("ErrorMessage",fvMap);
+			}
+		} catch (Exception e) {
+			System.out.println("We are in exception while calling API : " + soaCorrelationId + e);
+		}
+		return returnMap;
+	}
 }
+
 
 
 
