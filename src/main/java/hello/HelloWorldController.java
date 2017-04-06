@@ -76,7 +76,7 @@ public class HelloWorldController {
 							.get("Given-PolicyNumber.original") + "";
 
 					System.out.println("policynumber is:*******" + requiredadata);
-					speech = "I am in OTPValidationAction. User agve this OTP-" + OTP_request;
+					//speech = "I am in OTPValidationAction. User agve this OTP-" + OTP_request;
 					otp_session = menuHashMap.get(CACHE_OTP).toString();
 					if (otp_session != null) {
 						if (otp_session.equals(OTP_request)) {
@@ -177,6 +177,7 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
+
 
 
 
