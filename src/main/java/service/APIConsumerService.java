@@ -273,7 +273,7 @@ public class APIConsumerService
 				
 				try
 				{
-				if(Integer.parseInt(ctpAmt)==0)
+				if(Double.parseDouble(ctpAmt)==0)
 				{
 					Map<String,String> fvMap=new HashMap();
 					fvMap.put("Message",resProp.getString("nextPremium1")+" "+polDueDate+" "+resProp.getString("nextPremium2"));
@@ -311,6 +311,7 @@ public class APIConsumerService
 		return returnMap;
 	}
 }
+
 
 
 
