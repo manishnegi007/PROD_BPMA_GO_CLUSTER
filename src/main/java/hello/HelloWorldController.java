@@ -45,9 +45,12 @@ public class HelloWorldController {
 				menuHashMap.put(SESSION, requestJsonObj.get("sessionId").toString());
 			}
 			if ("PolicyNumberValidation".equals(action)) {
-				if (menuHashMap.get(VALID_POL) != null) {
+				if (menuHashMap.get(VALID_POL) != null && menuHashMap.get(VALID_OTP) != null) {
+					speech = "OTP Verification is completed for Policy Number " + menuHashMap.get(VALID_POL)
+					+ ", please tell what you want to know about policy";
+				}else if(menuHashMap.get(VALID_POL) != null && menuHashMap.get(VALID_OTP) == null){
 					speech = "OTP has been sent to your registered mobile number for policy number "
-							+ menuHashMap.get(VALID_POL) + ", please provide the same for verification";
+							+ menuHashMap.get(VALID_POL) + ", please provide the same for verification OR write reset to start new session";
 				} else {
 					Map parameters = (Map) result.get("parameters");
 					Map policyNumber = (Map) parameters.get("PolicyNumber");
@@ -66,7 +69,7 @@ public class HelloWorldController {
 					speech = "Please Validate Customer identity first by giving correct Policy Number.";
 				} else if (menuHashMap.get(VALID_OTP) != null) {
 					speech = "OTP Verification is completed for Policy Number " + menuHashMap.get(VALID_POL)
-					+ ", please tell what you want to know about policy";
+					+ ", please tell what you want to know about policy  OR write reset to start new session";
 				}else {
 					String otp_session = null;
 					Map parameters = (Map) result.get("parameters");
@@ -179,6 +182,7 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
+
 
 
 
