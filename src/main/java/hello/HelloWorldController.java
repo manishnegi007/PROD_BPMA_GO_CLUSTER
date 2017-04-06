@@ -62,10 +62,12 @@ public class HelloWorldController {
 					}
 				}
 			} else if (action.equals("OTPValidation")) {
-				if (menuHashMap.get(VALID_OTP) != null) {
+				if (menuHashMap.get(VALID_POL) == null) {
+					speech = "Please Validate Customer identity first by giving correct Policy Number.";
+				} else if (menuHashMap.get(VALID_OTP) != null) {
 					speech = "OTP Verification is completed for Policy Number " + menuHashMap.get(VALID_POL)
-							+ ", please tell what you want to know about policy";
-				} else {
+					+ ", please tell what you want to know about policy";
+				}else {
 					String otp_session = null;
 					Map parameters = (Map) result.get("parameters");
 					Map OTP_Number = (Map) parameters.get("OTP");
@@ -177,6 +179,7 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
+
 
 
 
