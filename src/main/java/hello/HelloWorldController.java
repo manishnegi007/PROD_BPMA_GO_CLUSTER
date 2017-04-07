@@ -78,6 +78,7 @@ public class HelloWorldController {
 						if (!(G_PolicyNumber.equals(policyNumberInSession))) {
 							System.out.println("A new policy number entered by the customer " + G_PolicyNumber);
 							System.out.println("Clearing Map");
+							menuHashMap.clear();
 							menuHashMap.put(VALID_POL, G_PolicyNumber);
 						}
 					}
