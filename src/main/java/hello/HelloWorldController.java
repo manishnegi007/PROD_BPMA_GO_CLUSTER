@@ -51,7 +51,7 @@ public class HelloWorldController {
 				mainHashMap.put(sessionId, menuHashMap);
 			} else {
 				System.out.println("Existing session found " + sessionId);
-				menuHashMap = (HashMap)mainHashMap.get(sessionId);
+				menuHashMap = mainHashMap.get(sessionId);
 			}
 
 			if (menuHashMap.get(SESSION) == null
@@ -60,6 +60,28 @@ public class HelloWorldController {
 				menuHashMap.put(SESSION, requestJsonObj.get("sessionId").toString());
 			}
 			if ("PolicyNumberValidation".equals(action)) {
+
+				Map parameters = (Map) result.get("parameters");
+				Map policyNumber = (Map) parameters.get("PolicyNumber");
+				String G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
+
+			
+				if (menuHashMap.get(VALID_POL) != null) {
+			
+					String policyNumberInSession = menuHashMap.get(VALID_POL);
+					if (policyNumberInSession != null) {
+						if (!(G_PolicyNumber.equals(policyNumberInSession))) {
+							System.out.println("A new policy number entered by the customer " + G_PolicyNumber);
+							System.out.println("Clearing Map");
+							menuHashMap.clear();
+						}
+					}
+
+				}	
+
+
+							
+				
 				if (menuHashMap.get(VALID_POL) != null && menuHashMap.get(VALID_OTP) != null) {
 					speech = "OTP Verification is completed for Policy Number " + menuHashMap.get(VALID_POL)
 							+ ", please tell what you want to know about policy";
@@ -77,9 +99,9 @@ public class HelloWorldController {
 							menuHashMap.put(VALID_OTP, G_PolicyNumber);
 							menuHashMap.put(POL_DATA, data);
 							menuHashMap.remove(CACHE_OTP);
-		// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject
+							// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject
 
-//("parameters").put("validOTP.original",
+("parameters").put("validOTP.original",
 							// otp_session.toString());
 							// resultdataJson.getJSONObject("result").getJSONObject("fulfillment").put("speech",
 							// speech);
@@ -141,7 +163,7 @@ public class HelloWorldController {
 							menuHashMap.remove(CACHE_OTP);
 							// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject
 
-							//("parameters").put("validOTP.original",
+("parameters").put("validOTP.original",
 							// otp_session.toString());
 							// resultdataJson.getJSONObject("result").getJSONObject("fulfillment").put("speech",
 							// speech);
@@ -232,7 +254,6 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
-
 
 
 
