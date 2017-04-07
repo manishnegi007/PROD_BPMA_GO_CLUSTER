@@ -283,14 +283,14 @@ public class APIConsumerService
 				if(Double.parseDouble(ctpAmt)==0)
 				{
 					Map<String,String> fvMap=new HashMap();
-					fvMap.put("Message",resProp.getString("nextPremium1")+" "+convertDateFormat(polDueDate)+" "+resProp.getString("nextPremium2"));
+					fvMap.put("Message",resProp.getString("nextPremium1")+" "+polDueDate+" "+resProp.getString("nextPremium2"));
 					returnMap.put("CTP",fvMap);
 				}
 				else
 				{
 					Map<String,String> fvMap=new HashMap();
 					
-					fvMap.put("Message",resProp.getString("dueAmountPolicy1")+" "+policyNo+" "+resProp.getString("dueAmountPolicy2")+" "+ctpAmt+" "+resProp.getString("dueAmountPolicy3")+" "+convertDateFormat(polDueDate));
+					fvMap.put("Message",resProp.getString("dueAmountPolicy1")+" "+policyNo+" "+resProp.getString("dueAmountPolicy2")+" "+ctpAmt+" "+resProp.getString("dueAmountPolicy3")+" "+polDueDate);
 					fvMap.put("ctpAmt",ctpAmt);
 					fvMap.put("polDueDate",polDueDate);
 					returnMap.put("CTP",fvMap);
