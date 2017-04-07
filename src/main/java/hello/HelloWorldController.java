@@ -141,7 +141,7 @@ public class HelloWorldController {
 							menuHashMap.remove(CACHE_OTP);
 							// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject
 
-("parameters").put("validOTP.original",
+							//("parameters").put("validOTP.original",
 							// otp_session.toString());
 							// resultdataJson.getJSONObject("result").getJSONObject("fulfillment").put("speech",
 							// speech);
