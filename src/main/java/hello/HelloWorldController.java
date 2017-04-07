@@ -96,7 +96,10 @@ public class HelloWorldController {
 					parameters = (Map) result.get("parameters");
 					policyNumber = (Map) parameters.get("PolicyNumber");
 					G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
-					otp_session = menuHashMap.get(CACHE_OTP).toString();
+					String cache_otp = (String)menuHashMap.get(CACHE_OTP);
+					if (cache_otp != null) {
+						otp_session = menuHashMap.get(CACHE_OTP).toString();
+					}
 					if (otp_session != null) {
 						if (otp_session.equals(G_PolicyNumber)) {
 							speech = "Mr. Arun. What information you want to know about your policy";
