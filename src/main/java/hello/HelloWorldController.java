@@ -51,7 +51,7 @@ public class HelloWorldController {
 				mainHashMap.put(sessionId, menuHashMap);
 			} else {
 				System.out.println("Existing session found " + sessionId);
-				menuHashMap = mainHashMap.get(sessionId);
+				menuHashMap = (HashMap)mainHashMap.get(sessionId);
 			}
 
 			if (menuHashMap.get(SESSION) == null
