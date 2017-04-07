@@ -71,6 +71,9 @@ public class HelloWorldController {
 				if (menuHashMap.get(VALID_POL) != null) {
 			
 					String policyNumberInSession = (String)menuHashMap.get(VALID_POL);
+					
+					System.out.println("Policy number in session " + policyNumberInSession);
+					System.out.println("Policy number from parameter " + G_PolicyNumber);
 					if (policyNumberInSession != null) {
 						if (!(G_PolicyNumber.equals(policyNumberInSession))) {
 							System.out.println("A new policy number entered by the customer " + G_PolicyNumber);
