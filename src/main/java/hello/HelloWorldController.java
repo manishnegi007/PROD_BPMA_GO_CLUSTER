@@ -68,7 +68,7 @@ public class HelloWorldController {
 				G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 
 			
-				if (menuHashMap.get(VALID_POL) != null) {
+				/*if (menuHashMap.get(VALID_POL) != null) {
 			
 					String policyNumberInSession = (String)menuHashMap.get(VALID_POL);
 					
@@ -82,7 +82,7 @@ public class HelloWorldController {
 						}
 					}
 
-				}	
+				}*/	
 
 
 							
