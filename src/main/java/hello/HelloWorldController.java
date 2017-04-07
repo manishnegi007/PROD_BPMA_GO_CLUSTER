@@ -35,7 +35,7 @@ public class HelloWorldController {
 		try {
 			Map<String, String> serviceResp = null;
 			HashMap menuHashMap = null;
-
+			String G_PolicyNumber = null;
 
 			
 			System.out.println(obj);
@@ -63,7 +63,7 @@ public class HelloWorldController {
 
 				Map parameters = (Map) result.get("parameters");
 				Map policyNumber = (Map) parameters.get("PolicyNumber");
-				String G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
+				G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 
 			
 				if (menuHashMap.get(VALID_POL) != null) {
@@ -89,7 +89,7 @@ public class HelloWorldController {
 					String otp_session = null;
 					Map parameters = (Map) result.get("parameters");
 					Map policyNumber = (Map) parameters.get("PolicyNumber");
-					String G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
+					G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 					otp_session = menuHashMap.get(CACHE_OTP).toString();
 					if (otp_session != null) {
 						if (otp_session.equals(G_PolicyNumber)) {
@@ -123,7 +123,7 @@ public class HelloWorldController {
 				} else {
 					Map parameters = (Map) result.get("parameters");
 					Map policyNumber = (Map) parameters.get("PolicyNumber");
-					String G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
+					G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 					System.out.println(G_PolicyNumber);
 					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber);
 					speech = serviceResp.get("Message");
