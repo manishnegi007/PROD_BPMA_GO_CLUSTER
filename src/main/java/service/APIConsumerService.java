@@ -283,7 +283,7 @@ public class APIConsumerService
 				{
 					Map<String,String> fvMap=new HashMap();
 					
-					fvMap.put("Message",resProp.getString("dueAmountPolicy1")+" "+policyNo+" "+resProp.getString("dueAmountPolicy2")+" "+ctpAmt+resProp.getString("dueAmountPolicy3")+" "+polDueDate);
+					fvMap.put("Message",resProp.getString("dueAmountPolicy1")+" "+policyNo+" "+resProp.getString("dueAmountPolicy2")+" "+ctpAmt+" "+resProp.getString("dueAmountPolicy3")+" "+polDueDate);
 					fvMap.put("ctpAmt",ctpAmt);
 					fvMap.put("polDueDate",polDueDate);
 					returnMap.put("CTP",fvMap);
