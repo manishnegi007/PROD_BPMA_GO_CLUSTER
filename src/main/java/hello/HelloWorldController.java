@@ -56,11 +56,11 @@ public class HelloWorldController {
 				menuHashMap = (HashMap)mainHashMap.get(sessionId);
 			}
 
-			if (menuHashMap.get(SESSION) == null
+			/*if (menuHashMap.get(SESSION) == null
 					|| !menuHashMap.get(SESSION).equals(requestJsonObj.get("sessionId").toString())) {
 				menuHashMap.clear();
 				menuHashMap.put(SESSION, requestJsonObj.get("sessionId").toString());
-			}
+			}*/
 			if ("PolicyNumberValidation".equals(action)) {
 
 				parameters = (Map) result.get("parameters");
