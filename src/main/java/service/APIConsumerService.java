@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.DateFormat;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -235,7 +236,7 @@ public class APIConsumerService
 						.get("BasicDetails")).get("polDueDate").toString();
 				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
 				map.put("ctpAmt", ctpAmt);
-				map.put("polDueDate", polDueDate);
+				map.put("polDueDate", convertDateFormat(polDueDate));
 				
 				//////////////////////*******************************////////////////////////////////////
 				String policyInsuranceTypeCd=((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
@@ -309,6 +310,14 @@ public class APIConsumerService
 			System.out.println("We are in exception while calling API : " + soaCorrelationId + e);
 		}
 		return returnMap;
+	}
+	
+	private String convertDateFormat(String sourceFormat) {
+		DateFormat originalFormat = new SimpleDateFormat("yyyy MM, dd", Locale.ENGLISH);
+		DateFormat targetFormat = new SimpleDateFormat("ddMMyyyy");
+		Date date = originalFormat.parse(sourceFormat);
+		String formattedDate = targetFormat.format(date);  // 20120821
+		return formattedDate;
 	}
 }
 
