@@ -240,7 +240,9 @@ public class APIConsumerService
 						.get("BasicDetails")).get("polDueDate").toString();
 				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
 				map.put("ctpAmt", ctpAmt);
-				map.put("polDueDate", convertDateFormat(polDueDate));
+				map.put("polDueDate", polDueDate);
+				
+				polDueDate = convertDateFormat(polDueDate);
 				
 				//////////////////////*******************************////////////////////////////////////
 				String policyInsuranceTypeCd=((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
