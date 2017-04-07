@@ -77,9 +77,9 @@ public class HelloWorldController {
 							menuHashMap.put(VALID_OTP, G_PolicyNumber);
 							menuHashMap.put(POL_DATA, data);
 							menuHashMap.remove(CACHE_OTP);
-							// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject
+		// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject
 
-("parameters").put("validOTP.original",
+//("parameters").put("validOTP.original",
 							// otp_session.toString());
 							// resultdataJson.getJSONObject("result").getJSONObject("fulfillment").put("speech",
 							// speech);
