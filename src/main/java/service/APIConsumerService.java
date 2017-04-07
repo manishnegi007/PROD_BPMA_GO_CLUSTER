@@ -321,8 +321,8 @@ public class APIConsumerService
 	private String convertDateFormat(String sourceFormat) {
 		String formattedDate = null;
 		try {
-		DateFormat originalFormat = new SimpleDateFormat("yyyy MM, dd", Locale.ENGLISH);
-		DateFormat targetFormat = new SimpleDateFormat("ddMMyyyy");
+		DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+		DateFormat targetFormat = new SimpleDateFormat("dd-MON-yyyy");
 		Date date = originalFormat.parse(sourceFormat);
 		formattedDate = targetFormat.format(date);  // 20120821
 		return formattedDate;
