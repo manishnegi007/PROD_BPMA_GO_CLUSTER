@@ -36,6 +36,8 @@ public class HelloWorldController {
 			Map<String, String> serviceResp = null;
 			HashMap menuHashMap = null;
 			String G_PolicyNumber = null;
+			Map parameters = null;
+			Map policyNumber = null;
 
 			
 			System.out.println(obj);
@@ -61,8 +63,8 @@ public class HelloWorldController {
 			}
 			if ("PolicyNumberValidation".equals(action)) {
 
-				Map parameters = (Map) result.get("parameters");
-				Map policyNumber = (Map) parameters.get("PolicyNumber");
+				parameters = (Map) result.get("parameters");
+				policyNumber = (Map) parameters.get("PolicyNumber");
 				G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 
 			
@@ -87,8 +89,8 @@ public class HelloWorldController {
 							+ ", please tell what you want to know about policy";
 				} else if (menuHashMap.get(VALID_POL) != null) {
 					String otp_session = null;
-					Map parameters = (Map) result.get("parameters");
-					Map policyNumber = (Map) parameters.get("PolicyNumber");
+					parameters = (Map) result.get("parameters");
+					policyNumber = (Map) parameters.get("PolicyNumber");
 					G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 					otp_session = menuHashMap.get(CACHE_OTP).toString();
 					if (otp_session != null) {
@@ -121,8 +123,8 @@ public class HelloWorldController {
 					 * ;
 					 */
 				} else {
-					Map parameters = (Map) result.get("parameters");
-					Map policyNumber = (Map) parameters.get("PolicyNumber");
+					parameters = (Map) result.get("parameters");
+					policyNumber = (Map) parameters.get("PolicyNumber");
 					G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 					System.out.println(G_PolicyNumber);
 					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber);
@@ -141,7 +143,7 @@ public class HelloWorldController {
 							+ ", please tell what you want to know about policy  OR write reset to start new session";
 				} else {
 					String otp_session = null;
-					Map parameters = (Map) result.get("parameters");
+					parameters = (Map) result.get("parameters");
 					Map OTP_Number = (Map) parameters.get("OTP");
 					String OTP_request = OTP_Number.get("Provided-OTP").toString();
 					JSONObject resultdataJson = new JSONObject(obj);
