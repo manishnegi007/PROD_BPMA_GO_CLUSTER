@@ -47,10 +47,40 @@ public class HelloWorldController {
 			if ("PolicyNumberValidation".equals(action)) {
 				if (menuHashMap.get(VALID_POL) != null && menuHashMap.get(VALID_OTP) != null) {
 					speech = "OTP Verification is completed for Policy Number " + menuHashMap.get(VALID_POL)
-					+ ", please tell what you want to know about policy";
-				}else if(menuHashMap.get(VALID_POL) != null && menuHashMap.get(VALID_OTP) == null){
-					speech = "OTP has been sent to your registered mobile number for policy number "
-							+ menuHashMap.get(VALID_POL) + ", please provide the same for verification OR write reset to start new session";
+							+ ", please tell what you want to know about policy";
+				} else if (menuHashMap.get(VALID_POL) != null) {
+					String otp_session = null;
+					Map parameters = (Map) result.get("parameters");
+					Map policyNumber = (Map) parameters.get("PolicyNumber");
+					String G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
+					otp_session = menuHashMap.get(CACHE_OTP).toString();
+					if (otp_session != null) {
+						if (otp_session.equals(G_PolicyNumber)) {
+							speech = "Mr. Arun. What information you want to know about your policy";
+							Map data = apiConsumerService.getPolicyInfo(menuHashMap.get(VALID_POL).toString());
+							System.out.println("data----------" + data.toString());
+							menuHashMap.put(VALID_OTP, G_PolicyNumber);
+							menuHashMap.put(POL_DATA, data);
+							menuHashMap.remove(CACHE_OTP);
+							// resultdataJson.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").put("validOTP.original",
+							// otp_session.toString());
+							// resultdataJson.getJSONObject("result").getJSONObject("fulfillment").put("speech",
+							// speech);
+							// System.out.println(resultdataJson);
+						} else {
+							speech = "OTP did not match.Please provide correct OTP.";
+						}
+					} else {
+						speech = "You have not generated OTP.Please provide valid policy to generate OTP";
+					}
+
+					/*
+					 * speech =
+					 * "OTP has been sent to your registered mobile number for policy number "
+					 * + menuHashMap.get(VALID_POL) +
+					 * ", please provide the same for verification OR write reset to start new session"
+					 * ;
+					 */
 				} else {
 					Map parameters = (Map) result.get("parameters");
 					Map policyNumber = (Map) parameters.get("PolicyNumber");
@@ -69,8 +99,8 @@ public class HelloWorldController {
 					speech = "Please Validate Customer identity first by giving correct Policy Number.";
 				} else if (menuHashMap.get(VALID_OTP) != null) {
 					speech = "OTP Verification is completed for Policy Number " + menuHashMap.get(VALID_POL)
-					+ ", please tell what you want to know about policy  OR write reset to start new session";
-				}else {
+							+ ", please tell what you want to know about policy  OR write reset to start new session";
+				} else {
 					String otp_session = null;
 					Map parameters = (Map) result.get("parameters");
 					Map OTP_Number = (Map) parameters.get("OTP");
@@ -81,13 +111,14 @@ public class HelloWorldController {
 							.get("Given-PolicyNumber.original") + "";
 
 					System.out.println("policynumber is:*******" + requiredadata);
-					//speech = "I am in OTPValidationAction. User agve this OTP-" + OTP_request;
+					// speech = "I am in OTPValidationAction. User agve this
+					// OTP-" + OTP_request;
 					otp_session = menuHashMap.get(CACHE_OTP).toString();
 					if (otp_session != null) {
 						if (otp_session.equals(OTP_request)) {
 							speech = "Mr. Arun. What information you want to know about your policy";
 							Map data = apiConsumerService.getPolicyInfo(menuHashMap.get(VALID_POL).toString());
-							System.out.println("data----------"+data.toString());
+							System.out.println("data----------" + data.toString());
 							menuHashMap.put(VALID_OTP, OTP_request);
 							menuHashMap.put(POL_DATA, data);
 							menuHashMap.remove(CACHE_OTP);
@@ -182,6 +213,7 @@ public class HelloWorldController {
 		return responseObj;
 	}
 }
+
 
 
 
