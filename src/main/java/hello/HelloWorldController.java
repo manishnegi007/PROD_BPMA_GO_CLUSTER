@@ -51,7 +51,7 @@ public class HelloWorldController {
 				mainHashMap.put(sessionId, menuHashMap);
 			} else {
 				System.out.println("Existing session found " + sessionId);
-				menuHashMap = mainHashMap.get(sessionId);
+				menuHashMap = (HashMap)mainHashMap.get(sessionId);
 			}
 
 			if (menuHashMap.get(SESSION) == null
@@ -68,7 +68,7 @@ public class HelloWorldController {
 			
 				if (menuHashMap.get(VALID_POL) != null) {
 			
-					String policyNumberInSession = menuHashMap.get(VALID_POL);
+					String policyNumberInSession = (String)menuHashMap.get(VALID_POL);
 					if (policyNumberInSession != null) {
 						if (!(G_PolicyNumber.equals(policyNumberInSession))) {
 							System.out.println("A new policy number entered by the customer " + G_PolicyNumber);
