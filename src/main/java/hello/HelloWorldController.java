@@ -71,7 +71,7 @@ public class HelloWorldController {
 				G_PolicyNumber = (String)menuHashMap.get(VALID_POL);
 					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber);
 					speech = serviceResp.get("Message");
-					if (serviceResp.get("policyotp_regenerated") != null) {
+					if (serviceResp.get("policyotp") != null) {
 						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
 						menuHashMap.put(VALID_POL, G_PolicyNumber);
 						System.out.println("OTP is **** " + serviceResp.get("policyotp"));
