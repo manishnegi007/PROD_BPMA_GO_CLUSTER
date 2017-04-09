@@ -125,7 +125,7 @@ public class HelloWorldController {
 						System.out.println("In loop " + otp_session);
 
 						if (otp_session.equals(G_PolicyNumber)) {
-							speech = "Hi "+menuHashMap.get(CACHE_USERNAME)+"What information you want to know about your policy";
+							speech = "Hi "+menuHashMap.get(CACHE_USERNAME).toString()+"What information you want to know about your policy";
 							Map data = apiConsumerService.getPolicyInfo(menuHashMap.get(VALID_POL).toString());
 							System.out.println("data----------" + data.toString());
 							menuHashMap.put(VALID_OTP, G_PolicyNumber);
