@@ -69,7 +69,7 @@ public class HelloWorldController {
 				menuHashMap.remove(VALID_OTP);
 				
 				G_PolicyNumber = (String)menuHashMap.get(VALID_POL);
-					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber);
+					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber, 1);
 					speech = serviceResp.get("Message");
 					if (serviceResp.get("policyotp") != null) {
 						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
@@ -155,7 +155,7 @@ public class HelloWorldController {
 					policyNumber = (Map) parameters.get("PolicyNumber");
 					G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
 					System.out.println(G_PolicyNumber);
-					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber);
+					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber, 0);
 					speech = serviceResp.get("Message");
 					if (serviceResp.get("policyotp") != null) {
 						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
