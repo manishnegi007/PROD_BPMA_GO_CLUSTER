@@ -63,7 +63,7 @@ public class HelloWorldController {
 				menuHashMap.put(SESSION, requestJsonObj.get("sessionId").toString());
 			}*/
 			
-			if ("OTP.NotAvailable".equas(action)) {
+			if ("OTP.NotAvailable".equals(action)) {
 				//Regenrate OTP and send to customer
 				menuHashMap.put(OTP_UA, "Y");
 				menuHashMap.remove(VALID_OTP);
