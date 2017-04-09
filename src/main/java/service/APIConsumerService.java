@@ -104,6 +104,7 @@ public class APIConsumerService {
 								.toString();
 						proposerName = ((Map) ((Map) resultData.get("response")).get("responseData"))
 								.get("proposerName").toString();
+						System.out.println("proposerName :" + proposerName);
 					} catch (Exception ec) {
 						System.out.println("unable to get required data" + ec.getMessage());
 					}
