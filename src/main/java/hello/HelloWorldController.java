@@ -27,6 +27,7 @@ public class HelloWorldController {
 	private static final String CACHE_OTP = "CacheOTP";
 	private static final String POL_DATA = "PolData";
 	private static final String OTP_UA = "OTPUnavailable";
+	private static final String CACHE_USERNAME = "Username";
 	@Autowired
 	APIConsumerService apiConsumerService;
 
@@ -73,6 +74,7 @@ public class HelloWorldController {
 					speech = serviceResp.get("Message");
 					if (serviceResp.get("policyotp") != null) {
 						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
+						menuHashMap.put(CACHE_USERNAME, serviceResp.get("proposerName"));
 						menuHashMap.put(VALID_POL, G_PolicyNumber);
 						System.out.println("OTP is **** " + serviceResp.get("policyotp"));
 					}
@@ -123,7 +125,7 @@ public class HelloWorldController {
 						System.out.println("In loop " + otp_session);
 
 						if (otp_session.equals(G_PolicyNumber)) {
-							speech = "Mr. Arun. What information you want to know about your policy";
+							speech = "Hi "+menuHashMap.get(CACHE_USERNAME)+"What information you want to know about your policy";
 							Map data = apiConsumerService.getPolicyInfo(menuHashMap.get(VALID_POL).toString());
 							System.out.println("data----------" + data.toString());
 							menuHashMap.put(VALID_OTP, G_PolicyNumber);
@@ -159,6 +161,7 @@ public class HelloWorldController {
 					speech = serviceResp.get("Message");
 					if (serviceResp.get("policyotp") != null) {
 						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
+						menuHashMap.put(CACHE_USERNAME, serviceResp.get("proposerName"));
 						menuHashMap.put(VALID_POL, G_PolicyNumber);
 						System.out.println("OTP is **** " + serviceResp.get("policyotp"));
 					}
