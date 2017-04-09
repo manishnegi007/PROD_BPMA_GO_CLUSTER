@@ -26,6 +26,7 @@ public class HelloWorldController {
 	private static final String SESSION = "SessionID";
 	private static final String CACHE_OTP = "CacheOTP";
 	private static final String POL_DATA = "PolData";
+	private static final String OTP_UA = "OTPUnavailable";
 	@Autowired
 	APIConsumerService apiConsumerService;
 
@@ -61,6 +62,25 @@ public class HelloWorldController {
 				menuHashMap.clear();
 				menuHashMap.put(SESSION, requestJsonObj.get("sessionId").toString());
 			}*/
+			
+			if ("OTP.NotAvailable".equas(action)) {
+				//Regenrate OTP and send to customer
+				menuHashMap.put(OTP_UA, "Y");
+				menuHashMap.remove(VALID_OTP);
+				
+				parameters = (Map) result.get("parameters");
+					policyNumber = (Map) parameters.get("PolicyNumber");
+					G_PolicyNumber = policyNumber.get("Given-PolicyNumber").toString();
+					System.out.println(G_PolicyNumber);
+					serviceResp = apiConsumerService.getPolicyOtp(G_PolicyNumber);
+					speech = serviceResp.get("Message");
+					if (serviceResp.get("policyotp") != null) {
+						menuHashMap.put(CACHE_OTP, serviceResp.get("policyotp"));
+						menuHashMap.put(VALID_POL, G_PolicyNumber);
+						System.out.println("OTP is **** " + serviceResp.get("policyotp"));
+					}
+				
+			}
 			if ("PolicyNumberValidation".equals(action)) {
 
 				parameters = (Map) result.get("parameters");
