@@ -26,7 +26,7 @@ public class APIConsumerService
 {
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
 	//@Cacheable(value="maxserviceCache", key="#policyNo.concat('_OTP')", unless="#result == null" )
-	public Map<String,String> getPolicyOtp(String policyNo)
+	public Map<String,String> getPolicyOtp(String policyNo, int counter)
 	{
 		String output = new String();
 		StringBuilder result = new StringBuilder();
@@ -103,8 +103,12 @@ public class APIConsumerService
 						&& soaStatusCode.equalsIgnoreCase("200")) {
 					policyOtp = ((Map) ((Map) resultData.get("response")).get("responseData")).get("otp").toString();
 					otpDescMap.put("policyotp", policyOtp);
+					if (counter == 0)
 					otpDescMap.put("Message",resProp.getString("getOtpSuccessfully").concat(" "+policyOtp));
+					else
+					otpDescMap.put("Message",resProp.getString("getOtpRegenSuccessfully").concat(" "+policyOtp));
 				} 
+				
 				else if(soaStatusCode != null && !soaStatusCode.equalsIgnoreCase("")
 						&& soaStatusCode.equalsIgnoreCase("999")) 
 				{
