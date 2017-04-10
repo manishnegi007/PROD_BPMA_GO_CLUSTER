@@ -1,4 +1,7 @@
 package common;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -187,7 +190,21 @@ public class Commons
 		}
 		return stringBuilder.toString();
 	}
-
+	public static String convertDateFormat(String sourceFormat) {
+		String formattedDate = null;
+		try {
+			DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd");
+			DateFormat targetFormat = new SimpleDateFormat("dd-MMM-yyyy");
+			Date date = originalFormat.parse(sourceFormat);
+			//System.out.println("parsed date:"+date);
+			formattedDate = targetFormat.format(date); // 20120821
+			//System.out.println("parsed date:"+formattedDate);
+			return formattedDate;
+		} catch (java.text.ParseException ex) {
+			System.out.println("error in parsing");
+		}
+		return formattedDate;
+	}
 	@SuppressWarnings("unchecked")
 	public static Map<String,Object> getGsonData(String jsonData)
 	{
