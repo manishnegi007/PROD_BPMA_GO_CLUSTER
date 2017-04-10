@@ -243,7 +243,7 @@ public class APIConsumerService {
 						.get("BasicDetails")).get("polDueDate").toString();
 				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
 				map.put("ctpAmt", ctpAmt);
-				map.put("polDueDate", convertDateFormat(polDueDate));
+				map.put("polDueDate", polDueDate);
 
 				////////////////////// *******************************////////////////////////////////////
 				String policyInsuranceTypeCd = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
@@ -289,9 +289,9 @@ public class APIConsumerService {
 						fvMap.put("Message",
 								resProp.getString("dueAmountPolicy1") + " " + policyNo + " "
 										+ resProp.getString("dueAmountPolicy2") + " " + ctpAmt + " "
-										+ resProp.getString("dueAmountPolicy3") + " " + convertDateFormat(polDueDate));
+										+ resProp.getString("dueAmountPolicy3") + " " + polDueDate);
 						fvMap.put("ctpAmt", ctpAmt);
-						fvMap.put("polDueDate", convertDateFormat(polDueDate));
+						fvMap.put("polDueDate", polDueDate);
 						returnMap.put("CTP", fvMap);
 					}
 
