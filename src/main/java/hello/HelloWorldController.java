@@ -214,7 +214,7 @@ public class HelloWorldController {
 				if (menuHashMap.get(VALID_POL) == null) {
 					speech = resProp.getString("validPolicyMessage");
 				} else if (menuHashMap.get(VALID_OTP) == null) {
-					speech = resProp.getString("validPolicyMessage").concat(menuHashMap.get(VALID_POL).toString());
+					speech = resProp.getString("validateOTP").concat(menuHashMap.get(VALID_POL).toString());
 				} else {
 					System.out.println("i am in ctp action 1");
 					Map data = (Map) menuHashMap.get(POL_DATA);
@@ -231,7 +231,7 @@ public class HelloWorldController {
 				if (menuHashMap.get(VALID_POL) == null) {
 					speech = resProp.getString("validPolicyMessage");
 				} else if (menuHashMap.get(VALID_OTP) == null) {
-					speech = resProp.getString("validPolicyMessage").concat(menuHashMap.get(VALID_POL).toString());
+					speech = resProp.getString("validateOTP").concat(menuHashMap.get(VALID_POL).toString());
 				} else {
 					Map data = (Map) menuHashMap.get(POL_DATA);
 					System.out.println("I am in Surrender Value");
@@ -247,7 +247,7 @@ public class HelloWorldController {
 				if (menuHashMap.get(VALID_POL) == null) {
 					speech = resProp.getString("validPolicyMessage");
 				} else if (menuHashMap.get(VALID_OTP) == null) {
-					speech = resProp.getString("validPolicyMessage").concat(menuHashMap.get(VALID_POL).toString());
+					speech = resProp.getString("validateOTP").concat(menuHashMap.get(VALID_POL).toString());
 				} else {
 					speech = paymentRecieptHandler.sendPayReciept(menuHashMap.get(VALID_POL).toString());
 				}
@@ -255,7 +255,7 @@ public class HelloWorldController {
 				if (menuHashMap.get(VALID_POL) == null) {
 					speech = resProp.getString("validPolicyMessage");
 				} else if (menuHashMap.get(VALID_OTP) == null) {
-					speech = resProp.getString("validPolicyMessage").concat(menuHashMap.get(VALID_POL).toString());
+					speech = resProp.getString("validateOTP").concat(menuHashMap.get(VALID_POL).toString());
 				} else {
 					Map data = (Map) menuHashMap.get(POL_DATA);
 					if (data.get("FV") == null) {
