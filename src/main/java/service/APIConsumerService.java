@@ -243,7 +243,7 @@ public class APIConsumerService {
 						.get("BasicDetails")).get("polDueDate").toString();
 				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
 				map.put("ctpAmt", ctpAmt);
-				map.put("polDueDate", polDueDate);
+				map.put("polDueDate", Commons.convertDateFormat(polDueDate));
 
 				////////////////////// *******************************////////////////////////////////////
 				String policyInsuranceTypeCd = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
@@ -280,7 +280,7 @@ public class APIConsumerService {
 				try {
 					if (Double.parseDouble(ctpAmt) == 0) {
 						Map<String, String> fvMap = new HashMap();
-						fvMap.put("Message", resProp.getString("nextPremium1") + " " + polDueDate + " "
+						fvMap.put("Message", resProp.getString("nextPremium1") + " " + Commons.convertDateFormat(polDueDate) + " "
 								+ resProp.getString("nextPremium2"));
 						returnMap.put("CTP", fvMap);
 					} else {
@@ -289,9 +289,9 @@ public class APIConsumerService {
 						fvMap.put("Message",
 								resProp.getString("dueAmountPolicy1") + " " + policyNo + " "
 										+ resProp.getString("dueAmountPolicy2") + " " + ctpAmt + " "
-										+ resProp.getString("dueAmountPolicy3") + " " + polDueDate);
+										+ resProp.getString("dueAmountPolicy3") + " " + Commons.convertDateFormat(polDueDate));
 						fvMap.put("ctpAmt", ctpAmt);
-						fvMap.put("polDueDate", polDueDate);
+						fvMap.put("polDueDate", Commons.convertDateFormat(polDueDate));
 						returnMap.put("CTP", fvMap);
 					}
 
@@ -519,22 +519,8 @@ public class APIConsumerService {
 		
 		return returnMap;
 	}
-	private String convertDateFormat(String sourceFormat) {
-		String formattedDate = null;
-		try {
-			DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-			DateFormat targetFormat = new SimpleDateFormat("dd-MON-yyyy");
-			Date date = originalFormat.parse(sourceFormat);
-			formattedDate = targetFormat.format(date); // 20120821
-			System.out.println("parsed date:"+formattedDate);
-			return formattedDate;
-		} catch (java.text.ParseException ex) {
-			System.out.println("error in parsing");
-		}
-		return formattedDate;
-	}
+	
 }
-
 
 
 
