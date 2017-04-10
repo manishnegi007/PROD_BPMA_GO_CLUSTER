@@ -16,6 +16,23 @@ public class Commons
 //	Logger logger=Logger.getLogger(Commons.class.getName());
 //	ResourceBundle res=ResourceBundle.getBundle("com.qualtech.adm.resource.prop");
 
+	public static String toCamelCase(final String init) {
+	    if (init==null)
+	        return null;
+
+	    final StringBuilder ret = new StringBuilder(init.length());
+
+	    for (final String word : init.split(" ")) {
+	        if (!word.isEmpty()) {
+	            ret.append(word.substring(0, 1).toUpperCase());
+	            ret.append(word.substring(1).toLowerCase());
+	        }
+	        if (!(ret.length()==init.length()))
+	            ret.append(" ");
+	    }
+
+	    return ret.toString();
+	}
 	public static String getMethodName()
 	{
 		String methodName="";
@@ -187,5 +204,7 @@ public class Commons
 		System.out.println(data);			
 		return data;
 	}
-	
+	public static void main(String ar[])
+	{
+	}
 }
