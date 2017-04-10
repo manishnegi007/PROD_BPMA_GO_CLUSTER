@@ -154,9 +154,10 @@ public class APIConsumerService {
 					}
 					// Set message if required
 					System.out.println("soaStatusCode is : " + soaStatusCode);
-					
+
+				} else {
+					otpDescMap.put("Message", resProp.getString("GenericBackendErrorMessage"));
 				}
-				otpDescMap.put("Message", resProp.getString("GenericBackendErrorMessage"));
 				// Set message if required
 			}
 		} catch (Exception e) {
@@ -280,16 +281,15 @@ public class APIConsumerService {
 				try {
 					if (Double.parseDouble(ctpAmt) == 0) {
 						Map<String, String> fvMap = new HashMap();
-						fvMap.put("Message", resProp.getString("nextPremium1") + " " + Commons.convertDateFormat(polDueDate) + " "
-								+ resProp.getString("nextPremium2"));
+						fvMap.put("Message", resProp.getString("nextPremium1") + " "
+								+ Commons.convertDateFormat(polDueDate) + " " + resProp.getString("nextPremium2"));
 						returnMap.put("CTP", fvMap);
 					} else {
 						Map<String, String> fvMap = new HashMap();
 
-						fvMap.put("Message",
-								resProp.getString("dueAmountPolicy1") + " " + policyNo + " "
-										+ resProp.getString("dueAmountPolicy2") + " " + ctpAmt + " "
-										+ resProp.getString("dueAmountPolicy3") + " " + Commons.convertDateFormat(polDueDate));
+						fvMap.put("Message", resProp.getString("dueAmountPolicy1") + " " + policyNo + " "
+								+ resProp.getString("dueAmountPolicy2") + " " + ctpAmt + " "
+								+ resProp.getString("dueAmountPolicy3") + " " + Commons.convertDateFormat(polDueDate));
 						fvMap.put("ctpAmt", ctpAmt);
 						fvMap.put("polDueDate", Commons.convertDateFormat(polDueDate));
 						returnMap.put("CTP", fvMap);
@@ -314,7 +314,7 @@ public class APIConsumerService {
 	public Map<String, String> getPolicyDetails(String policyNumber) {
 		String policyURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyadminstration/policydetails/cashsurrendervalue/v1";
 		Map<String, String> returnMap = new HashMap<String, String>();
-		//String DevMode = "Y";
+		// String DevMode = "Y";
 		String soaAppId = "BOT";
 		String soaUserId = "BOTDEV123";
 		String soaPassword = "Qk9UMTIzREVW";
@@ -342,13 +342,14 @@ public class APIConsumerService {
 			trustProvider.install();
 			String pUrl = policyURL;
 			URL url = new URL(pUrl);
-			/*if (DevMode != null && !DevMode.equalsIgnoreCase("") && DevMode.equalsIgnoreCase("Y")) {
-				Proxy proxy = new Proxy(Proxy.Type.HTTP,
-						new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
-				conn = (HttpURLConnection) url.openConnection(proxy);
-			} else {
-				conn = (HttpURLConnection) url.openConnection();
-			}*/
+			/*
+			 * if (DevMode != null && !DevMode.equalsIgnoreCase("") &&
+			 * DevMode.equalsIgnoreCase("Y")) { Proxy proxy = new
+			 * Proxy(Proxy.Type.HTTP, new
+			 * InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
+			 * conn = (HttpURLConnection) url.openConnection(proxy); } else {
+			 * conn = (HttpURLConnection) url.openConnection(); }
+			 */
 			conn = (HttpURLConnection) url.openConnection();
 			HttpsURLConnection.setFollowRedirects(true);
 			conn.setDoInput(true);
@@ -358,7 +359,7 @@ public class APIConsumerService {
 			StringBuilder requestdata = new StringBuilder(requestJson);
 			OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
 			writer.write(requestdata.toString());
-			//logger.info("Request is==" + requestdata.toString());
+			// logger.info("Request is==" + requestdata.toString());
 			writer.flush();
 			try {
 				writer.close();
@@ -373,7 +374,7 @@ public class APIConsumerService {
 				}
 				conn.disconnect();
 				br.close();
-				//logger.info(apiResponseCode + " ==    " + result.toString());
+				// logger.info(apiResponseCode + " == " + result.toString());
 			} else if (apiResponseCode == 500) {
 				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getErrorStream())));
 				while ((output = br.readLine()) != null) {
@@ -381,7 +382,7 @@ public class APIConsumerService {
 				}
 				conn.disconnect();
 				br.close();
-				//logger.info(apiResponseCode + " ==    " + result.toString());
+				// logger.info(apiResponseCode + " == " + result.toString());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -407,27 +408,26 @@ public class APIConsumerService {
 							+ resProp.getString("surrendervalue3") + mir_dv_pol_csv_amt + ".");
 			returnMap.put("mir_dv_pua_csh_valu", mir_dv_pua_csh_valu);
 		} catch (Exception ec) {
-			//logger.error(ec);
+			// logger.error(ec);
 		}
 		return returnMap;
 	}
 
-	public Map<String,String> getMliDocService(String policyNo)
-	{
-		String policyMliDocURL="https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
-		HashMap<String,String> returnMap=new HashMap();
-		//String DevMode = "Y";
-        String soaCorrelationId="12345";
+	public Map<String, String> getMliDocService(String policyNo) {
+		String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
+		HashMap<String, String> returnMap = new HashMap();
+		// String DevMode = "Y";
+		String soaCorrelationId = "12345";
 		String soaAppId = "BOT";
 		String soaUserId = "BOTDEV123";
 		String soaPassword = "Qk9UMTIzREVW";
-		String docID="PRM23";
-		String SendTo="C";
-		String docDispatchMode="E";
-		String fromDate="04/01/2016";
-		String toDate="03/31/2017";
+		String docID = "PRM23";
+		String SendTo = "C";
+		String docDispatchMode = "E";
+		String fromDate = "04/01/2016";
+		String toDate = "03/31/2017";
 		// String
-		//  
+		//
 		StringBuilder requestJson = new StringBuilder();
 		requestJson.append("{\"request\":{\"header\":{\"soaCorrelationId\":\"");
 		requestJson.append(soaCorrelationId);
@@ -449,10 +449,11 @@ public class APIConsumerService {
 		requestJson.append(fromDate);
 		requestJson.append("\",\"toDate\":\"");
 		requestJson.append(toDate);
-		requestJson.append("\",\"fromYear\":\"\",\"toYear\":\"\",\"source\":\"\",\"machineIP\":\"\",\"uniqueTransId\":\"\",\"userId\":\"\",\"requestedBy\":\"\"}}}}");
-		
-		System.out.println("Request Json is="+requestJson);
-		
+		requestJson.append(
+				"\",\"fromYear\":\"\",\"toYear\":\"\",\"source\":\"\",\"machineIP\":\"\",\"uniqueTransId\":\"\",\"userId\":\"\",\"requestedBy\":\"\"}}}}");
+
+		System.out.println("Request Json is=" + requestJson);
+
 		StringBuilder result = new StringBuilder();
 
 		HttpURLConnection conn = null;
@@ -463,13 +464,14 @@ public class APIConsumerService {
 			trustProvider.install();
 			String pUrl = policyMliDocURL;
 			URL url = new URL(pUrl);
-			/*if (DevMode != null && !DevMode.equalsIgnoreCase("") && DevMode.equalsIgnoreCase("Y")) {
-				Proxy proxy = new Proxy(Proxy.Type.HTTP,
-						new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
-				conn = (HttpURLConnection) url.openConnection(proxy);
-			} else {
-				conn = (HttpURLConnection) url.openConnection();
-			}*/
+			/*
+			 * if (DevMode != null && !DevMode.equalsIgnoreCase("") &&
+			 * DevMode.equalsIgnoreCase("Y")) { Proxy proxy = new
+			 * Proxy(Proxy.Type.HTTP, new
+			 * InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
+			 * conn = (HttpURLConnection) url.openConnection(proxy); } else {
+			 * conn = (HttpURLConnection) url.openConnection(); }
+			 */
 			conn = (HttpURLConnection) url.openConnection();
 			HttpsURLConnection.setFollowRedirects(true);
 			conn.setDoInput(true);
@@ -502,7 +504,7 @@ public class APIConsumerService {
 				} else {
 					returnMap.put("Message", resProp.getString("mliDocServiceSuccess"));
 				}
-				System.out.println("The Api response Code is"+apiResponseCode);
+				System.out.println("The Api response Code is" + apiResponseCode);
 			} else if (apiResponseCode == 500) {
 				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getErrorStream())));
 				while ((output = br.readLine()) != null) {
@@ -511,15 +513,15 @@ public class APIConsumerService {
 				conn.disconnect();
 				br.close();
 				returnMap.put("Message", resProp.getString("mliDocServiceFailure"));
-				System.out.println("The Api response Code is"+apiResponseCode);
+				System.out.println("The Api response Code is" + apiResponseCode);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return returnMap;
 	}
-	
+
 }
 
 
