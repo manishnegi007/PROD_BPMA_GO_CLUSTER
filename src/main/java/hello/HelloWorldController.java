@@ -32,8 +32,9 @@ public class HelloWorldController {
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
 	@Autowired
 	APIConsumerService apiConsumerService;
-	SurrenderValueHandler surrenderValueHandler;
-	PaymentRecieptHandler paymentRecieptHandler;
+	
+	//SurrenderValueHandler surrenderValueHandler;
+	//PaymentRecieptHandler paymentRecieptHandler;
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) {
@@ -237,7 +238,7 @@ public class HelloWorldController {
 					System.out.println("I am in Surrender Value");
 					if (data.get("CSV") == null) {
 						System.out.println("CSV is null is policy data");
-						speech = surrenderValueHandler.getSurrenderValue(menuHashMap.get(VALID_POL).toString());
+						speech = apiConsumerService.getPolicyDetails(menuHashMap.get(VALID_POL).toString()).get("Message");
 					} else {
 						speech = data.get("CSV").toString();
 					}
@@ -249,7 +250,7 @@ public class HelloWorldController {
 				} else if (menuHashMap.get(VALID_OTP) == null) {
 					speech = resProp.getString("validateOTP").concat(menuHashMap.get(VALID_POL).toString());
 				} else {
-					speech = paymentRecieptHandler.sendPayReciept(menuHashMap.get(VALID_POL).toString());
+					speech = apiConsumerService.getMliDocService(menuHashMap.get(VALID_POL).toString()).get("Message");
 				}
 			} else if (action.equals("input.Fund")) {
 				if (menuHashMap.get(VALID_POL) == null) {
