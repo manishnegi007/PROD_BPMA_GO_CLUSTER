@@ -154,9 +154,9 @@ public class APIConsumerService {
 					}
 					// Set message if required
 					System.out.println("soaStatusCode is : " + soaStatusCode);
-					//otpDescMap.put("Message", resProp.getString("GenericBackendErrorMessage"));
+					
 				}
-
+				otpDescMap.put("Message", resProp.getString("GenericBackendErrorMessage"));
 				// Set message if required
 			}
 		} catch (Exception e) {
