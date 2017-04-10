@@ -30,7 +30,7 @@ public class APIConsumerService {
 		String output = new String();
 		StringBuilder result = new StringBuilder();
 		// String DevMode = "Y";
-		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v1/real";
+		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v2";
 		String soaCorrelationId = "ApiConsumer-" + policyNo + "-" + System.currentTimeMillis();
 		String soaMsgVersion = "1.0";
 		String soaAppID = "BOT";
