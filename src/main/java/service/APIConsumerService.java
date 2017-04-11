@@ -400,8 +400,8 @@ public class APIConsumerService {
 					.get("cashSurrenderValue")).get("MIR-DV-POL-CSV-AMT").toString();
 			returnMap.put("Message",
 					resProp.getString("surrendervalue1") + " " + policyNumber + " "
-							+ resProp.getString("surrendervalue2") + " " + mir_dv_eff_dt + " "
-							+ resProp.getString("surrendervalue3") + mir_dv_pol_csv_amt + ".");
+							+ resProp.getString("surrendervalue2") + " " + Commons.convertDateFormat(mir_dv_eff_dt) + " "
+							+ resProp.getString("surrendervalue3") + Double.parseDouble(mir_dv_pol_csv_amt) + ".");
 			returnMap.put("mir_dv_pua_csh_valu", mir_dv_pua_csh_valu);
 		} catch (Exception ec) {
 			// logger.error(ec);
