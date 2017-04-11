@@ -127,7 +127,7 @@ public class HelloWorldController {
 
 						if (otp_session.equals(G_PolicyNumber)) {
 							speech = "Hi " + Commons.toCamelCase(menuHashMap.get(CACHE_USERNAME).toString())
-									+ ". What information you want to know about your policy";
+									+ resProp.getString("welcomeUser");
 							Map data = apiConsumerService.getPolicyInfo(menuHashMap.get(VALID_POL).toString());
 							System.out.println("data----------" + data.toString());
 							menuHashMap.put(VALID_OTP, G_PolicyNumber);
