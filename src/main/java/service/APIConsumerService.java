@@ -257,7 +257,7 @@ public class APIConsumerService {
 									.get("discontinuanceFund").toString());
 					fvMap.put("Message", resProp.getString("InquiringFVTrue"));
 					returnMap.put("FV", fvMap);
-				} else if ("8".equals("policyInsuranceTypeCd") || "1".equals(policyInsuranceTypeCd)) {
+				} else if ("8".equals(policyInsuranceTypeCd) || "1".equals(policyInsuranceTypeCd)) {
 					Map<String, String> fvMap = new HashMap();
 					fvMap.put("Message", resProp.getString("InquiringFVfalse"));
 					returnMap.put("FV", fvMap);
@@ -267,7 +267,8 @@ public class APIConsumerService {
 					returnMap.put("FV", fvMap);
 				}
 
-				if ("8".equals("policyInsuranceTypeCd") || "1".equals(policyInsuranceTypeCd)) {
+				if ("8".equals(policyInsuranceTypeCd) || "1".equals(policyInsuranceTypeCd)) {
+					System.out.println("CSV not Applicable");
 					Map<String, String> csv = new HashMap();
 					csv.put("Message", resProp.getString("cashSurrenderNotApplicable"));
 					returnMap.put("CSV", csv);
