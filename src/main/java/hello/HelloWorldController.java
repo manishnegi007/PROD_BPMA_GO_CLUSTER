@@ -240,7 +240,7 @@ public class HelloWorldController {
 						System.out.println("CSV is null is policy data");
 						speech = apiConsumerService.getPolicyDetails(menuHashMap.get(VALID_POL).toString()).get("Message");
 					} else {
-						speech = data.get("CSV").toString();
+						speech = ((Map)data.get("CSV")).get("Message").toString();
 					}
 
 				}
