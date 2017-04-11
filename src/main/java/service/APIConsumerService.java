@@ -118,7 +118,7 @@ public class APIConsumerService {
 							.toString();
 					if ("Unable to fetch client Id from Policy Info backend service.".equals(soaMessage)) {
 						otpDescMap.put("Message",
-								"Policy number " + policyNo + " " + resProp.getString("PolicyNumberNotFound"));
+								resProp.getString("PolicyNumberNotFound") + policyNo + " " + resProp.getString("PolicyNumberNotFound1"));
 					} else if ("Unable to fetch Mobile number from Client Info backend service.".equals(soaMessage)) {
 						otpDescMap.put("Message", resProp.getString("MobileNumberRegardingPolicy"));
 					}
@@ -277,11 +277,33 @@ public class APIConsumerService {
 
 				try {
 					if (Double.parseDouble(ctpAmt) == 0) {
+						//if(Commons.dateDiff(polDueDate)<0){
+							Map<String, String> fvMap = new HashMap();
+							fvMap.put("Message", resProp.getString("CTP_CON1_1")+" "+
+									 Commons.convertDateFormat(polDueDate) + resProp.getString("CTP_CON1_2")+"\n"+resProp.getString("CTP_CON1_3"));
+							returnMap.put("CTP", fvMap);
+						//}
+					}else if(Commons.dateDiff(polDueDate)<=30){
 						Map<String, String> fvMap = new HashMap();
-						fvMap.put("Message", resProp.getString("nextPremium1") + " "
-								+ Commons.convertDateFormat(polDueDate) + " " + resProp.getString("nextPremium2"));
+						fvMap.put("Message", resProp.getString("CTP_CON2_1")+" "+ctpAmt+" "+resProp.getString("CTP_CON2_2")+" "
+								+ Commons.convertDateFormat(polDueDate) + resProp.getString("CTP_CON2_3"));
 						returnMap.put("CTP", fvMap);
-					} else {
+					}else if(Commons.dateDiff(polDueDate)>30 && Commons.dateDiff(polDueDate)<=180){
+						Map<String, String> fvMap = new HashMap();
+						fvMap.put("Message", resProp.getString("CTP_CON3_1")+" "+ctpAmt+" "+resProp.getString("CTP_CON3_2")+" "
+								+ Commons.convertDateFormat(polDueDate) + resProp.getString("CTP_CON3_3"));
+						returnMap.put("CTP", fvMap);
+					}else if(Commons.dateDiff(polDueDate)>180 && Commons.dateDiff(polDueDate)<1095){
+						Map<String, String> fvMap = new HashMap();
+						fvMap.put("Message", resProp.getString("CTP_CON4_1")+" "+ctpAmt+" "+resProp.getString("CTP_CON4_2")+" "
+								+ Commons.convertDateFormat(polDueDate) + resProp.getString("CTP_CON4_3"));
+						returnMap.put("CTP", fvMap);
+					}else if(Commons.dateDiff(polDueDate)>1095){
+						Map<String, String> fvMap = new HashMap();
+						fvMap.put("Message", resProp.getString("CTP_CON5_1"));
+						returnMap.put("CTP", fvMap);
+					}
+					else {
 						Map<String, String> fvMap = new HashMap();
 
 						fvMap.put("Message", resProp.getString("dueAmountPolicy1") + " " + policyNo + " "
@@ -520,7 +542,6 @@ public class APIConsumerService {
 	}
 
 }
-
 
 
 
