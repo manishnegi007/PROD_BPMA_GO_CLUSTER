@@ -238,9 +238,10 @@ public class APIConsumerService {
 						.get("BasicDetails")).get("ctpAmt").toString();
 				String polDueDate = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
 						.get("BasicDetails")).get("polDueDate").toString();
+				polDueDate=Commons.convertDateFormat(polDueDate);
 				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
 				map.put("ctpAmt", ctpAmt);
-				map.put("polDueDate", Commons.convertDateFormat(polDueDate));
+				map.put("polDueDate", polDueDate);
 
 				////////////////////// *******************************////////////////////////////////////
 				String policyInsuranceTypeCd = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
@@ -280,23 +281,23 @@ public class APIConsumerService {
 						//if(Commons.dateDiff(polDueDate)<0){
 							Map<String, String> fvMap = new HashMap();
 							fvMap.put("Message", resProp.getString("CTP_CON1_1")+" "+
-									 Commons.convertDateFormat(polDueDate) + resProp.getString("CTP_CON1_2")+"\n"+resProp.getString("CTP_CON1_3"));
+									 polDueDate + resProp.getString("CTP_CON1_2")+"\n"+resProp.getString("CTP_CON1_3"));
 							returnMap.put("CTP", fvMap);
 						//}
 					}else if(Commons.dateDiff(polDueDate)<=30){
 						Map<String, String> fvMap = new HashMap();
-						fvMap.put("Message", resProp.getString("CTP_CON2_1")+" "+Commons.convertDateFormat(polDueDate)+" "+resProp.getString("CTP_CON2_2")+" "
+						fvMap.put("Message", resProp.getString("CTP_CON2_1")+" "+polDueDate+" "+resProp.getString("CTP_CON2_2")+" "
 								+ ctpAmt +" "+resProp.getString("CTP_CON2_3"));
 						returnMap.put("CTP", fvMap);
 					}else if(Commons.dateDiff(polDueDate)>30 && Commons.dateDiff(polDueDate)<=180){
 						Map<String, String> fvMap = new HashMap();
 						fvMap.put("Message", resProp.getString("CTP_CON3_1")+" "+ctpAmt+" "+resProp.getString("CTP_CON3_2")+" "
-								+ Commons.convertDateFormat(polDueDate) + resProp.getString("CTP_CON3_3"));
+								+ polDueDate + resProp.getString("CTP_CON3_3"));
 						returnMap.put("CTP", fvMap);
 					}else if(Commons.dateDiff(polDueDate)>180 && Commons.dateDiff(polDueDate)<1095){
 						Map<String, String> fvMap = new HashMap();
 						fvMap.put("Message", resProp.getString("CTP_CON4_1")+" "+ctpAmt+" "+resProp.getString("CTP_CON4_2")+" "
-								+ Commons.convertDateFormat(polDueDate) + resProp.getString("CTP_CON4_3"));
+								+ polDueDate + resProp.getString("CTP_CON4_3"));
 						returnMap.put("CTP", fvMap);
 					}else if(Commons.dateDiff(polDueDate)>1095){
 						Map<String, String> fvMap = new HashMap();
@@ -308,9 +309,9 @@ public class APIConsumerService {
 
 						fvMap.put("Message", resProp.getString("dueAmountPolicy1") + " " + policyNo + " "
 								+ resProp.getString("dueAmountPolicy2") + " " + ctpAmt + " "
-								+ resProp.getString("dueAmountPolicy3") + " " + Commons.convertDateFormat(polDueDate));
+								+ resProp.getString("dueAmountPolicy3") + " " + polDueDate);
 						fvMap.put("ctpAmt", ctpAmt);
-						fvMap.put("polDueDate", Commons.convertDateFormat(polDueDate));
+						fvMap.put("polDueDate", polDueDate);
 						returnMap.put("CTP", fvMap);
 					}
 
@@ -542,7 +543,6 @@ public class APIConsumerService {
 	}
 
 }
-
 
 
 
