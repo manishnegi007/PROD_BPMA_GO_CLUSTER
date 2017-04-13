@@ -144,7 +144,7 @@ public class APIConsumerService {
 							.toString();
 					if ("Unable to fetch client Id from Policy Info backend service.".equals(soaMessage)) {
 						otpDescMap.put("Message",
-								"Policy number " + policyNo + " " + resProp.getString("PolicyNumberNotFound"));
+								resProp.getString("PolicyNumberNotFound") + " number " + policyNo + " in our records");
 					} else if ("Unable to fetch Mobile number from Client Info backend service.".equals(soaMessage)) {
 						otpDescMap.put("Message", resProp.getString("MobileNumberRegardingPolicy"));
 					}
