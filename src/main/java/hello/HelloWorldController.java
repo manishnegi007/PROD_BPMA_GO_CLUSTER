@@ -274,7 +274,7 @@ public class HelloWorldController {
 				}
 			} else if (action.equals("close.conversation")) {
 				menuHashMap.clear();
-				speech = "You can now start new conversation!";
+				speech = "Thank you for contacting Max Life. Have a great day!";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
