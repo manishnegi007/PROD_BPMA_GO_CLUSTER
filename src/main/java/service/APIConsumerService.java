@@ -256,7 +256,7 @@ public class APIConsumerService {
 					fvMap.put("discontinuanceFund",
 							((Map) ((Map) ((Map) resultData.get("response")).get("responseData")).get("BasicDetails"))
 									.get("discontinuanceFund").toString());
-					fvMap.put("Message", resProp.getString("InquiringFVTrue"));
+					fvMap.put("Message", resProp.getString("InquiringFVTrue") + ". " + resProp.getString("InquiringFVTrue_F"));
 					returnMap.put("FV", fvMap);
 				} else if ("8".equals(policyInsuranceTypeCd) || "1".equals(policyInsuranceTypeCd)) {
 					Map<String, String> fvMap = new HashMap();
