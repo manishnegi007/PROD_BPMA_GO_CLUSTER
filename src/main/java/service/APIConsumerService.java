@@ -176,12 +176,16 @@ public class APIConsumerService {
 		String output = new String();
 		StringBuilder result = new StringBuilder();
 		// String DevMode = "Y";
-		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policy360/policy360/policyctp/v1";
+		//String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policy360/policy360/policyctp/v1";
+		
+		String pUrl = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policy360/policy360/policyctp/v1";
+		
 		String soaCorrelationId = "ApiConsumer-" + policyNo + "-" + System.currentTimeMillis();
 		String soaMsgVersion = "1.0";
 		String soaAppID = "BOT";
-		String soaUserID = "BOTDEV123";
-		String soaUserPswd = "Qk9UMTIzREVW";
+		String soaUserID = "BOTPROD123";
+		String soaUserPswd = "Qk9UUFJPREAxMjM=";
+		
 		Map<String, String> map = new HashMap();
 		String policyOtp = "";
 		Map<String, Map> returnMap = new HashMap<String, Map>();
@@ -341,12 +345,12 @@ public class APIConsumerService {
 	}
 
 	public Map<String, String> getPolicyDetails(String policyNumber) {
-		String policyURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyadminstration/policydetails/cashsurrendervalue/v1";
+		String policyURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policyadminstration/policydetails/cashsurrendervalue/v1";
 		Map<String, String> returnMap = new HashMap<String, String>();
 		// String DevMode = "Y";
 		String soaAppId = "BOT";
-		String soaUserId = "BOTDEV123";
-		String soaPassword = "Qk9UMTIzREVW";
+		String soaUserId = "BOTPROD123";
+		String soaPassword = "Qk9UUFJPREAxMjM=";
 		// String
 		// requestJson="{\"request\":{\"header\":{\"soaCorrelationId\":\"12345\",\"soaMsgVersion\":\"1.0\",\"soaAppId\":\""+soaAppId+"\",\"soaUserId\":\""+soaUserId+"\",\"soaPassword\":\""+soaPassword+"\"},\"requestData\":{\"policyNumber\":\""+policyNumber+"\"}}}";
 		StringBuilder requestJson = new StringBuilder();
@@ -443,13 +447,13 @@ public class APIConsumerService {
 	}
 
 	public Map<String, String> getMliDocService(String policyNo) {
-		String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
+		String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
 		HashMap<String, String> returnMap = new HashMap();
 		// String DevMode = "Y";
 		String soaCorrelationId = "12345";
 		String soaAppId = "BOT";
-		String soaUserId = "BOTDEV123";
-		String soaPassword = "Qk9UMTIzREVW";
+		String soaUserId = "BOTPROD123";
+		String soaPassword = "Qk9UUFJPREAxMjM=";
 		String docID = "PRM23";
 		String SendTo = "C";
 		String docDispatchMode = "E";
