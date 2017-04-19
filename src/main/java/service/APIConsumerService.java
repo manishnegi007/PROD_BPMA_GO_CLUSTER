@@ -107,9 +107,9 @@ public class APIConsumerService {
 					otpDescMap.put("policyotp", policyOtp);
 					otpDescMap.put("proposerName", proposerName);
 					if (counter == 0)
-						otpDescMap.put("Message", resProp.getString("getOtpSuccessfully").concat(" " + policyOtp));
+						otpDescMap.put("Message", resProp.getString("getOtpSuccessfully"));
 					else
-						otpDescMap.put("Message", resProp.getString("getOtpRegenSuccessfully").concat(" " + policyOtp));
+						otpDescMap.put("Message", resProp.getString("getOtpRegenSuccessfully"));
 				}
 
 				else if (soaStatusCode != null && !soaStatusCode.equalsIgnoreCase("")
