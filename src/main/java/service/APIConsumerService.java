@@ -26,12 +26,21 @@ public class APIConsumerService {
 		String output = new String();
 		StringBuilder result = new StringBuilder();
 		// String DevMode = "Y";
-		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v2";
+		//String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v2";
+		String pUrl = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policyotp/v2";
 		String soaCorrelationId = "ApiConsumer-" + policyNo + "-" + System.currentTimeMillis();
 		String soaMsgVersion = "1.0";
-		String soaAppID = "BOT";
-		String soaUserID = "BOTDEV123";
-		String soaUserPswd = "Qk9UMTIzREVW";
+		
+		//String soaAppID = "BOT";
+		//String soaUserID = "BOTDEV123";
+		//String soaUserPswd = "Qk9UMTIzREVW";
+		
+		
+		String soaAppID = "NEO";
+		String soaUserID = "NEOPROD123";
+		String soaUserPswd = "dGhha2Fnb2xpdmU=";
+		
+		
 		Map<String, String> otpDescMap = new HashMap<String, String>();
 		String policyOtp = "";
 		String proposerName = "";
