@@ -265,7 +265,7 @@ public class HelloWorldController {
 						Map fv = (Map) data.get("FV");
 						if (fv.get("fundValAsonDate") != null) {
 							String fvdata = fv.get("fundValAsonDate").toString();
-							speech = fv.get("Message").toString() + fvdata;
+							speech = fv.get("Message").toString() + Math.round(Double.parseDouble(fvdata)*100.0)/100.0;
 						} else {
 							speech = fv.get("Message").toString();
 						}
