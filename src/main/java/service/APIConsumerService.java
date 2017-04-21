@@ -447,9 +447,9 @@ public class APIConsumerService {
 	}
 
 	public Map<String, String> getMliDocService(String policyNo) {
-		//String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
+		String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
 		
-		String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
+		//String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
 		
 		/*String soaAppID = "BOT";
 		String soaUserID = "BOTDEV123";
@@ -460,10 +460,10 @@ public class APIConsumerService {
 		// String DevMode = "Y";
 		String soaCorrelationId = "12345";
 		String soaAppId = "BOT";
-		//String soaUserId = "BOTPROD123";
-		String soaUserId = "BOTDEV123";
-		String soaPassword = "Qk9UMTIzREVW";
-		//String soaPassword = "Qk9UUFJPREAxMjM=";
+		String soaUserId = "BOTPROD123";
+		//String soaUserId = "BOTDEV123";
+		//String soaPassword = "Qk9UMTIzREVW";
+		String soaPassword = "Qk9UUFJPREAxMjM=";
 		String docID = "PRM23";
 		String SendTo = "C";
 		String docDispatchMode = "E";
