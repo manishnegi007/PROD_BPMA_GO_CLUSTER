@@ -447,7 +447,11 @@ public class APIConsumerService {
 	}
 
 	public Map<String, String> getMliDocService(String policyNo) {
-		String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
+		//String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
+		
+		String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
+		
+		
 		HashMap<String, String> returnMap = new HashMap();
 		// String DevMode = "Y";
 		String soaCorrelationId = "12345";
