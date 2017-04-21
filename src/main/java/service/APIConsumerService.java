@@ -461,7 +461,7 @@ public class APIConsumerService {
 		String soaCorrelationId = "12345";
 		String soaAppId = "BOT";
 		//String soaUserId = "BOTPROD123";
-		String soaUserID = "BOTDEV123";
+		String soaUserId = "BOTDEV123";
 		String soaPassword = "Qk9UMTIzREVW";
 		//String soaPassword = "Qk9UUFJPREAxMjM=";
 		String docID = "PRM23";
