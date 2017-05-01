@@ -266,6 +266,7 @@ public class APIConsumerService {
 				
 				if("".equalsIgnoreCase(ctpAmt) || "".equalsIgnoreCase(polDueDate)) {
 					map.put("Message", resProp.getString("CTP_CON6_1") + " " + policyNo + " " + resProp.getString("CTP_CON6_2") + " " + polStatusDesc + " " + resProp.getString("CTP_CON6_3") );
+					returnMap.put("ErrorMessage", map);
 				}
 				
 				
