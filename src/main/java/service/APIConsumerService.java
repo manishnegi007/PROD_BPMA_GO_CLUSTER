@@ -251,11 +251,26 @@ public class APIConsumerService {
 						.get("BasicDetails")).get("ctpAmt").toString();
 				String polDueDate = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
 						.get("BasicDetails")).get("polDueDate").toString();
+				
+				String polStatusCode = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("BasicDetails")).get("policyStatusCd").toString();
+				
+				String polStatusDesc = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("BasicDetails")).get("policyStatusDesc").toString();
+				
 				polDueDate=Commons.convertDateFormat(polDueDate);
 				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
 				map.put("ctpAmt", ctpAmt);
 				map.put("polDueDate", polDueDate);
 
+				
+				if("".equalsIgnoreCase(ctpAmt) || "".equalsIgnoreCase(polDueDate)) {
+					map.put("Message", resProp.getString("CTP_CON6_1") + " " + policyNo + " " + resProp.getString("CTP_CON6_2") + " " + polStatusDesc + " " + resProp.getString("CTP_CON6_3") );
+				}
+				
+				
+				
+				
 				////////////////////// *******************************////////////////////////////////////
 				String policyInsuranceTypeCd = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
 						.get("BasicDetails")).get("policyInsuranceTypeCd").toString();
