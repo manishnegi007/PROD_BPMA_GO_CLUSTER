@@ -285,13 +285,6 @@ public class APIConsumerService {
 					fvMap.put("discontinuanceFund",
 							((Map) ((Map) ((Map) resultData.get("response")).get("responseData")).get("BasicDetails"))
 									.get("discontinuanceFund").toString());
-					
-					if (!("1".equals(polStatusCode) || "2".equals(polStatusCode) || "3".equals(polStatusCode) || "4".equals(polStatusCode) || "5".equals(polStatusCode) || "1A".equals(polStatusCode))) {
-					{
-						fvMap.put("Message", resProp.getString("FV_CON1_1") + " " + policyNo + " " + resProp.getString("FV_CON1_2") + " " + polStatusDesc + " " + resProp.getString("FV_CON1_3"));
-					} else {
-						fvMap.put("Message", resProp.getString("InquiringFVTrue"));
-					}
 						
 					returnMap.put("FV", fvMap);
 				} else if ("8".equals(policyInsuranceTypeCd) || "1".equals(policyInsuranceTypeCd)) {
