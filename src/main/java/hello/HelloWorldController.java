@@ -238,7 +238,8 @@ public class HelloWorldController {
 					System.out.println("I am in Surrender Value");
 					if (data.get("CSV") == null) {
 						System.out.println("CSV is null is policy data");
-						speech = apiConsumerService.getPolicyDetails(menuHashMap.get(VALID_POL).toString()).get("Message");
+						speech = apiConsumerService.getPolicyDetails(data, menuHashMap.get(VALID_POL).toString()).get("Message");
+						System.out.println("Speech is " + speech);
 					} else {
 						speech = ((Map)data.get("CSV")).get("Message").toString();
 					}
@@ -264,8 +265,13 @@ public class HelloWorldController {
 					} else {
 						Map fv = (Map) data.get("FV");
 						if (fv.get("fundValAsonDate") != null) {
+							
+							if (fv.get("FVErrorMessage") != null)
+								speech = fv.get("FVErrorMessage").toString();
+							else {
 							String fvdata = fv.get("fundValAsonDate").toString();
 							speech = fv.get("Message").toString() + Math.round(Double.parseDouble(fvdata)*100.0)/100.0;
+							}
 						} else {
 							speech = fv.get("Message").toString();
 						}
@@ -294,6 +300,5 @@ public class HelloWorldController {
 	}
 
 }
-
 
 

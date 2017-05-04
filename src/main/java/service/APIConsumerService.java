@@ -26,19 +26,19 @@ public class APIConsumerService {
 		String output = new String();
 		StringBuilder result = new StringBuilder();
 		// String DevMode = "Y";
-		//String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v2";
-		String pUrl = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policyotp/v2";
+		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v2";
+		//String pUrl = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policyotp/v2";
 		String soaCorrelationId = "ApiConsumer-" + policyNo + "-" + System.currentTimeMillis();
 		String soaMsgVersion = "1.0";
 		
-		//String soaAppID = "BOT";
-		//String soaUserID = "BOTDEV123";
-		//String soaUserPswd = "Qk9UMTIzREVW";
+		String soaAppID = "BOT";
+		String soaUserID = "BOTDEV123";
+		String soaUserPswd = "Qk9UMTIzREVW";
 		
 		
-		String soaAppID = "NEO";
-		String soaUserID = "NEOPROD123";
-		String soaUserPswd = "dGhha2Fnb2xpdmU=";
+		//String soaAppID = "NEO";
+		//String soaUserID = "NEOPROD123";
+		//String soaUserPswd = "dGhha2Fnb2xpdmU=";
 		
 		
 		Map<String, String> otpDescMap = new HashMap<String, String>();
@@ -185,6 +185,8 @@ public class APIConsumerService {
 		String soaAppID = "BOT";
 		String soaUserID = "BOTPROD123";
 		String soaUserPswd = "Qk9UUFJPREAxMjM=";
+		//String soaUserID = "BOTDEV123";
+		//String soaUserPswd = "Qk9UMTIzREVW";
 		
 		Map<String, String> map = new HashMap();
 		String policyOtp = "";
@@ -255,8 +257,18 @@ public class APIConsumerService {
 				String polStatusCode = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
 						.get("BasicDetails")).get("policyStatusCd").toString();
 				
+				String polmodprem = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
+						.get("PolicyMeasures")).get("polModPrem").toString();
+				
 				String polStatusDesc = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
 						.get("BasicDetails")).get("policyStatusDesc").toString();
+				
+				Map<String, String> myPolicyData = new HashMap();
+				
+				myPolicyData.put("polStatusCode", polStatusCode);
+				myPolicyData.put("polStatusDesc",polStatusDesc);
+				
+				returnMap.put("PolicyData", myPolicyData);
 				
 				polDueDate=Commons.convertDateFormat(polDueDate);
 				map.put("policyBasePlanIdDesc", policyBasePlanIdDesc);
@@ -289,7 +301,7 @@ public class APIConsumerService {
 					
 					
 					if (!("1".equals(polStatusCode) || "2".equals(polStatusCode) || "3".equals(polStatusCode) || "4".equals(polStatusCode) || "5".equals(polStatusCode) || "1A".equals(polStatusCode))) 
-					fvMap.put("Message", resProp.getString("FV_CON1_1") + " " + policyNo + " " + resProp.getString("FV_CON1_2") + " " + polStatusDesc + " " + resProp.getString("FV_CON1_3"));
+					fvMap.put("FVErrorMessage", resProp.getString("FV_CON1_1") + " " + policyNo + " " + resProp.getString("FV_CON1_2") + " " + polStatusDesc + " " + resProp.getString("FV_CON1_3"));
 					else
 						fvMap.put("Message", resProp.getString("InquiringFVTrue"));
 
@@ -315,12 +327,18 @@ public class APIConsumerService {
 
 				try {
 					if (Double.parseDouble(ctpAmt) == 0) {
-						//if(Commons.dateDiff(polDueDate)<0){
+						if(Commons.dateDiff(polDueDate)<0){
 							Map<String, String> fvMap = new HashMap();
 							fvMap.put("Message", resProp.getString("CTP_CON1_1")+" "+
-									 polDueDate + resProp.getString("CTP_CON1_2")+"\n"+resProp.getString("CTP_CON1_3"));
+									 polmodprem   +" "+ resProp.getString("CTP_CON1_2")+" "+
+									 polDueDate +" "+ resProp.getString("CTP_CON1_3")+"\n"+resProp.getString("CTP_CON1_4"));
 							returnMap.put("CTP", fvMap);
-						//}
+						} else {
+							Map<String, String> fvMap = new HashMap();
+							fvMap.put("Message", resProp.getString("CTP_CON6_1") + " " + policyNo + " " + resProp.getString("CTP_CON6_2") + " " + polStatusDesc + " " + resProp.getString("CTP_CON6_3") );
+							returnMap.put("CTP", fvMap);
+						}
+					
 					}else if(Commons.dateDiff(polDueDate)<=30){
 						Map<String, String> fvMap = new HashMap();
 						fvMap.put("Message", resProp.getString("CTP_CON2_1")+" "+polDueDate+" "+resProp.getString("CTP_CON2_2")+" "
@@ -368,13 +386,17 @@ public class APIConsumerService {
 		return returnMap;
 	}
 
-	public Map<String, String> getPolicyDetails(String policyNumber) {
+	public Map<String, String> getPolicyDetails(Map<String, Map> mapData, String policyNumber) {
 		String policyURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policyadminstration/policydetails/cashsurrendervalue/v1";
+		//String policyURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyadminstration/policydetails/cashsurrendervalue/v1";
+
 		Map<String, String> returnMap = new HashMap<String, String>();
 		// String DevMode = "Y";
 		String soaAppId = "BOT";
 		String soaUserId = "BOTPROD123";
 		String soaPassword = "Qk9UUFJPREAxMjM=";
+		//String soaUserId = "BOTDEV123";
+		//String soaPassword = "Qk9UMTIzREVW";
 		// String
 		// requestJson="{\"request\":{\"header\":{\"soaCorrelationId\":\"12345\",\"soaMsgVersion\":\"1.0\",\"soaAppId\":\""+soaAppId+"\",\"soaUserId\":\""+soaUserId+"\",\"soaPassword\":\""+soaPassword+"\"},\"requestData\":{\"policyNumber\":\""+policyNumber+"\"}}}";
 		StringBuilder requestJson = new StringBuilder();
@@ -459,11 +481,38 @@ public class APIConsumerService {
 					.get("cashSurrenderValue")).get("MIR-DV-EFF-DT").toString();
 			mir_dv_pol_csv_amt = ((Map) ((Map) ((Map) resultData.get("response")).get("responseData"))
 					.get("cashSurrenderValue")).get("MIR-DV-POL-CSV-AMT").toString();
+			
+			if ((mir_dv_pua_csh_valu == null) || "".equals(mir_dv_pua_csh_valu))
+				mir_dv_pua_csh_valu = "0.00";
+			
+			if ((mir_dv_pol_csv_amt == null) || "".equals(mir_dv_pol_csv_amt))
+				mir_dv_pol_csv_amt = "0.00";
+			
+			
+			
+			
+			Map m = (Map)mapData.get("PolicyData");
+			
+			String polStatusCode = (String)m.get("polStatusCode");
+			String polStatusDesc = (String)m.get("polStatusDesc");
+			
+			System.out.println("Policy Status " + polStatusCode);
+			
+			System.out.println("Policy Desc  " + polStatusDesc);
+			
+			
+			if (!("1".equals(polStatusCode) || "2".equals(polStatusCode) || "3".equals(polStatusCode) || "4".equals(polStatusCode) || "5".equals(polStatusCode) || "1A".equals(polStatusCode))) 
+					returnMap.put("Message", resProp.getString("CSV_CON1_1") + " " + policyNumber + " " + resProp.getString("CSV_CON1_2") + " " + polStatusDesc + " " + resProp.getString("CSV_CON1_3"));
+					else {
+					
+				System.out.println("Adding message");
 			returnMap.put("Message",
 					resProp.getString("surrendervalue1") + " " + policyNumber + " "
 							+ resProp.getString("surrendervalue2") + " " + Commons.convertDateFormat(mir_dv_eff_dt) + " "
 							+ resProp.getString("surrendervalue3") + Double.parseDouble(mir_dv_pol_csv_amt) + ".");
 			returnMap.put("mir_dv_pua_csh_valu", mir_dv_pua_csh_valu);
+						System.out.println("Message added");
+					}
 		} catch (Exception ec) {
 			// logger.error(ec);
 		}
@@ -471,9 +520,9 @@ public class APIConsumerService {
 	}
 
 	public Map<String, String> getMliDocService(String policyNo) {
-		String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
+		//String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
 		
-		//String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
+		String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
 		
 		/*String soaAppID = "BOT";
 		String soaUserID = "BOTDEV123";
@@ -484,10 +533,10 @@ public class APIConsumerService {
 		// String DevMode = "Y";
 		String soaCorrelationId = "12345";
 		String soaAppId = "BOT";
-		String soaUserId = "BOTPROD123";
-		//String soaUserId = "BOTDEV123";
-		//String soaPassword = "Qk9UMTIzREVW";
-		String soaPassword = "Qk9UUFJPREAxMjM=";
+		//String soaUserId = "BOTPROD123";
+		String soaUserId = "BOTDEV123";
+		String soaPassword = "Qk9UMTIzREVW";
+		//String soaPassword = "Qk9UUFJPREAxMjM=";
 		String docID = "PRM23";
 		String SendTo = "C";
 		String docDispatchMode = "E";
@@ -590,6 +639,4 @@ public class APIConsumerService {
 	}
 
 }
-
-
 
