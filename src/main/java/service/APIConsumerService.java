@@ -26,19 +26,19 @@ public class APIConsumerService {
 		String output = new String();
 		StringBuilder result = new StringBuilder();
 		// String DevMode = "Y";
-		String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v2";
-		//String pUrl = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policyotp/v2";
+		//String pUrl = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/policyotp/v2";
+		String pUrl = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/policyotp/v2";
 		String soaCorrelationId = "ApiConsumer-" + policyNo + "-" + System.currentTimeMillis();
 		String soaMsgVersion = "1.0";
 		
-		String soaAppID = "BOT";
-		String soaUserID = "BOTDEV123";
-		String soaUserPswd = "Qk9UMTIzREVW";
+		//String soaAppID = "BOT";
+		//String soaUserID = "BOTDEV123";
+		//String soaUserPswd = "Qk9UMTIzREVW";
 		
 		
-		//String soaAppID = "NEO";
-		//String soaUserID = "NEOPROD123";
-		//String soaUserPswd = "dGhha2Fnb2xpdmU=";
+		String soaAppID = "NEO";
+		String soaUserID = "NEOPROD123";
+		String soaUserPswd = "dGhha2Fnb2xpdmU=";
 		
 		
 		Map<String, String> otpDescMap = new HashMap<String, String>();
@@ -520,9 +520,9 @@ public class APIConsumerService {
 	}
 
 	public Map<String, String> getMliDocService(String policyNo) {
-		//String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
+		String policyMliDocURL = "https://mligateway.maxlifeinsurance.com/mli/prod/soa/mlidocwebservice/v1";
 		
-		String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
+		//String policyMliDocURL = "https://gatewayuat.maxlifeinsurance.com/apimgm/dev/soa/mlidocwebservice/v1";
 		
 		/*String soaAppID = "BOT";
 		String soaUserID = "BOTDEV123";
@@ -533,10 +533,10 @@ public class APIConsumerService {
 		// String DevMode = "Y";
 		String soaCorrelationId = "12345";
 		String soaAppId = "BOT";
-		//String soaUserId = "BOTPROD123";
-		String soaUserId = "BOTDEV123";
-		String soaPassword = "Qk9UMTIzREVW";
-		//String soaPassword = "Qk9UUFJPREAxMjM=";
+		String soaUserId = "BOTPROD123";
+		//String soaUserId = "BOTDEV123";
+		//String soaPassword = "Qk9UMTIzREVW";
+		String soaPassword = "Qk9UUFJPREAxMjM=";
 		String docID = "PRM23";
 		String SendTo = "C";
 		String docDispatchMode = "E";
