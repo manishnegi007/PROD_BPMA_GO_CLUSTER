@@ -20,7 +20,7 @@ import service.APIConsumerService;
 
 @Controller
 @RequestMapping("/webhook")
-public class MliBotController {
+public class MliBotController{
 
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
 	@Autowired
