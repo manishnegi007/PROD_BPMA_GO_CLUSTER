@@ -26,7 +26,7 @@ public class APIConsumerService {
 			StringBuilder result = new StringBuilder();	
 			String DevMode = "N";
 			HttpURLConnection conn = null;
-			WebhookResponse response = new WebhookResponse();
+			//WebhookResponse response = new WebhookResponse();
 			try 
 			{
 				XTrustProvider trustProvider=new XTrustProvider();
@@ -116,8 +116,9 @@ public class APIConsumerService {
 							+", Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr"
 							+ " || WIP Data"
 							+      " WIP AFYP is: " +sum+" Cr";
-					response.setSpeech(finalresponse);
-					response.setDisplayText(finalresponse);
+					//response.setSpeech(finalresponse);
+					//response.setDisplayText(finalresponse);
+					WebhookResponse responseObj = new WebhookResponse(speech, speech);
 				}
 
 			}catch(Exception ex)
