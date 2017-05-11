@@ -26,6 +26,7 @@ public class APIConsumerService {
 			StringBuilder result = new StringBuilder();	
 			String DevMode = "N";
 			HttpURLConnection conn = null;
+			String speech="";
 			//WebhookResponse response = new WebhookResponse();
 			try 
 			{
@@ -118,13 +119,15 @@ public class APIConsumerService {
 							+      " WIP AFYP is: " +sum+" Cr";
 					//response.setSpeech(finalresponse);
 					//response.setDisplayText(finalresponse);
-					WebhookResponse responseObj = new WebhookResponse(finalresponse, finalresponse);
+					speech=finalresponse;
+					
 				}
 
 			}catch(Exception ex)
 			{
 				System.out.println("Exception>>>>>>>>>>>>"+ex);
 			}
+			WebhookResponse responseObj = new WebhookResponse(speech, speech);
 			return responseObj;
 		}
 
