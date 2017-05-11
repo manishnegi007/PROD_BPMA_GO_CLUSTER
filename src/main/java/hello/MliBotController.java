@@ -31,28 +31,32 @@ public class MliBotController{
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) {
-		WebhookResponse response = new WebhookResponse();
+		//WebhookResponse response = new WebhookResponse();
+		String speech="";
 		try 
 		{
 			JSONObject object = new JSONObject(obj.toString());
 			String actionperformed = object.getJSONObject("result").get("action")+"";
 			String channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel")+"";
-
+			
 			if(actionperformed.equalsIgnoreCase("NUMBERS") && channel.equalsIgnoreCase("MLI"))
 			{
-				response = apiConsumerService.getWipDataAll(actionperformed, channel);
+				return apiConsumerService.getWipDataAll(actionperformed, channel);
 			}
 			else
 			{
-				response.setSpeech("Inappropriate Action Get from Json");
-				response.setDisplayText("Inappropriate Action Get from Json");
+				//response.setSpeech("Inappropriate Action Get from Json");
+				//response.setDisplayText("Inappropriate Action Get from Json");
+				speech="Inappropriate Action Get from Json";
 			}
 		} 
 		catch (Exception e)
 		{
 			System.out.println("error occured during calling GSTDetail Service" + e);
 		}
-		return response;
+		WebhookResponse responseObj = new WebhookResponse(speech, speech);
+		
+		return responseObj;
 	}
 
 }
