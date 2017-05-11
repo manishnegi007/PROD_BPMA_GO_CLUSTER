@@ -118,14 +118,14 @@ public class APIConsumerService {
 							+      " WIP AFYP is: " +sum+" Cr";
 					//response.setSpeech(finalresponse);
 					//response.setDisplayText(finalresponse);
-					WebhookResponse responseObj = new WebhookResponse(speech, speech);
+					WebhookResponse responseObj = new WebhookResponse(finalresponse, finalresponse);
 				}
 
 			}catch(Exception ex)
 			{
 				System.out.println("Exception>>>>>>>>>>>>"+ex);
 			}
-			return response;
+			return responseObj;
 		}
 
 }
