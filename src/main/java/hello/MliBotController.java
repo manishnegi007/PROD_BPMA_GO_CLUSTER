@@ -23,6 +23,7 @@ import service.APIConsumerService;
 public class MliBotController{
 
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
+	
 	@Autowired
 	APIConsumerService apiConsumerService;
 	
