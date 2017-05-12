@@ -38,11 +38,12 @@ public class MliBotController{
 			JSONObject object = new JSONObject(obj.toString());
 			String actionperformed = object.getJSONObject("result").get("action")+"";
 			String channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel")+"";
+			String productType = object.getJSONObject("result").getJSONObject("parameters").getString("ProductType")+"";
 			String period = object.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").getString("Period")+"";
 			
 			if(actionperformed.equalsIgnoreCase(actionperformed) && channel.equalsIgnoreCase(channel))
 			{
-				return apiConsumerService.getWipDataAll(actionperformed, channel, period);
+				return apiConsumerService.getWipDataAll(actionperformed, channel, period, productType);
 			}
 			else
 			{
@@ -53,7 +54,7 @@ public class MliBotController{
 		} 
 		catch (Exception e)
 		{
-			System.out.println("error occured during calling GSTDetail Service" + e);
+			System.out.println("error occured during calling MLI-Chatbot Service" + e);
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
 		
