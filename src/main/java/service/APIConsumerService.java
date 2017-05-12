@@ -23,8 +23,8 @@ public class APIConsumerService {
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType)
 	{
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
-		ResourceBundle mtd = ResourceBundle.getBundle("com.qc.bot.resources.MTD");
-		ResourceBundle ytd = ResourceBundle.getBundle("com.qc.bot.resources.YTD");
+		ResourceBundle mtd = ResourceBundle.getBundle("MTD");
+		ResourceBundle ytd = ResourceBundle.getBundle("YTD");
 		String output = new String();
 		StringBuilder result = new StringBuilder();	
 		String DevMode = "N";
