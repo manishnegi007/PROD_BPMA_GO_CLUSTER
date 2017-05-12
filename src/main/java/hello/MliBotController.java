@@ -33,13 +33,31 @@ public class MliBotController{
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) {
 		//WebhookResponse response = new WebhookResponse();
 		String speech="";
+		String productType="";
+		String period="";
+		String channel="";
 		try 
 		{
 			JSONObject object = new JSONObject(obj.toString());
 			String actionperformed = object.getJSONObject("result").get("action")+"";
-			String channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel")+"";
-			String productType = object.getJSONObject("result").getJSONObject("parameters").getString("ProductType")+"";
-			String period = object.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").getString("Period")+"";
+			try{
+				channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel")+"";
+			}catch(Exception e)
+			{
+				channel = "";
+			}
+			try{
+				productType = object.getJSONObject("result").getJSONObject("parameters").getString("ProductType")+"";
+			}catch(Exception e)
+			{
+				productType="";
+			}
+			try{
+				period = object.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").getString("Period")+"";
+			}catch(Exception e)
+			{
+				period="";
+			}
 			
 			if(actionperformed.equalsIgnoreCase(actionperformed) && channel.equalsIgnoreCase(channel))
 			{
