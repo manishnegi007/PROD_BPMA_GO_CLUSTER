@@ -266,11 +266,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of "+dtf.format(now)+
 									"the business update for channel is :\n"
-									+"MLI Paid Business : "
-									+" Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr "
+									+"MLI Paid Business :\n\n "
+									+" Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr \n\n"
 									+" Applied Data: \n\n"
 									+" Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n "
-									+ " || WIP Data "
+									+ "WIP Data \n\n"
 									+      "  WIP AFYP is: " +convertsum+" Cr. \n\n "
 									+" Do you want to see the Data Channel Wise like : Agency, Axis Bank, Banca, Cat";
 						}
