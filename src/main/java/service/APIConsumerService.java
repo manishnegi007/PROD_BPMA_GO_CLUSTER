@@ -188,7 +188,7 @@ public class APIConsumerService {
 					double fin_wip_count=0;		double misc_wip_count=0;	double welcome_wip_count=0;
 					double sum = 0; double sum2=0;
 
-					DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss");
+					DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
 					LocalDateTime now = LocalDateTime.now();
 
 					try	{
@@ -265,13 +265,13 @@ public class APIConsumerService {
 						if("MONTHLY".equalsIgnoreCase(period))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									"the business update for channel is :\n"
+									" the business update for channel is :\n"
 									+"MLI Paid Business :\n\n "
-									+" Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr \n\n"
-									+" Applied Data: \n\n"
-									+" Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n "
-									+ "WIP Data \n\n"
-									+      "  WIP AFYP is: " +convertsum+" Cr. \n\n "
+									+"Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr \n\n"
+									+"Applied Data: \n\n"
+									+"Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n "
+									+"WIP Data \n\n"
+									+"WIP AFYP is: " +convertsum+" Cr. \n\n "
 									+" Do you want to see the Data Channel Wise like : Agency, Axis Bank, Banca, Cat";
 						}
 						else if(!"MLI".equalsIgnoreCase(channel))
