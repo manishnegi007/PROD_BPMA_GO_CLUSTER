@@ -265,47 +265,47 @@ public class APIConsumerService {
 						if("MONTHLY".equalsIgnoreCase(period))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									" the business update for channel is :\n"
+									", the business update for channel is :\n"
 									+"MLI Paid Business :\n\n "
 									+"Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr \n\n"
 									+"Applied Data: \n\n"
 									+"Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n "
 									+"WIP Data \n\n"
 									+"WIP AFYP is: " +convertsum+" Cr. \n\n "
-									+" Do you want to see the Data Channel Wise like : Agency, Axis Bank, Banca, Cat";
+									+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 						}
 						else if(!"MLI".equalsIgnoreCase(channel))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									", the business update for< "+channel+">is MLI paid business : Adj MFYP FTD is ,"+dailyAdjustMFYP+" Cr,"
-									+" Adj MFYP MTD is: " +mtdAdjustMFYP+" Cr ||"
-									+"  Applied Business AFYP: "
-									+ "AFYP FTD is: " +dailyAppliedAFYP+" Cr"
-									+", AFYP MTD is: " +mtdAppliedAFYP+" Cr"
-									+ " || WIP Data"
-									+      "  WIP AFYP is: " +convertsum+" Cr.";
+									", the business update for "+channel+" is \n MLI paid business : \n\n Adj MFYP FTD is :"+dailyAdjustMFYP+" Cr, \n\n"
+									+"Adj MFYP MTD is: " +mtdAdjustMFYP+" Cr \n\n"
+									+"Applied Business AFYP: \n\n"
+									+"AFYP FTD is: " +dailyAppliedAFYP+" Cr, \n\n"
+									+"AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n"
+									+"WIP Data WIP AFYP is: " +convertsum+" Cr.";
 						}
 						else if("MONTHLY".equalsIgnoreCase(period) && channel.equalsIgnoreCase(channel))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									"the business update for channel is :"
-									+" Adj MFYP MTD is: " +mtdAdjustMFYP+" Cr ||"
-									+" Applied Data: "
-									+" Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr"
-									+ " || WIP Data"
-									+      "  WIP AFYP is: " +convertsum+" Cr.";
+									", the business update for channel is :\n"
+									+"MLI Paid Business :\n\n "
+									+"Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr \n\n"
+									+"Applied Data: \n\n"
+									+"Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n "
+									+"WIP Data \n\n"
+									+"WIP AFYP is: " +convertsum+" Cr";
+									
 						}
 						else 
 						{
 							finalresponse="As of "+dtf.format(now)+
-									", the business update for< "+channel+">is MLI paid business : Adj MFYP FTD is," +dailyAdjustMFYP+" Cr,"
-									+" Adj MFYP MTD is: " +mtdAdjustMFYP+" Cr ||"
-									+"  Applied Business AFYP: "
-									+ "AFYP FTD is: " +dailyAppliedAFYP+" Cr"
-									+", AFYP MTD is: " +mtdAppliedAFYP+" Cr"
-									+ " || WIP Data"
-									+      "  WIP AFYP is: " +convertsum+" Cr."
-									+" Do you want to see the Data Channel Wise like : Agency, Axis Bank, Banca, Cat";
+									", the business update for "+channel+" is \n MLI paid business : \n\n Adj MFYP FTD is :"+dailyAdjustMFYP+" Cr, \n\n"
+									+"Adj MFYP MTD is: " +mtdAdjustMFYP+" Cr \n\n"
+									+"Applied Business AFYP: \n\n"
+									+"AFYP FTD is: " +dailyAppliedAFYP+" Cr, \n\n"
+									+"AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n"
+									+"WIP Data WIP AFYP is: " +convertsum+" Cr."
+							        +"Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 						}
 					}
 					else if("AdjMFYP".equalsIgnoreCase(action))
