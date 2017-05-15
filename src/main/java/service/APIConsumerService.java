@@ -383,7 +383,7 @@ public class APIConsumerService {
 					else if("Growth".equalsIgnoreCase(action))
 					{
 						if("Agency".equalsIgnoreCase(channel)){
-							finalresponse=""+"< "+channel+"'s> has witnessed paid business growth of "+mtd.getString("MTD_GWT_Agency")
+							finalresponse=""+"< "+channel+"'s> has witnessed paid business \n growth of "+mtd.getString("MTD_GWT_Agency")
 							+"% on MTD basis last month we had clocked "+mtd.getString("ADJ_CHANNEL_Agency")+"Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 						}else if("Axis".equalsIgnoreCase(channel)){
 							finalresponse=""+"< "+channel+"'s> has witnessed paid business growth of "+mtd.getString("MTD_GWT_Axis_Bank")
