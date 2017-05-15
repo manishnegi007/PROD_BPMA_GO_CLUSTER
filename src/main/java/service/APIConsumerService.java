@@ -120,6 +120,7 @@ public class APIConsumerService {
 				}
 			}
 
+
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			String serviceurl = res.getString("serviceurl");
@@ -415,7 +416,7 @@ public class APIConsumerService {
 						if("Agency".equalsIgnoreCase(channel)){
 							finalresponse=" Mr. Alok,"+"< "+channel+" is "+mtd.getString("MTD_ACH_Agency")+"% away from Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_Agency")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
-						}else if("Axis".equalsIgnoreCase(channel)){
+						}else if("Axis Bank".equalsIgnoreCase(channel)){
 							finalresponse=" Mr. Alok,"+"< "+channel+" is "+mtd.getString("MTD_ACH_Axis_Bank")+"% away from Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_Axis_Bank")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("Banca".equalsIgnoreCase(channel)){
@@ -458,7 +459,7 @@ public class APIConsumerService {
 										+ytd.getString("YTD_ADJ_MFYP_Agency")+ " Cr of paid business Adj MFYP YTD";
 							}
 
-						}else if("Axis".equalsIgnoreCase(channel)){
+						}else if("Axis Bank".equalsIgnoreCase(channel)){
 							if("ULIP".equalsIgnoreCase(productType)){
 								finalresponse="<"+channel+"'s "+productType+" Penetration is "+mtd.getString("MTD_ULIP_Axis_Bank")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_Axis_Bank")+"% of "
@@ -526,7 +527,8 @@ public class APIConsumerService {
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_IMF")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_IMF")+ " Cr of paid business Adj MFYP YTD";
 							}
-						}else if("INTERNETSALES".equalsIgnoreCase(channel)){
+						}else if("INTERNETSALES".equalsIgnoreCase(channel))
+						{
 							if("ULIP".equalsIgnoreCase(productType)){
 								finalresponse="<"+channel+"'s "+productType+" Penetration is "+mtd.getString("MTD_ULIP_Internet")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_Internet_Sales")+"% of "
