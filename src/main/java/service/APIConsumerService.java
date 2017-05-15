@@ -37,10 +37,18 @@ public class APIConsumerService {
 		{
 			if("NUMBERS".equalsIgnoreCase(action))
 			{
-				if("".equalsIgnoreCase(channel)|| "MLI".equalsIgnoreCase(channel))
+				if("".equalsIgnoreCase(channel) || "MLI".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel))
 				{
+					if(channel.equalsIgnoreCase("MLI") ||  channel.equalsIgnoreCase(""))
+					{
 					segment = "paid,wip,applied";
 					serviceChannel = "";
+					}
+					else
+					{
+						segment = "paid,wip,applied";
+						serviceChannel = "Axis Bank";
+					}
 				}
 				else
 				{
