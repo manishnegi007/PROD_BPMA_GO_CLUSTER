@@ -265,12 +265,12 @@ public class APIConsumerService {
 						if("MONTHLY".equalsIgnoreCase(period))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									"the business update for channel is : \n"
-									+"MLI Paid Business : \n"
-									+" Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr \n"
+									"the business update for channel is :"
+									+"MLI Paid Business : "
+									+" Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr "
 									+" Applied Data: \n"
-									+" Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr \n"
-									+ " || WIP Data \n"
+									+" Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr "
+									+ " || WIP Data "
 									+      "  WIP AFYP is: " +convertsum+" Cr."
 									+" Do you want to see the Data Channel Wise like : Agency, Axis Bank, Banca, Cat";
 						}
