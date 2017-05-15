@@ -272,7 +272,7 @@ public class APIConsumerService {
 									+"Applied AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n "
 									+"WIP Data \n\n"
 									+"WIP AFYP is: " +convertsum+" Cr. \n\n "
-									+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
+									+"Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 						}
 						else if(!"MLI".equalsIgnoreCase(channel))
 						{
@@ -282,7 +282,7 @@ public class APIConsumerService {
 									+"Applied Business AFYP: \n\n"
 									+"AFYP FTD is: " +dailyAppliedAFYP+" Cr, \n\n"
 									+"AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n"
-									+"WIP Data WIP AFYP is: " +convertsum+" Cr.";
+									+"WIP Data: \n\n WIP AFYP is: " +convertsum+" Cr.";
 						}
 						else if("MONTHLY".equalsIgnoreCase(period) && channel.equalsIgnoreCase(channel))
 						{
@@ -304,7 +304,7 @@ public class APIConsumerService {
 									+"Applied Business AFYP: \n\n"
 									+"AFYP FTD is: " +dailyAppliedAFYP+" Cr, \n\n"
 									+"AFYP MTD is: " +mtdAppliedAFYP+" Cr \n\n"
-									+"WIP Data WIP AFYP is: " +convertsum+" Cr."
+									+"WIP Data :\n\n WIP AFYP is: " +convertsum+" Cr."
 							        +"Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 						}
 					}
