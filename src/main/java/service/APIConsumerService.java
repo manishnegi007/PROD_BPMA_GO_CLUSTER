@@ -385,7 +385,7 @@ public class APIConsumerService {
 						if("Agency".equalsIgnoreCase(channel)){
 							finalresponse=""+"< "+channel+"'s> has witnessed paid business growth of % "+mtd.getString("MTD_GWT_Agency")
 							+" on MTD basis last month we had clocked "+mtd.getString("ADJ_CHANNEL_Agency")+"Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
-						}else if("Axis Bank".equalsIgnoreCase(channel)){
+						}else if("Axis".equalsIgnoreCase(channel)){
 							finalresponse=""+"< "+channel+"'s> has witnessed paid business growth of % "+mtd.getString("MTD_GWT_Axis_Bank")
 							+" on MTD basis last month we had clocked "+mtd.getString("ADJ_CHANNEL_Axis_Bank")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 						}else if("Banca".equalsIgnoreCase(channel)){
@@ -416,7 +416,7 @@ public class APIConsumerService {
 						if("Agency".equalsIgnoreCase(channel)){
 							finalresponse=" Mr. Alok,"+"< "+channel+" is "+mtd.getString("MTD_ACH_Agency")+"% away from Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_Agency")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
-						}else if("Axis Bank".equalsIgnoreCase(channel)){
+						}else if("Axis".equalsIgnoreCase(channel)){
 							finalresponse=" Mr. Alok,"+"< "+channel+" is "+mtd.getString("MTD_ACH_Axis_Bank")+"% away from Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_Axis_Bank")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("Banca".equalsIgnoreCase(channel)){
