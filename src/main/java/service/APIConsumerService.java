@@ -265,7 +265,7 @@ public class APIConsumerService {
 						if("MONTHLY".equalsIgnoreCase(period))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									"the business update for channel is :"
+									"the business update for channel is :\n"
 									+"MLI Paid Business : "
 									+" Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr "
 									+" Applied Data: \n"
