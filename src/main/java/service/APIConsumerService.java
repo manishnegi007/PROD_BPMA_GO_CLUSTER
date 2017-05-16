@@ -274,7 +274,7 @@ try
 									+"WIP AFYP: " +convertsum+" Cr. \n\n ";
 							if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(""))
 							{
-								finalresponse = finalresponse+"/n/n Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
+								finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 							}
 							else 
 							{
