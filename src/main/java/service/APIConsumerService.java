@@ -391,31 +391,31 @@ try
 						{
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse = channel+" has witnessed paid business growth of"+mtd.getString("MTD_GWT_Agency")
-								+"% on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Agency")+"Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+"% on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Agency")+"Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_Agency")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_Agency")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_Agency")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_Agency")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_Agency")+" today";
 							}
 						}
 						else if("Axis".equalsIgnoreCase(channel)){
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+" has witnessed paid business growth of "+mtd.getString("MTD_GWT_Axis_Bank")
-								+" % on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Axis_Bank")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+" % on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Axis_Bank")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_Axis_Bank")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_Axis_Bank")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_Axis_Bank")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_Axis_Bank")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_Axis_Bank")+" today";
 							}
 						}else if("Banca".equalsIgnoreCase(channel)){
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+" has witnessed paid business growth of "+mtd.getString("MTD_GWT_BancAssurance")
-								+"% on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Banc_Assurance")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+"% on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Banc_Assurance")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_BancAssurance")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_BancAssurance")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_BancAssurance")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_BancAssurance")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_BancAssurance")+" today";
 							}
 
 						}else if("CAT".equalsIgnoreCase(channel)){
@@ -426,57 +426,57 @@ try
 							else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_CAT")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_CAT")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_CAT")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_CAT")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_CAT")+" today";
 							}
 						}else if("IM".equalsIgnoreCase(channel)){
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+" has witnessed paid business growth of "+mtd.getString("MTD_GWT_IM")
-								+" % on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_IM_Channel")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+" % on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_IM_Channel")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_IM_Channel")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_IM")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_IM_Channel")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_IM")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_IM_Channel")+" today";
 							}
 						}else if("IMF".equalsIgnoreCase(channel)){
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+" has witnessed paid business growth of "+mtd.getString("MTD_GWT_IMF")
-								+"% on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_IMF")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+"% on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_IMF")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
 								finalresponse = "MLI has witnessed paid business growth of"+ytd.getString("YTD_GWT_IMF")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_IMF")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_IMF")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_IMF")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_IMF")+" today";
 							}
 						}else if("INTERNETSALES".equalsIgnoreCase(channel)){
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+" has witnessed paid business growth of "+mtd.getString("MTD_GWT_Internet_Sales")
-								+"% on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Internet_Sales")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+"% on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_Internet_Sales")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_Internet_Sales")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_Internet_Sales")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_Internet_Sales")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_Internet_Sales")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_Internet_Sales")+" today";
 							}
 						}else if("PD".equalsIgnoreCase(channel)){
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+" has witnessed paid business growth of "+mtd.getString("MTD_GWT_PD")
-								+"% on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_PD")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+"% on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_PD")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_PD")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_PD")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_PD")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_PD")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_PD")+" today";
 							}
 						}else{
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+ " has witnessed paid business growth of "+mtd.getString("MTD_GWT_MLI")
-								+"% on MTD basis last \n\n month we had clocked "+mtd.getString("ADJ_CHANNEL_MLI")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+"% on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_MLI")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
 								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_MLI")
-								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_MLI")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_MLI")+" today";
+								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_MLI")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_MLI")+" today";
 							}
 						}
 					}
