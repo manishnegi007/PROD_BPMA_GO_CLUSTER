@@ -445,7 +445,7 @@ try
 							}
 							else
 							{
-								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_IMF")
+								finalresponse = "MLI has witnessed paid business growth of"+ytd.getString("YTD_GWT_IMF")
 								+"% on YTD basis \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_IMF")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_IMF")+" today";
 							}
 						}else if("INTERNETSALES".equalsIgnoreCase(channel)){
