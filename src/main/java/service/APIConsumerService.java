@@ -272,7 +272,7 @@ try
 									+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
 									//+"WIP Data \n\n"
 									+"WIP AFYP: " +convertsum+" Cr. \n\n ";
-							if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(""))
+							if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 							{
 								finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 							}
@@ -302,9 +302,9 @@ try
 									+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
 									+"AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n"
 									+"WIP Data:\n\n WIP AFYP is: " +convertsum+" Cr."; 
-							if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(""))
+							if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 							{
-								finalresponse = finalresponse+"/n/n Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
+								finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 							}
 							else 
 							{
