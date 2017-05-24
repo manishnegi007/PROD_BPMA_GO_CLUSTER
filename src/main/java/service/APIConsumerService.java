@@ -33,7 +33,7 @@ public class APIConsumerService {
 		String serviceChannel="";
 		String speech="";
 
-             try 
+     		try 
 		{
 			if("NUMBERS".equalsIgnoreCase(action))
 			{
@@ -499,7 +499,7 @@ public class APIConsumerService {
 									+mtd.getString("MTD_PLAN_IMF")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("INTERNETSALES".equalsIgnoreCase(channel)){
 							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_Internet_Sales")+"% of Management Plan, Your monthly plan is "
-									+mtd.getString("MTD_PLAN_Internet_Sales")+"and till date"+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
+									+mtd.getString("MTD_PLAN_Internet_Sales")+"and till date"+dtf.format(now)+" You have achieved"+mtdAdjustMFYP+" Cr.";
 						}else if("PD".equalsIgnoreCase(channel)){
 							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_PD")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_PD")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
@@ -530,121 +530,121 @@ public class APIConsumerService {
 
 						}else if("Axis Bank".equalsIgnoreCase(channel)){
 							if("ULIP".equalsIgnoreCase(productType)){
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_ULIP_Axis_Bank")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_ULIP_Axis_Bank")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_Axis_Bank")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_Axis_Bank")+ " Cr of paid business Adj MFYP YTD ";
 							}else if("TRAD".equalsIgnoreCase(productType))
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_TRAD_Axis_Bank")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_TRAD_Axis_Bank")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("TRAD_PENETRATION_Axis_Bank")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_Axis_Bank")+ " Cr of paid business Adj MFYP YTD ";
 							}
 							else
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_Axis_Bank")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_Axis_Bank")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_Axis_Bank")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_Axis_Bank")+ " Cr of paid business Adj MFYP YTD";
 							}
 						}else if("Banca".equalsIgnoreCase(channel)){
 							if("ULIP".equalsIgnoreCase(productType)){
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_ULIP_BancAssurance")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_ULIP_BancAssurance")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_BancAssurance")+" % of "
 										+ytd.getString("YTD_ADJ_MFYP_BancAssurance")+ " Cr of paid business Adj MFYP YTD";
 							}else if("TRAD".equalsIgnoreCase(productType))
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_TRAD_BancAssurance")+" % of"+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_TRAD_BancAssurance")+" % of"+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and"+ytd.getString("TRAD_PENETRATION_BancAssurance")+"% of"
 										+ytd.getString("YTD_ADJ_MFYP_BancAssurance")+ "Cr of paid business Adj MFYP YTD";
 							}
 							else
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_BancAssurance")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_BancAssurance")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_BancAssurance")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_BancAssurance")+ " Cr of paid business Adj MFYP YTD";
 							}
 						}else if("CAT".equalsIgnoreCase(channel)){
 							if("ULIP".equalsIgnoreCase(productType)){
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_ULIP_CAT")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_ULIP_CAT")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_CAT")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_CAT")+ " Cr of paid business Adj MFYP YTD";
 							}else if("TRAD".equalsIgnoreCase(productType))
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_TRAD_CAT")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_TRAD_CAT")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("TRAD_PENETRATION_CAT")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_CAT")+ " Cr of paid business Adj MFYP YTD";
 							}
 							else
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_CAT")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_CAT")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_CAT")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_CAT")+ " Cr of paid business Adj MFYP YTD";
 							}
 						}else if("IMF".equalsIgnoreCase(channel)){
 							if("ULIP".equalsIgnoreCase(productType)){
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_ULIP_IMF")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_ULIP_IMF")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_IMF")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_IMF")+ " Cr of paid business Adj MFYP YTD";
 							}else if("TRAD".equalsIgnoreCase(productType))
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_TRAD_IMF")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_TRAD_IMF")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("TRAD_PENETRATION_IMF")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_IMF")+ " Cr of paid business Adj MFYP YTD";
 							}
 							else
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_IMF")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_IMF")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_IMF")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_IMF")+ " Cr of paid business Adj MFYP YTD";
 							}
 						}else if("INTERNETSALES".equalsIgnoreCase(channel))
 						{
 							if("ULIP".equalsIgnoreCase(productType)){
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_ULIP_Internet")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_ULIP_Internet")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_Internet_Sales")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_Internet_Sales")+ " Cr of paid business Adj MFYP YTD";
 							}else if("TRAD".equalsIgnoreCase(productType))
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_TRAD_Internet_Sales")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_TRAD_Internet_Sales")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("TRAD_PENETRATION_Internet_Sales")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_Internet_Sales")+ " Cr of paid business Adj MFYP YTD";
 							}
 							else
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_Internet_Sales")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_Internet_Sales")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_Internet_Sales")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_Internet_Sales")+ " Cr of paid business Adj MFYP YTD";
 							}
 						}else if("PD".equalsIgnoreCase(channel)){
 							if("ULIP".equalsIgnoreCase(productType)){
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_ULIP_PD")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_ULIP_PD")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_PD")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_PD")+ " Cr of paid business Adj MFYP YTD";
 							}else if("TRAD".equalsIgnoreCase(productType))
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_TRAD_PD")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_TRAD_PD")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("TRAD_PENETRATION_PD")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_PD")+ " Cr of paid business Adj MFYP YTD";
 							}
 							else
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_PD")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_PD")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_PD")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_PD")+ " Cr of paid business Adj MFYP YTD";
 							}
 						}else{
 							if("ULIP".equalsIgnoreCase(productType)){
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_ULIP_MLI")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_ULIP_MLI")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("ULIP_PENETRATION_MLI")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_MLI")+ " Cr of paid business Adj MFYP YTD";
 							}else if("TRAD".equalsIgnoreCase(productType))
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_TRAD_MLI")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_TRAD_MLI")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("TRAD_PENETRATION_MLI")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_MLI")+ " Cr of paid business Adj MFYP YTD";
 							}
 							else
 							{
-								finalresponse=channel+""+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_MLI")+" % of "+mtdAdjustMFYP
+								finalresponse=channel+" "+productType+" Penetration is "+mtd.getString("MTD_PROTECTION_MLI")+" % of "+mtdAdjustMFYP
 										+" Cr of paid business Adj MFYP MTD and "+ytd.getString("PRO_PENETRATION_MLI")+"% of "
 										+ytd.getString("YTD_ADJ_MFYP_MLI")+ " Cr of paid business Adj MFYP YTD";
 							}
