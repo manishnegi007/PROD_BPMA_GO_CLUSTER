@@ -33,7 +33,7 @@ public class APIConsumerService {
 		String serviceChannel="";
 		String speech="";
 
-             		try 
+             try 
 		{
 			if("NUMBERS".equalsIgnoreCase(action))
 			{
@@ -265,7 +265,7 @@ public class APIConsumerService {
 						if("MONTHLY".equalsIgnoreCase(period))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+ ":\n"
+									", the business update for "+channel+ "is :\n"
 									//+"MLI Paid Business :\n\n "
 									+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
 									//+"Applied Data: \n\n"
@@ -285,7 +285,7 @@ public class APIConsumerService {
 						else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+": \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
+									", the business update for "+channel+"is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 									+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr \n\n"
 									//+"Applied Business AFYP: \n\n"
 									+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
@@ -337,10 +337,10 @@ public class APIConsumerService {
 
 					else if("WIP".equalsIgnoreCase(action))
 					{
-						if(channel!="")
+						if(!"".equalsIgnoreCase(channel))
 						{
 							finalresponse="Current WIP as of "+dtf.format(now)+
-									" for"+channel+" is "+convertsum2+" Policies with "+convertsum+" "
+									" for "+channel+" is "+convertsum2+" Policies with "+convertsum+" "
 									+ " Cr. AFYP. Do you wish to see the stage wise snapshot";
 						}
 						else
@@ -493,19 +493,19 @@ public class APIConsumerService {
 									+mtd.getString("MTD_PLAN_BancAssurance")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("CAT".equalsIgnoreCase(channel)){
 							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_CAT")+"% of Management Plan, Your monthly plan is "
-									+mtd.getString("MTD_PLAN_CAT")+" and till date "+dtf.format(now)+" You have achieved"+mtdAdjustMFYP+" Cr.";
+									+mtd.getString("MTD_PLAN_CAT")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("IMF".equalsIgnoreCase(channel)){
 							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_IMF")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_IMF")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("INTERNETSALES".equalsIgnoreCase(channel)){
 							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_Internet_Sales")+"% of Management Plan, Your monthly plan is "
-									+mtd.getString("MTD_PLAN_Internet_Sales")+"and till date"+dtf.format(now)+" You have achieved"+mtdAdjustMFYP+" Cr.";
+									+mtd.getString("MTD_PLAN_Internet_Sales")+"and till date"+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("PD".equalsIgnoreCase(channel)){
 							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_PD")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_PD")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else{
 							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_MLI")+"% of Management Plan, Your monthly plan is "
-									+mtd.getString("MTD_PLAN_MLI")+" and till date "+dtf.format(now)+" You have achieved"+mtdAdjustMFYP+" Cr.";
+									+mtd.getString("MTD_PLAN_MLI")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}
 					}
 					else if("Penetration".equalsIgnoreCase(action))
