@@ -33,13 +33,13 @@ public class APIConsumerService {
 		String serviceChannel="";
 		String speech="";
 
-try 
+             		try 
 		{
 			if("NUMBERS".equalsIgnoreCase(action))
 			{
 				if("".equalsIgnoreCase(channel) || "MLI".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel))
 				{
-					if(channel.equalsIgnoreCase("MLI") ||  channel.equalsIgnoreCase(""))
+					if("MLI".equalsIgnoreCase(channel) ||  "".equalsIgnoreCase(channel))
 					{
 						segment = "paid,wip,applied";
 						serviceChannel = "";
@@ -59,9 +59,9 @@ try
 			else if("AdjMFYP".equalsIgnoreCase(action) || "Growth".equalsIgnoreCase(action) 
 					|| "Achievement".equalsIgnoreCase(action)|| "Penetration".equalsIgnoreCase(action))
 			{
-				if(channel.equalsIgnoreCase("MLI") || channel.equalsIgnoreCase("Axis") || channel.equalsIgnoreCase(""))
+				if("MLI".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 				{
-					if(channel.equalsIgnoreCase("MLI") ||  channel.equalsIgnoreCase(""))
+					if("MLI".equalsIgnoreCase(channel) ||  "".equalsIgnoreCase(channel))
 					{
 						segment="paid";
 						serviceChannel = "";
@@ -80,9 +80,9 @@ try
 			}
 			else if("WIP".equalsIgnoreCase(action)||"WIP.YES".equalsIgnoreCase(action))
 			{
-				if(channel.equalsIgnoreCase("") || channel.equalsIgnoreCase("Axis") || channel.equalsIgnoreCase("MLI"))
+				if("".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel) || "MLI".equalsIgnoreCase(channel))
 				{
-					if(channel.equalsIgnoreCase("") || channel.equalsIgnoreCase("MLI"))
+					if("".equalsIgnoreCase(channel) || "MLI".equalsIgnoreCase(channel))
 					{
 						segment="wip";
 						serviceChannel = "";
@@ -100,9 +100,9 @@ try
 			}
 			else if("APPLIED".equalsIgnoreCase(action))
 			{
-				if(channel.equalsIgnoreCase("MLI") || channel.equalsIgnoreCase("") || channel.equalsIgnoreCase("Axis"))
+				if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel))
 				{
-					if(channel.equalsIgnoreCase("MLI") || channel.equalsIgnoreCase(""))
+					if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 					{
 						segment="applied";
 						serviceChannel = "";
@@ -125,7 +125,7 @@ try
 			trustProvider.install();
 			String serviceurl = res.getString("serviceurl");
 			URL url = new URL(serviceurl);
-			if(DevMode!=null && !DevMode.equalsIgnoreCase("") && DevMode.equalsIgnoreCase("Y"))
+			if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
 			{
 				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
 				conn = (HttpURLConnection) url.openConnection(proxy);
@@ -141,8 +141,6 @@ try
 			//			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Content-Type", "application/json");
 			StringBuilder requestdata=new StringBuilder();
-
-			Long currenttm = System.currentTimeMillis();
 
 			requestdata.append("	{	");
 			requestdata.append("	  \"header\": {	");
@@ -177,6 +175,7 @@ try
 				try
 				{
 					DecimalFormat df = new DecimalFormat("####0.00");
+					DecimalFormat df1 = new DecimalFormat("####");
 					System.out.println(result.toString());
 					JSONObject object = new JSONObject(result.toString());
 					String finalresponse="";
@@ -258,7 +257,8 @@ try
 					String convertsum  =  df.format(sum);
 
 					sum2=sum2+wip_count+ho_wip_count+go_wip_count+it_wip_count+fin_wip_count+misc_wip_count+welcome_wip_count;
-					String convertsum2  =  df.format(sum2);
+					String convertsum2  =  df1.format(sum2);
+					
 
 					if("NUMBERS".equalsIgnoreCase(action))
 					{
@@ -267,7 +267,7 @@ try
 							finalresponse="As of "+dtf.format(now)+
 									", the business update for "+channel+ ":\n"
 									//+"MLI Paid Business :\n\n "
-									+"Adj MFYP MTD is: "+mtdAdjustMFYP+" Cr \n\n"
+									+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
 									//+"Applied Data: \n\n"
 									+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
 									//+"WIP Data \n\n"
@@ -296,8 +296,8 @@ try
 						else 
 						{
 							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+" is \n MLI paid business : \n\n Adj MFYP FTD is :"+dailyAdjustMFYP+" Cr, \n\n"
-									+"Adj MFYP MTD is: " +mtdAdjustMFYP+" Cr \n\n"
+									", the business update for "+channel+" is \n MLI paid business : \n\n Adj MFYP FTD :"+dailyAdjustMFYP+" Cr, \n\n"
+									+"Adj MFYP MTD : " +mtdAdjustMFYP+" Cr \n\n"
 									+"Applied Business AFYP: \n\n"
 									+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
 									+"AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n"
@@ -330,8 +330,8 @@ try
 						}
 						else {
 							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business"+
-									" is FTD : " +dailyAdjustMFYP+" Cr,"
-									+" MTD is: " +mtdAdjustMFYP+" Cr";
+									" FTD : " +dailyAdjustMFYP+" Cr,"
+									+" MTD : " +mtdAdjustMFYP+" Cr";
 						}
 					}
 
@@ -421,7 +421,7 @@ try
 						}else if("CAT".equalsIgnoreCase(channel)){
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+" has witnessed paid business growth of "+mtd.getString("MTD_GWT_CAT")
-								+" % on MTD basis \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_CAT")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+" % on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_CAT")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
@@ -445,7 +445,7 @@ try
 							}
 							else
 							{
-								finalresponse = "MLI has witnessed paid business growth of"+ytd.getString("YTD_GWT_IMF")
+								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_IMF")
 								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_IMF")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_IMF")+" today";
 							}
 						}else if("INTERNETSALES".equalsIgnoreCase(channel)){
@@ -471,11 +471,11 @@ try
 						}else{
 							if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
 								finalresponse=channel+ " has witnessed paid business growth of "+mtd.getString("MTD_GWT_MLI")
-								+"% on MTD basis, \n\n last month we had clocked "+mtd.getString("ADJ_CHANNEL_MLI")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
+								+"% on MTD basis, \n\n last  month we had clocked "+mtd.getString("ADJ_CHANNEL_MLI")+" Cr of Adj MFYP as compared to "+mtdAdjustMFYP+" today";
 							}
 							else
 							{
-								finalresponse = channel+" has witnessed paid business growth of"+ytd.getString("YTD_GWT_MLI")
+								finalresponse = "MLI has witnessed paid business growth of"+ytd.getString("YTD_GWT_MLI")
 								+"% on YTD basis, \n\n last year we had clocked "+ytd.getString("LAST_YR_ADJ_MFYP_MLI")+"Cr of Adj MFYP as compared to "+ytd.getString("YTD_ADJ_MFYP_MLI")+" today";
 							}
 						}
@@ -483,28 +483,28 @@ try
 					else if("Achievement".equalsIgnoreCase(action))
 					{
 						if("Agency".equalsIgnoreCase(channel)){
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_Agency")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_Agency")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_Agency")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("Axis".equalsIgnoreCase(channel)){
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_Axis_Bank")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_Axis_Bank")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_Axis_Bank")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("Banca".equalsIgnoreCase(channel)){
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_BancAssurance")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_BancAssurance")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_BancAssurance")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("CAT".equalsIgnoreCase(channel)){
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_CAT")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_CAT")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_CAT")+" and till date "+dtf.format(now)+" You have achieved"+mtdAdjustMFYP+" Cr.";
 						}else if("IMF".equalsIgnoreCase(channel)){
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_IMF")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_IMF")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_IMF")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else if("INTERNETSALES".equalsIgnoreCase(channel)){
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_Internet_Sales")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_Internet_Sales")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_Internet_Sales")+"and till date"+dtf.format(now)+" You have achieved"+mtdAdjustMFYP+" Cr.";
 						}else if("PD".equalsIgnoreCase(channel)){
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_PD")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_PD")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_PD")+" and till date "+dtf.format(now)+" You have achieved "+mtdAdjustMFYP+" Cr.";
 						}else{
-							finalresponse=channel+" is "+mtd.getString("MTD_ACH_MLI")+"% away from Management Plan, Your monthly plan is "
+							finalresponse=channel+" has achieved "+mtd.getString("MTD_ACH_MLI")+"% of Management Plan, Your monthly plan is "
 									+mtd.getString("MTD_PLAN_MLI")+" and till date "+dtf.format(now)+" You have achieved"+mtdAdjustMFYP+" Cr.";
 						}
 					}
