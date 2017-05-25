@@ -156,6 +156,7 @@ public class APIConsumerService {
 			requestdata.append("	    \"channel\": \""+serviceChannel+"\"	");
 			requestdata.append("	  }	");
 			requestdata.append("	}	");
+			System.out.println("External API Call : START");
 			OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
 			writer.write(requestdata.toString());
 			writer.flush();
@@ -172,6 +173,7 @@ public class APIConsumerService {
 				}
 				conn.disconnect();
 				br.close();
+				System.out.println("External API Call : END");
 				try
 				{
 					DecimalFormat df = new DecimalFormat("####0.00");
