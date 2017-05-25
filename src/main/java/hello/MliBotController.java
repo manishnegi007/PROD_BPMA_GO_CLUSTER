@@ -33,6 +33,7 @@ public class MliBotController{
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) {
 		//WebhookResponse response = new WebhookResponse();
+		System.out.println("CameInside :- Controller: Webhook");
 		String speech="";
 		String productType="";
 		String period="";
@@ -76,7 +77,7 @@ public class MliBotController{
 			System.out.println("error occured during calling MLI-Chatbot Service" + e);
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
-		
+		System.out.println("End : Controller: Webhook");
 		return responseObj;
 	}
 
