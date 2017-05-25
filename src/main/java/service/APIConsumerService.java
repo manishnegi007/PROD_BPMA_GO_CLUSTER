@@ -178,7 +178,6 @@ public class APIConsumerService {
 				{
 					DecimalFormat df = new DecimalFormat("####0.00");
 					DecimalFormat df1 = new DecimalFormat("####");
-					System.out.println(result.toString());
 					JSONObject object = new JSONObject(result.toString());
 					String finalresponse="";
 					double dailyAdjustMFYP1=0;  double mtdAdjustMFYP1=0;    double dailyAppliedAFYP1=0;
@@ -672,7 +671,7 @@ public class APIConsumerService {
 			System.out.println("Exception>>>>>>>>>>>>"+ex);
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
-		System.out.println("*******"+responseObj);
+		System.out.println("End : Controller: Webhook");
 		return responseObj;
 	}
 
