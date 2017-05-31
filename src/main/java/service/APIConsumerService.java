@@ -266,7 +266,7 @@ public class APIConsumerService {
 						if("MONTHLY".equalsIgnoreCase(period))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+ "is :\n"
+									", the business update for "+channel+ " is :\n"
 									//+"MLI Paid Business :\n\n "
 									+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
 									//+"Applied Data: \n\n"
@@ -286,7 +286,7 @@ public class APIConsumerService {
 						else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
 						{
 							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+"is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
+									", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 									+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr \n\n"
 									//+"Applied Business AFYP: \n\n"
 									+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
