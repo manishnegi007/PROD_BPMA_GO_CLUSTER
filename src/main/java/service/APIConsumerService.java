@@ -179,14 +179,14 @@ public class APIConsumerService {
 					DecimalFormat df = new DecimalFormat("####0.00");
 					DecimalFormat df1 = new DecimalFormat("####");
 					JSONObject object = new JSONObject(result.toString());
-					String finalresponse="";
+				String finalresponse="";
 				double dailyAdjustMFYP1=0;  double mtdAdjustMFYP1=0;    double dailyAppliedAFYP1=0;
 				double mtdAppliedAFYP1=0;	double wipAFYP=0;           double hoWIPAFYP=0;
 				double goWIPAFYP=0;			double itWIPAFYP=0;	   	    double finWIPAFYP=0;
 				double miscWIPAFYP=0;		double welcomeWIPAFYP=0;	double wip_count=0;
 				double ho_wip_count=0;		double go_wip_count=0;		double it_wip_count=0;
 				double fin_wip_count=0;		double misc_wip_count=0;	double welcome_wip_count=0;
-				double sum = 0; double sum2=0; double sum3 = 0;
+				double sum = 0; double sum2=0; double sum3 = 0; double sum4 = 0;
 
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
 				LocalDateTime now = LocalDateTime.now();
@@ -261,7 +261,9 @@ public class APIConsumerService {
 				String convertsum3  =  df.format(sum3);
 
 				sum2=sum2+wip_count+ho_wip_count+go_wip_count+it_wip_count+fin_wip_count+misc_wip_count+welcome_wip_count;
+				sum4=sum4+ho_wip_count+go_wip_count+it_wip_count+fin_wip_count+misc_wip_count+welcome_wip_count;
 				String convertsum2  =  df1.format(sum2);
+				String convertsum4  =  df1.format(sum4);
 				
 
 				if("NUMBERS".equalsIgnoreCase(action))
@@ -344,13 +346,13 @@ public class APIConsumerService {
 					if(!"".equalsIgnoreCase(channel))
 					{
 						finalresponse="Current WIP as of "+dtf.format(now)+
-								" for "+channel+" is "+convertsum2+" Policies with "+convertsum3+" "
+								" for "+channel+" is "+convertsum4+" Policies with "+convertsum3+" "
 								+ " Cr. AFYP. Do you wish to see the stage wise snapshot";
 					}
 					else
 					{
 						finalresponse="Current WIP as of "+dtf.format(now)+
-								" for MLI is "+convertsum2+" Policies with "+convertsum3+" "
+								" for MLI is "+convertsum4+" Policies with "+convertsum3+" "
 								+ "Cr. AFYP. Do you wish to see the stage wise snapshot";
 					}
 				 }
