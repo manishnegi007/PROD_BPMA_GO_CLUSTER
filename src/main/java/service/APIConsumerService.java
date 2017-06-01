@@ -350,7 +350,7 @@ public class APIConsumerService {
 					else
 					{
 						finalresponse="Current WIP as of "+dtf.format(now)+
-								" for MLI is "+convertsum2+" Policies with "+convertsum+" "
+								" for MLI is "+convertsum2+" Policies with "+convertsum3+" "
 								+ "Cr. AFYP. Do you wish to see the stage wise snapshot";
 					}
 				 }
