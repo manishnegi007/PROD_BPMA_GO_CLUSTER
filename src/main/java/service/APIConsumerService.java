@@ -180,177 +180,180 @@ public class APIConsumerService {
 					DecimalFormat df1 = new DecimalFormat("####");
 					JSONObject object = new JSONObject(result.toString());
 					String finalresponse="";
-					double dailyAdjustMFYP1=0;  double mtdAdjustMFYP1=0;    double dailyAppliedAFYP1=0;
-					double mtdAppliedAFYP1=0;	double wipAFYP=0;           double hoWIPAFYP=0;
-					double goWIPAFYP=0;			double itWIPAFYP=0;	   	    double finWIPAFYP=0;
-					double miscWIPAFYP=0;		double welcomeWIPAFYP=0;	double wip_count=0;
-					double ho_wip_count=0;		double go_wip_count=0;		double it_wip_count=0;
-					double fin_wip_count=0;		double misc_wip_count=0;	double welcome_wip_count=0;
-					double sum = 0; double sum2=0;
+				double dailyAdjustMFYP1=0;  double mtdAdjustMFYP1=0;    double dailyAppliedAFYP1=0;
+				double mtdAppliedAFYP1=0;	double wipAFYP=0;           double hoWIPAFYP=0;
+				double goWIPAFYP=0;			double itWIPAFYP=0;	   	    double finWIPAFYP=0;
+				double miscWIPAFYP=0;		double welcomeWIPAFYP=0;	double wip_count=0;
+				double ho_wip_count=0;		double go_wip_count=0;		double it_wip_count=0;
+				double fin_wip_count=0;		double misc_wip_count=0;	double welcome_wip_count=0;
+				double sum = 0; double sum2=0; double sum3 = 0;
 
-					DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
-					LocalDateTime now = LocalDateTime.now();
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
+				LocalDateTime now = LocalDateTime.now();
 
-					try	{
-						dailyAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("daily_adj_mfyp").toString());
-					}
-					catch(Exception ex)	{}
-					String dailyAdjustMFYP =df.format(dailyAdjustMFYP1);
-					try
+				try	{
+					dailyAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("daily_adj_mfyp").toString());
+				}
+				catch(Exception ex)	{}
+				String dailyAdjustMFYP =df.format(dailyAdjustMFYP1);
+				try
+				{
+					mtdAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("mtd_adj_mfyp").toString());
+				}catch(Exception ex){}
+				String mtdAdjustMFYP = df.format(mtdAdjustMFYP1);
+				try{
+					dailyAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("appliedData").get("daily_applied_afyp").toString());
+				}catch(Exception e){}
+				String dailyAppliedAFYP = df.format(dailyAppliedAFYP1);
+				try{
+					mtdAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("appliedData").get("mtd_applied_afyp").toString());
+				}catch(Exception e){}
+				String mtdAppliedAFYP = df.format(mtdAppliedAFYP1);
+
+				try{
+					wipAFYP = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("wip_afyp").toString());
+				}catch(Exception e){}
+				try{
+					hoWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("ho_wip_afyp").toString());
+				}catch(Exception e){}
+				try{
+					goWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("go_wip_afyp").toString());
+				}catch(Exception e){}
+				try{
+					itWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("it_wip_afyp").toString());
+				}catch(Exception e){}
+				try{
+					finWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("fin_wip_afyp").toString());
+				}catch(Exception e){}
+				try{
+					miscWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("misc_wip_afyp").toString());
+				}catch(Exception e){}
+				try{
+					welcomeWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("welcome_wip_afyp").toString());
+				}catch(Exception e){}
+
+				try{
+					wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("wip_count").toString());
+				}catch(Exception e){}
+				try{
+					ho_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("ho_wip_count").toString());
+				}catch(Exception e){}
+				try{
+					go_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("go_wip_count").toString());
+				}catch(Exception e){}
+				try{
+					it_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("it_wip_count").toString());
+				}catch(Exception e){}
+				try{
+					fin_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("fin_wip_count").toString());
+				}catch(Exception e){}
+				try{
+					misc_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("misc_wip_count").toString());
+				}catch(Exception e){}
+				try{
+					welcome_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("welcome_wip_count").toString());
+				}catch(Exception e){}
+
+//				sum = sum+wipAFYP+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
+				sum3 = sum+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
+				sum = sum+wipAFYP+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
+				String convertsum  =  df.format(sum);
+				String convertsum3  =  df.format(sum3);
+
+				sum2=sum2+wip_count+ho_wip_count+go_wip_count+it_wip_count+fin_wip_count+misc_wip_count+welcome_wip_count;
+				String convertsum2  =  df1.format(sum2);
+				
+
+				if("NUMBERS".equalsIgnoreCase(action))
+				{
+					if("MONTHLY".equalsIgnoreCase(period))
 					{
-						mtdAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("mtd_adj_mfyp").toString());
-					}catch(Exception ex){}
-					String mtdAdjustMFYP = df.format(mtdAdjustMFYP1);
-					try{
-						dailyAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("appliedData").get("daily_applied_afyp").toString());
-					}catch(Exception e){}
-					String dailyAppliedAFYP = df.format(dailyAppliedAFYP1);
-					try{
-						mtdAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("appliedData").get("mtd_applied_afyp").toString());
-					}catch(Exception e){}
-					String mtdAppliedAFYP = df.format(mtdAppliedAFYP1);
-
-					try{
-						wipAFYP = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("wip_afyp").toString());
-					}catch(Exception e){}
-					try{
-						hoWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("ho_wip_afyp").toString());
-					}catch(Exception e){}
-					try{
-						goWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("go_wip_afyp").toString());
-					}catch(Exception e){}
-					try{
-						itWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("it_wip_afyp").toString());
-					}catch(Exception e){}
-					try{
-						finWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("fin_wip_afyp").toString());
-					}catch(Exception e){}
-					try{
-						miscWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("misc_wip_afyp").toString());
-					}catch(Exception e){}
-					try{
-						welcomeWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("welcome_wip_afyp").toString());
-					}catch(Exception e){}
-
-					try{
-						wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("wip_count").toString());
-					}catch(Exception e){}
-					try{
-						ho_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("ho_wip_count").toString());
-					}catch(Exception e){}
-					try{
-						go_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("go_wip_count").toString());
-					}catch(Exception e){}
-					try{
-						it_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("it_wip_count").toString());
-					}catch(Exception e){}
-					try{
-						fin_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("fin_wip_count").toString());
-					}catch(Exception e){}
-					try{
-						misc_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("misc_wip_count").toString());
-					}catch(Exception e){}
-					try{
-						welcome_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("welcome_wip_count").toString());
-					}catch(Exception e){}
-
-					sum = sum+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
-					String convertsum  =  df.format(sum);
-
-					sum2=sum2+wip_count+ho_wip_count+go_wip_count+it_wip_count+fin_wip_count+misc_wip_count+welcome_wip_count;
-					String convertsum2  =  df1.format(sum2);
-					
-
-					if("NUMBERS".equalsIgnoreCase(action))
-					{
-						if("MONTHLY".equalsIgnoreCase(period))
+						finalresponse="As of "+dtf.format(now)+
+								", the business update for "+channel+ " is :\n"
+								//+"MLI Paid Business :\n\n "
+								+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
+								//+"Applied Data: \n\n"
+								+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
+								//+"WIP Data \n\n"
+								+"WIP AFYP: " +convertsum+" Cr. \n\n ";
+						if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 						{
-							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+ " is :\n"
-									//+"MLI Paid Business :\n\n "
-									+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
-									//+"Applied Data: \n\n"
-									+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
-									//+"WIP Data \n\n"
-									+"WIP AFYP: " +convertsum+" Cr. \n\n ";
-							if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
-							{
-								finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
-							}
-							else 
-							{
-								finalresponse=finalresponse;
-							}
-						}
-
-						else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
-						{
-							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
-									+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr \n\n"
-									//+"Applied Business AFYP: \n\n"
-									+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
-									+"AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n"
-									//+"WIP Data: \n\n WIP AFYP is: " +convertsum+" Cr.";
-									+"WIP AFYP: " +convertsum+" Cr.";
+							finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 						}
 						else 
 						{
-							finalresponse="As of "+dtf.format(now)+
-									", the business update for "+channel+" is \n MLI paid business : \n\n Adj MFYP FTD :"+dailyAdjustMFYP+" Cr, \n\n"
-									+"Adj MFYP MTD : " +mtdAdjustMFYP+" Cr \n\n"
-									+"Applied Business AFYP: \n\n"
-									+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
-									+"AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n"
-									+"WIP Data:\n\n WIP AFYP is: " +convertsum+" Cr."; 
-							if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
-							{
-								finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
-							}
-							else 
-							{
-								finalresponse=finalresponse;
-							}
-						}
-					}
-					else if("AdjMFYP".equalsIgnoreCase(action))
-					{
-						if("MONTHLY".equalsIgnoreCase(period))
-						{
-							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
-									" is : "+mtdAdjustMFYP+" Cr";
-						}
-						else if(channel.equalsIgnoreCase(channel))
-						{
-							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business for" +channel+" is" +mtdAdjustMFYP+" Cr.";
-						}
-						else if("MONTHLY".equalsIgnoreCase(period) && channel.equalsIgnoreCase(channel))
-						{
-							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
-									" is : "+mtdAdjustMFYP+" Cr";
-						}
-						else {
-							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business"+
-									" FTD : " +dailyAdjustMFYP+" Cr,"
-									+" MTD : " +mtdAdjustMFYP+" Cr";
+							finalresponse=finalresponse;
 						}
 					}
 
-					else if("WIP".equalsIgnoreCase(action))
+					else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
 					{
-						if(!"".equalsIgnoreCase(channel))
+						finalresponse="As of "+dtf.format(now)+
+								", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
+								+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr \n\n"
+								//+"Applied Business AFYP: \n\n"
+								+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
+								+"AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n"
+								//+"WIP Data: \n\n WIP AFYP is: " +convertsum+" Cr.";
+								+"WIP AFYP: " +convertsum+" Cr.";
+					}
+					else 
+					{
+						finalresponse="As of "+dtf.format(now)+
+								", the business update for "+channel+" is \n MLI paid business : \n\n Adj MFYP FTD :"+dailyAdjustMFYP+" Cr, \n\n"
+								+"Adj MFYP MTD : " +mtdAdjustMFYP+" Cr \n\n"
+								+"Applied Business AFYP: \n\n"
+								+"AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
+								+"AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n"
+								+"WIP Data:\n\n WIP AFYP is: " +convertsum+" Cr."; 
+						if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 						{
-							finalresponse="Current WIP as of "+dtf.format(now)+
-									" for "+channel+" is "+convertsum2+" Policies with "+convertsum+" "
-									+ " Cr. AFYP. Do you wish to see the stage wise snapshot";
+							finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
 						}
-						else
+						else 
 						{
-							finalresponse="Current WIP as of "+dtf.format(now)+
-									" for MLI is "+convertsum2+" Policies with "+convertsum+" "
-									+ "Cr. AFYP. Do you wish to see the stage wise snapshot";
+							finalresponse=finalresponse;
 						}
 					}
+				}
+				else if("AdjMFYP".equalsIgnoreCase(action))
+				{
+					if("MONTHLY".equalsIgnoreCase(period))
+					{
+						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
+								" is : "+mtdAdjustMFYP+" Cr";
+					}
+					else if(channel.equalsIgnoreCase(channel))
+					{
+						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business for" +channel+" is" +mtdAdjustMFYP+" Cr.";
+					}
+					else if("MONTHLY".equalsIgnoreCase(period) && channel.equalsIgnoreCase(channel))
+					{
+						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
+								" is : "+mtdAdjustMFYP+" Cr";
+					}
+					else {
+						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business"+
+								" FTD : " +dailyAdjustMFYP+" Cr,"
+								+" MTD : " +mtdAdjustMFYP+" Cr";
+					}
+				}
+
+				else if("WIP".equalsIgnoreCase(action))
+				{
+					if(!"".equalsIgnoreCase(channel))
+					{
+						finalresponse="Current WIP as of "+dtf.format(now)+
+								" for "+channel+" is "+convertsum2+" Policies with "+convertsum3+" "
+								+ " Cr. AFYP. Do you wish to see the stage wise snapshot";
+					}
+					else
+					{
+						finalresponse="Current WIP as of "+dtf.format(now)+
+								" for MLI is "+convertsum2+" Policies with "+convertsum+" "
+								+ "Cr. AFYP. Do you wish to see the stage wise snapshot";
+					}
+				 }
 					else if("WIP.YES".equalsIgnoreCase(action))
 					{
 						finalresponse="WIP AFYP :" +wipAFYP+
