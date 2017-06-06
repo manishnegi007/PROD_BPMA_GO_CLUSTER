@@ -358,8 +358,8 @@ public class APIConsumerService {
 				 }
 					else if("WIP.YES".equalsIgnoreCase(action))
 					{
-						finalresponse="WIP AFYP :" +wipAFYP+
-								"\n\n HO WIP AFYP :"+convertsum3+
+						finalresponse="WIP AFYP :" +convertsum3+
+								"\n\n HO WIP AFYP :"+hoWIPAFYP+
 								"\n\n GO WIP AFYP :"+goWIPAFYP+
 								"\n\n IT WIP AFYP :"+itWIPAFYP+
 								"\n\n FIN WIP AFYP :"+finWIPAFYP+
