@@ -23,6 +23,7 @@ public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
 	{
+		System.out.println("getWipDataAll API START");
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		ResourceBundle mtd = ResourceBundle.getBundle("MTD");
 		ResourceBundle ytd = ResourceBundle.getBundle("YTD");
@@ -126,6 +127,7 @@ public class APIConsumerService {
 			if("PAID".equalsIgnoreCase(segment) || "WIP".equalsIgnoreCase(segment) 
 					|| "APPLIED".equalsIgnoreCase(segment))
 			{
+				System.out.println("First  API START Call");
 				String serviceurl = res.getString("serviceurl");
 				URL url = new URL(serviceurl);
 				if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
@@ -171,7 +173,7 @@ public class APIConsumerService {
 					}
 					conn.disconnect();
 					br.close();
-					System.out.println("External API Call : END");
+					System.out.println("First  API END Call");
 
 				}
 			}
@@ -924,6 +926,7 @@ public class APIConsumerService {
 				}
 			//	response.setSpeech(finalresponse);
 			//	response.setDisplayText(finalresponse);
+				speech=finalresponse;
 			}
 			catch(Exception e)
 			{
