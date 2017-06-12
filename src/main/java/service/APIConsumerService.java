@@ -207,7 +207,7 @@ public class APIConsumerService {
 				try {writer2.close(); } 
 				catch (Exception e1) 
 				{
-					logger.info(e1);
+					
 				}
 				int apiResponseCode2 = conn.getResponseCode();
 				if(apiResponseCode2 == 200)
@@ -219,12 +219,12 @@ public class APIConsumerService {
 					}
 					conn.disconnect();
 					br.close();
-					logger.info("External API Call : END");
+					
 
 				}
 				else
 				{
-					logger.info("Unable to connect External API");
+					
 				}
 			}
 			try
@@ -927,7 +927,7 @@ public class APIConsumerService {
 			}
 			catch(Exception e)
 			{
-				logger.info(e);
+				
 			}
 		}
 		catch(Exception ex)
