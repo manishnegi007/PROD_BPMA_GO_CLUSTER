@@ -6,24 +6,30 @@ public class WebhookResponse {
 
     private final String source = "java-webhook";
     
-    public WebhookResponse() {
+    private String speech;
+	 private String displayText;
+	 
+	 
+	 
+	public WebhookResponse() {
 		super();
 	}
-
-    public WebhookResponse(String speech, String displayText) {
-        this.speech = speech;
-        this.displayText = displayText;
-    }
-
-    public String getSpeech() {
-        return speech;
-    }
-
-    public String getDisplayText() {
-        return displayText;
-    }
-
-    public String getSource() {
-        return source;
-    }
+	public WebhookResponse(String speech, String displayText) {
+		super();
+		this.speech = speech;
+		this.displayText = displayText;
+	}
+	public String getSpeech() {
+		return speech;
+	}
+	public void setSpeech(String speech) {
+		this.speech = speech;
+	}
+	public String getDisplayText() {
+		return displayText;
+	}
+	public void setDisplayText(String displayText) {
+		this.displayText = displayText;
+	}
+	
 }
