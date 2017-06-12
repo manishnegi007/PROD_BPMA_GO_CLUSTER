@@ -74,7 +74,7 @@ public class MliBotController{
 			}
 			if(actionperformed.equalsIgnoreCase(actionperformed) && channel.equalsIgnoreCase(channel))
 			{
-				return = aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType);
+				return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType);
 			}
 		} 
 		catch (Exception e)
