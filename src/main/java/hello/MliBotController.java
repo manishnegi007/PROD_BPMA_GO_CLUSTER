@@ -78,7 +78,7 @@ public class MliBotController{
 		} 
 		catch (Exception e)
 		{
-			logger.info(e);
+			logger.info("Method : MliBootRequest :: END :: API_REQUEST :: ");
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
 		System.out.println("End : Controller: Webhook");
