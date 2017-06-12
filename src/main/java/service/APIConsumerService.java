@@ -254,6 +254,7 @@ public class APIConsumerService {
 				String grth_paid_adj_mfyp=""; String adj_mfyp_lst_mn=""; String mtd_inforced_adj_mfyp=""; String grth_ovr_lst_yr_paid="";
 				String adj_mfyp_sam_ytd_lst_yr=""; String ytd_inforced_adj_mfyp=""; String achiev_mtd_adj_mfyp=""; String pln_mtd_basis_adj_mfyp="";
 				String achiev_ytd_adj_mfyp=""; String pln_ytd_basis_adj_mfyp=""; String mtd_inforced_adj_mfyp_achi="";
+				String mtd_inforced_adj_mfyp_achi="";
 
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
 				LocalDateTime now = LocalDateTime.now();
@@ -446,6 +447,9 @@ public class APIConsumerService {
 				}catch(Exception e){}
 				try{
 					mtd_inforced_adj_mfyp_achi = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_inforced_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					ytd_inforced_adj_mfyp_achi = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_inforced_adj_mfyp").toString());
 				}catch(Exception e){}
 
 				sum3 = sum+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
@@ -667,43 +671,43 @@ public class APIConsumerService {
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 
 					}else if("Axis".equalsIgnoreCase(channel)){
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+" % of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 					}else if("Banca".equalsIgnoreCase(channel)){
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 					}else if("CAT".equalsIgnoreCase(channel)){
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 					}else if("IMF".equalsIgnoreCase(channel)){
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 					}else if("INTERNETSALES".equalsIgnoreCase(channel)){
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 					}else if("PD".equalsIgnoreCase(channel)){
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 					}else{
 						finalresponse=channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Your monthly plan is "
 								+pln_mtd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+mtd_inforced_adj_mfyp_achi+" Cr and "
 								+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Your yearly plan is "
-								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp+" Cr";
+								+pln_ytd_basis_adj_mfyp+" and till date "+dtf.format(now)+" You have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 					}
 				}
 				else if("Penetration".equalsIgnoreCase(action))
