@@ -124,8 +124,8 @@ public class APIConsumerService {
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			if("PAID".equalsIgnoreCase(segment) || "WIP".equalsIgnoreCase(segment) 
-					|| "APPLIED".equalsIgnoreCase(segment))
+			if("NUMBERS".equalsIgnoreCase(segment) || "AdjMFYP".equalsIgnoreCase(segment) 
+					|| "WIP".equalsIgnoreCase(segment) || "APPLIED".equalsIgnoreCase(segment)||"WIP.YES".equalsIgnoreCase(segment))
 			{
 				System.out.println("First  API START Call");
 				String serviceurl = res.getString("serviceurl");
