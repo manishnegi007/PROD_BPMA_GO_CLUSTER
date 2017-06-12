@@ -5,6 +5,10 @@ public class WebhookResponse {
     private final String displayText;
 
     private final String source = "java-webhook";
+    
+    public WebhookResponse() {
+		super();
+	}
 
     public WebhookResponse(String speech, String displayText) {
         this.speech = speech;
