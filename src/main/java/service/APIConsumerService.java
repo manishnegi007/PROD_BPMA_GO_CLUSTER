@@ -927,6 +927,7 @@ public class APIConsumerService {
 			//	response.setSpeech(finalresponse);
 			//	response.setDisplayText(finalresponse);
 				speech=finalresponse;
+				System.out.println("Exception>>>>>>>>>>>>"+speech);
 			}
 			catch(Exception e)
 			{
