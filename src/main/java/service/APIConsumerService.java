@@ -922,8 +922,8 @@ public class APIConsumerService {
 				{
 					finalresponse="Something gets wrong between action & channel";
 				}
-				response.setSpeech(finalresponse);
-				response.setDisplayText(finalresponse);
+			//	response.setSpeech(finalresponse);
+			//	response.setDisplayText(finalresponse);
 			}
 			catch(Exception e)
 			{
