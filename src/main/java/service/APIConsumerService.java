@@ -20,7 +20,7 @@ import common.XTrustProvider;
 import hello.WebhookResponse;
 @Component
 public class APIConsumerService {
-	private static Logger logger = LogManager.getLogger(APIConsumerService.class);
+	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
 	{
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
