@@ -197,7 +197,7 @@ public class APIConsumerService {
 				requestdata.append("	    \"rollId\":\"\"	");
 				requestdata.append("	  },	");
 				requestdata.append("	  \"payload\": {	");
-				requestdata.append("	    \"segment\": \""+segment+"\",	");
+				requestdata.append("	    \"segment\": \""+action+"\",	");
 				requestdata.append("	    \"channel\": \""+serviceChannel+"\",	");
 				requestdata.append("	    \"planType\": \""+planType+"\"	");
 				requestdata.append("	  }	");
