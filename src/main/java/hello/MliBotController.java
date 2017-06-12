@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import common.Commons;
 import service.APIConsumerService;
@@ -25,10 +26,7 @@ public class MliBotController{
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
 	
 	@Autowired
-	APIConsumerService apiConsumerService;
-	
-	//SurrenderValueHandler surrenderValueHandler;
-	//PaymentRecieptHandler paymentRecieptHandler;
+	APIConsumerService aPIConsumerService;
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) {
@@ -36,45 +34,51 @@ public class MliBotController{
 		System.out.println("CameInside :- Controller: Webhook");
 		String speech="";
 		String productType="";
+		String planType="";
 		String period="";
 		String channel="";
+		logger.info("Method : MliBootRequest :: STARTS :: API_REQUEST :: ");
+		WebhookResponse response = new WebhookResponse();
 		try 
 		{
-			JSONObject object = new JSONObject(obj.toString());
+			JSONObject object = new JSONObject(obj);
 			String actionperformed = object.getJSONObject("result").get("action")+"";
 			try{
 				channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel")+"";
 			}catch(Exception e)
 			{
+				logger.info(e);
 				channel = "";
 			}
 			try{
 				productType = object.getJSONObject("result").getJSONObject("parameters").getString("ProductType")+"";
 			}catch(Exception e)
 			{
+				logger.info(e);
 				productType="";
 			}
 			try{
 				period = object.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").getString("Period")+"";
 			}catch(Exception e)
 			{
+				logger.info(e);
 				period="";
 			}
-			
+			try{
+				planType = object.getJSONObject("result").getJSONObject("parameters").getString("planType")+"";
+			}catch(Exception e)
+			{
+				logger.info(e);
+				productType="";
+			}
 			if(actionperformed.equalsIgnoreCase(actionperformed) && channel.equalsIgnoreCase(channel))
 			{
-				return apiConsumerService.getWipDataAll(actionperformed, channel, period, productType);
-			}
-			else
-			{
-				//response.setSpeech("Inappropriate Action Get from Json");
-				//response.setDisplayText("Inappropriate Action Get from Json");
-				speech="Inappropriate Action Get from Json";
+				response = aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType);
 			}
 		} 
 		catch (Exception e)
 		{
-			System.out.println("error occured during calling MLI-Chatbot Service" + e);
+			logger.info(e);
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
 		System.out.println("End : Controller: Webhook");
