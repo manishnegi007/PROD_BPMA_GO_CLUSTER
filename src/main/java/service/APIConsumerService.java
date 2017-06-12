@@ -13,6 +13,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javax.net.ssl.HttpsURLConnection;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.json.JSONObject;
 import common.Commons;
