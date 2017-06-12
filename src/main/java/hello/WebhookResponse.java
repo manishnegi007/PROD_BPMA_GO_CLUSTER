@@ -4,7 +4,10 @@ public class WebhookResponse {
    	  String speech;
 	  String displayText;
 	  
-	  
+	  public WebhookResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public WebhookResponse(String speech, String displayText) {
 		super();
 		this.speech = speech;
