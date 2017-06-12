@@ -37,7 +37,7 @@ public class MliBotController{
 		String planType="";
 		String period="";
 		String channel="";
-		logger.info("Method : MliBootRequest :: STARTS :: API_REQUEST :: ");
+		
 		WebhookResponse response = new WebhookResponse();
 		try 
 		{
@@ -47,28 +47,28 @@ public class MliBotController{
 				channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel")+"";
 			}catch(Exception e)
 			{
-				logger.info(e);
+				
 				channel = "";
 			}
 			try{
 				productType = object.getJSONObject("result").getJSONObject("parameters").getString("ProductType")+"";
 			}catch(Exception e)
 			{
-				logger.info(e);
+				
 				productType="";
 			}
 			try{
 				period = object.getJSONObject("result").getJSONArray("contexts").getJSONObject(0).getJSONObject("parameters").getString("Period")+"";
 			}catch(Exception e)
 			{
-				logger.info(e);
+				
 				period="";
 			}
 			try{
 				planType = object.getJSONObject("result").getJSONObject("parameters").getString("planType")+"";
 			}catch(Exception e)
 			{
-				logger.info(e);
+				
 				productType="";
 			}
 			if(actionperformed.equalsIgnoreCase(actionperformed) && channel.equalsIgnoreCase(channel))
@@ -78,7 +78,7 @@ public class MliBotController{
 		} 
 		catch (Exception e)
 		{
-			logger.info("Method : MliBootRequest :: END :: API_REQUEST :: ");
+			
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
 		System.out.println("End : Controller: Webhook");
