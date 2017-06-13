@@ -1,25 +1,38 @@
 package hello;
 
 public class WebhookResponse {
-    private final String speech;
-    private final String displayText;
+   	  String speech;
+	  String displayText;
+	  
+	  public WebhookResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public WebhookResponse(String speech, String displayText) {
+		super();
+		this.speech = speech;
+		this.displayText = displayText;
+	}
 
-    private final String source = "java-webhook";
 
-    public WebhookResponse(String speech, String displayText) {
-        this.speech = speech;
-        this.displayText = displayText;
-    }
+	public String getSpeech() {
+		return speech;
+	}
 
-    public String getSpeech() {
-        return speech;
-    }
 
-    public String getDisplayText() {
-        return displayText;
-    }
+	public void setSpeech(String speech) {
+		this.speech = speech;
+	}
 
-    public String getSource() {
-        return source;
-    }
+
+	public String getDisplayText() {
+		return displayText;
+	}
+
+
+	public void setDisplayText(String displayText) {
+		this.displayText = displayText;
+	}
+	 
+	
 }
