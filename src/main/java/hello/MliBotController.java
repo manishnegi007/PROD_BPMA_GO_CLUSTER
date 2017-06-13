@@ -70,7 +70,7 @@ public class MliBotController{
 			}catch(Exception e)
 			{
 				
-				productType="";
+				planType="";
 			}
 			if(actionperformed.equalsIgnoreCase(actionperformed) && channel.equalsIgnoreCase(channel))
 			{
