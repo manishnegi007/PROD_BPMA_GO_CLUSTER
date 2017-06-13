@@ -242,7 +242,7 @@ public class APIConsumerService {
 				double miscWIPAFYP=0;		double welcomeWIPAFYP=0;	double wip_count=0;
 				double ho_wip_count=0;		double go_wip_count=0;		double it_wip_count=0;
 				double fin_wip_count=0;		double misc_wip_count=0;	double welcome_wip_count=0;
-				double ytd_inforced_afyp1=0;double ytd_applied_afyp1=0; double mtd_inforced_afyp1=0;
+				double ytd_inforced_afyp1=0;double ytd_applied_afyp1=0; double mtd_inforced_afyp1=0; double ytd_adj_mfyp1=0;
 				double sum = 0; double sum2=0; double sum3 = 0; double sum4 = 0;
 				String 	ul_penet_mtd_afyp="";	String 	ul_penet_ytd_afyp="";  String 	ul_penet_mtd_pol_cnt="";   String ul_penet_ytd_pol_cnt="";
 				String 	ul_mtd_afyp="";	String 	ul_ytd_afyp="";	String 	ul_mtd_pol_cnt="";	String 	ul_ytd_pol_cnt="";	String 	trad_penet_mtd_afyp="";
@@ -258,6 +258,11 @@ public class APIConsumerService {
 
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
 				LocalDateTime now = LocalDateTime.now();
+				try	{
+						ytd_adj_mfyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("ytd_adj_mfyp").toString());
+					}
+					catch(Exception ex)	{}
+					String ytd_adj_mfyp =df.format(ytd_adj_mfyp1);
 
 				try	{
 					dailyAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("daily_adj_mfyp").toString());
@@ -508,29 +513,29 @@ public class APIConsumerService {
 					}
 				}
 				else if("AdjMFYP".equalsIgnoreCase(action))
-				{
-					if("MONTHLY".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
-								" is : "+mtd_inforced_afyp_enforce+" Cr";
+						if("MONTHLY".equalsIgnoreCase(period))
+						{
+							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
+									" is : "+mtdAdjustMFYP+" Cr";
+						}
+						else if(channel.equalsIgnoreCase(channel))
+						{
+							finalresponse="As of "+dtf.format(now)+" Monthly Applied AFYP Business" +
+									" is : "+mtdAdjustMFYP+" Cr and Yearly Applied AFYP Business is : "+ytd_adj_mfyp+ " for "+channel+"";
+						}
+						else if("MONTHLY".equalsIgnoreCase(period) && channel.equalsIgnoreCase(channel))
+						{
+							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
+									" is : "+mtdAdjustMFYP+" Cr";
+						}
+						else {
+							finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business"+
+									" FTD : " +dailyAdjustMFYP+" Cr,"
+									+" MTD : " +mtdAdjustMFYP+" Cr"
+									+" YTD : " +ytd_adj_mfyp+" Cr";
+						}
 					}
-					else if(channel.equalsIgnoreCase(channel))
-					{
-						finalresponse="As of "+dtf.format(now)+" Monthly Applied AFYP Business" +
-								" is : "+mtd_inforced_afyp_enforce+" Cr and Yearly Applied AFYP Business is : "+ytd_inforced_afyp_enforce+ " for "+channel+"";
-					}
-					else if("MONTHLY".equalsIgnoreCase(period) && channel.equalsIgnoreCase(channel))
-					{
-						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business" +
-								" is : "+mtd_inforced_afyp_enforce+" Cr";
-					}
-					else {
-						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business"+
-								" FTD : " +dailyAdjustMFYP+" Cr,"
-								+" MTD : " +mtd_inforced_afyp_enforce+" Cr"
-								+" YTD : " +ytd_inforced_afyp_enforce+" Cr";
-					}
-				}
 
 				else if("WIP".equalsIgnoreCase(action))
 				{
