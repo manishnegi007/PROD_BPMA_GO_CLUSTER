@@ -463,7 +463,7 @@ public class APIConsumerService {
 				{
 					if("MONTHLY".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+dtf.format(now)+
+						finalresponse="As of "+real_tim_timstamp+
 								", the business update for "+channel+ " is :\n"
 								+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
 								+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
@@ -475,7 +475,7 @@ public class APIConsumerService {
 					}
 					else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
 					{
-						finalresponse="As of "+dtf.format(now)+
+						finalresponse="As of "+real_tim_timstamp+
 								", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
@@ -486,7 +486,7 @@ public class APIConsumerService {
 					}
 					else 
 					{
-						finalresponse="As of "+dtf.format(now)+
+						finalresponse="As of "+real_tim_timstamp+
 								", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
@@ -504,16 +504,16 @@ public class APIConsumerService {
 				{
 					if("MONTHLY".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+dtf.format(now)+" Paid AdjMFYP Business" +
+						finalresponse="As of "+real_tim_timstamp+" Paid AdjMFYP Business" +
 								" is : "+mtdAdjustMFYP+" Cr";
 					}
 					else if(channel.equalsIgnoreCase(channel))
 					{
-						finalresponse="As of "+dtf.format(now)+"  Paid AdjMFYP Business" +
+						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business" +
 								" is : "+mtdAdjustMFYP+" Cr and Yearly Paid AdjMFYP Business is : "+ytd_adj_mfyp+ " for "+channel+"";
 					}
 					else {
-						finalresponse="As of "+dtf.format(now)+" paid AdjMFYP Business"+
+						finalresponse="As of "+real_tim_timstamp+" paid AdjMFYP Business"+
 								" FTD : " +dailyAdjustMFYP+" Cr,"
 								+" MTD : " +mtdAdjustMFYP+" Cr"
 								+" YTD : " +ytd_adj_mfyp+" Cr";
@@ -524,13 +524,13 @@ public class APIConsumerService {
 				{
 					if(!"".equalsIgnoreCase(channel))
 					{
-						finalresponse="Current WIP as of "+dtf.format(now)+
+						finalresponse="Current WIP as of "+real_tim_timstamp+
 								" for "+channel+" is "+convertsum4+" Policies with "+convertsum3+" "
 								+ " Cr. AFYP. Do you wish to see the stage wise snapshot";
 					}
 					else
 					{
-						finalresponse="Current WIP as of "+dtf.format(now)+
+						finalresponse="Current WIP as of "+real_tim_timstamp+
 								" for MLI is "+convertsum4+" Policies with "+convertsum3+" "
 								+ "Cr. AFYP. Do you wish to see the stage wise snapshot";
 					}
@@ -549,19 +549,19 @@ public class APIConsumerService {
 				{
 					if("MONTHLY".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+dtf.format(now)+" AFYP Business Applied MTD"  +
+						finalresponse="As of "+real_tim_timstamp+" AFYP Business Applied MTD"  +
 								" is : "+mtdAppliedAFYP+" Cr for "+channel+"";
 					}
 					else if(!"".equalsIgnoreCase(channel))
 					{
-						finalresponse="As of "+dtf.format(now)+"\n"+
+						finalresponse="As of "+real_tim_timstamp+"\n"+
 								" FTD : " +dailyAppliedAFYP+" Cr \n\n"+
 								" AFYP Business Applied MTD " +
 								" is : "+mtdAppliedAFYP+" Cr and  Applied AFYP Business YTD is : "+ytd_applied_afyp+ " for "+channel+"";
 					}
 					else
 					{
-						finalresponse="As of "+dtf.format(now)+" Applied AFYP"+
+						finalresponse="As of "+real_tim_timstamp+" Applied AFYP"+
 								"  is: "
 								+ " FTD : " +dailyAppliedAFYP+" Cr"
 								+", MTD is: " +mtdAppliedAFYP+" Cr"
@@ -585,9 +585,9 @@ public class APIConsumerService {
 				else if("Achievement".equalsIgnoreCase(action))
 				{
 					finalresponse="At MTD level "+channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Our monthly plan is "
-							+pln_mtd_basis_adj_mfyp+" and till "+dtf.format(now)+" We have achieved "+mtd_inforced_adj_mfyp_achi+" Cr, At YTD level "
+							+pln_mtd_basis_adj_mfyp+" and till "+real_tim_timstamp+" We have achieved "+mtd_inforced_adj_mfyp_achi+" Cr, At YTD level "
 							+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Our yearly plan is "
-							+pln_ytd_basis_adj_mfyp+" and till "+dtf.format(now)+" We have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
+							+pln_ytd_basis_adj_mfyp+" and till "+real_tim_timstamp+" We have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 				}
 				else if("Penetration".equalsIgnoreCase(action))
 				{
