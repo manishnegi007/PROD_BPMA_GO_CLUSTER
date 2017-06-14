@@ -134,9 +134,7 @@ public class APIConsumerService {
 				{
 					Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
 					conn = (HttpURLConnection) url.openConnection(proxy);
-				}
-				else
-				{
+				}else{
 					conn = (HttpURLConnection) url.openConnection();
 				}
 				HttpsURLConnection.setFollowRedirects(true);
@@ -168,13 +166,12 @@ public class APIConsumerService {
 				{
 					BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 					while ((output = br.readLine()) != null) 
-					{
-						result.append(output);
-					}
+					{result.append(output);}
 					conn.disconnect();
 					br.close();
-					System.out.println("First  API END Call");
-
+					System.out.println("External API Call : END");
+				}else{
+					System.out.println("Unable to call External API :- WIP, APPLIED, ENFORCE");
 				}
 			}
 			else
@@ -209,18 +206,18 @@ public class APIConsumerService {
 				try {writer2.close(); } 
 				catch (Exception e1) 
 				{
-					
+				    System.out.println("We are in Exception in to Close the writer object");
 				}
 				int apiResponseCode2 = conn.getResponseCode();
 				if(apiResponseCode2 == 200)
 				{
 					BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 					while ((output = br.readLine()) != null) 
-					{
-						result.append(output);
-					}
+					{result.append(output);}
 					conn.disconnect();
 					br.close();
+				}else{
+					System.out.println("Unable to connect External API");
 				}
 			}
 			try
@@ -457,10 +454,7 @@ public class APIConsumerService {
 				sum = sum+wipAFYP+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
 				String convertsum  =  df.format(sum);
 				String convertsum3  =  df.format(sum3);
-
-				sum2=sum2+wip_count+ho_wip_count+go_wip_count+it_wip_count+fin_wip_count+misc_wip_count+welcome_wip_count;
 				sum4=sum4+ho_wip_count+go_wip_count+it_wip_count+fin_wip_count+misc_wip_count+welcome_wip_count;
-				String convertsum2  =  df1.format(sum2);
 				String convertsum4  =  df1.format(sum4);
 
 				if("NUMBERS".equalsIgnoreCase(action))
@@ -647,12 +641,12 @@ public class APIConsumerService {
 			}
 			catch(Exception e)
 			{
-				
+			   System.out.println("Something went wrong in Bot Logic");
 			}
 		}
 		catch(Exception ex)
 		{
-			System.out.println("Exception>>>>>>>>>>>>"+ex);
+			System.out.println("Exception In Outer Catch"+ex);
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
 		System.out.println("End : Controller: Webhook");
