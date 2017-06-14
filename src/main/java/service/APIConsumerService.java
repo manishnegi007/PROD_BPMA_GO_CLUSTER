@@ -551,23 +551,23 @@ public class APIConsumerService {
 				{
 					if("MONTHLY".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+real_tim_timstamp+" AFYP Business Applied MTD"  +
-								" is : "+mtdAppliedAFYP+" Cr for "+channel+"";
+						finalresponse="As of "+real_tim_timstamp+" Applied Business AFYP MTD For "+channel+
+								": "+mtdAppliedAFYP+" Cr for "+channel+"";
 					}
 					else if(!"".equalsIgnoreCase(channel))
 					{
-						finalresponse="As of "+real_tim_timstamp+"\n"+
-								" FTD : " +dailyAppliedAFYP+" Cr \n\n"+
-								" AFYP Business Applied MTD " +
-								" is : "+mtdAppliedAFYP+" Cr and  Applied AFYP Business YTD is : "+ytd_applied_afyp+ " for "+channel+"";
+						finalresponse="As of "+real_tim_timstamp+" Applied AFYP For "+channel+"  is: "
+								+ " FTD : " +dailyAppliedAFYP+" Cr"
+								+", MTD : " +mtdAppliedAFYP+" Cr"
+								+", YTD : " +ytd_applied_afyp+" Cr";
 					}
 					else
 					{
 						finalresponse="As of "+real_tim_timstamp+" Applied AFYP"+
 								"  is: "
 								+ " FTD : " +dailyAppliedAFYP+" Cr"
-								+", MTD is: " +mtdAppliedAFYP+" Cr"
-								+", YTD is: " +ytd_applied_afyp+" Cr";
+								+", MTD : " +mtdAppliedAFYP+" Cr"
+								+", YTD : " +ytd_applied_afyp+" Cr";
 					}
 				}
 				else if("Growth".equalsIgnoreCase(action))
