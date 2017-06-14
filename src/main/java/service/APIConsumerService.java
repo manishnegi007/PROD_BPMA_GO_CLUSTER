@@ -45,15 +45,11 @@ public class APIConsumerService {
 					{
 						segment = "paid,wip,applied";
 						serviceChannel = "";
-					}
-					else
-					{
+					}else{
 						segment = "paid,wip,applied";
 						serviceChannel = "Axis Bank";
 					}
-				}
-				else
-				{
+				}else{
 					segment = "paid,wip,applied";
 					serviceChannel = channel;
 				}
@@ -67,15 +63,11 @@ public class APIConsumerService {
 					{
 						segment="paid";
 						serviceChannel = "";
-					}
-					else
-					{
+					}else{
 						segment="paid";
 						serviceChannel = "Axis Bank";
 					}
-				}
-				else
-				{
+				}else{
 					segment="paid";
 					serviceChannel = channel;
 				}
@@ -88,14 +80,11 @@ public class APIConsumerService {
 					{
 						segment="wip";
 						serviceChannel = "";
-					}else
-					{
+					}else{
 						segment="wip";
 						serviceChannel = "Axis Bank";
 					}
-				}
-				else
-				{
+				}else{
 					segment="wip";
 					serviceChannel = channel;
 				}
@@ -108,15 +97,11 @@ public class APIConsumerService {
 					{
 						segment="applied";
 						serviceChannel = "";
-					}
-					else
-					{
+					}else{
 						segment="applied";
 						serviceChannel = "Axis Bank";
 					}
-				}
-				else
-				{
+				}else{
 					segment="applied";
 					serviceChannel = channel;
 				}
@@ -173,8 +158,7 @@ public class APIConsumerService {
 				}else{
 					System.out.println("Unable to call External API :- WIP, APPLIED, ENFORCE");
 				}
-			}
-			else
+			}else
 			{
 				String serviceurl2 = res.getString("serviceurl2");
 				URL url2 = new URL(serviceurl2);
