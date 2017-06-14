@@ -229,6 +229,8 @@ public class APIConsumerService {
 				String adj_mfyp_sam_ytd_lst_yr=""; String ytd_inforced_adj_mfyp=""; String achiev_mtd_adj_mfyp=""; String pln_mtd_basis_adj_mfyp="";
 				String achiev_ytd_adj_mfyp=""; String pln_ytd_basis_adj_mfyp=""; String mtd_inforced_adj_mfyp_achi="";
 				String ytd_inforced_adj_mfyp_achi=""; String real_tim_timstamp="";
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
+				LocalDateTime now = LocalDateTime.now();
 				for(int i=0;i<1;i++){
 					try{
 						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("enforceData").get("real_tim_timstamp").toString();
@@ -524,13 +526,13 @@ public class APIConsumerService {
 				{
 					if(!"".equalsIgnoreCase(channel))
 					{
-						finalresponse="Current WIP as of "+real_tim_timstamp+
+						finalresponse="Current WIP as of "+dtf.format(now)+
 								" for "+channel+" is "+convertsum4+" Policies with "+convertsum3+" "
 								+ " Cr. AFYP. Do you wish to see the stage wise snapshot";
 					}
 					else
 					{
-						finalresponse="Current WIP as of "+real_tim_timstamp+
+						finalresponse="Current WIP as of "+dtf.format(now)+
 								" for MLI is "+convertsum4+" Policies with "+convertsum3+" "
 								+ "Cr. AFYP. Do you wish to see the stage wise snapshot";
 					}
