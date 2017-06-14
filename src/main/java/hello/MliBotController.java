@@ -21,7 +21,7 @@ import service.APIConsumerService;
 public class MliBotController{
 
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
-        public static Map<String, Map<String,String>> sessionMap = new HashMap<String, Map<String,String>>();
+        public static Map<String, Map<String,String>> sessionMap = new ConcurrentHashMap<String, Map<String,String>>();
 	
 	@Autowired
 	APIConsumerService aPIConsumerService;
