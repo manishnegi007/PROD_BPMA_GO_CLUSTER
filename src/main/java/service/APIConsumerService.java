@@ -34,7 +34,6 @@ public class APIConsumerService {
 		String segment="";
 		String serviceChannel="";
 		String speech="";
-
      		try 
 		{
 			if("NUMBERS".equalsIgnoreCase(action))
