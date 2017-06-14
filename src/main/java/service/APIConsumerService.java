@@ -228,11 +228,30 @@ public class APIConsumerService {
 				String grth_paid_adj_mfyp=""; String adj_mfyp_lst_mn=""; String mtd_inforced_adj_mfyp=""; String grth_ovr_lst_yr_paid="";
 				String adj_mfyp_sam_ytd_lst_yr=""; String ytd_inforced_adj_mfyp=""; String achiev_mtd_adj_mfyp=""; String pln_mtd_basis_adj_mfyp="";
 				String achiev_ytd_adj_mfyp=""; String pln_ytd_basis_adj_mfyp=""; String mtd_inforced_adj_mfyp_achi="";
-				String ytd_inforced_adj_mfyp_achi="";
-
-				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
-				LocalDateTime now = LocalDateTime.now();
-				try	{
+				String ytd_inforced_adj_mfyp_achi=""; String real_tim_timstamp="";
+				for(int i=0;i<1;i++){
+					try{
+						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("enforceData").get("real_tim_timstamp").toString();
+						if(real_tim_timstamp!=null){break;}
+					}catch(Exception ex){}
+					try{
+						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("appliedData").get("real_tim_timstamp").toString();
+						if(real_tim_timstamp!=null){break;}
+					}catch(Exception ex){}
+					try{
+						real_tim_timstamp= object.getJSONObject("payload").getJSONObject("penetration").get("real_tim_timstamp").toString();
+						if(real_tim_timstamp!=null){break;}
+					}catch(Exception ex){}
+					try{
+						real_tim_timstamp = (object.getJSONObject("payload").getJSONObject("growth").get("real_tim_timstamp").toString());
+						if(real_tim_timstamp!=null){break;}
+					}catch(Exception e){}
+					try{
+						real_tim_timstamp = (object.getJSONObject("payload").getJSONObject("achievement").get("real_tim_timstamp").toString());
+						if(real_tim_timstamp!=null){break;}
+					}catch(Exception e){}
+				}
+				try{
 					dailyAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("daily_adj_mfyp").toString());
 				}
 				catch(Exception ex)	{}
