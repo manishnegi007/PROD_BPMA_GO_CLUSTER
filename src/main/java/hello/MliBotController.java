@@ -107,7 +107,7 @@ public class MliBotController{
 				}
 				if(!actionperformed.equalsIgnoreCase("") && actionperformed!=null)
 				{
-					response = aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType);
+					return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType);
 				}
 			}
 			else
@@ -120,7 +120,7 @@ public class MliBotController{
 				sessionMap.put(sessionId, map);
 				if(!actionperformed.equalsIgnoreCase("") && actionperformed!=null)
 				{
-					response = aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType);
+					return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType);
 				}
 			}
 		} 
