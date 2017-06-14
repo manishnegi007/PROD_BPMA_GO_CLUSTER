@@ -506,13 +506,13 @@ public class APIConsumerService {
 				{
 					if("MONTHLY".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+real_tim_timstamp+" Paid AdjMFYP Business" +
+						finalresponse="As of "+real_tim_timstamp+" Paid AdjMFYP Business for "+channel+
 								" is : "+mtdAdjustMFYP+" Cr";
 					}
-					else if(channel.equalsIgnoreCase(channel))
+					else if(!"".equalsIgnoreCase(channel))
 					{
 						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business" +
-								" is : "+mtdAdjustMFYP+" Cr and Yearly Paid AdjMFYP Business is : "+ytd_adj_mfyp+ " for "+channel+"";
+								" is : "+mtdAdjustMFYP+" Cr and Yearly Paid AdjMFYP Business is : "+ytd_adj_mfyp+" Cr for "+channel+"";
 					}
 					else {
 						finalresponse="As of "+real_tim_timstamp+" paid AdjMFYP Business"+
