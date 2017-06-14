@@ -621,7 +621,7 @@ public class APIConsumerService {
 					finalresponse="Something gets wrong between action & channel";
 				}
 				speech=finalresponse;
-				System.out.println("Exception>>>>>>>>>>>>"+speech);
+				System.out.println("FinalResponse:- "+speech);
 			}
 			catch(Exception e)
 			{
@@ -633,7 +633,7 @@ public class APIConsumerService {
 			System.out.println("Exception In Outer Catch"+ex);
 		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
-		System.out.println("End : Controller: Webhook");
+		System.out.println("End : Response"+ speech);
 		return responseObj;
 	}
 
