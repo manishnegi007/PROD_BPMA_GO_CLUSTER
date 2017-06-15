@@ -245,14 +245,13 @@ public class MliBotController{
 		StringBuilder result = new StringBuilder();
 		Map<String, Map<String,String>> cashData=null;
 		Map<String,String> blankmessage= new HashMap<String,String>();
-		ResourceBundle res = ResourceBundle.getBundle("com.qc.bot.resources.application");
 		try 
 		{
 			MliBotController mliBotController= new MliBotController();
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			String serviceurl3 = res.getString("servicegetphoneno");
+			String serviceurl3 = resProp.getString("servicegetphoneno");
 			URL url3 = new URL(serviceurl3);
 			if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
 			{
@@ -350,13 +349,12 @@ public class MliBotController{
 		String randomotp="";
 		StringBuilder result = new StringBuilder();
 		Map<String,String> otpsession= new HashMap<String,String>();
-		ResourceBundle res = ResourceBundle.getBundle("com.qc.bot.resources.application");
 		try 
 		{
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			String serviceurl = res.getString("servicesendotp");
+			String serviceurl = resProp.getString("servicesendotp");
 			URL url = new URL(serviceurl);
 			if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
 			{
