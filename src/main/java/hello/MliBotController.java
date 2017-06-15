@@ -68,6 +68,7 @@ public class MliBotController{
 
 			if("SSO.Validation".equalsIgnoreCase(actionperformed))
 			{
+				System.out.println("SSOValidation API START");
 				password = object.getJSONObject("result").getJSONObject("parameters").get("password")+"";
 				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
 				sessionId=object.get("sessionId")+"";
@@ -77,6 +78,7 @@ public class MliBotController{
 				Map<String,String> cashMap= returnmap.get(sessionId);
 				SoaStatus=cashMap.get("SoaStatus");
 				PhoneStatus=cashMap.get("PhoneStatus");
+				System.out.println("SSO Validation API END");
 				if("success".equalsIgnoreCase(SoaStatus))
 				{
 				speech="I need to verify the OTP which was sent on your registered mobile number. Please enter it here";
@@ -96,6 +98,7 @@ public class MliBotController{
 			}
 			else if("nb.OTP.Validation".equalsIgnoreCase(actionperformed))
 			{
+				System.out.println("OTP Validation API START");
 				String AgentName="";
 				String cashOTP="";
 				if(sessionMapcontainssoinfo.containsKey(sessionId))
@@ -107,6 +110,7 @@ public class MliBotController{
 					{
 						speech="Hi "+AgentName+" How can i help you";
 						cashMap.put("Validation", "success");
+						System.out.println("OTP Validation API END");
 					}
 					else
 					{
