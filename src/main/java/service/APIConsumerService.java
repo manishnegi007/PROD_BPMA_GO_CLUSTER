@@ -595,13 +595,13 @@ public class APIConsumerService {
 				{
 					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period))
 					{
-						if("ULIP".equalsIgnoreCase(planType))
+						if("ULIP".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+ul_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 									+" Cr of paid business AFYP MTD and "+ul_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 									+ " issued on MTD basis";
 						}
-						else if("TRAD".equalsIgnoreCase(planType))
+						else if("TRAD".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+trad_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 									+" Cr of paid business AFYP MTD and "+trad_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
@@ -616,13 +616,13 @@ public class APIConsumerService {
 					}
 					else
 					{
-						if("ULIP".equalsIgnoreCase(planType))
+						if("ULIP".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+ul_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
 									" Cr of paid business AFYP YTD and "+ul_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 									+ " issued on YTD basis";
 						}
-						else if("TRAD".equalsIgnoreCase(planType))
+						else if("TRAD".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+trad_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
 									" Cr of paid business AFYP YTD and "+trad_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
