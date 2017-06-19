@@ -236,7 +236,7 @@ public class MliBotController{
 		return responseObj;
 	}
 
-	public Map<String, Map<String,String>> APICallSSOValidation(String ssoId, String password, String sessionId)
+	public Map<String, Map<String,String>> APICallSSOValidation(String ssoId, String sessionId)
 	{
 		String phoneNo="";	String agentName="";
 		String DevMode = "N";
@@ -251,7 +251,7 @@ public class MliBotController{
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			String serviceurl3 = resProp.getString("servicegetphoneno");
+			String serviceurl3 = resProp.getString("servicephoneno");
 			URL url3 = new URL(serviceurl3);
 			if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
 			{
@@ -280,8 +280,7 @@ public class MliBotController{
 			requestdata.append("	            \"requestPayload\": {	");
 			requestdata.append("	                \"transactions\": [	");
 			requestdata.append("	                    {	");
-			requestdata.append("	                        \"ssoId\": \""+ssoId+"\",	");
-			requestdata.append("	                        \"ssoPassword\": \""+password+"\"	");
+			requestdata.append("	                        \"ssoId\": \""+ssoId+"\"");
 			requestdata.append("	                    }	");
 			requestdata.append("	                ]	");
 			requestdata.append("	            }	");
@@ -311,7 +310,7 @@ public class MliBotController{
 					agentName = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnyldisplayname")+"";
 					if(phoneNo!=null && !"".equalsIgnoreCase(phoneNo))
 					{
-						cashData = mliBotController.OTPVarification(sessionId, phoneNo, agentName);
+						cashData = mliBotController.OTPVarification(sessionId, phoneNo, agentName, ssoId);
 					}
 					else
 					{
@@ -340,7 +339,7 @@ public class MliBotController{
 		}
 		return cashData;
 	}
-	public Map<String,Map<String,String>> OTPVarification(String sessionId, String phoneno, String agentName)
+	public Map<String,Map<String,String>> OTPVarification(String sessionId, String phoneno, String agentName, String ssoId)
 	{
 		String DevMode = "N";
 		HttpURLConnection conn = null;
@@ -414,6 +413,7 @@ public class MliBotController{
 					otpsession.put("AgentName", agentName);
 					otpsession.put( "otp", randomotp);
 					otpsession.put("SoaStatus", "success");
+					otpsession.put("validSSOID", ssoId);
 					sessionMapcontainssoinfo.put(sessionId, otpsession);
 				}
 				catch(Exception e)
