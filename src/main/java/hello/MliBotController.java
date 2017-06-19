@@ -69,11 +69,10 @@ public class MliBotController{
 			if("SSO.Validation".equalsIgnoreCase(actionperformed))
 			{
 				System.out.println("SSOValidation API START");
-				password = object.getJSONObject("result").getJSONObject("parameters").get("password")+"";
 				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
 				sessionId=object.get("sessionId")+"";
 				System.out.println("APICallSSOValidation API CALL START");
-				Map<String, Map<String,String>> returnmap = mliBotController.APICallSSOValidation(ssoId, password, sessionId );
+				Map<String, Map<String,String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId );
 				System.out.println("APICallSSOValidation API CALL END");
 				String SoaStatus="";
 				String PhoneStatus="";
