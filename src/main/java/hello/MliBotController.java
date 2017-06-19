@@ -308,7 +308,7 @@ public class MliBotController{
 				try{
 					phoneNo	 = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnylpreferredmobile")+"";
 					phoneNo="7503170576";
-					agentName = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnyldisplayname")+"";
+					agentName = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("givenname")+"";
 					if(phoneNo!=null && !"".equalsIgnoreCase(phoneNo))
 					{
 						cashData = mliBotController.OTPVarification(sessionId, phoneNo, agentName, ssoId);
