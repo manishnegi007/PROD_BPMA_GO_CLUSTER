@@ -126,9 +126,11 @@ public class MliBotController{
 			}
 			else if("close.conversation".equalsIgnoreCase(actionperformed))
 			{
+				
 				if(sessionMapcontainssoinfo.containsKey(sessionId))
 				{
 					sessionMapcontainssoinfo.remove(sessionId);
+					System.out.println("close conversation");
 					speech = "Thank you for contacting Max Life. Have a great day!";
 				}
 				else{
@@ -411,6 +413,7 @@ public class MliBotController{
 					otpsession.put("Status", status);
 					otpsession.put("AgentName", agentName);
 					otpsession.put( "otp", randomotp);
+					System.out.println("valid otp");
 					otpsession.put("SoaStatus", "success");
 					otpsession.put("validSSOID", ssoId);
 					sessionMapcontainssoinfo.put(sessionId, otpsession);
