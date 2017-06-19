@@ -64,8 +64,7 @@ public class MliBotController{
 				userOTP = object.getJSONObject("result").getJSONObject("parameters").get("number")+"";
 			}catch(Exception e){System.out.println("Not getting OTP");}
 			String ssoId="";
-			String password="";
-
+		        
 			if("SSO.Validation".equalsIgnoreCase(actionperformed))
 			{
 				System.out.println("SSOValidation API START");
