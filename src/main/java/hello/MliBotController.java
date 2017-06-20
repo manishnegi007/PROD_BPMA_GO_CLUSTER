@@ -413,7 +413,7 @@ public class MliBotController{
 					otpsession.put("Status", status);
 					otpsession.put("AgentName", agentName);
 					otpsession.put( "otp", randomotp);
-					System.out.println("valid otp");
+					System.out.println(randomotp);
 					otpsession.put("SoaStatus", "success");
 					otpsession.put("validSSOID", ssoId);
 					sessionMapcontainssoinfo.put(sessionId, otpsession);
