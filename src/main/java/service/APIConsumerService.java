@@ -539,6 +539,8 @@ public class APIConsumerService {
 				}
 				else if("WIP.YES".equalsIgnoreCase(action))
 				{
+					if(!"".equalsIgnoreCase(channel))
+					{
 					finalresponse="WIP AFYP :" +convertsum3+
 							"\n\n HO WIP AFYP :"+hoWIPAFYP+
 							"\n\n GO WIP AFYP :"+goWIPAFYP+
@@ -546,6 +548,17 @@ public class APIConsumerService {
 							"\n\n FIN WIP AFYP :"+finWIPAFYP+
 							"\n\n MISC WIP AFYP :"+miscWIPAFYP+
 							"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"";
+					}
+					else
+					{
+						finalresponse="WIP AFYP :" +convertsum3+
+								"\n\n HO WIP AFYP :"+hoWIPAFYP+
+								"\n\n GO WIP AFYP :"+goWIPAFYP+
+								"\n\n IT WIP AFYP :"+itWIPAFYP+
+								"\n\n FIN WIP AFYP :"+finWIPAFYP+
+								"\n\n MISC WIP AFYP :"+miscWIPAFYP+
+								"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"";
+					}
 				}
 				else if("APPLIED".equalsIgnoreCase(action))
 				{
