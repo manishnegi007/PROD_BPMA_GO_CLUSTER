@@ -264,7 +264,7 @@ public class MliBotController{
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
 			//String serviceurl3 = resProp.getString("servicephoneno");
-                        String serviceurl3 = res.getString("serviceproduction");
+                        String serviceurl3 = resProp.getString("serviceproduction");
 			URL url3 = new URL(serviceurl3);
 			if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
 			{
