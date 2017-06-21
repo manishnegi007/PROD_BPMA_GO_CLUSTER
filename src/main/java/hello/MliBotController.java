@@ -287,7 +287,7 @@ public class MliBotController{
 			requestdata.append("	            \"soaMsgVersion\": \"1.0\",	");
 			requestdata.append("	            \"soaAppId\": \"MISBOT\",	");
 			requestdata.append("	            \"soaUserId\": \"MISBOTPROD123\",	");
-			requestdata.append("	            \"soaPassword\": \"cGFzd29yZDU\"	");
+			requestdata.append("	            \"soaPassword\": \"cGFzd29yZDU=\"	");
 			requestdata.append("	        },	");
 			requestdata.append("	        \"requestData\": {	");
 			requestdata.append("	            \"requestPayload\": {	");
