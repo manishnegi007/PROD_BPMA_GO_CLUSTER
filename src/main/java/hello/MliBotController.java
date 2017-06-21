@@ -34,7 +34,7 @@ public class MliBotController{
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
         public static Map<String, Map<String,String>> sessionMap = new ConcurrentHashMap<String, Map<String,String>>();
 	public static Map<String, Map<String,String>> sessionMapcontainssoinfo = new ConcurrentHashMap<String, Map<String,String>>();
-	public static Map<String,String> otpsession= new HashMap<String,String>();
+	
 
 	@Autowired
 	APIConsumerService aPIConsumerService;
@@ -71,11 +71,13 @@ public class MliBotController{
 				System.out.println("SSOValidation API START");
 				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
 				sessionId=object.get("sessionId")+"";
-				if(otpsession.get("validSSOID")!=null && otpsession.get("validSSOID").equalsIgnoreCase(ssoId))
+				Map otpsessionMap=sessionMapcontainssoinfo.get(sessionId);
+				
+				if(otpsessionMap.get("validSSOID")!=null && otpsessionMap.get("validSSOID").toString().equalsIgnoreCase(ssoId))
 				{
 					speech="Already validated";
 				}
-				else if(otpsession.get("validSSOID")==null)
+				else if(otpsessionMap.get("validSSOID")==null)
 				{
 					Map<String, Map<String,String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId );
 					String SoaStatus="";
@@ -101,7 +103,7 @@ public class MliBotController{
 					}
 			
 				}
-				if(!otpsession.get("validSSOID").equalsIgnoreCase(ssoId))
+				if(!otpsessionMap.get("validSSOID").toString().equalsIgnoreCase(ssoId))
 				{
 					speech="You are trying to be login as different user. Please close earlier conversation to proceed";
 				}
@@ -141,7 +143,7 @@ public class MliBotController{
 				if(sessionMapcontainssoinfo.containsKey(sessionId))
 				{
 					sessionMapcontainssoinfo.remove(sessionId);
-					System.out.println("close conversation");
+					sessionMap.remove(sessionId);
 					speech = "Thank you for contacting Max Life. Have a great day!";
 				}
 				else{
@@ -360,7 +362,9 @@ public class MliBotController{
 		String status="";
 		String randomotp="";
 		StringBuilder result = new StringBuilder();
-	        try 
+	    Map<String,String> otpsession= new HashMap<String,String>();
+		
+		try 
 		{
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
