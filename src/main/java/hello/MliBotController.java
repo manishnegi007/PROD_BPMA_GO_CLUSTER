@@ -71,41 +71,36 @@ public class MliBotController{
 				System.out.println("SSOValidation API START");
 				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
 				sessionId=object.get("sessionId")+"";
-				Map otpsessionMap=sessionMapcontainssoinfo.get(sessionId);
-				
-				if(otpsessionMap.get("validSSOID")!=null && otpsessionMap.get("validSSOID").toString().equalsIgnoreCase(ssoId))
-				{
-					speech="Already validated";
-				}
-				else if(otpsessionMap.get("validSSOID")==null)
-				{
-					Map<String, Map<String,String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId );
-					String SoaStatus="";
-					String PhoneStatus="";
-					Map<String,String> cashMap= returnmap.get(sessionId);
-					SoaStatus=cashMap.get("SoaStatus");
-					PhoneStatus=cashMap.get("PhoneStatus");
-					if("success".equalsIgnoreCase(SoaStatus))
-					{
-					speech="I need to verify the OTP which was sent on your registered mobile number. Please enter it here"+cashMap.get("otp")+"";
+				Map otpsessionMap = sessionMapcontainssoinfo.get(sessionId);
+				if (otpsessionMap == null) {
+					Map<String, Map<String, String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId);
+					String SoaStatus = "";
+					String PhoneStatus = "";
+					Map<String, String> cashMap = returnmap.get(sessionId);
+					SoaStatus = cashMap.get("SoaStatus");
+					PhoneStatus = cashMap.get("PhoneStatus");
+					if ("success".equalsIgnoreCase(SoaStatus)) {
+						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here"
+								+ cashMap.get("otp") + "";
+					} else if ("NotAvail".equalsIgnoreCase(PhoneStatus)) {
+						speech = "Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
+					} else if ("Failure_API_1".equalsIgnoreCase(SoaStatus)
+							|| "Failure_API_2".equalsIgnoreCase("SoaStatus")) {
+						speech = "Invalid Credentials! Please Enter a Valid Credentials";
+					} else {
+						speech = "Oops! I could not find any registered mobile number for this SSO";
 					}
-					else if("NotAvail".equalsIgnoreCase(PhoneStatus))
-					{
-						speech="Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
+				} else {
+
+					if (otpsessionMap.get("validSSOID") != null
+							&& otpsessionMap.get("validSSOID").toString().equalsIgnoreCase(ssoId)) {
+						speech = "Already validated";
 					}
-					else if("Failure_API_1".equalsIgnoreCase(SoaStatus) || "Failure_API_2".equalsIgnoreCase("SoaStatus"))
-					{
-						speech="Invalid Credentials! Please Enter a Valid Credentials";
+
+					if (!otpsessionMap.get("validSSOID").toString().equalsIgnoreCase(ssoId)) {
+						speech = "You are trying to be login as different user. Please close earlier conversation to proceed";
 					}
-					else
-					{
-						speech="Oops! I could not find any registered mobile number for this SSO";
-					}
-			
-				}
-				if(!otpsessionMap.get("validSSOID").toString().equalsIgnoreCase(ssoId))
-				{
-					speech="You are trying to be login as different user. Please close earlier conversation to proceed";
+
 				}
 				
 			}
