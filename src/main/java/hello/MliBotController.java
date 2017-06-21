@@ -189,6 +189,8 @@ public class MliBotController{
 							}else
 							{
 								cachePeriod=period;
+	                                                        Map map = sessionMap.get(sessionId);
+								map.put("period", period);
 							}
 							if(planType.equalsIgnoreCase("")){	
 								cashplanType= sessionMap.get(sessionId).get("planType")+"";
@@ -200,24 +202,52 @@ public class MliBotController{
 								cashchannel= sessionMap.get(sessionId).get("channel")+"";
 							}else{
 								cashchannel=channel;
+								Map map = sessionMap.get(sessionId);
+								map.put("channel", channel);
 							}
 							if(productType.equalsIgnoreCase("")){	
 								cashproductType= sessionMap.get(sessionId).get("productType")+"";
 							}else{
 								cashproductType=productType;
 							}
-							if(!actionperformed.equalsIgnoreCase("") && actionperformed!=null)
-							{
-								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType);
+							if (actionperformed.equalsIgnoreCase("nb.channel")
+									|| actionperformed.equalsIgnoreCase("nb.period")) {
+								actionperformed = sessionMap.get(sessionId).get("action") + "";
+							} else {
+								Map map = sessionMap.get(sessionId);
+								map.put("action", actionperformed);
 							}
-						}
-						else
-						{
+
+							if (!actionperformed.equalsIgnoreCase("") && actionperformed != null) {
+								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod,
+										cashproductType, cashplanType);
+							}
+						} else {
 							Map<String, String> map = new HashMap<String, String>();
-							map.put("channel", channel);
-							map.put("productType", productType);
-							map.put("period", period);
+							if (channel.equalsIgnoreCase("")) {
+								channel = "MLI";
+								map.put("channel", channel);
+							} else {
+								map.put("channel", channel);
+							}
+							if (productType.equalsIgnoreCase("")) {
+								productType = "ULIP";
+								map.put("productType", productType);
+							} else {
+								map.put("productType", productType);
+							}
+							if (period.equalsIgnoreCase("")) {
+								period = "MONTHLY";
+								map.put("period", period);
+							} else {
+								map.put("period", period);
+							}
 							map.put("planType", planType);
+							if (actionperformed.equalsIgnoreCase("nb.channel")
+									|| actionperformed.equalsIgnoreCase("nb.period")) {
+								actionperformed = "NUMBERS";
+							}
+							map.put("action", actionperformed);
 							sessionMap.put(sessionId, map);
 							if(!actionperformed.equalsIgnoreCase("") && actionperformed!=null)
 							{
@@ -426,6 +456,8 @@ public class MliBotController{
 					System.out.println(randomotp);
 					otpsession.put("SoaStatus", "success");
 					otpsession.put("validSSOID", ssoId);
+					otpsession.put("channel", "MLI");
+					otpsession.put("period", "MTD");
 					sessionMapcontainssoinfo.put(sessionId, otpsession);
 				}
 				catch(Exception e)
@@ -463,7 +495,3 @@ public class MliBotController{
 		return r.nextInt((max - min) + 1) + min;
 	}
 }
-
-
-
-
