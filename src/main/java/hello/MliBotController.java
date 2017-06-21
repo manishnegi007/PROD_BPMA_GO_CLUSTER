@@ -34,6 +34,7 @@ public class MliBotController{
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
         public static Map<String, Map<String,String>> sessionMap = new ConcurrentHashMap<String, Map<String,String>>();
 	public static Map<String, Map<String,String>> sessionMapcontainssoinfo = new ConcurrentHashMap<String, Map<String,String>>();
+	public static Map<String,String> otpsession= new HashMap<String,String>();
 
 	@Autowired
 	APIConsumerService aPIConsumerService;
@@ -70,31 +71,41 @@ public class MliBotController{
 				System.out.println("SSOValidation API START");
 				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
 				sessionId=object.get("sessionId")+"";
-				System.out.println("APICallSSOValidation API CALL START");
-				Map<String, Map<String,String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId );
-				System.out.println("APICallSSOValidation API CALL END");
-				String SoaStatus="";
-				String PhoneStatus="";
-				Map<String,String> cashMap= returnmap.get(sessionId);
-				SoaStatus=cashMap.get("SoaStatus");
-				PhoneStatus=cashMap.get("PhoneStatus");
-				System.out.println("SSO Validation API END");
-				if("success".equalsIgnoreCase(SoaStatus))
+				if(otpsession.get("validSSOID")!=null && otpsession.get("validSSOID").equalsIgnoreCase(ssoId))
 				{
-				speech="I need to verify the OTP which was sent on your registered mobile number. Please enter it here";
+					speech="Already validated";
 				}
-				else if("NotAvail".equalsIgnoreCase(PhoneStatus))
+				else if(otpsession.get("validSSOID")==null)
 				{
-					speech="Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
+					Map<String, Map<String,String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId );
+					String SoaStatus="";
+					String PhoneStatus="";
+					Map<String,String> cashMap= returnmap.get(sessionId);
+					SoaStatus=cashMap.get("SoaStatus");
+					PhoneStatus=cashMap.get("PhoneStatus");
+					if("success".equalsIgnoreCase(SoaStatus))
+					{
+					speech="I need to verify the OTP which was sent on your registered mobile number. Please enter it here";
+					}
+					else if("NotAvail".equalsIgnoreCase(PhoneStatus))
+					{
+						speech="Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
+					}
+					else if("Failure_API_1".equalsIgnoreCase(SoaStatus) || "Failure_API_2".equalsIgnoreCase("SoaStatus"))
+					{
+						speech="Invalid Credentials! Please Enter a Valid Credentials";
+					}
+					else
+					{
+						speech="Oops! I could not find any registered mobile number for this SSO";
+					}
+			
 				}
-				else if("Failure_API_1".equalsIgnoreCase(SoaStatus) || "Failure_API_2".equalsIgnoreCase("SoaStatus"))
+				if(!otpsession.get("validSSOID").equalsIgnoreCase(ssoId))
 				{
-					speech="Invalid Credentials! Please Enter a Valid Credentials";
+					speech="You are trying to be login as different user. Please close earlier conversation to proceed";
 				}
-				else
-				{
-					speech="Oops! I could not find any registered mobile number for this SSO";
-				}
+				
 			}
 			else if("nb.OTP.Validation".equalsIgnoreCase(actionperformed))
 			{
@@ -252,7 +263,8 @@ public class MliBotController{
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			String serviceurl3 = resProp.getString("servicephoneno");
+			//String serviceurl3 = resProp.getString("servicephoneno");
+                        String serviceurl3 = res.getString("serviceproduction");
 			URL url3 = new URL(serviceurl3);
 			if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
 			{
@@ -273,9 +285,9 @@ public class MliBotController{
 			requestdata.append("	        \"header\": {	");
 			requestdata.append("	            \"soaCorrelationId\": \"2569887\",	");
 			requestdata.append("	            \"soaMsgVersion\": \"1.0\",	");
-			requestdata.append("	            \"soaAppId\": \"BPMA_BOT\",	");
-			requestdata.append("	            \"soaUserId\": \"BPMA_BOT123\",	");
-			requestdata.append("	            \"soaPassword\": \"dHJsdfjTIz\"	");
+			requestdata.append("	            \"soaAppId\": \"MISBOT\",	");
+			requestdata.append("	            \"soaUserId\": \"MISBOTUAT123\",	");
+			requestdata.append("	            \"soaPassword\": \"a3V0cml5YTEy\"	");
 			requestdata.append("	        },	");
 			requestdata.append("	        \"requestData\": {	");
 			requestdata.append("	            \"requestPayload\": {	");
