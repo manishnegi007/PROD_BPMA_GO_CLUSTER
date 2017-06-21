@@ -360,8 +360,7 @@ public class MliBotController{
 		String status="";
 		String randomotp="";
 		StringBuilder result = new StringBuilder();
-		Map<String,String> otpsession= new HashMap<String,String>();
-		try 
+	        try 
 		{
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
