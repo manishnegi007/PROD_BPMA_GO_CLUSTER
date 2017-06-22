@@ -215,6 +215,8 @@ public class MliBotController{
 								cashproductType= sessionMap.get(sessionId).get("productType")+"";
 							}else{
 								cashproductType=productType;
+								Map map = sessionMap.get(sessionId);
+								map.put("productType", productType);
 							}
 							if (actionperformed.equalsIgnoreCase("nb.channel")
 									|| actionperformed.equalsIgnoreCase("nb.period")) {
@@ -237,7 +239,7 @@ public class MliBotController{
 								map.put("channel", channel);
 							}
 							if (productType.equalsIgnoreCase("")) {
-								productType = "ULIP";
+								productType = "Protection";
 								map.put("productType", productType);
 							} else {
 								map.put("productType", productType);
