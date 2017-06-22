@@ -463,7 +463,7 @@ public class APIConsumerService {
 
 				if("NUMBERS".equalsIgnoreCase(action))
 				{
-					if("MONTHLY".equalsIgnoreCase(period))
+					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+
 								", the business update for "+channel+ " is :\n"
