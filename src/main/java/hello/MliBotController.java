@@ -104,32 +104,38 @@ public class MliBotController{
 				}
 				
 			}
-			else if("nb.OTP.Validation".equalsIgnoreCase(actionperformed))
-			{
-				System.out.println("OTP Validation API START");
-				String AgentName="";
-				String cashOTP="";
-				if(sessionMapcontainssoinfo.containsKey(sessionId))
+			else if ("nb.OTP.Validation".equalsIgnoreCase(actionperformed)) {
+				String AgentName = "";
+				String cashOTP = "";
+				if (sessionMapcontainssoinfo.containsKey(sessionId))
 				{
-					Map<String,String> cashMap= sessionMapcontainssoinfo.get(sessionId);
-					cashOTP=cashMap.get("otp");
-					System.out.println(cashOTP);
-					AgentName=cashMap.get("AgentName");
-					if(cashOTP.equalsIgnoreCase(userOTP))
+					Map<String, String> cashMap = sessionMapcontainssoinfo.get(sessionId);
+					String validSSOID = cashMap.get("validSSOID");
+					if(cashMap.containsKey(validSSOID+"_VERIFY"))
 					{
-						speech="Hi "+AgentName+" How can i help you";
-						cashMap.put("Validation", "success");
-						System.out.println("OTP Validation API END");
+						speech = "Already validated!";
 					}
 					else
 					{
-						speech="Invalid OTP Entered! "
-								+ "The OTP you have provided does not match. Please provide valid OTP that has been sent to your registered mobile number.";
+						cashOTP = cashMap.get("otp");
+						AgentName = cashMap.get("AgentName");
+						if (cashOTP.equalsIgnoreCase(userOTP))
+						{
+							speech = "Hi " + AgentName + " How can i help you";
+							cashMap.put("Validation", "success");
+							cashMap.put(validSSOID+"_VERIFY", cashOTP);
+							sessionMapcontainssoinfo.put(sessionId, cashMap);
+						}
+						else
+						{
+							speech = "Invalid OTP Entered! "
+									+ "The OTP you have provided does not match. Please provide valid OTP that has been sent to your registered mobile number.";
+						}
 					}
-				}
+				} 
 				else
 				{
-					speech="Please Validate SSO Credentials For Further Process";
+					speech = "Please Validate SSO Credentials For Further Process";
 				}
 			}
 			else if("close.conversation".equalsIgnoreCase(actionperformed))
