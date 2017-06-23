@@ -120,7 +120,7 @@ public class MliBotController{
 						AgentName = cashMap.get("AgentName");
 						if (cashOTP.equalsIgnoreCase(userOTP))
 						{
-							speech = "Hi " + AgentName + " How can i help you";
+							speech = "Hi " + AgentName + ", How can i help you today?";
 							cashMap.put("Validation", "success");
 							cashMap.put(validSSOID+"_VERIFY", cashOTP);
 							sessionMapcontainssoinfo.put(sessionId, cashMap);
