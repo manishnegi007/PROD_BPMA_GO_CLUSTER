@@ -40,10 +40,7 @@ public class APIConsumerService {
 		String serviceChannel="";
 		String output = new String();
 		StringBuilder result = new StringBuilder();	
-		String DevMode = "N";
 		HttpURLConnection conn = null;
-		String segment="";
-		String serviceChannel="";
 		String speech="";
      		try 
 		{
