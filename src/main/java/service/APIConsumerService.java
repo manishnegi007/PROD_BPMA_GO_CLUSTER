@@ -463,7 +463,7 @@ public class APIConsumerService {
 
 				if("NUMBERS".equalsIgnoreCase(action))
 				{
-					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period))
+					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+
 								", the business update for "+channel+ " is :\n"
@@ -504,7 +504,7 @@ public class APIConsumerService {
 				}
 				else if("AdjMFYP".equalsIgnoreCase(action))
 				{
-					if("MONTHLY".equalsIgnoreCase(period))
+					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+" Paid AdjMFYP Business for "+channel+
 								" is : "+mtdAdjustMFYP+" Cr";
@@ -562,7 +562,7 @@ public class APIConsumerService {
 				}
 				else if("APPLIED".equalsIgnoreCase(action))
 				{
-					if("MONTHLY".equalsIgnoreCase(period))
+					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+" Applied Business AFYP MTD For "+channel+
 								": "+mtdAppliedAFYP+" Cr for "+channel+"";
@@ -585,7 +585,8 @@ public class APIConsumerService {
 				}
 				else if("Growth".equalsIgnoreCase(action))
 				{
-					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
+					
+					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period) || "MONTH".equalsIgnoreCase(period)){
 						finalresponse = channel+" has witnessed paid business growth of "+grth_paid_adj_mfyp
 								+"% on MTD basis, \n\n last month we had clocked "+adj_mfyp_lst_mn+
 								"Cr of Adj MFYP as compared to "+mtd_inforced_adj_mfyp+" today";
@@ -606,7 +607,7 @@ public class APIConsumerService {
 				}
 				else if("Penetration".equalsIgnoreCase(action))
 				{
-					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period))
+					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)||"MONTH".equalsIgnoreCase(period))
 					{
 						if("ULIP".equalsIgnoreCase(productType))
 						{
