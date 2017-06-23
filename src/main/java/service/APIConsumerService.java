@@ -23,6 +23,15 @@ public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
 	{
+		if("MLI".equalsIgnoreCase(channel)||"CAT".equalsIgnoreCase(channel))
+		{
+			channel=channel.toUpperCase();
+		}
+		else
+		{
+			channel=convertToCamelCase(channel);
+
+		}
 		System.out.println("getWipDataAll API START");
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		ResourceBundle mtd = ResourceBundle.getBundle("MTD");
@@ -671,6 +680,23 @@ public class APIConsumerService {
 		WebhookResponse responseObj = new WebhookResponse(speech, speech);
 		System.out.println("End : Response"+ speech);
 		return responseObj;
+		public String convertToCamelCase(String channel){
+
+		final String ACTIONABLE_DELIMITERS = " '-/"; // these cause the character following
+		// to be capitalized
+
+		StringBuilder sb = new StringBuilder();
+		boolean capNext = true;
+
+		for (char c : channel.toCharArray()) {
+			c = (capNext)
+					? Character.toUpperCase(c)
+							: Character.toLowerCase(c);
+					sb.append(c);
+					capNext = (ACTIONABLE_DELIMITERS.indexOf((int) c) >= 0); // explicit cast not needed
+
+		}
+		return sb.toString();
 	}
 
 }
