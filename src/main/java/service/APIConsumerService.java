@@ -543,7 +543,7 @@ public class APIConsumerService {
 				{
 					if(!"".equalsIgnoreCase(channel))
 					{
-					finalresponse="WIP AFYP :" +convertsum3+"Cr. and Policies"+wip_count+" "
+					finalresponse="WIP AFYP :" +convertsum3+"Cr. and Policies"+convertsum4+" "
 								+"\n\n HO WIP AFYP :"+hoWIPAFYP+"Cr. and Policies"+ho_wip_count+" "
 								+"\n\n GO WIP AFYP :"+goWIPAFYP+"Cr. and Policies "+go_wip_count+" "
 								+"\n\n IT WIP AFYP :"+itWIPAFYP+"Cr. and Policies"+it_wip_count+" "
