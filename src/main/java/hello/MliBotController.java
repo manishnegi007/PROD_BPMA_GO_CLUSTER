@@ -427,7 +427,7 @@ public class MliBotController{
 			requestdata.append("	         }	");
 			requestdata.append("	      },	");
 			requestdata.append("	      \"requestBody\": {	");
-			requestdata.append("	         \"appAccId\": \"SRV_BOT\",	");
+			requestdata.append("	         \"appAccId\": \"SRV_BOTS\",	");
 			requestdata.append("	         \"appAccPass\": \"t(9Kp~8P\",	");
 			requestdata.append("	         \"appId\": \"MAXLIT\",	");
 			requestdata.append("	         \"msgTo\": \""+phoneno+"\",	");
