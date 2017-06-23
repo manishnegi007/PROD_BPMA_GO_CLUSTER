@@ -463,10 +463,10 @@ public class APIConsumerService {
 
 				if("NUMBERS".equalsIgnoreCase(action))
 				{
-					if("MONTHLY".equalsIgnoreCase(period))
+					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+
-								", the business update for "+channel+ " is :\n"
+								", the Business update for "+channel+ " is :\n"
 								+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
 								+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
 								+"WIP AFYP: " +convertsum3+" Cr. \n\n ";
@@ -478,7 +478,7 @@ public class APIConsumerService {
 					else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
 					{
 						finalresponse="As of "+real_tim_timstamp+
-								", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
+								", the Business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
 								+"Applied AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
@@ -489,13 +489,13 @@ public class APIConsumerService {
 					else 
 					{
 						finalresponse="As of "+real_tim_timstamp+
-								", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
+								", the Business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
 								+"Applied AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
 								+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr, \n\n"
 								+"Applied AFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
-								+"WIP AFYP: " +convertsum3+" Cr.";
+								+"WIP AFYP: " +convertsum+" Cr.";
 						if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 						{
 							finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
@@ -504,15 +504,17 @@ public class APIConsumerService {
 				}
 				else if("AdjMFYP".equalsIgnoreCase(action))
 				{
-					if("MONTHLY".equalsIgnoreCase(period))
+					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+" Paid AdjMFYP Business for "+channel+
 								" is : "+mtdAdjustMFYP+" Cr";
 					}
 					else if(!"".equalsIgnoreCase(channel))
 					{
-						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business" +
-								" is : "+mtdAdjustMFYP+" Cr and Yearly Paid AdjMFYP Business is : "+ytd_adj_mfyp+" Cr for "+channel+"";
+						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business for "+channel+ "is :"+
+							     " FTD : " +dailyAdjustMFYP+" Cr,"
+								+" MTD : " +mtdAdjustMFYP+" Cr"
+								+" YTD : " +ytd_adj_mfyp+" Cr";
 					}
 					else {
 						finalresponse="As of "+real_tim_timstamp+" paid AdjMFYP Business"+
@@ -539,6 +541,8 @@ public class APIConsumerService {
 				}
 				else if("WIP.YES".equalsIgnoreCase(action))
 				{
+					if(!"".equalsIgnoreCase(channel))
+					{
 					finalresponse="WIP AFYP :" +convertsum3+
 							"\n\n HO WIP AFYP :"+hoWIPAFYP+
 							"\n\n GO WIP AFYP :"+goWIPAFYP+
@@ -546,13 +550,24 @@ public class APIConsumerService {
 							"\n\n FIN WIP AFYP :"+finWIPAFYP+
 							"\n\n MISC WIP AFYP :"+miscWIPAFYP+
 							"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"";
+					}
+					else
+					{
+						finalresponse="WIP AFYP :" +convertsum3+
+								"\n\n HO WIP AFYP :"+hoWIPAFYP+
+								"\n\n GO WIP AFYP :"+goWIPAFYP+
+								"\n\n IT WIP AFYP :"+itWIPAFYP+
+								"\n\n FIN WIP AFYP :"+finWIPAFYP+
+								"\n\n MISC WIP AFYP :"+miscWIPAFYP+
+								"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"";
+					}
 				}
 				else if("APPLIED".equalsIgnoreCase(action))
 				{
-					if("MONTHLY".equalsIgnoreCase(period))
+					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+" Applied Business AFYP MTD For "+channel+
-								": "+mtdAppliedAFYP+" Cr for "+channel+"";
+								": "+mtdAppliedAFYP+" Cr "+"";
 					}
 					else if(!"".equalsIgnoreCase(channel))
 					{
@@ -572,17 +587,18 @@ public class APIConsumerService {
 				}
 				else if("Growth".equalsIgnoreCase(action))
 				{
-					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)){
+
+					/*if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period) || "MONTH".equalsIgnoreCase(period)){
 						finalresponse = channel+" has witnessed paid business growth of "+grth_paid_adj_mfyp
 								+"% on MTD basis, \n\n last month we had clocked "+adj_mfyp_lst_mn+
 								"Cr of Adj MFYP as compared to "+mtd_inforced_adj_mfyp+" today";
-					}else
-					{
-						finalresponse = channel+" has witnessed paid business growth of "+grth_ovr_lst_yr_paid
-								+"% on YTD basis, \n\n last month we had clocked "+adj_mfyp_sam_ytd_lst_yr+
+					}*/
+					
+						finalresponse = channel+" has witnessed paid Business growth of "+grth_ovr_lst_yr_paid
+								+"% on YTD basis, \n\n last year we had clocked "+adj_mfyp_sam_ytd_lst_yr+
 								"Cr of Adj MFYP as compared to "+ytd_inforced_adj_mfyp+" today";
 
-					}
+					
 				}
 				else if("Achievement".equalsIgnoreCase(action))
 				{
@@ -593,24 +609,24 @@ public class APIConsumerService {
 				}
 				else if("Penetration".equalsIgnoreCase(action))
 				{
-					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period))
+					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)||"MONTH".equalsIgnoreCase(period))
 					{
 						if("ULIP".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+ul_penet_mtd_afyp+" % of "+mtd_inforced_afyp
-									+" Cr of paid business AFYP MTD and "+ul_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
+									+" Cr of paid Business AFYP MTD and "+ul_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 									+ " issued on MTD basis";
 						}
 						else if("TRAD".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+trad_penet_mtd_afyp+" % of "+mtd_inforced_afyp
-									+" Cr of paid business AFYP MTD and "+trad_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
+									+" Cr of paid Business AFYP MTD and "+trad_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 									+ " issued on MTD basis";
 						}
 						else
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+protec_penet_mtd_afyp+" % of "+mtd_inforced_afyp
-									+" Cr of paid business AFYP MTD and "+protec_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
+									+" Cr of paid Business AFYP MTD and "+protec_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 									+ " issued on MTD basis";
 						}
 					}
@@ -619,19 +635,19 @@ public class APIConsumerService {
 						if("ULIP".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+ul_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
-									" Cr of paid business AFYP YTD and "+ul_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
+									" Cr of paid Business AFYP YTD and "+ul_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 									+ " issued on YTD basis";
 						}
 						else if("TRAD".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+trad_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
-									" Cr of paid business AFYP YTD and "+trad_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
+									" Cr of paid Business AFYP YTD and "+trad_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 									+ " issued on YTD basis";
 						}
 						else
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+protec_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
-									" Cr of paid business AFYP YTD and "+protec_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
+									" Cr of paid Business AFYP YTD and "+protec_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 									+ " issued on YTD basis";
 						}
 					}
