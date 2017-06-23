@@ -19,11 +19,21 @@ import common.Commons;
 import common.XTrustProvider;
 import hello.WebhookResponse;
 @Component
+
+
 public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
 	{
-	
+		if("MLI".equalsIgnoreCase(channel)||"CAT".equalsIgnoreCase(channel))
+		{
+			channel=channel.toUpperCase();
+		}
+		else
+		{
+			channel=convertToCamelCase(channel);
+
+		}
 		System.out.println("Action:-" + action + "Channel:- "+channel+ "Period:-"+ period+"ProductType:-"+productType+ "planType"+planType);
 		ResourceBundle res = ResourceBundle.getBundle("com.qc.bot.resources.application");
 		WebhookResponse response = new WebhookResponse();	
@@ -32,10 +42,9 @@ public class APIConsumerService {
 		String serviceChannel="";
 		String output = new String();
 		StringBuilder result = new StringBuilder();	
-		String DevMode = "N";
+		
 		HttpURLConnection conn = null;
-		String segment="";
-		String serviceChannel="";
+	
 		String speech="";
      		try 
 		{
@@ -469,7 +478,7 @@ public class APIConsumerService {
 					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+
-								", the business update for "+channel+ " is :\n"
+								", the Business update for "+channel+ " is :\n"
 								+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
 								+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
 								+"WIP AFYP: " +convertsum3+" Cr. \n\n ";
@@ -481,18 +490,18 @@ public class APIConsumerService {
 					else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
 					{
 						finalresponse="As of "+real_tim_timstamp+
-								", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
+								", the Business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
 								+"Applied AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
 								+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr, \n\n"
 								+"Applied AFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
-								+"WIP AFYP: " +convertsum+" Cr.";
+								+"WIP AFYP: " +convertsum3+" Cr.";
 					}
 					else 
 					{
 						finalresponse="As of "+real_tim_timstamp+
-								", the business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
+								", the Business update for "+channel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 								+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
 								+"Applied AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
@@ -514,8 +523,10 @@ public class APIConsumerService {
 					}
 					else if(!"".equalsIgnoreCase(channel))
 					{
-						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business" +
-								" is : "+mtdAdjustMFYP+" Cr and Yearly Paid AdjMFYP Business is : "+ytd_adj_mfyp+" Cr for "+channel+"";
+						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business for "+channel+ "is :"+
+							     " FTD : " +dailyAdjustMFYP+" Cr,"
+								+" MTD : " +mtdAdjustMFYP+" Cr"
+								+" YTD : " +ytd_adj_mfyp+" Cr";
 					}
 					else {
 						finalresponse="As of "+real_tim_timstamp+" paid AdjMFYP Business"+
@@ -588,18 +599,18 @@ public class APIConsumerService {
 				}
 				else if("Growth".equalsIgnoreCase(action))
 				{
-					
-					if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period) || "MONTH".equalsIgnoreCase(period)){
+
+					/*if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period) || "MONTH".equalsIgnoreCase(period)){
 						finalresponse = channel+" has witnessed paid business growth of "+grth_paid_adj_mfyp
 								+"% on MTD basis, \n\n last month we had clocked "+adj_mfyp_lst_mn+
 								"Cr of Adj MFYP as compared to "+mtd_inforced_adj_mfyp+" today";
-					}else
-					{
-						finalresponse = channel+" has witnessed paid business growth of "+grth_ovr_lst_yr_paid
-								+"% on YTD basis, \n\n last month we had clocked "+adj_mfyp_sam_ytd_lst_yr+
+					}*/
+					
+						finalresponse = channel+" has witnessed paid Business growth of "+grth_ovr_lst_yr_paid
+								+"% on YTD basis, \n\n last year we had clocked "+adj_mfyp_sam_ytd_lst_yr+
 								"Cr of Adj MFYP as compared to "+ytd_inforced_adj_mfyp+" today";
 
-					}
+					
 				}
 				else if("Achievement".equalsIgnoreCase(action))
 				{
@@ -615,19 +626,19 @@ public class APIConsumerService {
 						if("ULIP".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+ul_penet_mtd_afyp+" % of "+mtd_inforced_afyp
-									+" Cr of paid business AFYP MTD and "+ul_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
+									+" Cr of paid Business AFYP MTD and "+ul_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 									+ " issued on MTD basis";
 						}
 						else if("TRAD".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+trad_penet_mtd_afyp+" % of "+mtd_inforced_afyp
-									+" Cr of paid business AFYP MTD and "+trad_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
+									+" Cr of paid Business AFYP MTD and "+trad_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 									+ " issued on MTD basis";
 						}
 						else
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+protec_penet_mtd_afyp+" % of "+mtd_inforced_afyp
-									+" Cr of paid business AFYP MTD and "+protec_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
+									+" Cr of paid Business AFYP MTD and "+protec_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 									+ " issued on MTD basis";
 						}
 					}
@@ -636,19 +647,19 @@ public class APIConsumerService {
 						if("ULIP".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+ul_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
-									" Cr of paid business AFYP YTD and "+ul_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
+									" Cr of paid Business AFYP YTD and "+ul_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 									+ " issued on YTD basis";
 						}
 						else if("TRAD".equalsIgnoreCase(productType))
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+trad_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
-									" Cr of paid business AFYP YTD and "+trad_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
+									" Cr of paid Business AFYP YTD and "+trad_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 									+ " issued on YTD basis";
 						}
 						else
 						{
 							finalresponse=channel+" "+productType+" Penetration is "+protec_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
-									" Cr of paid business AFYP YTD and "+protec_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
+									" Cr of paid Business AFYP YTD and "+protec_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 									+ " issued on YTD basis";
 						}
 					}
@@ -662,7 +673,7 @@ public class APIConsumerService {
 			}
 			catch(Exception e)
 			{
-			   System.out.println("Something went wrong in Bot Logic");
+				System.out.println("Something went wrong in Bot Logic");
 			}
 		}
 		catch(Exception ex)
@@ -674,5 +685,22 @@ public class APIConsumerService {
 		return responseObj;
 	}
 	
+	public String convertToCamelCase(String channel){
 
+		final String ACTIONABLE_DELIMITERS = " '-/"; // these cause the character following
+		// to be capitalized
+
+		StringBuilder sb = new StringBuilder();
+		boolean capNext = true;
+
+		for (char c : channel.toCharArray()) {
+			c = (capNext)
+					? Character.toUpperCase(c)
+							: Character.toLowerCase(c);
+					sb.append(c);
+					capNext = (ACTIONABLE_DELIMITERS.indexOf((int) c) >= 0); // explicit cast not needed
+
+		}
+		return sb.toString();
+	}
 }
