@@ -543,12 +543,12 @@ public class APIConsumerService {
 				{
 					if(!"".equalsIgnoreCase(channel))
 					{
-					finalresponse="WIP for "+channel+" AFYP :" +convertsum3+"Cr. and Policies"+convertsum4+" "
-								+"\n\n HO WIP AFYP :"+hoWIPAFYP+"Cr. and Policies"+ho_wip_count+" "
-								+"\n\n GO WIP AFYP :"+goWIPAFYP+"Cr. and Policies "+go_wip_count+" "
-								+"\n\n IT WIP AFYP :"+itWIPAFYP+"Cr. and Policies"+it_wip_count+" "
-								+"\n\n FIN WIP AFYP :"+finWIPAFYP+"Cr. and Policies"+fin_wip_count+" "
-								+"\n\n MISC WIP AFYP :"+miscWIPAFYP+"Cr. and Policies"+misc_wip_count+" "
+					finalresponse="WIP for "+channel+" is AFYP :" +convertsum3+"Cr. and Policies"+convertsum4+", "
+								+"\n\n HO WIP AFYP :"+hoWIPAFYP+"Cr. and Policies"+ho_wip_count+", "
+								+"\n\n GO WIP AFYP :"+goWIPAFYP+"Cr. and Policies "+go_wip_count+", "
+								+"\n\n IT WIP AFYP :"+itWIPAFYP+"Cr. and Policies"+it_wip_count+", "
+								+"\n\n FIN WIP AFYP :"+finWIPAFYP+"Cr. and Policies"+fin_wip_count+", "
+								+"\n\n MISC WIP AFYP :"+miscWIPAFYP+"Cr. and Policies"+misc_wip_count+", "
 								+"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"Cr. and Policies "+welcome_wip_count+"";
 					}
 					else
