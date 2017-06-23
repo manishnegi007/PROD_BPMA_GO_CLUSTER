@@ -80,8 +80,7 @@ public class MliBotController{
 					SoaStatus = cashMap.get("SoaStatus");
 					PhoneStatus = cashMap.get("PhoneStatus");
 					if ("success".equalsIgnoreCase(SoaStatus)) {
-						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here"
-								+ cashMap.get("otp") + "";
+						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here";
 					} else if ("NotAvail".equalsIgnoreCase(PhoneStatus)) {
 						speech = "Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
 					} else if ("Failure_API_1".equalsIgnoreCase(SoaStatus)
@@ -354,7 +353,7 @@ public class MliBotController{
 				JSONObject object = new JSONObject(result.toString());
 				try{
 					phoneNo	 = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnylpreferredmobile")+"";
-					phoneNo="9891596808";
+					//phoneNo="9891596808";
 					agentName = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("givenname")+"";
 					if(phoneNo!=null && !"".equalsIgnoreCase(phoneNo))
 					{
