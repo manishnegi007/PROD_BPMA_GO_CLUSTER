@@ -515,7 +515,7 @@ public class APIConsumerService {
 				{
 					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+real_tim_timstamp+" Paid AdjMFYP Business for "+channel+
+						finalresponse="As of "+real_tim_timstamp+" Paid AdjMFYP Business MTD for "+channel+
 								" is : "+mtdAdjustMFYP+" Cr";
 					}
 					else if(!"".equalsIgnoreCase(channel))
