@@ -595,7 +595,7 @@ public class APIConsumerService {
 					}*/
 					
 						finalresponse = channel+" has witnessed paid Business growth of "+grth_ovr_lst_yr_paid
-								+"% on YTD basis, \n\n last year we had clocked "+adj_mfyp_sam_ytd_lst_yr+
+								+"% on YTD basis, \n\n last year same time we had clocked "+adj_mfyp_sam_ytd_lst_yr+
 								"Cr of Adj MFYP as compared to "+ytd_inforced_adj_mfyp+" today";
 
 					
