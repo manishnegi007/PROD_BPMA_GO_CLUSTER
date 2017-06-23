@@ -568,7 +568,7 @@ public class APIConsumerService {
 					if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 					{
 						finalresponse="As of "+real_tim_timstamp+" Applied Business AFYP MTD For "+channel+
-								": "+mtdAppliedAFYP+" Cr for "+channel+"";
+								": "+mtdAppliedAFYP+" Cr "+"";
 					}
 					else if(!"".equalsIgnoreCase(channel))
 					{
