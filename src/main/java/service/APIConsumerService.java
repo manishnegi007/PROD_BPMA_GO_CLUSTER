@@ -23,6 +23,10 @@ public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
 	{
+		if("MLI".equalsIgnoreCase(channel)||"CAT".equalsIgnoreCase(channel))
+		{
+			channel=channel.toUpperCase();
+		}
 		
 		System.out.println("getWipDataAll API START");
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
