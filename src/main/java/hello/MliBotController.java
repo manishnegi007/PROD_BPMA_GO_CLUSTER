@@ -43,7 +43,7 @@ public class MliBotController{
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) {
 		//WebhookResponse response = new WebhookResponse();
 		System.out.println("CameInside :- Controller: Webhook");
-		
+		System.out.println(obj.toString());
 		String productType="";
 		String planType="";
 		String period="";
