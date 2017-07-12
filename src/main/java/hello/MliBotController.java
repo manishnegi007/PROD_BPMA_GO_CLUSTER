@@ -277,7 +277,7 @@ public class MliBotController{
 		{
 		 System.out.println("End : Controller: Webhook- Exception");	
 		}
-		WebhookResponse responseObj = new WebhookResponse(speech, speech);
+		WebhookResponse responseObj = new WebhookResponse(speech, speech, null);
 		System.out.println("End : Controller: Webhook");
 		return responseObj;
 	}
