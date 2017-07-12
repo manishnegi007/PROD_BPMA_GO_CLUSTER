@@ -1,4 +1,4 @@
-
+package hello;
 public class InnerData 
 {
 	private Facebook facebook;
@@ -22,7 +22,4 @@ public class InnerData
 	public void setFacebook(Facebook facebook) {
 		this.facebook = facebook;
 	}
-	
-	
-
 }
