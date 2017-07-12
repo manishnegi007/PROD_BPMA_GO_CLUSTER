@@ -31,6 +31,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoException;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 @Component
 public class APIConsumerService {
