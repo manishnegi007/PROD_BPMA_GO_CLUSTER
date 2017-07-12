@@ -18,11 +18,17 @@ import org.json.JSONObject;
 import common.Commons;
 import common.XTrustProvider;
 import hello.WebhookResponse;
+import response.InnerButton;
 @Component
 public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
 	{
+		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
+		Facebook fb = new Facebook();
+		InnerData innerData= new InnerData();
+		InnerButton innerButton = new InnerButton();
+		
 		if("MLI".equalsIgnoreCase(channel)||"CAT".equalsIgnoreCase(channel))
 		{
 			channel=channel.toUpperCase();
@@ -678,7 +684,16 @@ public class APIConsumerService {
 		{
 			System.out.println("Exception In Outer Catch"+ex);
 		}
-		WebhookResponse responseObj = new WebhookResponse(speech, speech);
+		innerButton.setText("Click");
+		innerButton.setPostback("PostBack");
+		innerbuttonlist.add(innerButton);
+		fb.setButtons(innerbuttonlist);
+		fb.setTitle("MLIChatBot");
+		fb.setPlatform("API.AI");
+		fb.setType("Chatbot");
+		fb.setImageUrl("BOT");
+		innerData.setFacebook(fb);
+		WebhookResponse responseObj = new WebhookResponse(speech, speech, innerData);
 		System.out.println("End : Response"+ speech);
 		return responseObj;
 		
