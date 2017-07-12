@@ -353,7 +353,7 @@ public class MliBotController{
 				JSONObject object = new JSONObject(result.toString());
 				try{
 					phoneNo	 = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnylpreferredmobile")+"";
-					//phoneNo="9891596808";
+					phoneNo="8588857910";
 					agentName = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("givenname")+"";
 					if(phoneNo!=null && !"".equalsIgnoreCase(phoneNo))
 					{
@@ -443,7 +443,7 @@ public class MliBotController{
 			try {writer3.close(); } catch (Exception e1) {}
 			int apiResponseCode3 = conn.getResponseCode();
 
-			if(apiResponseCode3 == 200)
+			if(apiResponseCode3 == 200 || apiResponseCode3 == 201)
 			{
 				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 				while ((output = br.readLine()) != null) 
