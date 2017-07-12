@@ -1,5 +1,7 @@
-
-String text;
+package hello;
+public class InnerButton 
+{
+	String text;
 	String postback;
 	
 	public InnerButton() {
@@ -28,3 +30,5 @@ String text;
 	public void setPostback(String postback) {
 		this.postback = postback;
 	}
+
+}
