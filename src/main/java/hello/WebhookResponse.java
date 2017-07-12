@@ -1,17 +1,22 @@
 package hello;
 
-public class WebhookResponse {
-   	  String speech;
-	  String displayText;
-	  
-	  public WebhookResponse() {
+public class WebhookResponse 
+{
+	private String speech;
+	private String displayText;
+	private InnerData data;
+	
+
+	public WebhookResponse() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public WebhookResponse(String speech, String displayText) {
+
+
+	public WebhookResponse(String speech, String displayText, InnerData data) {
 		super();
 		this.speech = speech;
 		this.displayText = displayText;
+		this.data = data;
 	}
 
 
@@ -33,6 +38,15 @@ public class WebhookResponse {
 	public void setDisplayText(String displayText) {
 		this.displayText = displayText;
 	}
-	 
+
+
+	public InnerData getData() {
+		return data;
+	}
+
+
+	public void setData(InnerData data) {
+		this.data = data;
+	}
 	
 }
