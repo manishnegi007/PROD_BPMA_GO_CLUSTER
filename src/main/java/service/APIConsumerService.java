@@ -43,7 +43,7 @@ public class APIConsumerService {
 		MongoClient mongo = new MongoClient("mongodb://MLI:max@1234@ds147842.mlab.com", 47842);
 		System.out.println(mongo);
 		DB db = mongo.getDB("mlibot");
-		DBCollection table = db.getCollection("user");
+		DBCollection table = db.getCollection("test");
 		BasicDBObject document = new BasicDBObject();
 		document.put("name", "ABC");
 		document.put("age", 30);
