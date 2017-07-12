@@ -515,7 +515,7 @@ public class APIConsumerService {
 								+"Applied AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
 								+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr, \n\n"
 								+"Applied AFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
-								+"WIP AFYP: " +convertsum+" Cr.";
+								+"WIP AFYP: " +convertsum3+" Cr.";
 						if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 						{
 							finalresponse = finalresponse+" Do you want to see the Data Channel Wise like :\n\n Agency, Axis Bank, Banca, Cat";
