@@ -76,10 +76,16 @@ public class MliBotController{
 					Map<String, Map<String, String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId);
 					String SoaStatus = "";
 					String PhoneStatus = "";
+					String mnylstatus="";
 					Map<String, String> cashMap = returnmap.get(sessionId);
 					SoaStatus = cashMap.get("SoaStatus");
 					PhoneStatus = cashMap.get("PhoneStatus");
-					if ("success".equalsIgnoreCase(SoaStatus)) {
+					mnylstatus=cashMap.get("mnylStatus");
+					if("N".equalsIgnoreCase(mnylstatus)){
+						speech="This UserID Is InActive";
+					}
+					else if ("success".equalsIgnoreCase(SoaStatus)) 
+					{
 						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here";
 					} else if ("NotAvail".equalsIgnoreCase(PhoneStatus)) {
 						speech = "Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
@@ -286,6 +292,7 @@ public class MliBotController{
 	{
 		String phoneNo="";	String agentName="";
 		String DevMode = "N";
+		String mnylstatus="";
 		HttpURLConnection conn = null;
 		String output = new String();
 		StringBuilder result = new StringBuilder();
@@ -353,15 +360,18 @@ public class MliBotController{
 				JSONObject object = new JSONObject(result.toString());
 				try{
 					phoneNo	 = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnylpreferredmobile")+"";
+					mnylstatus=object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnylstatus")+ "";
 					phoneNo="8588857910";
 					agentName = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("givenname")+"";
-					if(phoneNo!=null && !"".equalsIgnoreCase(phoneNo))
+					if (phoneNo != null && !"".equalsIgnoreCase(phoneNo) && mnylstatus!=null && !"".equalsIgnoreCase(mnylstatus)
+							&& "Y".equalsIgnoreCase(mnylstatus)) 
 					{
 						cashData = mliBotController.OTPVarification(sessionId, phoneNo, agentName, ssoId);
 					}
 					else
 					{
 						blankmessage.put("PhoneStatus", "NotAvail");
+						blankmessage.put("mnylStatus", "N");
 						sessionMapcontainssoinfo.put(sessionId, blankmessage);
 						cashData=sessionMapcontainssoinfo;
 					}
