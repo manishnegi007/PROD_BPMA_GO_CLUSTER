@@ -164,6 +164,7 @@ public class MliBotController{
 					String Validation="";
 					Map<String,String> cashMap= sessionMapcontainssoinfo.get(sessionId);
 					Validation=cashMap.get("Validation");
+					ssoId = cashMap.get("validSSOID");
 					if("success".equalsIgnoreCase(Validation))
 					{
 						try{
@@ -232,7 +233,18 @@ public class MliBotController{
 								map.put("action", actionperformed);
 							}
 
-							if (!actionperformed.equalsIgnoreCase("") && actionperformed != null) {
+							if (!actionperformed.equalsIgnoreCase("") && actionperformed != null) 
+							{
+								try
+								{
+									HttpUrlConnectionMlabInsert mlab = new HttpUrlConnectionMlabInsert();
+									String status=mlab.httpConnection_response_mlab_Insert(sessionId, ssoId, actionperformed, channel, period, productType,
+													planType);
+									System.out.println(status);
+								}catch(Exception ex)
+								{
+									System.out.println("Something goes wrong to connect Mlab:MongoDb");
+								}
 								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod,
 										cashproductType, cashplanType);
 							}
@@ -265,6 +277,16 @@ public class MliBotController{
 							sessionMap.put(sessionId, map);
 							if(!actionperformed.equalsIgnoreCase("") && actionperformed!=null)
 							{
+								try
+									{
+										HttpUrlConnectionMlabInsert mlab = new HttpUrlConnectionMlabInsert();
+										String status=mlab.httpConnection_response_mlab_Insert(sessionId, ssoId, actionperformed,
+																       channel, period, productType, planType);
+										System.out.println(status);
+									}catch(Exception ex)
+									{
+										System.out.println("Something goes wrong to connect Mlab:MongoDb");
+									}
 								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType);
 							}
 						}
