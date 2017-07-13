@@ -15,7 +15,7 @@ public class HttpUrlConnectionMlabInsert
 
 	public String httpConnection_response_mlab_Insert(String sessionId, String ssoId, String action, String channel, String period, String productType, String planType)
 	{
-		ResourceBundle res = ResourceBundle.getBundle("resources.application");
+		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		HttpURLConnection conn = null;
 		StringBuilder result = new StringBuilder();
 		String output = ""; 
