@@ -68,7 +68,7 @@ public class HttpUrlConnectionMlabInsert
 				conn.disconnect();
 				br.close();
 				System.out.println("httpConnection_response_mlab_Insert Result:- " +result.toString());
-				System.out.println("External API Call : END");
+				System.out.println("External API Call : START : MLAB");
 				return "success";
 			}
 			else
