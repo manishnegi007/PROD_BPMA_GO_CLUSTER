@@ -24,14 +24,14 @@ import hello.InnerButton;
 import hello.Facebook;
 import hello.InnerData;
 //--------------Mongo Dependencies--------------------------
-import java.net.UnknownHostException;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoException;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+// import java.net.UnknownHostException;
+// import com.mongodb.BasicDBObject;
+// import com.mongodb.DB;
+// import com.mongodb.DBCollection;
+// import com.mongodb.DBCursor;
+// import com.mongodb.MongoClient;
+// import com.mongodb.MongoException;
+// import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 @Component
 public class APIConsumerService {
@@ -39,22 +39,22 @@ public class APIConsumerService {
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
 	{
 // 		--------------START MONGO DB-------------------------------
-	try {
-		MongoClient mongo = new MongoClient("mongodb://MLI:max@1234@ds147842.mlab.com", 47842);
-		System.out.println(mongo);
-		DB db = mongo.getDB("mlibot");
-		DBCollection table = db.getCollection("test");
-		BasicDBObject document = new BasicDBObject();
-		document.put("name", "ABC");
-		document.put("age", 30);
-		document.put("createdDate", new Date());
-		table.insert(document);
-	     } 
-		catch (UnknownHostException ex) {
-		System.out.println(ex);
-    		} catch (MongoException ex) {
-		System.out.println(ex);
-    	}
+// 	try {
+// 		MongoClient mongo = new MongoClient("mongodb://MLI:max@1234@ds147842.mlab.com", 47842);
+// 		System.out.println(mongo);
+// 		DB db = mongo.getDB("mlibot");
+// 		DBCollection table = db.getCollection("test");
+// 		BasicDBObject document = new BasicDBObject();
+// 		document.put("name", "ABC");
+// 		document.put("age", 30);
+// 		document.put("createdDate", new Date());
+// 		table.insert(document);
+// 	     } 
+// 		catch (UnknownHostException ex) {
+// 		System.out.println(ex);
+//     		} catch (MongoException ex) {
+// 		System.out.println(ex);
+//     	}
 // 		--------------END MONGO DB-------------------------------
 
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
