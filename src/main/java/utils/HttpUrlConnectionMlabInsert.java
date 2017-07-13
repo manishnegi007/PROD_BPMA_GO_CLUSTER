@@ -79,7 +79,7 @@ public class HttpUrlConnectionMlabInsert
 		}
 		catch(Exception e)
 		{
-			logger.info(e);
+			System.out.println(e);
 		}
 		return "Success";
 	}
