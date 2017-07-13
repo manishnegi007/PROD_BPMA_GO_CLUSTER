@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URL;
+import common.XTrustProvider;
 import java.util.ResourceBundle;
 import javax.net.ssl.HttpsURLConnection;
 
