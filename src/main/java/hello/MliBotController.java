@@ -86,7 +86,8 @@ public class MliBotController{
 					}
 					else if ("success".equalsIgnoreCase(SoaStatus)) 
 					{
-						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here";
+						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here. OTP for development :-" 
+							+ cashMap.get("otp")+ "";
 					} else if ("NotAvail".equalsIgnoreCase(PhoneStatus)) {
 						speech = "Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
 					} else if ("Failure_API_1".equalsIgnoreCase(SoaStatus)
