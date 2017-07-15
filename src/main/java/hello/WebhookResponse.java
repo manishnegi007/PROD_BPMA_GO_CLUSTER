@@ -17,6 +17,7 @@ public class WebhookResponse
 		this.speech = speech;
 		this.displayText = displayText;
 		this.data = data;
+		System.out.println(data);
 	}
 
 
