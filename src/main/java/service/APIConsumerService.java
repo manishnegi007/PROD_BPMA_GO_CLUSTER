@@ -719,6 +719,10 @@ public class APIConsumerService {
 		}
 		innerButton.setText("Click");
 		innerButton.setPostback("PostBack");
+		innerButton.setText("Click2");
+		innerButton.setText("Click3");
+		innerButton.setText("Click4");
+		innerButton.setText("Click5");
 		innerbuttonlist.add(innerButton);
 		fb.setButtons(innerbuttonlist);
 		fb.setTitle("MLIChatBot");
