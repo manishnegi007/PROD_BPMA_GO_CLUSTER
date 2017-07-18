@@ -21,6 +21,9 @@ public class HttpUrlConnectionMlabInsert
 		StringBuilder result = new StringBuilder();
 		String output = ""; 
 		String DevMode="N";
+		DateFormat df = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
+		Date dateobj = new Date();
+		System.out.println(df.format(dateobj));
 		try
 		{
 
@@ -46,7 +49,8 @@ public class HttpUrlConnectionMlabInsert
 			requestdata.append("	    \"SSO_ID\": \""+ssoId+"\",	");
 			requestdata.append("	    \"KPI_ASKED\": \""+action+"\",");
 			requestdata.append("	    \"INTENT_CALLED\": \""+channel+"\",");
-			requestdata.append("	    \"LOGIN_TIME\": \""+System.currentTimeMillis()+"\",");
+			//requestdata.append("	    \"LOGIN_TIME\": \""+System.currentTimeMillis()+"\",");
+			requestdata.append("	    \"LOGIN_TIME\": \""+df.format(dateobj)+"\",");
 			requestdata.append("	    \"PLATFORM\": \""+"Platform"+"\"");
 			requestdata.append("	}	");
 			System.out.println("External API Call : START : MLAB");
