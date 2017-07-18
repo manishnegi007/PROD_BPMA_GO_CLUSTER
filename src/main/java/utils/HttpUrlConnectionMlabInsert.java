@@ -50,7 +50,7 @@ public class HttpUrlConnectionMlabInsert
 			requestdata.append("	    \"KPI_ASKED\": \""+action+"\",");
 			requestdata.append("	    \"INTENT_CALLED\": \""+channel+"\",");
 			//requestdata.append("	    \"LOGIN_TIME\": \""+System.currentTimeMillis()+"\",");
-			requestdata.append("	    \"LOGIN_TIME\": \""+df.format(dateobj)+"\",");
+			requestdata.append("	    \"LOGIN_TIME\": \""+df.format(dateobj).toString()+"\",");
 			requestdata.append("	    \"PLATFORM\": \""+"Platform"+"\"");
 			requestdata.append("	}	");
 			System.out.println("External API Call : START : MLAB");
