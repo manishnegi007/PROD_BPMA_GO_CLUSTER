@@ -717,6 +717,7 @@ public class APIConsumerService {
 		{
 			System.out.println("Exception In Outer Catch"+ex);
 		}
+		innerButton.setText("click");
 		innerButton.setPostback("PostBack");
 		innerbuttonlist.add(innerButton);
 		fb.setButtons(innerbuttonlist);
