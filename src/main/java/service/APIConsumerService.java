@@ -717,12 +717,7 @@ public class APIConsumerService {
 		{
 			System.out.println("Exception In Outer Catch"+ex);
 		}
-		innerButton.setText("Click");
 		innerButton.setPostback("PostBack");
-		innerButton.setText2("Click2");
-		innerButton.setText3("Click3");
-		innerButton.setText4("Click4");
-		innerButton.setText5("Click5");
 		innerbuttonlist.add(innerButton);
 		fb.setButtons(innerbuttonlist);
 		fb.setTitle("MLIChatBot");
