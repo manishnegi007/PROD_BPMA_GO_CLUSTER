@@ -60,7 +60,7 @@ public class APIConsumerService {
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
 		Facebook fb = new Facebook();
 		InnerData innerData= new InnerData();
-		InnerButton innerButton = new InnerButton();
+		//InnerButton innerButton = new InnerButton();
 		
 		if("MLI".equalsIgnoreCase(channel)||"CAT".equalsIgnoreCase(channel))
 		{
@@ -717,9 +717,17 @@ public class APIConsumerService {
 		{
 			System.out.println("Exception In Outer Catch"+ex);
 		}
-		innerButton.setText("click");
-		innerButton.setPostback("PostBack");
-		innerbuttonlist.add(innerButton);
+		
+		InnerButton innerButton1 = new InnerButton();
+		innerButton1.setText("Click");
+		innerButton1.setPostback("PostBack");
+				//For Second button
+		InnerButton innerButton2 = new InnerButton();
+		innerButton2.setText("Submit");
+		innerButton2.setPostback("CallBack");
+				
+		innerbuttonlist.add(innerButton1);
+		innerbuttonlist.add(innerButton2);
 		fb.setButtons(innerbuttonlist);
 		fb.setTitle("MLIChatBot");
 		fb.setPlatform("API.AI");
