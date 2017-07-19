@@ -719,15 +719,25 @@ public class APIConsumerService {
 		}
 		
 		InnerButton innerButton1 = new InnerButton();
-		innerButton1.setText("Click");
+		innerButton1.setText("Axis");
 		innerButton1.setPostback("PostBack");
 				//For Second button
 		InnerButton innerButton2 = new InnerButton();
-		innerButton2.setText("Submit");
+		innerButton2.setText("Agency");
 		innerButton2.setPostback("CallBack");
+				
+		InnerButton innerButton3 = new InnerButton();
+		innerButton3.setText("Banca");
+		innerButton3.setPostback("PostBack");
+				
+		InnerButton innerButton4 = new InnerButton();
+		innerButton4.setText("CAT");
+		innerButton4.setPostback("PostBack");
 				
 		innerbuttonlist.add(innerButton1);
 		innerbuttonlist.add(innerButton2);
+		innerbuttonlist.add(innerButton3);
+		innerbuttonlist.add(innerButton4);
 		fb.setButtons(innerbuttonlist);
 		fb.setTitle("MLIChatBot");
 		fb.setPlatform("API.AI");
