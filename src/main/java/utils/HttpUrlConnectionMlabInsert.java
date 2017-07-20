@@ -13,20 +13,24 @@ import java.net.URL;
 import common.XTrustProvider;
 import java.util.ResourceBundle;
 import javax.net.ssl.HttpsURLConnection;
+import java.util.*;	
 
 public class HttpUrlConnectionMlabInsert 
 {
 
-	public String httpConnection_response_mlab_Insert(String sessionId, String ssoId, String action, String channel, String period, String productType, String planType)
+	public String httpConnection_response_mlab_Insert(String sessionId, String ssoId, String action, String resolvedQuery, String period, String productType, String planType)
 	{
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		HttpURLConnection conn = null;
 		StringBuilder result = new StringBuilder();
 		String output = ""; 
 		String DevMode="N";
-		DateFormat df = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
-		Date dateobj = new Date();
-		System.out.println(df.format(dateobj));
+		Calendar cal = Calendar.getInstance(); 
+	   	cal.setTime(new Date()); 
+	   	cal.add(Calendar.HOUR_OF_DAY, 5); 
+	   	cal.add(Calendar.MINUTE, 30);
+	 	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+	    	System.out.println(dateFormat.format(cal.getTime()));
 		try
 		{
 
@@ -51,9 +55,9 @@ public class HttpUrlConnectionMlabInsert
 			requestdata.append("	    \"SESSION_ID\": \""+sessionId+"\",	");
 			requestdata.append("	    \"SSO_ID\": \""+ssoId+"\",	");
 			requestdata.append("	    \"KPI_ASKED\": \""+action+"\",");
-			requestdata.append("	    \"INTENT_CALLED\": \""+channel+"\",");
+			requestdata.append("	    \"INTENT_CALLED\": \""+resolvedQuery+"\",");
 			//requestdata.append("	    \"LOGIN_TIME\": \""+System.currentTimeMillis()+"\",");
-			requestdata.append("	    \"LOGIN_TIME\": \""+df.format(dateobj).toString()+"\",");
+			requestdata.append("	    \"LOGIN_TIME\": \""+dateFormat.format(cal.getTime())+"\",");
 			requestdata.append("	    \"PLATFORM\": \""+"Platform"+"\"");
 			requestdata.append("	}	");
 			System.out.println("External API Call : START : MLAB");
