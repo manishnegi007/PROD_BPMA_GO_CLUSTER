@@ -61,6 +61,7 @@ public class MliBotController{
 			System.out.println("WebhookResponse API START");
 			JSONObject object = new JSONObject(obj);
 			String actionperformed = object.getJSONObject("result").get("action")+"";
+			String resolvedQuery = object.getJSONObject("result").get("resolvedQuery") + "";
 			sessionId = object.get("sessionId")+"";
 			try{
 				userOTP = object.getJSONObject("result").getJSONObject("parameters").get("number")+"";
@@ -239,7 +240,7 @@ public class MliBotController{
 								try
 								{
 									HttpUrlConnectionMlabInsert mlab = new HttpUrlConnectionMlabInsert();
-									String status=mlab.httpConnection_response_mlab_Insert(sessionId, ssoId, actionperformed, channel, period, productType,
+									String status=mlab.httpConnection_response_mlab_Insert(sessionId, ssoId, actionperformed, resolvedQuery, period, productType,
 													planType);
 									System.out.println(status);
 								}catch(Exception ex)
@@ -282,7 +283,7 @@ public class MliBotController{
 									{
 										HttpUrlConnectionMlabInsert mlab = new HttpUrlConnectionMlabInsert();
 										String status=mlab.httpConnection_response_mlab_Insert(sessionId, ssoId, actionperformed,
-																       channel, period, productType, planType);
+																       resolvedQuery, period, productType, planType);
 										System.out.println(status);
 									}catch(Exception ex)
 									{
