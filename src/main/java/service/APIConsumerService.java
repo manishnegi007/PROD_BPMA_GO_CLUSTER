@@ -653,7 +653,7 @@ public class APIConsumerService {
 				{
 					finalresponse="At MTD level "+channel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Our monthly plan is "
 							+pln_mtd_basis_adj_mfyp+" and till "+real_tim_timstamp+" We have achieved "+mtd_inforced_adj_mfyp_achi+" Cr, At YTD level "
-							+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Our yearly plan is "
+							+channel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Our YTD plan is "
 							+pln_ytd_basis_adj_mfyp+" and till "+real_tim_timstamp+" We have achieved "+ytd_inforced_adj_mfyp_achi+" Cr";
 				}
 				else if("Penetration".equalsIgnoreCase(action))
