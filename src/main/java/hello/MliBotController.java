@@ -75,8 +75,6 @@ public class MliBotController{
 			try{
 				userOTP = object.getJSONObject("result").getJSONObject("parameters").get("number")+"";
 			}catch(Exception e){System.out.println("Not getting OTP");}
-			String ssoId="";
-		        
 			if("SSO.Validation".equalsIgnoreCase(actionperformed))
 			{
 				System.out.println("SSOValidation API START");
@@ -206,21 +204,21 @@ public class MliBotController{
 							circle = object.getJSONObject("result").getJSONObject("parameters").getString("Circle")
 									+ "";
 						} catch (Exception e) {
-							logger.info(e);
+							System.out.println(e);
 							circle = "";
 						}
 						try {
 							region = object.getJSONObject("result").getJSONObject("parameters").getString("Region")
 									+ "";
 						} catch (Exception e) {
-							logger.info(e);
+							System.out.println(e);
 							region = "";
 						}
 						try {
 							zone = object.getJSONObject("result").getJSONObject("parameters").getString("Zone")
 									+ "";
 						} catch (Exception e) {
-							logger.info(e);
+							System.out.println(e);
 							zone = "";
 						}
 						if(sessionMap.containsKey(sessionId))
