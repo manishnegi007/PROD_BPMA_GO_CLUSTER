@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import utils.HttpUrlConnectionMlabInsert;
 import utils.HttpUrlConnection_GetDetails;
-
 import common.Commons;
 import  service.APIConsumerService;
 import  common.XTrustProvider;
@@ -37,7 +36,6 @@ public class MliBotController{
         public static Map<String, Map<String,String>> sessionMap = new ConcurrentHashMap<String, Map<String,String>>();
 	public static Map<String, Map<String,String>> sessionMapcontainssoinfo = new ConcurrentHashMap<String, Map<String,String>>();
 	
-
 	@Autowired
 	APIConsumerService aPIConsumerService;
 
@@ -119,9 +117,7 @@ public class MliBotController{
 					if (!otpsessionMap.get("validSSOID").toString().equalsIgnoreCase(ssoId)) {
 						speech = "You are trying to be login as different user. Please close earlier conversation to proceed";
 					}
-
 				}
-				
 			}
 			else if ("nb.OTP.Validation".equalsIgnoreCase(actionperformed)) {
 				String AgentName = "";
@@ -310,7 +306,7 @@ public class MliBotController{
 								String segment="SSO_VALIDATION";
 								HttpUrlConnection_GetDetails getdetail = new HttpUrlConnection_GetDetails();
 								//String ssoId2="ssdel0299";
-								String getdetailresult = getdetail.getUserDetail(seg	ment, ssoId);
+								String getdetailresult = getdetail.getUserDetail(segment, ssoId);
 								JSONObject getUserDetailObject = new JSONObject(getdetailresult);
 								try{
 									user_ssoid=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("ssoid")+"";
