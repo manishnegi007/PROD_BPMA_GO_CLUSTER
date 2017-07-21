@@ -1,5 +1,4 @@
 package utils;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -24,9 +23,8 @@ public class HttpUrlConnection_GetDetails
 		StringBuilder result = new StringBuilder();
 		String output = ""; 
 		String DevMode="N";
-    try
+  	  try
 		{
-
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			String serviceurl = res.getString("servicegetUserDetail");
@@ -65,7 +63,7 @@ public class HttpUrlConnection_GetDetails
 			try {writer.close(); } 
 			catch (Exception e1) 
 			{
-				System.out.println(e1);
+			   System.out.println(e1);
 			}
 			int apiResponseCode = conn.getResponseCode();
 			if(apiResponseCode == 200)
@@ -77,20 +75,18 @@ public class HttpUrlConnection_GetDetails
 				}
 				conn.disconnect();
 				br.close();
-				System.out.println("httpConnection_response_mlab_Insert Result:- " +result.toString());
+				System.out.println("httpConnection_response_SSO_Validation Result:- " +result.toString());
 				System.out.println("External API Call : START : SSO_Validation");
-				return "success";
 			}
 			else
 			{
-				System.out.println("something went worong to communicate mlab and inset data in it");
-				return "failure";
+				System.out.println("something went worong to communicate SSO_Validation_API");
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 		}
-    return result.toString();
-  }
-}
+            return result.toString();
+ 	 }
+   }
