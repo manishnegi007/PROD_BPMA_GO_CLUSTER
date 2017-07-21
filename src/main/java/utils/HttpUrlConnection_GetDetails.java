@@ -42,6 +42,7 @@ public class HttpUrlConnection_GetDetails
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/json");
 			StringBuilder requestdata = new StringBuilder();
+		  	UUID uniqueId = UUID.randomUUID();
 			requestdata.append("	{	");
 			requestdata.append("	  \"header\": {	");
 			requestdata.append("	    \"correlationId\": \""+uniqueId+"\",	");
