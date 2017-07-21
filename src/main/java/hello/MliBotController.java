@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import utils.HttpUrlConnectionMlabInsert;
+import utils.HttpUrlConnection_GetDetails;
 
 import common.Commons;
 import  service.APIConsumerService;
@@ -52,7 +53,17 @@ public class MliBotController{
 		String sessionId="";
 		String userOTP="";
 		String speech="";
-		String cachePeriod=""; String cashplanType=""; String cashchannel=""; String cashproductType="";
+		String cachePeriod=""; 
+		String cashplanType="";
+		String cashchannel=""; 
+		String cashproductType="";
+		String ssoId = "";
+		String cashCircle = "";
+		String cashRegion="";
+		String cashZone="";
+		String circle="";
+		String region="";
+		String zone="";
 
 		WebhookResponse response = new WebhookResponse();
 		MliBotController mliBotController= new MliBotController();
@@ -163,6 +174,8 @@ public class MliBotController{
 			{
 				if(sessionMapcontainssoinfo.containsKey(sessionId))
 				{
+					String user_ssoid="", user_channel="", user_sub_channel="", user_designation_desc="", user_getzone="", user_region="", user_circle="", 
+						user_clusters="", user_go="", user_cmo="", user_amo="";
 					String Validation="";
 					Map<String,String> cashMap= sessionMapcontainssoinfo.get(sessionId);
 					Validation=cashMap.get("Validation");
@@ -173,29 +186,46 @@ public class MliBotController{
 							channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel")+"";
 						}catch(Exception e)
 						{
-							
 							channel = "";
 						}
 						try{
 							productType = object.getJSONObject("result").getJSONObject("parameters").getString("ProductType")+"";
 						}catch(Exception e)
 						{
-							
 							productType="";
 						}
 						try{
 							period =  object.getJSONObject("result").getJSONObject("parameters").getString("Period")+""; 
 						}catch(Exception e)
 						{
-							
 							period="";
 						}
 						try{
 							planType = object.getJSONObject("result").getJSONObject("parameters").getString("planType")+"";
 						}catch(Exception e)
 						{
-							
 							planType="";
+						}
+						try {
+							circle = object.getJSONObject("result").getJSONObject("parameters").getString("Circle")
+									+ "";
+						} catch (Exception e) {
+							logger.info(e);
+							circle = "";
+						}
+						try {
+							region = object.getJSONObject("result").getJSONObject("parameters").getString("Region")
+									+ "";
+						} catch (Exception e) {
+							logger.info(e);
+							region = "";
+						}
+						try {
+							zone = object.getJSONObject("result").getJSONObject("parameters").getString("Zone")
+									+ "";
+						} catch (Exception e) {
+							logger.info(e);
+							zone = "";
 						}
 						if(sessionMap.containsKey(sessionId))
 						{
@@ -234,7 +264,28 @@ public class MliBotController{
 								Map map = sessionMap.get(sessionId);
 								map.put("action", actionperformed);
 							}
-
+							if (circle.equalsIgnoreCase("")) {
+								cashCircle = sessionMap.get(sessionId).get("circle") + "";
+							} else {
+								cashCircle = circle;
+								Map map = sessionMap.get(sessionId);
+								map.put("circle", circle);
+							}
+							if (region.equalsIgnoreCase("")) {
+								cashRegion = sessionMap.get(sessionId).get("region") + "";
+							} else {
+								cashRegion = region;
+								Map map = sessionMap.get(sessionId);
+								map.put("region", region);
+							}
+							if (zone.equalsIgnoreCase(""))
+							{
+								cashZone = sessionMap.get(sessionId).get("zone") + "";
+							} else {
+								cashZone = zone;
+								Map map = sessionMap.get(sessionId);
+								map.put("zone", zone);
+							}
 							if (!actionperformed.equalsIgnoreCase("") && actionperformed != null) 
 							{
 								try
@@ -247,30 +298,122 @@ public class MliBotController{
 								{
 									System.out.println("Something goes wrong to connect Mlab:MongoDb");
 								}
-								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod,
-										cashproductType, cashplanType);
+								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType,
+										user_ssoid, user_sub_channel, user_designation_desc, cashZone, cashRegion, cashCircle, 
+										user_clusters, user_go, user_cmo, user_amo);
 							}
-						} else {
+						} 
+						else 
+						{
+							try
+							{
+								String segment="SSO_VALIDATION";
+								HttpUrlConnection_GetDetails getdetail = new HttpUrlConnection_GetDetails();
+								//String ssoId2="ssdel0299";
+								String getdetailresult = getdetail.getUserDetail(seg	ment, ssoId);
+								JSONObject getUserDetailObject = new JSONObject(getdetailresult);
+								try{
+									user_ssoid=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("ssoid")+"";
+								}catch(Exception ex){user_ssoid="";}
+								try{
+									user_channel=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("channel")+"";
+								}catch(Exception ex){user_channel="";}
+								try{
+									user_sub_channel=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("sub_channel")+"";
+								}catch(Exception ex){user_sub_channel="";}
+								try{
+									user_designation_desc=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("designation_desc")+"";
+								}catch(Exception ex){user_designation_desc="";}
+								try{
+									user_getzone=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("zone")+"";
+								}catch(Exception ex){user_getzone="";}
+								try{
+									user_region=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("region")+"";
+								}catch(Exception ex){user_region="";}
+								try{
+									user_circle=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("circle")+"";
+								}catch(Exception ex){user_circle="";}
+								try{
+									user_clusters=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("clusters")+"";
+								}catch(Exception ex){user_clusters="";}
+								try{
+									user_go=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("go")+"";
+								}catch(Exception ex){user_go="";}
+								try{
+									user_cmo=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("cmo")+"";
+								}catch(Exception ex){user_cmo="";}
+								try{
+									user_amo=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("amo")+"";
+								}catch(Exception ex){user_amo="";}
+							}catch(Exception ex)
+							{
+								System.out.println("Exception Occured while while calling External API GetUserDetail");
+							}
 							Map<String, String> map = new HashMap<String, String>();
-							if (channel.equalsIgnoreCase("")) {
-								channel = "MLI";
-								map.put("channel", channel);
-							} else {
-								map.put("channel", channel);
+							if(user_channel.equalsIgnoreCase(""))
+							{
+								if (channel.equalsIgnoreCase(""))
+								{
+									channel = "MLI";
+									map.put("channel", channel);
+								} else {
+									map.put("channel", channel);
+								}
+							}else
+							{
+								map.put("channel", user_channel);
+								channel=user_channel;
 							}
 							if (productType.equalsIgnoreCase("")) {
 								productType = "Protection";
 								map.put("productType", productType);
-							} else {
+							}else {
 								map.put("productType", productType);
 							}
 							if (period.equalsIgnoreCase("")) {
 								period = "MONTHLY";
 								map.put("period", period);
-							} else {
+							}else {
 								map.put("period", period);
 							}
 							map.put("planType", planType);
+							if(user_circle.equalsIgnoreCase(""))
+							{
+								if (circle.equalsIgnoreCase("")) 
+								{
+									circle = "";
+									map.put("circle", circle);
+								} else {
+									map.put("circle", circle);
+								}
+							}else
+							{
+								map.put("circle", user_circle);
+							}
+							if(user_region.equalsIgnoreCase(""))
+							{
+								if (region.equalsIgnoreCase("")) {
+									region = "";
+									map.put("region", region);
+								} else {
+									map.put("region", region);
+								}
+							}else
+							{
+								map.put("region", user_region);
+							}
+							if(user_getzone.equalsIgnoreCase(""))
+							{
+								if (zone.equalsIgnoreCase("")) {
+									zone = "";
+									map.put("zone", zone);
+								} else {
+									map.put("zone", zone);
+								}
+							}
+							else{
+								map.put("zone", user_getzone);
+							}
 							if (actionperformed.equalsIgnoreCase("nb.channel")
 									|| actionperformed.equalsIgnoreCase("nb.period")) {
 								actionperformed = "NUMBERS";
@@ -289,7 +432,8 @@ public class MliBotController{
 									{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
 									}
-								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType);
+								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType, user_ssoid, 
+										user_sub_channel, user_designation_desc, user_getzone, user_region, user_circle, user_clusters, user_go, user_cmo, user_amo);
 							}
 						}
 					}
