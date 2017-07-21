@@ -27,7 +27,9 @@ import hello.InnerData;
 @Component
 public class APIConsumerService {
 	
-	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType)
+	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType,
+		String user_ssoid, String user_sub_channel, String user_designation_desc, String user_getzone, String user_region, 
+	        String user_circle, String user_clusters, String user_go, String user_cmo, String user_amo)
 	{
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
 		Facebook fb = new Facebook();
@@ -44,7 +46,7 @@ public class APIConsumerService {
 		System.out.println("getWipDataAll API START");
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		ResourceBundle mtd = ResourceBundle.getBundle("MTD");
-		ResourceBundle ytd = ResourceBundle.getBundle("YTD");
+		ResourceBundle ytd = ResourceBundle.getBundle("YTD");	
 		String output = new String();
 		StringBuilder result = new StringBuilder();	
 		String DevMode = "N";
@@ -126,8 +128,7 @@ public class APIConsumerService {
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			if("NUMBERS".equalsIgnoreCase(action) || "AdjMFYP".equalsIgnoreCase(action) 
-					|| "WIP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action)||"WIP.YES".equalsIgnoreCase(action))
+			if("NUMBERS".equalsIgnoreCase(action) || "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action))
 			{
 				System.out.println("First  API START Call");
 				String serviceurl = res.getString("serviceurl");
@@ -175,7 +176,71 @@ public class APIConsumerService {
 				}else{
 					System.out.println("Unable to call External API :- WIP, APPLIED, ENFORCE");
 				}
-			}else
+			}
+			else if("WIP".equalsIgnoreCase(action) || "WIP.YES".equalsIgnoreCase(action))
+			{
+				user_designation_desc="";
+				String serviceurl = res.getString("servicegetUserDetail");
+				URL url = new URL(serviceurl);
+				if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
+				{
+					Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
+					conn = (HttpURLConnection) url.openConnection(proxy);
+				}else{
+					conn = (HttpURLConnection) url.openConnection();
+				}
+				HttpsURLConnection.setFollowRedirects(true);
+				conn.setDoInput(true);
+				conn.setDoOutput(true);
+				conn.setRequestMethod("POST");
+				conn.setRequestProperty("Content-Type", "application/json");
+				requestdata.append("	{	");
+				requestdata.append("	  \"header\": {	");
+				requestdata.append("	    \"correlationId\": \"1234567890\",	");
+				requestdata.append("	    \"msgVersion\": \"\",	");
+				requestdata.append("	    \"appId\": \"\",	");
+				requestdata.append("	    \"userId\": \"\",	");
+				requestdata.append("	    \"password\": \"\",	");
+				requestdata.append("	    \"rollId\":\"\"	");
+				requestdata.append("	  },	");
+				requestdata.append("	  \"payload\": {	");
+				requestdata.append("	    \"segment\": \""+segment+"\",	");
+				requestdata.append("	    \"designationDesc\": \""+user_designation_desc+"\",");
+				requestdata.append("	    \"channel\": \""+channel+"\",");
+				requestdata.append("	    \"subChannel\": \""+user_sub_channel+"\",");
+				requestdata.append("	    \"zone\": \""+user_getzone+"\",");
+				requestdata.append("	    \"region\": \""+user_region+"\",");
+				requestdata.append("	    \"circle\": \""+user_circle+"\",");
+				requestdata.append("	    \"cluster\": \""+user_clusters+"\",");
+				requestdata.append("	    \"go\": \""+user_go+"\",");
+				requestdata.append("	    \"cmo\": \""+user_cmo+"\",");
+				requestdata.append("	    \"amo\": \""+user_amo+"\"");
+				requestdata.append("	  }	");
+				requestdata.append("	}	");
+				System.out.println("External API Call : START");
+				OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
+				writer.write(requestdata.toString());
+				writer.flush();
+				try {writer.close(); } catch (Exception e1) {}
+				int apiResponseCode = conn.getResponseCode();
+				if(apiResponseCode == 200)
+				{
+					BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+					while ((output = br.readLine()) != null) 
+					{
+						result.append(output);
+					}
+					conn.disconnect();
+					br.close();
+					System.out.println("External API Call : END");
+
+				}
+				else
+				{
+					System.out.println("Unable to call External API :- WIP");
+				}
+			}
+			else
 			{
 				String serviceurl2 = res.getString("serviceurl2");
 				URL url2 = new URL(serviceurl2);
@@ -309,46 +374,46 @@ public class APIConsumerService {
 				}catch(Exception e){}
 				String ytd_applied_afyp = df.format(ytd_applied_afyp1);
 				try{
-					wipAFYP = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("wip_afyp").toString());
+					wipAFYP = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("wip_afyp").toString());
 				}catch(Exception e){}
 				try{
-					hoWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("ho_wip_afyp").toString());
+					hoWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("ho_wip_afyp").toString());
 				}catch(Exception e){}
 				try{
-					goWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("go_wip_afyp").toString());
+					goWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("go_wip_afyp").toString());
 				}catch(Exception e){}
 				try{
-					itWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("it_wip_afyp").toString());
+					itWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("it_wip_afyp").toString());
 				}catch(Exception e){}
 				try{
-					finWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("fin_wip_afyp").toString());
+					finWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("fin_wip_afyp").toString());
 				}catch(Exception e){}
 				try{
-					miscWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("misc_wip_afyp").toString());
+					miscWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("misc_wip_afyp").toString());
 				}catch(Exception e){}
 				try{
-					welcomeWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("welcome_wip_afyp").toString());
+					welcomeWIPAFYP =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("welcome_wip_afyp").toString());
 				}catch(Exception e){}
 				try{
-					wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("wip_count").toString());
+					wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("wip_count").toString());
 				}catch(Exception e){}
 				try{
-					ho_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("ho_wip_count").toString());
+					ho_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("ho_wip_count").toString());
 				}catch(Exception e){}
 				try{
-					go_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("go_wip_count").toString());
+					go_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("go_wip_count").toString());
 				}catch(Exception e){}
 				try{
-					it_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("it_wip_count").toString());
+					it_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("it_wip_count").toString());
 				}catch(Exception e){}
 				try{
-					fin_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("fin_wip_count").toString());
+					fin_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("fin_wip_count").toString());
 				}catch(Exception e){}
 				try{
-					misc_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("misc_wip_count").toString());
+					misc_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("misc_wip_count").toString());
 				}catch(Exception e){}
 				try{
-					welcome_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wipData").get("welcome_wip_count").toString());
+					welcome_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("welcome_wip_count").toString());
 				}catch(Exception e){}
 				try{
 					mtd_inforced_afyp	 = (object.getJSONObject("payload").getJSONObject("penetration").get("mtd_inforced_afyp").toString());
