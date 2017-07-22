@@ -180,6 +180,7 @@ public class APIConsumerService {
 				requestdata.append("	    \"planType\": \""+planType+"\"");
 				requestdata.append("	  }	");
 				requestdata.append("	}	");
+				System.out.println(requestdata.toString());
 				System.out.println("External API Call : START");
 				OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
 				writer.write(requestdata.toString());
