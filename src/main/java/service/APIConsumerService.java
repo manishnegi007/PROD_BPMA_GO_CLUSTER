@@ -140,7 +140,7 @@ public class APIConsumerService {
 					|| "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action) 
 					|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action))
 			{
-				System.out.println("First  API START Call");
+				System.out.println("External Java Service Called: ");
 				user_designation_desc="";
 				String serviceurl = res.getString("servicegetUserDetail");
 				URL url = new URL(serviceurl);
@@ -158,7 +158,7 @@ public class APIConsumerService {
 				conn.setRequestProperty("Content-Type", "application/json");
 				requestdata.append("	{	");
 				requestdata.append("	  \"header\": {	");
-				requestdata.append("	    \"correlationId\": \"1234567890\",	");
+				requestdata.append("	    \"correlationId\": \"12345\",	");
 				requestdata.append("	    \"msgVersion\": \"\",	");
 				requestdata.append("	    \"appId\": \"\",	");
 				requestdata.append("	    \"userId\": \"\",	");
@@ -206,12 +206,12 @@ public class APIConsumerService {
 				DecimalFormat df = new DecimalFormat("####0.00");
 				DecimalFormat df1 = new DecimalFormat("####");
 				JSONObject object = new JSONObject(result.toString());
-				double dailyAdjustMFYP1=0;  double mtdAdjustMFYP1=0;    double dailyAppliedAFYP1=0;
+				double dailyAdjustMFYP1=0; 	double mtdAdjustMFYP1=0;    double dailyAppliedAFYP1=0;
 				double mtdAppliedAFYP1=0;	double wipAFYP=0;           double hoWIPAFYP=0;
-				double goWIPAFYP=0;			double itWIPAFYP=0;	   	    double finWIPAFYP=0;
-				double miscWIPAFYP=0;		double welcomeWIPAFYP=0;	double wip_count=0;
-				double ho_wip_count=0;		double go_wip_count=0;		double it_wip_count=0;
-				double fin_wip_count=0;		double misc_wip_count=0;	double welcome_wip_count=0;
+				double goWIPAFYP=0; 		double itWIPAFYP=0;	    double finWIPAFYP=0;
+				double miscWIPAFYP=0;		double welcomeWIPAFYP=0;    double wip_count=0;
+				double ho_wip_count=0;		double go_wip_count=0;	    double it_wip_count=0;
+				double fin_wip_count=0;		double misc_wip_count=0;    double welcome_wip_count=0;
 				double ytd_inforced_afyp1=0;double ytd_applied_afyp1=0; double mtd_inforced_afyp1=0;
 				double ytd_adj_mfyp1=0;
 				double sum = 0; double sum2=0; double sum3 = 0; double sum4 = 0;
