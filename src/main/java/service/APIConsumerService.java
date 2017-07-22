@@ -28,8 +28,9 @@ import hello.InnerData;
 public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType,
-		String user_ssoid, String user_sub_channel, String user_designation_desc, String user_getzone, String user_region, 
-	        String user_circle, String user_clusters, String user_go, String user_cmo, String user_amo)
+			String user_ssoid, String user_sub_channel, String user_designation_desc, String user_getzone, String user_region, 
+					     String user_circle, String user_clusters, String user_go, String user_cmo, 
+			String user_amo)
 	{
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
 		Facebook fb = new Facebook();
@@ -43,7 +44,6 @@ public class APIConsumerService {
 		{
 			channel=convertToCamelCase(channel);
 		}
-		System.out.println("getWipDataAll API START");
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		ResourceBundle mtd = ResourceBundle.getBundle("MTD");
 		ResourceBundle ytd = ResourceBundle.getBundle("YTD");	
@@ -54,6 +54,7 @@ public class APIConsumerService {
 		String segment="";
 		String serviceChannel="";
 		String speech="";
+		String finalresponse="";
      		try 
 		{
 			if("NUMBERS".equalsIgnoreCase(action))
@@ -73,8 +74,7 @@ public class APIConsumerService {
 					serviceChannel = channel;
 				}
 			}
-			else if("AdjMFYP".equalsIgnoreCase(action) || "Growth".equalsIgnoreCase(action) 
-					|| "Achievement".equalsIgnoreCase(action)|| "Penetration".equalsIgnoreCase(action))
+			else if("AdjMFYP".equalsIgnoreCase(action))
 			{
 				if("MLI".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 				{
@@ -125,60 +125,22 @@ public class APIConsumerService {
 					serviceChannel = channel;
 				}
 			}
+			else if("Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action))
+			{
+				segment=action;
+			}
+			else
+			{
+				finalresponse="Invalid Intent Called by User";
+			}
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			if("NUMBERS".equalsIgnoreCase(action) || "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action))
+			if("WIP".equalsIgnoreCase(action) || "WIP.YES".equalsIgnoreCase(action) || "NUMBERS".equalsIgnoreCase(action)
+					|| "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action) 
+					|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action))
 			{
 				System.out.println("First  API START Call");
-				String serviceurl = res.getString("serviceurl");
-				URL url = new URL(serviceurl);
-				if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
-				{
-					Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("cachecluster.maxlifeinsurance.com", 3128));
-					conn = (HttpURLConnection) url.openConnection(proxy);
-				}else{
-					conn = (HttpURLConnection) url.openConnection();
-				}
-				HttpsURLConnection.setFollowRedirects(true);
-				conn.setDoInput(true);
-				conn.setDoOutput(true);
-				conn.setRequestMethod("POST");
-				conn.setRequestProperty("Content-Type", "application/json");
-				requestdata.append("	{	");
-				requestdata.append("	  \"header\": {	");
-				requestdata.append("	    \"correlationId\": \"1234567890\",	");
-				requestdata.append("	    \"msgVersion\": \"\",	");
-				requestdata.append("	    \"appId\": \"\",	");
-				requestdata.append("	    \"userId\": \"\",	");
-				requestdata.append("	    \"password\": \"\",	");
-				requestdata.append("	    \"rollId\":\"\"	");
-				requestdata.append("	  },	");
-				requestdata.append("	  \"payload\": {	");
-				requestdata.append("	    \"segment\": \""+segment+"\",	");
-				requestdata.append("	    \"channel\": \""+serviceChannel+"\"	");
-				requestdata.append("	  }	");
-				requestdata.append("	}	");
-				System.out.println("External API Call : START");
-				OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
-				writer.write(requestdata.toString());
-				writer.flush();
-				try {writer.close(); } catch (Exception e1) {}
-				int apiResponseCode = conn.getResponseCode();
-				if(apiResponseCode == 200)
-				{
-					BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-					while ((output = br.readLine()) != null) 
-					{result.append(output);}
-					conn.disconnect();
-					br.close();
-					System.out.println("External API Call : END");
-				}else{
-					System.out.println("Unable to call External API :- WIP, APPLIED, ENFORCE");
-				}
-			}
-			else if("WIP".equalsIgnoreCase(action) || "WIP.YES".equalsIgnoreCase(action))
-			{
 				user_designation_desc="";
 				String serviceurl = res.getString("servicegetUserDetail");
 				URL url = new URL(serviceurl);
@@ -206,7 +168,7 @@ public class APIConsumerService {
 				requestdata.append("	  \"payload\": {	");
 				requestdata.append("	    \"segment\": \""+segment+"\",	");
 				requestdata.append("	    \"designationDesc\": \""+user_designation_desc+"\",");
-				requestdata.append("	    \"channel\": \""+channel+"\",");
+				requestdata.append("	    \"channel\": \""+serviceChannel+"\",");
 				requestdata.append("	    \"subChannel\": \""+user_sub_channel+"\",");
 				requestdata.append("	    \"zone\": \""+user_getzone+"\",");
 				requestdata.append("	    \"region\": \""+user_region+"\",");
@@ -214,7 +176,8 @@ public class APIConsumerService {
 				requestdata.append("	    \"cluster\": \""+user_clusters+"\",");
 				requestdata.append("	    \"go\": \""+user_go+"\",");
 				requestdata.append("	    \"cmo\": \""+user_cmo+"\",");
-				requestdata.append("	    \"amo\": \""+user_amo+"\"");
+				requestdata.append("	    \"amo\": \""+user_amo+"\",");
+				requestdata.append("	    \"planType\": \""+planType+"\"");
 				requestdata.append("	  }	");
 				requestdata.append("	}	");
 				System.out.println("External API Call : START");
@@ -227,71 +190,22 @@ public class APIConsumerService {
 				{
 					BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 					while ((output = br.readLine()) != null) 
-					{
-						result.append(output);
-					}
-					conn.disconnect();
-					br.close();
-					System.out.println("External API Call : END");
-
-				}
-				else
-				{
-					System.out.println("Unable to call External API :- WIP");
-				}
-			}
-			else
-			{
-				String serviceurl2 = res.getString("serviceurl2");
-				URL url2 = new URL(serviceurl2);
-				conn = (HttpURLConnection) url2.openConnection();
-				HttpsURLConnection.setFollowRedirects(true);
-				conn.setDoInput(true);
-				conn.setDoOutput(true);
-				conn.setRequestMethod("POST");
-				conn.setRequestProperty("Content-Type", "application/json");
-				requestdata.append("	{	");
-				requestdata.append("	  \"header\": {	");
-				requestdata.append("	    \"correlationId\": \"1234567890\",	");
-				requestdata.append("	    \"msgVersion\": \"\",	");
-				requestdata.append("	    \"appId\": \"\",	");
-				requestdata.append("	    \"userId\": \"\",	");
-				requestdata.append("	    \"password\": \"\",	");
-				requestdata.append("	    \"rollId\":\"\"	");
-				requestdata.append("	  },	");
-				requestdata.append("	  \"payload\": {	");
-				requestdata.append("	    \"segment\": \""+action+"\",	");
-				requestdata.append("	    \"channel\": \""+serviceChannel+"\",	");
-				requestdata.append("	    \"planType\": \""+planType+"\"	");
-				requestdata.append("	  }	");
-				requestdata.append("	}	");
-				
-				OutputStreamWriter writer2 = new OutputStreamWriter(conn.getOutputStream());
-				writer2.write(requestdata.toString());
-				writer2.flush();
-				try {writer2.close(); } 
-				catch (Exception e1) 
-				{
-				    System.out.println("We are in Exception in to Close the writer object");
-				}
-				int apiResponseCode2 = conn.getResponseCode();
-				if(apiResponseCode2 == 200)
-				{
-					BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-					while ((output = br.readLine()) != null) 
 					{result.append(output);}
 					conn.disconnect();
 					br.close();
+					System.out.println("External API Call : END");
 				}else{
-					System.out.println("Unable to connect External API");
+					System.out.println("Unable to call External API Java Service");
 				}
+			}
+			else{
+				finalresponse="Invalid Intent Called by User";
 			}
 			try
 			   {
 				DecimalFormat df = new DecimalFormat("####0.00");
 				DecimalFormat df1 = new DecimalFormat("####");
 				JSONObject object = new JSONObject(result.toString());
-				String finalresponse="";
 				double dailyAdjustMFYP1=0;  double mtdAdjustMFYP1=0;    double dailyAppliedAFYP1=0;
 				double mtdAppliedAFYP1=0;	double wipAFYP=0;           double hoWIPAFYP=0;
 				double goWIPAFYP=0;			double itWIPAFYP=0;	   	    double finWIPAFYP=0;
@@ -316,11 +230,11 @@ public class APIConsumerService {
 				LocalDateTime now = LocalDateTime.now();
 				for(int i=0;i<1;i++){
 					try{
-						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("enforceData").get("real_tim_timstamp").toString();
+						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("paid").get("real_tim_timstamp").toString();
 						if(real_tim_timstamp!=null){break;}
 					}catch(Exception ex){}
 					try{
-						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("appliedData").get("real_tim_timstamp").toString();
+						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("applied").get("real_tim_timstamp").toString();
 						if(real_tim_timstamp!=null){break;}
 					}catch(Exception ex){}
 					try{
@@ -337,40 +251,40 @@ public class APIConsumerService {
 					}catch(Exception e){}
 				}
 				try{
-					dailyAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("daily_adj_mfyp").toString());
+					dailyAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("daily_adj_mfyp").toString());
 				}
 				catch(Exception ex)	{}
 				String dailyAdjustMFYP =df.format(dailyAdjustMFYP1);
 
 				try	{
-					mtd_inforced_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("mtd_inforced_afyp").toString());
+					mtd_inforced_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("mtd_inforced_afyp").toString());
 				}
 				catch(Exception ex)	{}
 				String mtd_inforced_afyp_enforce =df.format(mtd_inforced_afyp1);
 				try
 				{
-					mtdAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("mtd_adj_mfyp").toString());
+					mtdAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("mtd_adj_mfyp").toString());
 				}catch(Exception ex){}
 				String mtdAdjustMFYP = df.format(mtdAdjustMFYP1);
 				try
 				{
-					ytd_inforced_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("ytd_inforced_afyp").toString());
+					ytd_inforced_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("ytd_inforced_afyp").toString());
 				}catch(Exception ex){}
 				String ytd_inforced_afyp_enforce = df.format(ytd_inforced_afyp1);
 				try{
-					ytd_adj_mfyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("enforceData").get("ytd_adj_mfyp").toString());
+					ytd_adj_mfyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("ytd_adj_mfyp").toString());
 				}catch(Exception ex){}
 				String ytd_adj_mfyp = df.format(ytd_adj_mfyp1);
 				try{
-					dailyAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("appliedData").get("daily_applied_afyp").toString());
+					dailyAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("daily_applied_afyp").toString());
 				}catch(Exception e){}
 				String dailyAppliedAFYP = df.format(dailyAppliedAFYP1);
 				try{
-					mtdAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("appliedData").get("mtd_applied_afyp").toString());
+					mtdAppliedAFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("mtd_applied_afyp").toString());
 				}catch(Exception e){}
 				String mtdAppliedAFYP = df.format(mtdAppliedAFYP1);
 				try{
-					ytd_applied_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("appliedData").get("ytd_applied_afyp").toString());
+					ytd_applied_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("ytd_applied_afyp").toString());
 				}catch(Exception e){}
 				String ytd_applied_afyp = df.format(ytd_applied_afyp1);
 				try{
