@@ -292,8 +292,9 @@ public class MliBotController{
 							{
 								String segment="SSO_VALIDATION";
 								HttpUrlConnection_GetDetails getdetail = new HttpUrlConnection_GetDetails();
-								//String ssoId2="ssdel0299";
-								String getdetailresult = getdetail.getUserDetail(segment, ssoId);
+								String ssoId2="vsbby0105";
+								//String getdetailresult = getdetail.getUserDetail(segment, ssoId);
+								String getdetailresult = getdetail.getUserDetail(segment, ssoId2);
 								JSONObject getUserDetailObject = new JSONObject(getdetailresult);
 								try{
 									user_ssoid=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("ssoid")+"";
