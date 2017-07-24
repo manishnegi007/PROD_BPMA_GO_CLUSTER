@@ -238,15 +238,44 @@ public class MliBotController{
 								Map map = sessionMap.get(sessionId);
 								map.put("action", actionperformed);
 							}
-							if (circle.equalsIgnoreCase("")) {
+							if (circle.equalsIgnoreCase("")) 
+							{
+								String user_ssoId=sessionMap.get(sessionId).get("user_ssoid")+"";
+								if(user_ssoId.equalsIgnoreCase("") || user_ssoId.equalsIgnoreCase("null"))
+								{
+									if(!channel.equalsIgnoreCase(""))
+									{
+										cashCircle="";
+									}
+									else{
+										cashCircle= sessionMap.get(sessionId).get("circle") + "";
+									}
+								}
+								else{
 								cashCircle = sessionMap.get(sessionId).get("circle") + "";
+								}
 							} else {
 								cashCircle = circle;
 								Map map = sessionMap.get(sessionId);
 								map.put("circle", circle);
 							}
-							if (region.equalsIgnoreCase("")) {
-								cashRegion = sessionMap.get(sessionId).get("region") + "";
+							if (region.equalsIgnoreCase("")) 
+							{
+								String user_ssoId=sessionMap.get(sessionId).get("user_ssoid")+"";
+								if(user_ssoId.equalsIgnoreCase("") || user_ssoId.equalsIgnoreCase("null"))
+								{
+									if(!channel.equalsIgnoreCase(""))
+									{
+										cashRegion="";
+									}
+									else{
+										cashRegion= sessionMap.get(sessionId).get("region") + "";
+									}
+								}
+								else{
+									cashRegion = sessionMap.get(sessionId).get("region") + "";
+								}
+								
 							} else {
 								cashRegion = region;
 								Map map = sessionMap.get(sessionId);
@@ -254,7 +283,20 @@ public class MliBotController{
 							}
 							if (zone.equalsIgnoreCase(""))
 							{
-								cashZone = sessionMap.get(sessionId).get("zone") + "";
+								String user_ssoId2=sessionMap.get(sessionId).get("user_ssoid")+"";
+								if(user_ssoId2.equalsIgnoreCase("") || user_ssoId2.equalsIgnoreCase("null"))
+								{
+									if(!channel.equalsIgnoreCase(""))
+									{
+										cashZone="";
+									}
+									else{
+										cashZone= sessionMap.get(sessionId).get("zone") + "";;
+									}
+								}
+								else{
+									cashZone = sessionMap.get(sessionId).get("zone") + "";
+								}
 							} else {
 								cashZone = zone;
 								Map map = sessionMap.get(sessionId);
