@@ -132,16 +132,12 @@ public class MliBotController{
 						}
 					}
 				} 
-				else
-				{
+				else{
 					speech = "Please Validate SSO Credentials For Further Process";
 				}
-			}
-			else if("close.conversation".equalsIgnoreCase(actionperformed))
-			{
-				
-				if(sessionMapcontainssoinfo.containsKey(sessionId))
-				{
+			}else if("close.conversation".equalsIgnoreCase(actionperformed))
+			{			
+				if(sessionMapcontainssoinfo.containsKey(sessionId)){
 					sessionMapcontainssoinfo.remove(sessionId);
 					sessionMap.remove(sessionId);
 					speech = "Thank you for contacting Max Life. Have a great day!";
@@ -149,11 +145,9 @@ public class MliBotController{
 				else{
 					speech = "Thank you for contacting Max Life. Have a great day!";
 				}
-			}
-			else
+			}else
 			{
-				if(sessionMapcontainssoinfo.containsKey(sessionId))
-				{
+				if(sessionMapcontainssoinfo.containsKey(sessionId)){
 					String user_ssoid="", user_channel="", user_sub_channel="", user_designation_desc="", user_getzone="", user_region="", user_circle="", 
 							user_clusters="", user_go="", user_cmo="", user_amo="";
 					String Validation="";
@@ -246,8 +240,7 @@ public class MliBotController{
 									if(!channel.equalsIgnoreCase(""))
 									{
 										cashCircle="";
-									}
-									else{
+									}else{
 										cashCircle= sessionMap.get(sessionId).get("circle") + "";
 									}
 								}
