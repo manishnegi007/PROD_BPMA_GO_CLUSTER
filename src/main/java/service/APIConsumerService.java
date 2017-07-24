@@ -29,12 +29,38 @@ public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType,
 			String user_ssoid, String user_sub_channel, String user_designation_desc, String user_getzone, String user_region, 
-					     String user_circle, String user_clusters, String user_go, String user_cmo, 
-			String user_amo)
+					     String user_circle, String user_clusters, String user_go, String user_cmo,	String user_amo)
 	{
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
 		Facebook fb = new Facebook();
 		InnerData innerData= new InnerData();
+		for(int i=0; i<=0; i++)
+		{
+			if(!"".equalsIgnoreCase(user_circle))
+			{
+				channel=user_circle;
+				channel="Circle "+channel;
+				break;
+			}
+			else if(!"".equalsIgnoreCase(user_region))
+			{
+				channel=user_region;
+				channel="Channel "+channel;
+				break;
+			}
+			else if(!"".equalsIgnoreCase(user_getzone))
+			{
+				channel=user_getzone;
+				channel="Zone "+channel;
+				break;
+			}
+			else if(!"".equalsIgnoreCase(user_sub_channel))
+			{
+				channel=user_sub_channel;
+				channel="SubChannel "+channel;
+				break;
+			}
+		}
 		
 		if("MLI".equalsIgnoreCase(channel)||"CAT".equalsIgnoreCase(channel))
 		{
