@@ -383,7 +383,7 @@ public class MliBotController{
 									region = "";
 									map.put("region", region);
 								} else {
-									map.put("region", region);
+									map.put("region", user_region);
 									region=user_region;
 								}
 							}else{
