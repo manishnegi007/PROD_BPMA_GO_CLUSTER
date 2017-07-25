@@ -218,7 +218,7 @@ public class MliBotController{
 								extraRegion =extraMap.get(user_ssoid).get("region") + "";
 								extraZone = extraMap.get(user_ssoid).get("zone") + "";
 								extraCircle = extraMap.get(user_ssoid).get("circle") + "";
-								if(!"".equalsIgnoreCase(extraSSOId))
+								if(!"".equalsIgnoreCase(extraSSOId) && !extraSSOId.equalsIgnoreCase("null"))
 								{
 									if((!"Others".equalsIgnoreCase(extraRegion) && !"".equalsIgnoreCase(extraRegion)
 											|| !"Others".equalsIgnoreCase(extraCircle) && !"".equalsIgnoreCase(extraCircle)))
