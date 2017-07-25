@@ -163,6 +163,7 @@ public class APIConsumerService {
 			else if("Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action))
 			{
 				segment=action;
+				serviceChannel = channel;
 			}
 			else
 			{
