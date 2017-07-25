@@ -35,6 +35,10 @@ public class APIConsumerService {
 		Facebook fb = new Facebook();
 		InnerData innerData= new InnerData();
 		String msgChannel="";
+		if("".equalsIgnoreCase(channel))
+		{
+			channel="MLI";
+		}
 		for(int i=0; i<=0; i++)
 		{
 			if(!"".equalsIgnoreCase(user_circle))
