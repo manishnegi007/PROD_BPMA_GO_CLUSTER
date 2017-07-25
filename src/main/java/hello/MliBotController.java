@@ -415,7 +415,30 @@ public class MliBotController{
 								}
 								if (subChannel.equalsIgnoreCase(""))
 								{
-									cash_Sub_Channel = sessionMap.get(sessionId).get("subChannel") + "";
+									String user_ssoId3=sessionMap.get(sessionId).get("user_ssoid")+"";
+									if(user_ssoId3.equalsIgnoreCase("") || user_ssoId3.equalsIgnoreCase("null"))
+									{
+										if(!checkChannel.equalsIgnoreCase(channel))
+										{
+											cash_Sub_Channel= sessionMap.get(sessionId).get("subChannel") + "";;
+											if("".equalsIgnoreCase(cash_Sub_Channel))
+											{
+												cash_Sub_Channel= sessionMap.get(sessionId).get("subChannel") + "";;
+											}
+											else
+											{
+												cash_Sub_Channel="";
+												Map map = sessionMap.get(sessionId);
+												map.put("subChannel", cash_Sub_Channel);
+											}
+										}
+										else{
+											cash_Sub_Channel= sessionMap.get(sessionId).get("subChannel") + "";;
+										}
+									}
+									else{
+										cash_Sub_Channel = sessionMap.get(sessionId).get("subChannel") + "";
+									}
 								} else {
 									cash_Sub_Channel = subChannel;
 									Map map = sessionMap.get(sessionId);
