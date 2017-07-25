@@ -459,10 +459,10 @@ public class APIConsumerService {
 					mtd_inforced_adj_mfyp = (object.getJSONObject("payload").getJSONObject("growth").get("mtd_inforced_adj_mfyp").toString());
 				}catch(Exception e){}
 				try{
-					grth_ovr_lst_yr_paid = (object.getJSONObject("payload").getJSONObject("growth").get("grth_ovr_lst_yr_paid").toString());
+					grth_ovr_lst_yr_paid = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lst_yr_sm_adj_mfyp_ytd").toString());
 				}catch(Exception e){}
 				try{
-					adj_mfyp_sam_ytd_lst_yr = (object.getJSONObject("payload").getJSONObject("growth").get("adj_mfyp_sam_ytd_lst_yr").toString());
+					adj_mfyp_sam_ytd_lst_yr = (object.getJSONObject("payload").getJSONObject("growth").get("prev_year_adj_mfyp_ytd").toString());
 				}catch(Exception e){}
 				try{
 					ytd_inforced_adj_mfyp = (object.getJSONObject("payload").getJSONObject("growth").get("ytd_inforced_adj_mfyp").toString());
@@ -629,7 +629,7 @@ public class APIConsumerService {
 					
 						finalresponse = msgChannel+" has witnessed paid Business growth of "+grth_ovr_lst_yr_paid
 								+"% on YTD basis, \n\n last year same time we had clocked "+adj_mfyp_sam_ytd_lst_yr+
-								"Cr of Adj MFYP as compared to "+ytd_inforced_adj_mfyp+" today";
+								" Cr of Adj MFYP as compared to "+ytd_inforced_adj_mfyp+" Cr. today";
 
 					
 				}
