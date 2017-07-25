@@ -34,6 +34,7 @@ public class MliBotController{
 
 	public static ResourceBundle resProp = ResourceBundle.getBundle("errorMessages");
         public static Map<String, Map<String,String>> sessionMap = new ConcurrentHashMap<String, Map<String,String>>();
+	public static Map<String, Map<String, String>> extraMap = new ConcurrentHashMap<String, Map<String, String>>();
 	public static Map<String, Map<String,String>> sessionMapcontainssoinfo = new ConcurrentHashMap<String, Map<String,String>>();
 	
 	@Autowired
