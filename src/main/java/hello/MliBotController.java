@@ -544,21 +544,16 @@ public class MliBotController{
 								map.put("zone", user_getzone);
 								zone=user_getzone;
 							}
-							if(subChannel.equalsIgnoreCase(""))
+							if(user_sub_channel.equalsIgnoreCase(""))
 							{
-								if (user_sub_channel.equalsIgnoreCase("")) 
-								{
-									subChannel = "";
-									map.put("subChannel", subChannel);
-								} else {
-									map.put("subChannel", user_sub_channel);
-									subChannel=user_sub_channel;
-								}
+								map.put("subChannel", subChannel);
+								subChannel=subChannel;
+
 							}
 							else{
-								map.put("subChannel", subChannel);
+								map.put("subChannel", user_sub_channel);
+								subChannel=user_sub_channel;
 							}
-
 							if (actionperformed.equalsIgnoreCase("nb.channel")
 									|| actionperformed.equalsIgnoreCase("nb.period")) {
 								actionperformed = "NUMBERS";
