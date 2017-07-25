@@ -202,144 +202,223 @@ public class MliBotController{
 							zone = "";
 						}
 /*------------Second Time when user comes with same SessionId---------------------------------------------------------------------------------*/
-						if(sessionMap.containsKey(sessionId))
+						if (sessionMap.containsKey(sessionId)) 
 						{
 							String checkChannel="";
-							if (period.equalsIgnoreCase("")) {
-								cachePeriod = sessionMap.get(sessionId).get("period") + "";
-							} else {
-								cachePeriod = period;
-								Map<String,String> map = sessionMap.get(sessionId);
-								map.put("period", period);
-							}
-							if (planType.equalsIgnoreCase("")) {
-								cashplanType = sessionMap.get(sessionId).get("planType") + "";
-							} else {
-								cashplanType = planType;
-							}
-							if(true)
+							String extraChannel="";
+							String extraSSOId="";
+							String extraRegion=""; String extraZone=""; String extraCircle="";
+							user_ssoid=sessionMap.get(sessionId).get("user_ssoid") + "";
+							if(!"".equalsIgnoreCase(user_ssoid) && !user_ssoid.equalsIgnoreCase("null"))
 							{
+								user_ssoid=sessionMap.get(sessionId).get("user_ssoid") + "";
 								checkChannel = sessionMap.get(sessionId).get("channel") + "";
-							}
-							if (channel.equalsIgnoreCase("")) {
-								cashchannel = sessionMap.get(sessionId).get("channel") + "";
-							} else {
-								cashchannel = channel;
-								Map map = sessionMap.get(sessionId);
-								map.put("channel", channel);
-							}
-							if (productType.equalsIgnoreCase("")) {
-								cashproductType = sessionMap.get(sessionId).get("productType") + "";
-							} else {
-								cashproductType = productType;
-								Map map = sessionMap.get(sessionId);
-								map.put("productType", productType);
-							}
-							if (actionperformed.equalsIgnoreCase("nb.channel")
-									|| actionperformed.equalsIgnoreCase("nb.period")) {
-								actionperformed = sessionMap.get(sessionId).get("action") + "";
-							} else {
-								Map map = sessionMap.get(sessionId);
-								map.put("action", actionperformed);
-							}
-							if (circle.equalsIgnoreCase("")) 
-							{
-								String user_ssoId=sessionMap.get(sessionId).get("user_ssoid")+"";
-								if(user_ssoId.equalsIgnoreCase("") || user_ssoId.equalsIgnoreCase("null"))
+								extraChannel = extraMap.get(user_ssoid).get("channel") + "";
+								extraSSOId = extraMap.get(user_ssoid).get("user_ssoid") + "";
+								extraRegion =extraMap.get(user_ssoid).get("region") + "";
+								extraZone = extraMap.get(user_ssoid).get("zone") + "";
+								extraCircle = extraMap.get(user_ssoid).get("circle") + "";
+								if(!"".equalsIgnoreCase(extraSSOId))
 								{
-									if(!checkChannel.equalsIgnoreCase(channel))
+									if((!"Others".equalsIgnoreCase(extraRegion) && !"".equalsIgnoreCase(extraRegion)
+											|| !"Others".equalsIgnoreCase(extraCircle) && !"".equalsIgnoreCase(extraCircle)))
+											
 									{
-										cashCircle= sessionMap.get(sessionId).get("circle") + "";
-									    if("".equalsIgnoreCase(cashCircle))
-									    {
-									    	cashCircle= sessionMap.get(sessionId).get("circle") + "";
-									    }else{
-										cashCircle="";
-										Map map = sessionMap.get(sessionId);
-										map.put("circle", cashCircle);
-									    }
+											cashchannel=extraChannel;
+											cashZone=extraZone;
+											cashRegion=extraRegion;
+											cashCircle=extraCircle;
 									}
-									else{
 
-										cashCircle= sessionMap.get(sessionId).get("circle") + "";
-									}
-								}
-								else{
-									cashCircle = sessionMap.get(sessionId).get("circle") + "";
-								}
-							} else {
-								cashCircle = circle;
-								Map map = sessionMap.get(sessionId);
-								map.put("circle", circle);
-							}
-							if (region.equalsIgnoreCase("")) 
-							{
-								String user_ssoId=sessionMap.get(sessionId).get("user_ssoid")+"";
-								if(user_ssoId.equalsIgnoreCase("") || user_ssoId.equalsIgnoreCase("null"))
-								{
-									if(!checkChannel.equalsIgnoreCase(channel))
-									{
-										cashRegion= sessionMap.get(sessionId).get("region") + "";
-										if("".equalsIgnoreCase(cashRegion))
+									else if(!"Others".equalsIgnoreCase(extraZone) && !"".equalsIgnoreCase(extraZone))
+									{	
+										cashchannel=extraChannel;
+										cashZone=extraZone;
+										if("".equalsIgnoreCase(region))
 										{
-											cashRegion= sessionMap.get(sessionId).get("region") + "";
-										}else{
-											cashRegion="";
-											Map map = sessionMap.get(sessionId);
-											map.put("region", cashRegion);
-										}
-									}
-									else{
-										cashRegion= sessionMap.get(sessionId).get("region") + "";
-									}
-								}
-								else{
-									cashRegion = sessionMap.get(sessionId).get("region") + "";
-								}
-
-							} else {
-								cashRegion = region;
-								Map map = sessionMap.get(sessionId);
-								map.put("region", region);
-							}
-							if (zone.equalsIgnoreCase(""))
-							{
-								String user_ssoId2=sessionMap.get(sessionId).get("user_ssoid")+"";
-								if(user_ssoId2.equalsIgnoreCase("") || user_ssoId2.equalsIgnoreCase("null"))
-								{
-									if(!checkChannel.equalsIgnoreCase(channel))
-									{
-										cashZone= sessionMap.get(sessionId).get("zone") + "";;
-										if("".equalsIgnoreCase(cashZone))
-										{
-											cashZone= sessionMap.get(sessionId).get("zone") + "";;
+											cashRegion=extraRegion;
 										}
 										else
 										{
-											cashZone="";
-											Map map = sessionMap.get(sessionId);
-											map.put("zone", cashZone);
+											cashRegion=region;
+										}
+										if("".equalsIgnoreCase(circle))
+										{
+											cashCircle=extraCircle;
+										}
+										else
+										{
+											cashCircle=circle;
+										}
+									}
+									else
+									{
+										cashchannel=extraChannel;
+										if("Others".equalsIgnoreCase(zone))
+										{
+											cashZone=extraZone;
+										}
+										else
+										{
+											cashZone=zone;
+										}
+										if("".equalsIgnoreCase(region))
+										{
+											cashRegion=extraRegion;
+										}
+										else
+										{
+											cashRegion=region;
+										}
+										if("".equalsIgnoreCase(circle))
+										{
+											cashCircle=extraCircle;
+										}
+										else
+										{
+											cashCircle=circle;
+										}
+									}
+								}
+							}
+							else
+							{
+								if (period.equalsIgnoreCase("")) {
+									cachePeriod = sessionMap.get(sessionId).get("period") + "";
+
+								} else {
+									cachePeriod = period;
+									Map<String,String> map = sessionMap.get(sessionId);
+									map.put("period", period);
+
+								}
+								if (planType.equalsIgnoreCase("")) {
+									cashplanType = sessionMap.get(sessionId).get("planType") + "";
+								} else {
+									cashplanType = planType;
+								}
+
+								if (channel.equalsIgnoreCase("")) {
+									cashchannel = sessionMap.get(sessionId).get("channel") + "";
+								} else {
+									cashchannel = channel;
+									Map map = sessionMap.get(sessionId);
+									map.put("channel", channel);
+
+								}
+								if (productType.equalsIgnoreCase("")) {
+									cashproductType = sessionMap.get(sessionId).get("productType") + "";
+								} else {
+									cashproductType = productType;
+									Map map = sessionMap.get(sessionId);
+									map.put("productType", productType);
+								}
+								if (actionperformed.equalsIgnoreCase("nb.channel")
+										|| actionperformed.equalsIgnoreCase("nb.period")) {
+									actionperformed = sessionMap.get(sessionId).get("action") + "";
+								} else {
+									Map map = sessionMap.get(sessionId);
+									map.put("action", actionperformed);
+								}
+								if (circle.equalsIgnoreCase("")) 
+								{
+									String user_ssoId=sessionMap.get(sessionId).get("user_ssoid")+"";
+									if(user_ssoId.equalsIgnoreCase("") || user_ssoId.equalsIgnoreCase("null"))
+									{
+										if(!checkChannel.equalsIgnoreCase(channel))
+										{
+											cashCircle= sessionMap.get(sessionId).get("circle") + "";
+											if(!"".equalsIgnoreCase(cashCircle))
+											{
+												cashCircle= sessionMap.get(sessionId).get("circle") + "";
+											}else{
+												cashCircle="";
+												Map map = sessionMap.get(sessionId);
+												map.put("circle", cashCircle);
+											}
+										}
+										else{
+
+											cashCircle= sessionMap.get(sessionId).get("circle") + "";
 										}
 									}
 									else{
-										cashZone= sessionMap.get(sessionId).get("zone") + "";;
+										cashCircle = sessionMap.get(sessionId).get("circle") + "";
 									}
+								} else {
+									cashCircle = circle;
+									Map map = sessionMap.get(sessionId);
+									map.put("circle", circle);
 								}
-								else{
-									cashZone = sessionMap.get(sessionId).get("zone") + "";
+								if (region.equalsIgnoreCase("")) 
+								{
+									String user_ssoId=sessionMap.get(sessionId).get("user_ssoid")+"";
+									if(user_ssoId.equalsIgnoreCase("") || user_ssoId.equalsIgnoreCase("null"))
+									{
+										if(!checkChannel.equalsIgnoreCase(channel))
+										{
+											cashRegion= sessionMap.get(sessionId).get("region") + "";
+											if(!"".equalsIgnoreCase(cashRegion))
+											{
+												cashRegion= sessionMap.get(sessionId).get("region") + "";
+											}else{
+												cashRegion="";
+												Map map = sessionMap.get(sessionId);
+												map.put("region", cashRegion);
+											}
+										}
+										else{
+											cashRegion= sessionMap.get(sessionId).get("region") + "";
+										}
+									}
+									else{
+										cashRegion = sessionMap.get(sessionId).get("region") + "";
+									}
+
+								} else {
+									cashRegion = region;
+									Map map = sessionMap.get(sessionId);
+									map.put("region", region);
 								}
-							} else {
-								cashZone = zone;
-								Map map = sessionMap.get(sessionId);
-								map.put("zone", zone);
-							}
-							if (subChannel.equalsIgnoreCase(""))
-							{
-								cash_Sub_Channel = sessionMap.get(sessionId).get("subChannel") + "";
-							} else {
-								cash_Sub_Channel = subChannel;
-								Map map = sessionMap.get(sessionId);
-								map.put("cash_Sub_Channel", subChannel);
+								if (zone.equalsIgnoreCase(""))
+								{
+									String user_ssoId2=sessionMap.get(sessionId).get("user_ssoid")+"";
+									if(user_ssoId2.equalsIgnoreCase("") || user_ssoId2.equalsIgnoreCase("null"))
+									{
+										if(!checkChannel.equalsIgnoreCase(channel))
+										{
+											cashZone= sessionMap.get(sessionId).get("zone") + "";;
+											if(!"".equalsIgnoreCase(cashZone))
+											{
+												cashZone= sessionMap.get(sessionId).get("zone") + "";;
+											}
+											else
+											{
+												cashZone="";
+												Map map = sessionMap.get(sessionId);
+												map.put("zone", cashZone);
+											}
+										}
+										else{
+											cashZone= sessionMap.get(sessionId).get("zone") + "";;
+										}
+									}
+									else{
+										cashZone = sessionMap.get(sessionId).get("zone") + "";
+									}
+								} else {
+									cashZone = zone;
+									Map map = sessionMap.get(sessionId);
+									map.put("zone", zone);
+								}
+								if (subChannel.equalsIgnoreCase(""))
+								{
+									cash_Sub_Channel = sessionMap.get(sessionId).get("subChannel") + "";
+								} else {
+									cash_Sub_Channel = subChannel;
+									Map map = sessionMap.get(sessionId);
+									map.put("cash_Sub_Channel", subChannel);
+								}
 							}
 							if (!actionperformed.equalsIgnoreCase("") && actionperformed != null) 
 							{
@@ -411,19 +490,15 @@ public class MliBotController{
 							{
 								map.put("user_ssoid", user_ssoid);
 							}
-							if(channel.equalsIgnoreCase(""))
-							{
-								if (user_channel.equalsIgnoreCase(""))
-								{
-									channel = "MLI";
-									map.put("channel", channel);
-								} else {
-									map.put("channel", user_channel);
-									channel=user_channel;
-								}
-							}else
+							if(user_channel.equalsIgnoreCase(""))
 							{
 								map.put("channel", channel);
+								channel=channel;
+
+							}else
+							{
+								map.put("channel", user_channel);
+								channel=user_channel;
 							}
 							if (productType.equalsIgnoreCase(""))
 							{
@@ -440,45 +515,32 @@ public class MliBotController{
 								map.put("period", period);
 							}
 							map.put("planType", planType);
-							if(circle.equalsIgnoreCase(""))
+							if(user_circle.equalsIgnoreCase(""))
 							{
-								if (user_circle.equalsIgnoreCase("")) 
-								{
-									circle = "";
-									map.put("circle", circle);
-								} else {
-									map.put("circle", user_circle);
-									circle=user_circle;
-								}
-							}else{
 								map.put("circle", circle);
-							}
-							if(region.equalsIgnoreCase(""))
-							{
-								if (user_region.equalsIgnoreCase("")) 
-								{
-									region = "";
-									map.put("region", region);
-								} else {
-									map.put("region", user_region);
-									region=user_region;
-								}
+								circle=circle;
+
 							}else{
-								map.put("region", region);
+								map.put("circle", user_circle);
+								circle=user_circle;
 							}
-							if(zone.equalsIgnoreCase(""))
+							if(user_region.equalsIgnoreCase(""))
 							{
-								if (user_getzone.equalsIgnoreCase("")) 
-								{
-									zone = "";
-									map.put("zone", zone);
-								} else {
-									map.put("zone", user_getzone);
-									zone=user_getzone;
-								}
+								map.put("region", region);
+								region=region;
+
+							}else{
+								map.put("region", user_region);
+								region=user_region;
+							}
+							if(user_getzone.equalsIgnoreCase(""))
+							{
+								map.put("zone", zone);
+								zone=zone;
 							}
 							else{
-								map.put("zone", zone);
+								map.put("zone", user_getzone);
+								zone=user_getzone;
 							}
 							if(subChannel.equalsIgnoreCase(""))
 							{
@@ -494,12 +556,17 @@ public class MliBotController{
 							else{
 								map.put("subChannel", subChannel);
 							}
+
 							if (actionperformed.equalsIgnoreCase("nb.channel")
 									|| actionperformed.equalsIgnoreCase("nb.period")) {
 								actionperformed = "NUMBERS";
 							}
 							map.put("action", actionperformed);
 							sessionMap.put(sessionId, map);
+							if(!"".equalsIgnoreCase(user_ssoid) || !user_ssoid.equalsIgnoreCase("null"))
+							{
+								extraMap.put(user_ssoid, map);
+							}
 							if(!actionperformed.equalsIgnoreCase("") && actionperformed!=null)
 							{
 								try
