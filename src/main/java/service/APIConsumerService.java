@@ -46,7 +46,7 @@ public class APIConsumerService {
 			else if(!"".equalsIgnoreCase(user_region))
 			{
 				msgChannel=user_region;
-				msgChannel="Channel "+msgChannel;
+				msgChannel="Region "+msgChannel;
 				break;
 			}
 			else if(!"".equalsIgnoreCase(user_getzone))
