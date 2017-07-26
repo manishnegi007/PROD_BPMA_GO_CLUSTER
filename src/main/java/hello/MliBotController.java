@@ -237,6 +237,7 @@ public class MliBotController{
 									{	
 										cashchannel=extraChannel;
 										cashZone=extraZone;
+										cashproductType=extraproductType;
 										if("".equalsIgnoreCase(region))
 										{
 											cashRegion=extraRegion;
@@ -257,6 +258,7 @@ public class MliBotController{
 									else
 									{
 										cashchannel=extraChannel;
+										cashproductType=extraproductType;
 										if("Others".equalsIgnoreCase(zone))
 										{
 											cashZone=extraZone;
