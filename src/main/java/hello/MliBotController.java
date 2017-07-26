@@ -324,8 +324,7 @@ public class MliBotController{
 										|| actionperformed.equalsIgnoreCase("nb.zone")
 										|| actionperformed.equalsIgnoreCase("nb.region")
 										|| actionperformed.equalsIgnoreCase("nb.channelnzone")
-										|| actionperformed.equalsIgnoreCase("nb.zonenregion")
-									) 
+										|| actionperformed.equalsIgnoreCase("nb.zonenregion")) 
 								{
 									actionperformed = sessionMap.get(sessionId).get("action") + "";
 								} else {
@@ -588,7 +587,13 @@ public class MliBotController{
 								subChannel=user_sub_channel;
 							}
 							if (actionperformed.equalsIgnoreCase("nb.channel")
-									|| actionperformed.equalsIgnoreCase("nb.period")) {
+									|| actionperformed.equalsIgnoreCase("nb.period")
+									|| actionperformed.equalsIgnoreCase("nb.circle")
+									|| actionperformed.equalsIgnoreCase("nb.zone")
+									|| actionperformed.equalsIgnoreCase("nb.region")
+									|| actionperformed.equalsIgnoreCase("nb.channelnzone")
+									|| actionperformed.equalsIgnoreCase("nb.zonenregion")) 
+							{
 								actionperformed = "NUMBERS";
 							}
 							map.put("action", actionperformed);
