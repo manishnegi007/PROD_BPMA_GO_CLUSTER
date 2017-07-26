@@ -321,12 +321,19 @@ public class MliBotController{
 									map.put("productType", productType);
 								}
 								if (actionperformed.equalsIgnoreCase("nb.channel")
-										|| actionperformed.equalsIgnoreCase("nb.period")
-										|| actionperformed.equalsIgnoreCase("nb.circle")
-										|| actionperformed.equalsIgnoreCase("nb.zone")
-										|| actionperformed.equalsIgnoreCase("nb.region")
-										|| actionperformed.equalsIgnoreCase("nb.channelnzone")
-										|| actionperformed.equalsIgnoreCase("nb.zonenregion")) 	
+									|| actionperformed.equalsIgnoreCase("nb.period")
+									|| actionperformed.equalsIgnoreCase("nb.circle")
+									|| actionperformed.equalsIgnoreCase("nb.zone")
+									|| actionperformed.equalsIgnoreCase("nb.region")
+									|| actionperformed.equalsIgnoreCase("nb.channelnzone")
+									|| actionperformed.equalsIgnoreCase("nb.zonenregion")
+									|| actionperformed.equalsIgnoreCase("nb.subchannel")
+									|| actionperformed.equalsIgnoreCase("nb.channelncircle")
+									|| actionperformed.equalsIgnoreCase("nb.subchannelnregion")
+									|| actionperformed.equalsIgnoreCase("nb.zonencircle")
+									|| actionperformed.equalsIgnoreCase("nb.channelnregion")
+									|| actionperformed.equalsIgnoreCase("nb.channelnzonenregion")
+									|| actionperformed.equalsIgnoreCase("nb.channelnzonencircle"))	
 									{
 									actionperformed = sessionMap.get(sessionId).get("action") + "";
 								} else {
@@ -602,7 +609,14 @@ public class MliBotController{
 									|| actionperformed.equalsIgnoreCase("nb.zone")
 									|| actionperformed.equalsIgnoreCase("nb.region")
 									|| actionperformed.equalsIgnoreCase("nb.channelnzone")
-									|| actionperformed.equalsIgnoreCase("nb.zonenregion")) 
+									|| actionperformed.equalsIgnoreCase("nb.zonenregion")
+									|| actionperformed.equalsIgnoreCase("nb.subchannel")
+									|| actionperformed.equalsIgnoreCase("nb.channelncircle")
+									|| actionperformed.equalsIgnoreCase("nb.subchannelnregion")
+									|| actionperformed.equalsIgnoreCase("nb.zonencircle")
+									|| actionperformed.equalsIgnoreCase("nb.channelnregion")
+									|| actionperformed.equalsIgnoreCase("nb.channelnzonenregion")
+									|| actionperformed.equalsIgnoreCase("nb.channelnzonencircle"))
 							{
 								actionperformed = "NUMBERS";
 							}
