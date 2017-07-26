@@ -561,7 +561,7 @@ public class APIConsumerService {
 					}
 					else if(!"".equalsIgnoreCase(channel))
 					{
-						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business for "+msgChannel+ "is :"+
+						finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business for "+msgChannel+ " is :"+
 							     " FTD : " +dailyAdjustMFYP+" Cr,"
 								+" MTD : " +mtdAdjustMFYP+" Cr"
 								+" YTD : " +ytd_adj_mfyp+" Cr";
@@ -638,12 +638,6 @@ public class APIConsumerService {
 				else if("Growth".equalsIgnoreCase(action))
 				{
 
-					/*if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period) || "MONTH".equalsIgnoreCase(period)){
-						finalresponse = channel+" has witnessed paid business growth of "+grth_paid_adj_mfyp
-								+"% on MTD basis, \n\n last month we had clocked "+adj_mfyp_lst_mn+
-								"Cr of Adj MFYP as compared to "+mtd_inforced_adj_mfyp+" today";
-					}*/
-					
 						finalresponse = msgChannel+" has witnessed paid Business growth of "+grth_ovr_lst_yr_paid
 								+"% on YTD basis, \n\n last year same time we had clocked "+adj_mfyp_sam_ytd_lst_yr+
 								" Cr of Adj MFYP as compared to "+ytd_inforced_adj_mfyp+" Cr. today";
