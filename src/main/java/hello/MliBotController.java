@@ -208,6 +208,7 @@ public class MliBotController{
 							String checkChannel="";
 							String extraChannel="";
 							String extraSSOId="";
+							String extraproductType="";
 							String extraRegion=""; String extraZone=""; String extraCircle="";
 							user_ssoid=sessionMap.get(sessionId).get("user_ssoid") + "";
 							checkChannel = sessionMap.get(sessionId).get("channel") + "";
@@ -220,18 +221,18 @@ public class MliBotController{
 								extraRegion =extraMap.get(user_ssoid).get("region") + "";
 								extraZone = extraMap.get(user_ssoid).get("zone") + "";
 								extraCircle = extraMap.get(user_ssoid).get("circle") + "";
+								extraproductType=extraMap.get(user_ssoid).get("productType");
 								if(!"".equalsIgnoreCase(extraSSOId) && !extraSSOId.equalsIgnoreCase("null"))
 								{
 									if((!"Others".equalsIgnoreCase(extraRegion) && !"".equalsIgnoreCase(extraRegion)
 											|| !"Others".equalsIgnoreCase(extraCircle) && !"".equalsIgnoreCase(extraCircle)))
-											
 									{
 											cashchannel=extraChannel;
 											cashZone=extraZone;
 											cashRegion=extraRegion;
 											cashCircle=extraCircle;
+											cashproductType=extraproductType;
 									}
-
 									else if(!"Others".equalsIgnoreCase(extraZone) && !"".equalsIgnoreCase(extraZone))
 									{	
 										cashchannel=extraChannel;
