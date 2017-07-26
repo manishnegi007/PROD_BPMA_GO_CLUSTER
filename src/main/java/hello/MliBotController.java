@@ -392,10 +392,10 @@ public class MliBotController{
 									{
 										if(!checkChannel.equalsIgnoreCase(channel))
 										{
-											cashZone= sessionMap.get(sessionId).get("zone") + "";;
+											cashZone= sessionMap.get(sessionId).get("zone")+"";
 											if("".equalsIgnoreCase(cashZone))
 											{
-												cashZone= sessionMap.get(sessionId).get("zone") + "";;
+												cashZone= sessionMap.get(sessionId).get("zone")+"";
 											}
 											else
 											{
@@ -405,11 +405,11 @@ public class MliBotController{
 											}
 										}
 										else{
-											cashZone= sessionMap.get(sessionId).get("zone") + "";;
+											cashZone= sessionMap.get(sessionId).get("zone")+"";
 										}
 									}
 									else{
-										cashZone = sessionMap.get(sessionId).get("zone") + "";
+										cashZone = sessionMap.get(sessionId).get("zone")+"";
 									}
 								} else {
 									cashZone = zone;
