@@ -319,7 +319,14 @@ public class MliBotController{
 									map.put("productType", productType);
 								}
 								if (actionperformed.equalsIgnoreCase("nb.channel")
-										|| actionperformed.equalsIgnoreCase("nb.period")) {
+										|| actionperformed.equalsIgnoreCase("nb.period")
+										|| actionperformed.equalsIgnoreCase("nb.circle")
+										|| actionperformed.equalsIgnoreCase("nb.zone")
+										|| actionperformed.equalsIgnoreCase("nb.region")
+										|| actionperformed.equalsIgnoreCase("nb.channelnzone")
+										|| actionperformed.equalsIgnoreCase("nb.zonenregion")
+									) 
+								{
 									actionperformed = sessionMap.get(sessionId).get("action") + "";
 								} else {
 									Map map = sessionMap.get(sessionId);
