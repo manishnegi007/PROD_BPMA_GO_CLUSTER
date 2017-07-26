@@ -169,8 +169,16 @@ public class APIConsumerService {
 				}
 				else
 				{
+					if("Axis".equalsIgnoreCase(channel))
+					{
 					segment=action;
-					serviceChannel = channel;
+					serviceChannel = "Axis Bank";
+					}
+					else
+					{
+						segment=action;
+						serviceChannel = channel;
+					}
 				}
 			}
 			else
