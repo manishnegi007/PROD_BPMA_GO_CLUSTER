@@ -928,7 +928,7 @@ public class MliBotController{
 					otpsession.put("channel", "MLI");
 					otpsession.put("period", "MTD");
 					sessionMapcontainssoinfo.put(sessionId, otpsession);
-				}
+				        }
 					else
 					{
 						otpsession.put("SoaStatus", "partial_content");
@@ -937,6 +937,11 @@ public class MliBotController{
 						sessionMapcontainssoinfo.put(sessionId, otpsession);
 					}
 				}
+					catch(Exception ex)
+					{
+					   System.out.println(ex);	
+					}
+				
 			}
 			else
 			{
