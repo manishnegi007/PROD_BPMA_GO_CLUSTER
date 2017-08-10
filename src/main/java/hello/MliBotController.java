@@ -67,34 +67,47 @@ public class MliBotController{
 			try{
 				userOTP = object.getJSONObject("result").getJSONObject("parameters").get("number")+"";
 			}catch(Exception e){System.out.println("Not getting OTP");}
-			if("SSO.Validation".equalsIgnoreCase(actionperformed))
+			if("SSO.Validation".equalsIgnoreCase(actionperformed)|| "nb.validate".equalsIgnoreCase(actionperformed))
 			{
 				System.out.println("SSOValidation API START");
 				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
 				sessionId=object.get("sessionId")+"";
 				Map otpsessionMap = sessionMapcontainssoinfo.get(sessionId);
 				if (otpsessionMap == null) {
-					Map<String, Map<String, String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId);
+					Map<String, Map<String, String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId,actionperformed);
 					String SoaStatus = "";
+					String mnylstatus = "";
 					String PhoneStatus = "";
-					String mnylstatus="";
+					String agentName ="";
+					
 					Map<String, String> cashMap = returnmap.get(sessionId);
 					SoaStatus = cashMap.get("SoaStatus");
 					PhoneStatus = cashMap.get("PhoneStatus");
-					mnylstatus=cashMap.get("mnylStatus");
-					if("N".equalsIgnoreCase(mnylstatus)){
-						speech="This UserID Is InActive";
-					}
-					else if ("success".equalsIgnoreCase(SoaStatus)) 
+					mnylstatus = cashMap.get("mnylStatus");
+					agentName=cashMap.get("AgentName").toString();
+					
+					
+					if ("N".equalsIgnoreCase(mnylstatus))
 					{
-						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here. OTP for Testing :" 
-							+ cashMap.get("otp")+ "";
+						speech = "This UserID Is InActive";
+					} else if ("success".equalsIgnoreCase(SoaStatus)) {
+						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here "
+								+ cashMap.get("otp") + "";
 					} else if ("NotAvail".equalsIgnoreCase(PhoneStatus)) {
 						speech = "Your PhoneNo. is not registered with us! Please Enter a registered PhoneNo.";
 					} else if ("Failure_API_1".equalsIgnoreCase(SoaStatus)
 							|| "Failure_API_2".equalsIgnoreCase("SoaStatus")) {
 						speech = "Invalid Credentials! Please Enter a Valid Credentials";
-					} else {
+					}
+					
+					else if("partial_content".equalsIgnoreCase(SoaStatus))
+					{
+						speech = "Hi " + agentName + ", How can i help you today?";
+						cashMap.put("Validation", "success");
+						sessionMapcontainssoinfo.put(sessionId, cashMap);
+					}
+					
+					else {
 						speech = "Oops! I could not find any registered mobile number for this SSO";
 					}
 				} else {
@@ -720,7 +733,7 @@ public class MliBotController{
 		return responseObj;
 	}
 
-	public Map<String, Map<String,String>> APICallSSOValidation(String ssoId, String sessionId)
+	public Map<String, Map<String,String>> APICallSSOValidation(String ssoId, String sessionId,String actionperformed)
 	{
 		String phoneNo="";	String agentName="";
 		String DevMode = "N";
@@ -798,7 +811,7 @@ public class MliBotController{
 					if (phoneNo != null && !"".equalsIgnoreCase(phoneNo) && mnylstatus!=null && !"".equalsIgnoreCase(mnylstatus)
 							&& "Y".equalsIgnoreCase(mnylstatus)) 
 					{
-						cashData = mliBotController.OTPVarification(sessionId, phoneNo, agentName, ssoId);
+						cashData = mliBotController.OTPVarification(sessionId, phoneNo, agentName, ssoId,actionperformed);
 					}
 					else
 					{
@@ -828,13 +841,14 @@ public class MliBotController{
 		}
 		return cashData;
 	}
-	public Map<String,Map<String,String>> OTPVarification(String sessionId, String phoneno, String agentName, String ssoId)
+	public Map<String,Map<String,String>> OTPVarification(String sessionId, String phoneno, String agentName, String ssoId,String actionperformed)
 	{
 		String DevMode = "N";
 		HttpURLConnection conn = null;
 		String output = new String();
-		String status="";
-		String randomotp="";
+		String status = "";
+		String randomotp = "";
+		JSONObject object=null;
 		StringBuilder result = new StringBuilder();
 	    Map<String,String> otpsession= new HashMap<String,String>();
 		
@@ -887,6 +901,9 @@ public class MliBotController{
 
 			if(apiResponseCode3 == 200 || apiResponseCode3 == 201)
 			{
+				if(!"nb.validate".equalsIgnoreCase(actionperformed))
+				{
+				
 				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 				while ((output = br.readLine()) != null) 
 				{
@@ -894,8 +911,11 @@ public class MliBotController{
 				}
 				conn.disconnect();
 				br.close();
-				JSONObject object = new JSONObject(result.toString());
-				try{
+				object = new JSONObject(result.toString());
+				}
+				try {
+					if(!"nb.validate".equalsIgnoreCase(actionperformed))
+					{
 					status = object.getJSONObject("MliSmsServiceResponse").getJSONObject("responseHeader")
 							.getJSONObject("generalResponse").get("status")+"";
 
@@ -909,9 +929,13 @@ public class MliBotController{
 					otpsession.put("period", "MTD");
 					sessionMapcontainssoinfo.put(sessionId, otpsession);
 				}
-				catch(Exception e)
-				{
-					System.out.println(e);
+					else
+					{
+						otpsession.put("SoaStatus", "partial_content");
+						otpsession.put("validSSOID", ssoId);
+						otpsession.put("AgentName", agentName);
+						sessionMapcontainssoinfo.put(sessionId, otpsession);
+					}
 				}
 			}
 			else
