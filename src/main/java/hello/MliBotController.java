@@ -72,6 +72,7 @@ public class MliBotController{
 				System.out.println("SSOValidation API START");
 				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
 				sessionId=object.get("sessionId")+"";
+				System.out.println("----------Session Id For Checking :-"+sessionId);
 				Map otpsessionMap = sessionMapcontainssoinfo.get(sessionId);
 				if (otpsessionMap == null) {
 					Map<String, Map<String, String>> returnmap = mliBotController.APICallSSOValidation(ssoId, sessionId,actionperformed);
