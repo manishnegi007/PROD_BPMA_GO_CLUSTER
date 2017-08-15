@@ -1022,6 +1022,8 @@ public class MliBotController{
 								}catch(Exception ex){user_ssoid="";}
 								try{
 									user_channel=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("channel")+"";
+									if("Axis Bank".equalsIgnoreCase(user_channel))
+									{user_channel="AXIS";}
 								}catch(Exception ex){user_channel="";}
 								try{
 									user_sub_channel=getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("sub_channel")+"";
