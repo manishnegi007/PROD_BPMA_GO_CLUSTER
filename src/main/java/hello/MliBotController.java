@@ -146,12 +146,18 @@ public class MliBotController{
 				}
 			}else if("close.conversation".equalsIgnoreCase(actionperformed))
 			{			
-				if(sessionMapcontainssoinfo.containsKey(sessionId)){
+				if (sessionMapcontainssoinfo.containsKey(sessionId)) {
 					sessionMapcontainssoinfo.remove(sessionId);
 					sessionMap.remove(sessionId);
 					extraMap.remove(sessionId);
 					kpilevel.remove(sessionId);
-					innermap.clear();
+					innermap.remove("cachePeriod_"+sessionId);
+					innermap.remove("cashplanType_"+sessionId);
+					innermap.remove("cashCircle_"+sessionId);
+					innermap.remove("cashRegion_"+sessionId);
+					innermap.remove("cashZone_"+sessionId);
+					innermap.remove("cash_Sub_Channel_"+sessionId);
+					innermap.remove("cashproductType_"+sessionId);
 					speech = "Thank you for contacting Max Life. Have a great day!";
 				}
 				else{
@@ -175,9 +181,8 @@ public class MliBotController{
 						}
 						try {
 							productType = object.getJSONObject("result").getJSONObject("parameters").getString("ProductType");
-							if(!"".equalsIgnoreCase(productType))
-							{
-								innermap.put("cashproductType", productType);
+							if (!"".equalsIgnoreCase(productType)) {
+								innermap.put("cashproductType_"+sessionId, productType);
 								kpilevel.put(sessionId, innermap);
 							}
 						} catch (Exception e) {
@@ -185,9 +190,8 @@ public class MliBotController{
 						}
 						try {
 							period = object.getJSONObject("result").getJSONObject("parameters").getString("Period");
-							if(!"".equalsIgnoreCase(period))
-							{
-								innermap.put("cachePeriod", period);
+							if (!"".equalsIgnoreCase(period)) {
+								innermap.put("cachePeriod_"+sessionId, period);
 								kpilevel.put(sessionId, innermap);
 							}
 						} catch (Exception e) {
@@ -195,9 +199,8 @@ public class MliBotController{
 						}
 						try {
 							planType = object.getJSONObject("result").getJSONObject("parameters").getString("planType");
-							if(!"".equalsIgnoreCase(planType))
-							{
-								innermap.put("cashplanType", planType);
+							if (!"".equalsIgnoreCase(planType)) {
+								innermap.put("cashplanType_"+sessionId, planType);
 								kpilevel.put(sessionId, innermap);
 							}
 						} catch (Exception e) {
@@ -205,9 +208,8 @@ public class MliBotController{
 						}
 						try {
 							circle = object.getJSONObject("result").getJSONObject("parameters").getString("Circle");
-							if(!"".equalsIgnoreCase(circle))
-							{
-								innermap.put("cashCircle", circle);
+							if (!"".equalsIgnoreCase(circle)) {
+								innermap.put("cashCircle_"+sessionId, circle);
 								kpilevel.put(sessionId, innermap);
 							}
 						} catch (Exception e) {
@@ -215,9 +217,8 @@ public class MliBotController{
 						}
 						try {
 							region = object.getJSONObject("result").getJSONObject("parameters").getString("Region");
-							if(!"".equalsIgnoreCase(region))
-							{
-								innermap.put("cashRegion", region);
+							if (!"".equalsIgnoreCase(region)) {
+								innermap.put("cashRegion_"+sessionId, region);
 								kpilevel.put(sessionId, innermap);
 							}
 						} catch (Exception e) {
@@ -225,26 +226,23 @@ public class MliBotController{
 						}
 						try {
 							subChannel = object.getJSONObject("result").getJSONObject("parameters").getString("SubChannel");
-							if(!"".equalsIgnoreCase(subChannel))
-							{
-								innermap.put("cash_Sub_Channel", subChannel);
+							if (!"".equalsIgnoreCase(subChannel)) {
+								innermap.put("cash_Sub_Channel_"+sessionId, subChannel);
 								kpilevel.put(sessionId, innermap);
 							}
-						} catch (Exception e) 
-						{
+						} catch (Exception e) {
 							subChannel = "";
 						}
 						try {
 							zone = object.getJSONObject("result").getJSONObject("parameters").getString("Zone");
-							if(!"".equalsIgnoreCase(zone))
-							{
-								innermap.put("cashZone", zone);
+							if (!"".equalsIgnoreCase(zone)) {
+								innermap.put("cashZone_"+sessionId, zone);
 								kpilevel.put(sessionId, innermap);
 							}
 						} catch (Exception e) {
 							zone = "";
 						}
-/*------------Second Time when user comes with same SessionId---------------------------------------------------------------------------------*/
+/*------------Second Time when user comes with same SessionId------------------------------------------------------------------*/
 						if (sessionMap.containsKey(sessionId)) 
 						{
 							String checkChannel="";
@@ -293,13 +291,14 @@ public class MliBotController{
 								{
 		//----------------------------------------Region Level ------------------------------------------------------------------------------
 									if (sessionMap.get(sessionId).get("employeeIdentification").equalsIgnoreCase("RE")
-											|| sessionMap.get(sessionId).get("employeeIdentification").equalsIgnoreCase("CR")) 
+											|| sessionMap.get(sessionId).get("employeeIdentification").equalsIgnoreCase("CR"))
 									{
-										if(!"".equalsIgnoreCase(channel) || !"".equalsIgnoreCase(zone) ||!"".equalsIgnoreCase(subChannel)
-												|| (!extraRegion.equalsIgnoreCase(region) && !"".equalsIgnoreCase(region)) 
-												|| !extraCircle.equalsIgnoreCase(circle) && !"".equalsIgnoreCase(circle))
+										if (!"".equalsIgnoreCase(channel) || !"".equalsIgnoreCase(zone)
+												|| !"".equalsIgnoreCase(subChannel)	|| (!extraRegion.equalsIgnoreCase(region)
+														&& !"".equalsIgnoreCase(region))|| !extraCircle.equalsIgnoreCase(circle)
+												&& !"".equalsIgnoreCase(circle))
 										{
-											speech="You are not authorized to see different channel, zone, region/circle data";
+											speech = "You are not authorized to see different channel, zone, region/circle data";
 										}
 										else
 										{
@@ -307,442 +306,480 @@ public class MliBotController{
 											cashZone = extraZone;
 											cashRegion = extraRegion;
 											cashCircle = extraCircle;
-											cash_Sub_Channel=extrasubchannel;
-											if("".equalsIgnoreCase(productType))
+											cash_Sub_Channel = extrasubchannel;
+											if ("".equalsIgnoreCase(productType))
 											{
-												try{
-													cashproductType = kpilevel.get(sessionId).get("cashproductType");
+												try {
+													cashproductType = kpilevel.get(sessionId).get("cashproductType_"+sessionId);
 												}
-												catch(Exception ex)
-												{cashproductType="";}
-												if(cashproductType==null)
-												{cashproductType="";}
-											}else
+												catch (Exception ex)
+												{
+													cashproductType = "";
+												}
+												if (cashproductType == null)
+												{
+													cashproductType = "";
+												}
+											} else
 											{
-												innermap.put("cashproductType", productType);
+												innermap.put("cashproductType_"+sessionId, productType);
 												kpilevel.put(sessionId, innermap);
-												cashproductType=productType;
+												cashproductType = productType;
 											}
-											if("".equalsIgnoreCase(period))
+											if ("".equalsIgnoreCase(period))
 											{
-												try{
-													cachePeriod = kpilevel.get(sessionId).get("cachePeriod");
+												try {
+													cachePeriod = kpilevel.get(sessionId).get("cachePeriod_"+sessionId);
 												}
-												catch(Exception ex)
-												{cachePeriod="";}
-												if(cachePeriod==null)
-												{cachePeriod="";}
+												catch (Exception ex)
+												{
+													cachePeriod = "";
+												}
+												if (cachePeriod == null)
+												{
+													cachePeriod = "";
+												}
 											}
 											else
 											{
-												innermap.put("cachePeriod", period);
+												innermap.put("cachePeriod_"+sessionId, period);
 												kpilevel.put(sessionId, innermap);
-												cachePeriod=period;
+												cachePeriod = period;
 											}
 										}
 									}
 					//----------------------------Zone Level ----------------------------------------------------------------------------------------
-									else if (sessionMap.get(sessionId).get("employeeIdentification").equalsIgnoreCase("ZN"))  
+									else if (sessionMap.get(sessionId).get("employeeIdentification")
+											.equalsIgnoreCase("ZN"))
 									{
-										if(!diffIntent.equalsIgnoreCase(actionperformed))
+										if (!diffIntent.equalsIgnoreCase(actionperformed))
 										{
-											if(!"".equalsIgnoreCase(channel) ||!"".equalsIgnoreCase(subChannel) || (!"".equalsIgnoreCase(zone) 
-												&& !zone.equalsIgnoreCase(extraZone)))
+											if (!"".equalsIgnoreCase(channel) || !"".equalsIgnoreCase(subChannel)
+													|| (!"".equalsIgnoreCase(zone)&& !zone.equalsIgnoreCase(extraZone)))
 											{
-												speech="You are not authorized to see different channel & zone data";
+												speech = "You are not authorized to see different channel & zone data";
 											}
 											else
 											{
-												//START---------Cannot change its channel, subchannel and zone but put its same zone ------------------
+												// START---------Cannot change its channel, subchannel and zone but put its same zone
 												cashchannel = extraChannel;
-												cash_Sub_Channel=extrasubchannel;
+												cash_Sub_Channel = extrasubchannel;
 												cashZone = extraZone;
-												//END---------Cannot change its channel, subchannel and zone but put its same zone ------------------
-												if("".equalsIgnoreCase(productType))
+												// END---------Cannot change its channel, subchannel and zone but put its same zone
+												if ("".equalsIgnoreCase(productType))
 												{
-													try{
-														cashproductType = kpilevel.get(sessionId).get("cashproductType");
+													try {
+														cashproductType = kpilevel.get(sessionId).get("cashproductType_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashproductType="";}
-													if(cashproductType==null)
-													{cashproductType="";}
-												}else
+													catch (Exception ex)
+													{
+														cashproductType = "";
+													}
+													if (cashproductType == null)
+													{
+														cashproductType = "";
+													}
+												} else
 												{
-													innermap.put("cashproductType", productType);
+													innermap.put("cashproductType_"+sessionId, productType);
 													kpilevel.put(sessionId, innermap);
-													cashproductType=productType;
+													cashproductType = productType;
 												}
-												if("".equalsIgnoreCase(period))
+												if ("".equalsIgnoreCase(period))
 												{
-													try{
-														cachePeriod = kpilevel.get(sessionId).get("cachePeriod");
+													try {
+														cachePeriod = kpilevel.get(sessionId).get("cachePeriod_"+sessionId);
 													}
-													catch(Exception ex)
-													{cachePeriod="";}
-													if(cachePeriod==null)
-													{cachePeriod="";}
+													catch (Exception ex)
+													{
+														cachePeriod = "";
+													}
+													if (cachePeriod == null)
+													{
+														cachePeriod = "";
+													}
 												}
 												else
 												{
-													innermap.put("cachePeriod", period);
+													innermap.put("cachePeriod_"+sessionId, period);
 													kpilevel.put(sessionId, innermap);
-													cachePeriod=period;
+													cachePeriod = period;
 												}
 												if ("".equalsIgnoreCase(region))
 												{
-													if("".equalsIgnoreCase(zone))
+													if ("".equalsIgnoreCase(zone))
 													{
-														try{
-															cashRegion = kpilevel.get(sessionId).get("cashRegion");
+														try {
+															cashRegion = kpilevel.get(sessionId).get("cashRegion_"+sessionId);
 														}
-														catch(Exception ex)
-														{cashRegion="";}
-														if(cashRegion==null)
-														{cashRegion="";}
+														catch (Exception ex)
+														{
+															cashRegion = "";
+														}
+														if (cashRegion == null)
+														{
+															cashRegion = "";
+														}
 													}
 													else
 													{
 														cashZone = extraZone;
-														cashRegion="";
-														innermap.put("cashRegion", cashRegion);
+														cashRegion = "";
+														innermap.put("cashRegion_"+sessionId, cashRegion);
 														kpilevel.put(sessionId, innermap);
 													}
 												} else {
-													innermap.put("cashRegion", region);
-													kpilevel.put(sessionId,innermap);
+													innermap.put("cashRegion_"+sessionId, region);
+													kpilevel.put(sessionId, innermap);
 													cashRegion = region;
 												}
-												if ("".equalsIgnoreCase(circle)) 
+												if ("".equalsIgnoreCase(circle))
 												{
-													if("".equalsIgnoreCase(zone))
+													if ("".equalsIgnoreCase(zone))
 													{
-														try{
-															cashCircle = kpilevel.get(sessionId).get("cashCircle");
+														try {
+															cashCircle = kpilevel.get(sessionId).get("cashCircle_"+sessionId);
 														}
-														catch(Exception ex)
-														{cashCircle="";}
-														if(cashCircle==null)
-														{cashCircle="";}
+														catch (Exception ex)
+														{cashCircle = "";}
+														if (cashCircle == null)
+														{
+															cashCircle = "";
+														}
 													}
 													else
 													{
 														cashZone = extraZone;
-														cashCircle="";
-														innermap.put("cashCircle", cashCircle);
+														cashCircle = "";
+														innermap.put("cashCircle_"+sessionId, cashCircle);
 														kpilevel.put(sessionId, innermap);
 													}
-												}else {
-													innermap.put("cashCircle", circle);
+												} else {
+													innermap.put("cashCircle_"+sessionId, circle);
 													kpilevel.put(sessionId, innermap);
 													cashCircle = circle;
 												}
 											}
-										}else
+										} else
 										{
-											cashZone=extraZone;
-											cashRegion="";
-											cashCircle="";
+											cashZone = extraZone;
+											cashRegion = "";
+											cashCircle = "";
 										}
 									}
 					//-----------------------------------------SubChannel-----------------------------------------------------------------------
-									else if(sessionMap.get(sessionId).get("employeeIdentification").equalsIgnoreCase("SB"))
+									else if (sessionMap.get(sessionId).get("employeeIdentification").equalsIgnoreCase("SB"))
 									{
-										if(!"".equalsIgnoreCase(channel) || (!"".equalsIgnoreCase(subChannel) 
+										if (!"".equalsIgnoreCase(channel) || (!"".equalsIgnoreCase(subChannel)
 												&& !subChannel.equalsIgnoreCase(extrasubchannel)))
 										{
-											speech="You are not authorized to see different channel data";
+											speech = "You are not authorized to see different channel data";
 										}
 										else
 										{
-											if(!diffIntent.equalsIgnoreCase(actionperformed))
+											if (!diffIntent.equalsIgnoreCase(actionperformed))
 											{
 												cashchannel = extraChannel;
 												cash_Sub_Channel = extrasubchannel;
-												if("".equalsIgnoreCase(productType))
+												if ("".equalsIgnoreCase(productType))
 												{
-													try{
-														cashproductType = kpilevel.get(sessionId).get("cashproductType");
+													try {
+														cashproductType = kpilevel.get(sessionId).get("cashproductType_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashproductType="";}
-													if(cashproductType==null)
-													{cashproductType="";}
-												}else
+													catch (Exception ex)
+													{
+														cashproductType = "";
+													}
+													if (cashproductType == null)
+													{
+														cashproductType = "";
+													}
+												} else
 												{
-													innermap.put("cashproductType", productType);
+													innermap.put("cashproductType_"+sessionId, productType);
 													kpilevel.put(sessionId, innermap);
-													cashproductType=productType;
+													cashproductType = productType;
 												}
-												if("".equalsIgnoreCase(period))
+												if ("".equalsIgnoreCase(period))
 												{
-													try{
-														cachePeriod = kpilevel.get(sessionId).get("cachePeriod");
+													try {
+														cachePeriod = kpilevel.get(sessionId).get("cachePeriod_"+sessionId);
 													}
-													catch(Exception ex)
-													{cachePeriod="";}
-													if(cachePeriod==null)
-													{cachePeriod="";}
+													catch (Exception ex)
+													{
+														cachePeriod = "";
+													}
+													if (cachePeriod == null)
+													{
+														cachePeriod = "";
+													}
 												}
 												else
 												{
-													innermap.put("cachePeriod", period);
+													innermap.put("cachePeriod_"+sessionId, period);
 													kpilevel.put(sessionId, innermap);
-													cachePeriod=period;
+													cachePeriod = period;
 												}
-							//START----------------------------if User enter a same subchannel again then blank rest of the items------------------------------------------------------
-												if("".equalsIgnoreCase(subChannel))
+			// START----------------------------if User enter a same subchannel again then blank rest of the items--------------
+												if ("".equalsIgnoreCase(subChannel))
 												{
 													cash_Sub_Channel = extrasubchannel;
-													
-													/*try{
-														cash_Sub_Channel = kpilevel.get(sessionId).get("cash_Sub_Channel");
-													}
-													catch(Exception ex)
-													{
-														cash_Sub_Channel="";
-													}
-													if(cash_Sub_Channel==null)
-													{
-														cash_Sub_Channel="";
-													}*/
 												}
 												else
 												{
-													/*innermap.put("cash_Sub_Channel", subChannel);*/
-													cash_Sub_Channel=subChannel;
-													cashZone="";
-													innermap.put("cashZone", cashZone);
-													cashRegion="";
-													innermap.put("cashRegion", cashRegion);
-													cashCircle="";
-													innermap.put("cashCircle", cashCircle);
+													cash_Sub_Channel = subChannel;
+													cashZone = "";
+													innermap.put("cashZone_"+sessionId, cashZone);
+													cashRegion = "";
+													innermap.put("cashRegion_"+sessionId, cashRegion);
+													cashCircle = "";
+													innermap.put("cashCircle_"+sessionId, cashCircle);
 													kpilevel.put(sessionId, innermap);
 												}
-												//END----------------------------if User enter a same subchannel again then blank rest of the items------------------------------------------------------
+			// END----------------------------if// User enter a same subchannel again then blank rest of the items------------------
 												if ("".equalsIgnoreCase(zone))
 												{
-													try{
-														cashZone = kpilevel.get(sessionId).get("cashZone");
+													try {
+														cashZone = kpilevel.get(sessionId).get("cashZone_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashZone="";}
-													if(cashZone==null)
+													catch (Exception ex)
 													{
-														cashZone="";
+														cashZone = "";
+													}
+													if (cashZone == null)
+													{
+														cashZone = "";
 													}
 												} else {
 													cashZone = zone;
-													innermap.put("cashZone", zone);
-													cashRegion="";
-													innermap.put("cashRegion", cashRegion);
-													cashCircle="";
-													innermap.put("cashCircle", cashCircle);
+													innermap.put("cashZone_"+sessionId, zone);
+													cashRegion = "";
+													innermap.put("cashRegion_"+sessionId, cashRegion);
+													cashCircle = "";
+													innermap.put("cashCircle_"+sessionId, cashCircle);
 													kpilevel.put(sessionId, innermap);
 												}
 												if ("".equalsIgnoreCase(region))
 												{
-													try{
-														cashRegion = kpilevel.get(sessionId).get("cashRegion");
+													try {
+														cashRegion = kpilevel.get(sessionId).get("cashRegion_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashRegion="";}
-													if(cashRegion==null)
+													catch (Exception ex)
 													{
-														cashRegion="";
+														cashRegion = "";
+													}
+													if (cashRegion == null)
+													{
+														cashRegion = "";
 													}
 												} else {
-													innermap.put("cashRegion", region);
+													innermap.put("cashRegion_"+sessionId, region);
 													kpilevel.put(sessionId, innermap);
 													cashRegion = region;
 												}
-												if ("".equalsIgnoreCase(circle)) 
+												if ("".equalsIgnoreCase(circle))
 												{
-													try{
-														cashCircle = kpilevel.get(sessionId).get("cashCircle");
+													try {
+														cashCircle = kpilevel.get(sessionId).get("cashCircle_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashCircle="";}
-													if(cashCircle==null)
+													catch (Exception ex)
 													{
-														cashCircle="";
+														cashCircle = "";
+													}
+													if (cashCircle == null)
+													{
+														cashCircle = "";
 													}
 												} else {
-													innermap.put("cashCircle", circle);
+													innermap.put("cashCircle_"+sessionId, circle);
 													kpilevel.put(sessionId, innermap);
 													cashCircle = circle;
 												}
-											}else
+											} else
 											{
 												cashchannel = extraChannel;
-												cash_Sub_Channel=extrasubchannel;
-												cashZone="";
-												innermap.put("cashZone", cashZone);
-												cashRegion="";
-												innermap.put("cashRegion", cashRegion);
-												cashCircle="";
-												innermap.put("cashCircle", cashCircle);
+												cash_Sub_Channel = extrasubchannel;
+												cashZone = "";
+												innermap.put("cashZone_"+sessionId, cashZone);
+												cashRegion = "";
+												innermap.put("cashRegion_"+sessionId, cashRegion);
+												cashCircle = "";
+												innermap.put("cashCircle_"+sessionId, cashCircle);
 												kpilevel.put(sessionId, innermap);
 											}
 										}
 									}
 							//---------------------------------Channel Level----------------------------------------------------------------------------
 									else {
-										if(!extraChannel.equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
+										if (!extraChannel.equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
 										{
-											speech="You are not authorized to see different channel data";
+											speech = "You are not authorized to see different channel data";
 										}
 										else
 										{
-											if(!diffIntent.equalsIgnoreCase(actionperformed))
+											if (!diffIntent.equalsIgnoreCase(actionperformed))
 											{
 												cashchannel = extraChannel;
-												//START----------------------------------	Product and Period level Handling--------------------------------------------------------- 											
-												if("".equalsIgnoreCase(productType))
+												// START--------- Product and Period level Handling-----------------------------
+												if ("".equalsIgnoreCase(productType))
 												{
-													try{
-														cashproductType = kpilevel.get(sessionId).get("cashproductType");
+													try {
+														cashproductType = kpilevel.get(sessionId).get("cashproductType_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashproductType="";}
-													if(cashproductType==null)
-													{cashproductType="";}
-												}else
-												{
-													innermap.put("cashproductType", productType);
-													kpilevel.put(sessionId, innermap);
-													cashproductType=productType;
-												}
-												if("".equalsIgnoreCase(period))
-												{
-													try{
-														cachePeriod = kpilevel.get(sessionId).get("cachePeriod");
-													}
-													catch(Exception ex)
-													{cachePeriod="";}
-													if(cachePeriod==null)
-													{cachePeriod="";}
-												}
-												else
-												{
-													innermap.put("cachePeriod", period);
-													kpilevel.put(sessionId, innermap);
-													cachePeriod=period;
-												}
-												//END  ----------------------------------	Product and Period level Handling---------------------------------------------------------
-//START----------------------------if User enter a same channel again then blank rest of the items
-												if(!"".equalsIgnoreCase(channel))
-												{
-													cashchannel=channel;
-													cash_Sub_Channel="";
-													innermap.put("cash_Sub_Channel", cash_Sub_Channel);
-													cashZone="";
-													innermap.put("cashZone", cashZone);
-													cashRegion="";
-													innermap.put("cashRegion", cashRegion);
-													cashCircle="";
-													innermap.put("cashCircle", cashCircle);
-													kpilevel.put(sessionId, innermap);
-												}
-//END----------------------------if User enter a same channel again then blank rest of the items
-//---------------------------------------------------------------------------------------------------------------------------------------------------------
-//START----------------------------if User enter a same subchannel again then blank rest of the items------------------------------------------------------
-												if("".equalsIgnoreCase(subChannel))
-												{
-													try{
-														cash_Sub_Channel = kpilevel.get(sessionId).get("cash_Sub_Channel");
-													}
-													catch(Exception ex)
-													{cash_Sub_Channel="";}
-													if(cash_Sub_Channel==null)
+													catch (Exception ex)
+													{cashproductType = "";}
+													if (cashproductType == null)
 													{
-														cash_Sub_Channel="";
+														cashproductType = "";
+													}
+												} else
+												{
+													innermap.put("cashproductType_"+sessionId, productType);
+													kpilevel.put(sessionId, innermap);
+													cashproductType = productType;
+												}
+												if ("".equalsIgnoreCase(period))
+												{
+													try {
+														cachePeriod = kpilevel.get(sessionId).get("cachePeriod_"+sessionId);
+													}
+													catch (Exception ex)
+													{
+														cachePeriod = "";
+													}
+													if (cachePeriod == null)
+													{
+														cachePeriod = "";
 													}
 												}
 												else
 												{
-													innermap.put("cash_Sub_Channel", subChannel);
-													cash_Sub_Channel=subChannel;
-													cashZone="";
-													innermap.put("cashZone", cashZone);
-													cashRegion="";
-													innermap.put("cashRegion", cashRegion);
-													cashCircle="";
-													innermap.put("cashCircle", cashCircle);
+													innermap.put("cachePeriod_"+sessionId, period);
+													kpilevel.put(sessionId, innermap);
+													cachePeriod = period;
+												}
+												// END Product and Period levelHandling---------------------------------------------------------
+												// START----------------------------if// User enter a same channel again then blank rest of the items
+												if (!"".equalsIgnoreCase(channel))
+												{
+													cashchannel = channel;
+													cash_Sub_Channel = "";
+													innermap.put("cash_Sub_Channel_"+sessionId, cash_Sub_Channel);
+													cashZone = "";
+													innermap.put("cashZone_"+sessionId, cashZone);
+													cashRegion = "";
+													innermap.put("cashRegion_"+sessionId, cashRegion);
+													cashCircle = "";
+													innermap.put("cashCircle_"+sessionId, cashCircle);
 													kpilevel.put(sessionId, innermap);
 												}
-//END----------------------------if User enter a same subchannel again then blank rest of the items------------------------------------------------------
+												// END-----------------if User enter a same channelagain then blank rest of the items
+												// ------------------------------------------------------------------------------------------
+												// START----------if User enter a same subchannel again then blank rest of the items--------
+												if ("".equalsIgnoreCase(subChannel))
+												{
+													try {
+														cash_Sub_Channel = kpilevel.get(sessionId).get("cash_Sub_Channel_"+sessionId);
+													}
+													catch (Exception ex)
+													{
+														cash_Sub_Channel = "";
+													}
+													if (cash_Sub_Channel == null)
+													{
+														cash_Sub_Channel = "";
+													}
+												}
+												else
+												{
+													innermap.put("cash_Sub_Channel_"+sessionId, subChannel);
+													cash_Sub_Channel = subChannel;
+													cashZone = "";
+													innermap.put("cashZone_"+sessionId, cashZone);
+													cashRegion = "";
+													innermap.put("cashRegion_"+sessionId, cashRegion);
+													cashCircle = "";
+													innermap.put("cashCircle_"+sessionId, cashCircle);
+													kpilevel.put(sessionId, innermap);
+												}
+						// END-------------if User enter a same subchannel again then blank rest of the items-----------
 												if ("".equalsIgnoreCase(zone))
 												{
-													try{
-														cashZone = kpilevel.get(sessionId).get("cashZone");
+													try {
+														cashZone = kpilevel.get(sessionId).get("cashZone_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashZone="";}
-													if(cashZone==null)
+													catch (Exception ex)
 													{
-														cashZone="";
+														cashZone = "";
+													}
+													if (cashZone == null)
+													{
+														cashZone = "";
 													}
 												} else {
-													innermap.put("cashZone", zone);
-													cashRegion="";
-													innermap.put("cashRegion", cashRegion);
-													cashCircle="";
-													innermap.put("cashCircle", cashCircle);
+													innermap.put("cashZone_"+sessionId, zone);
+													cashRegion = "";
+													innermap.put("cashRegion_"+sessionId, cashRegion);
+													cashCircle = "";
+													innermap.put("cashCircle_"+sessionId, cashCircle);
 													kpilevel.put(sessionId, innermap);
 													cashZone = zone;
 												}
 												if ("".equalsIgnoreCase(region))
 												{
-													try{
-														cashRegion = kpilevel.get(sessionId).get("cashRegion");
+													try {
+														cashRegion = kpilevel.get(sessionId).get("cashRegion_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashRegion="";}
-													if(cashRegion==null)
+													catch (Exception ex)
 													{
-														cashRegion="";
+														cashRegion = "";
+													}
+													if (cashRegion == null)
+													{
+														cashRegion = "";
 													}
 												} else {
-													innermap.put("cashRegion", region);
+													innermap.put("cashRegion_"+sessionId, region);
 													kpilevel.put(sessionId, innermap);
 													cashRegion = region;
 												}
-												if ("".equalsIgnoreCase(circle)) 
+												if ("".equalsIgnoreCase(circle))
 												{
-													try{
-														cashCircle = kpilevel.get(sessionId).get("cashCircle");
+													try {
+														cashCircle = kpilevel.get(sessionId).get("cashCircle_"+sessionId);
 													}
-													catch(Exception ex)
-													{cashCircle="";}
-													if(cashCircle==null)
+													catch (Exception ex)
 													{
-														cashCircle="";
+														cashCircle = "";
+													}
+													if (cashCircle == null)
+													{
+														cashCircle = "";
 													}
 												} else {
-													innermap.put("cashCircle", circle);
+													innermap.put("cashCircle_"+sessionId, circle);
 													kpilevel.put(sessionId, innermap);
 													cashCircle = circle;
 												}
 											}
 											else
 											{
-							//--------------if user enter the same intent/action again then blank rest of the item and show on intent level
+			// --------------if user enter the same intent/action again then blank rest of the item and show on intent level
 												cashchannel = extraChannel;
-												cash_Sub_Channel="";
-												innermap.put("cash_Sub_Channel", cash_Sub_Channel);
-												cashZone="";
-												innermap.put("cashZone", cashZone);
-												cashRegion="";
-												innermap.put("cashRegion", cashRegion);
-												cashCircle="";
-												innermap.put("cashCircle", cashCircle);
+												cash_Sub_Channel = "";
+												innermap.put("cash_Sub_Channel_"+sessionId, cash_Sub_Channel);
+												cashZone = "";
+												innermap.put("cashZone_"+sessionId, cashZone);
+												cashRegion = "";
+												innermap.put("cashRegion_"+sessionId, cashRegion);
+												cashCircle = "";
+												innermap.put("cashCircle_"+sessionId, cashCircle);
 												kpilevel.put(sessionId, innermap);
 											}
 										}
 									}
 								}
-							} 
+							}
 							else
 							{
 								if (period.equalsIgnoreCase("")) {
