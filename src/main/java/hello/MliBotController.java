@@ -464,7 +464,10 @@ public class MliBotController{
 										{
 											cashZone = extraZone;
 											cashRegion = "";
+											innermap.put("cashRegion_"+sessionId, cashRegion);
 											cashCircle = "";
+											innermap.put("cashCircle_"+sessionId, cashCircle);
+											kpilevel.put(sessionId, innermap);
 										}
 									}
 					//-----------------------------------------SubChannel-----------------------------------------------------------------------
