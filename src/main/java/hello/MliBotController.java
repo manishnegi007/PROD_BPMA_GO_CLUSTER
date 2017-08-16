@@ -988,6 +988,18 @@ public class MliBotController{
 									Map map = sessionMap.get(sessionId);
 									map.put("subChannel", subChannel);
 								}
+								if (checkChannel.equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
+								{
+									Map map = sessionMap.get(sessionId);
+									cash_Sub_Channel = "";
+									map.put("subChannel", subChannel);
+									cashZone = "";
+									map.put("zone", zone);
+									cashRegion = "";
+									map.put("region", cashRegion);
+									cashCircle = "";
+									map.put("circle", cashCircle);
+								}
 							}
 							if (!actionperformed.equalsIgnoreCase("") && actionperformed != null && "".equalsIgnoreCase(speech)) 
 							{
