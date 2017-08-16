@@ -544,7 +544,10 @@ public class APIConsumerService {
 								+"WIP AFYP: " +convertsum3+" Cr. \n\n ";
 						if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 						{
+							if("".equalsIgnoreCase(user_sub_channel))
+							{
 							finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, Cat, Ecomm, IM, IMF";
+							}
 						}
 					}
 					else if(!"MLI".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(channel))
@@ -570,7 +573,10 @@ public class APIConsumerService {
 								+"WIP AFYP: " +convertsum3+" Cr.";
 						if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 						{
+							if("".equalsIgnoreCase(user_sub_channel))
+							{
 							finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, Cat, Ecomm, IM, IMF";
+							}
 						}
 					}
 				}
