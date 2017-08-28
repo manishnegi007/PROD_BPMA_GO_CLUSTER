@@ -1181,7 +1181,7 @@ public class MliBotController{
 							}
 							map.put("action", actionperformed);
 							sessionMap.put(sessionId, map);
-							if(!"".equalsIgnoreCase(user_ssoid) || !user_ssoid.equalsIgnoreCase("null"))
+							if(!"".equalsIgnoreCase(user_ssoid) && !user_ssoid.equalsIgnoreCase("null"))
 							{
 								extraMap.put(user_ssoid, map);
 							}
