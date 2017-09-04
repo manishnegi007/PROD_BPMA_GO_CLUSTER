@@ -310,7 +310,7 @@ public class APIConsumerService {
 				requestdata.append("	    \"designationDesc\": \""+user_designation_desc+"\",");
 				requestdata.append("	    \"channel\": \""+serviceChannel+"\",");
 				requestdata.append("	    \"subChannel\": \""+user_sub_channel+"\",");
-				requestdata.append("	    \"zone\": \""+user_getzone+"\",");
+				requestdata.append("	    \"zone\": \""+userzone+"\",");
 				requestdata.append("	    \"region\": \""+user_region+"\",");
 				requestdata.append("	    \"circle\": \""+user_circle+"\",");
 				requestdata.append("	    \"cluster\": \""+user_clusters+"\",");
