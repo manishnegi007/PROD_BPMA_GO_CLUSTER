@@ -1067,8 +1067,7 @@ public class APIConsumerService {
 									+"Applied value for the Month is, : " +mtdAppliedAFYP+" Cr, \n\n"
 									+"Applied value for the Year is, : "+ytd_applied_afyp+" Cr, \n\n"
 									+"WIP AFYP, : " +convertsum3+" Cr.";	
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+
 									", the Business update for "+msgChannel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
@@ -1079,8 +1078,7 @@ public class APIConsumerService {
 									+"Applied AFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
 									+"WIP AFYP: " +convertsum3+" Cr.";
 						}
-					}
-					else 
+					}else 
 					{
 						finalresponse="As of "+real_tim_timstamp+
 								", the Business update for "+msgChannel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
@@ -1123,8 +1121,7 @@ public class APIConsumerService {
 									+" For the Month : " +mtdAdjustMFYP+" Cr"
 									+" For the Year : " +ytd_adj_mfyp+" Cr";
 
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+"  Paid AdjMFYP Business for "+msgChannel+ " is :"+
 									" FTD : " +dailyAdjustMFYP+" Cr,"
@@ -1146,8 +1143,7 @@ public class APIConsumerService {
 						finalresponse="Current WIP as of "+dtf.format(now)+
 								" for "+msgChannel+" is "+convertsum4+" Policies with "+convertsum3+" "
 								+ " Cr. AFYP. Do you wish to see the stage wise snapshot";
-					}
-					else
+					}else
 					{
 						finalresponse="Current WIP as of "+dtf.format(now)+
 								" for MLI is "+convertsum4+" Policies with "+convertsum3+" "
@@ -1165,8 +1161,7 @@ public class APIConsumerService {
 								+"\n\n FIN WIP AFYP :"+finWIPAFYP+"Cr. and Policies"+fin_wip_count+" "
 								+"\n\n MISC WIP AFYP :"+miscWIPAFYP+"Cr. and Policies"+misc_wip_count+" "
 								+"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"Cr. and Policies "+welcome_wip_count+"";
-					}
-					else
+					}else
 					{
 						finalresponse="WIP AFYP :" +convertsum3+
 								"\n\n HO WIP AFYP :"+hoWIPAFYP+
@@ -1185,8 +1180,7 @@ public class APIConsumerService {
 						{
 							finalresponse=" Monthly Applied Business for "+msgChannel+
 									" as of now is : "+mtdAppliedAFYP+" Cr "+"";
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+" Applied Business AFYP MTD For "+msgChannel+
 									": "+mtdAppliedAFYP+" Cr "+"";
@@ -1200,8 +1194,7 @@ public class APIConsumerService {
 									+ " For the day is, : " +dailyAppliedAFYP+" Cr"
 									+", For the month is, : " +mtdAppliedAFYP+" Cr"
 									+", For the year is, : " +ytd_applied_afyp+" Cr";
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+" Applied AFYP For "+msgChannel+"  is: "
 									+ " FTD : " +dailyAppliedAFYP+" Cr"
@@ -1226,8 +1219,7 @@ public class APIConsumerService {
 						finalresponse = msgChannel+" has witnessed paid Business growth of "+grth_ovr_lst_yr_paid
 								+"% on YTD basis, \n\n last year we had clocked "+adj_mfyp_sam_ytd_lst_yr+
 								"Cr of paid business, as compared to "+ytd_inforced_adj_mfyp+"Cr today";
-					}
-					else
+					}else
 					{
 						finalresponse = msgChannel+" has witnessed paid Business growth of "+grth_ovr_lst_yr_paid
 								+"% on YTD basis, \n\n last year we had clocked "+adj_mfyp_sam_ytd_lst_yr+
@@ -1243,15 +1235,13 @@ public class APIConsumerService {
 								+mtd_adj_mfyp_pln+" Cr, and till now we have achieved "+mtd_adj_mfyp_act+" Cr, At Yearly level "
 								+msgChannel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Our plan is "
 								+ytd_adj_mfyp_pln+"Cr and till now we have achieved "+ytd_adj_mfyp_act+" Cr";
-					}
-					else
+					}else
 					{
 						finalresponse="At MTD level "+msgChannel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Our monthly plan is "
 								+mtd_adj_mfyp_pln+" Cr and till "+real_tim_timstamp+" We have achieved "+mtd_adj_mfyp_act+" Cr, At YTD level "
 								+msgChannel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Our YTD plan is "
 								+ytd_adj_mfyp_pln+" Cr and till "+real_tim_timstamp+" We have achieved "+ytd_adj_mfyp_act+" Cr";
 					}
-
 				}
 				else if("Penetration".equalsIgnoreCase(action))
 				{
@@ -1264,8 +1254,7 @@ public class APIConsumerService {
 								finalresponse=msgChannel+" "+productType+" Penetration is "+ul_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 										+" Cr of paid Business and "+ul_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 										+ "  issued in this month ";	
-							}
-							else
+							}else
 							{
 								finalresponse=msgChannel+" "+productType+" Penetration is "+ul_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 										+" Cr of paid Business AFYP "+period+" and "+ul_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
@@ -1279,8 +1268,7 @@ public class APIConsumerService {
 								finalresponse=msgChannel+" "+productType+" Penetration is "+trad_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 										+" Cr of paid Business, and "+trad_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 										+ " issued in this month";
-							}
-							else
+							}else
 							{
 								finalresponse=msgChannel+" "+productType+" Penetration is "+trad_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 										+" Cr of paid Business AFYP "+period+" and "+trad_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
@@ -1294,8 +1282,7 @@ public class APIConsumerService {
 								finalresponse=msgChannel+" "+productType+" Penetration is "+protec_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 										+" Cr of paid Business  and "+protec_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
 										+ " issued in this month ";
-							}
-							else
+							}else
 							{
 								finalresponse=msgChannel+" "+productType+" Penetration is "+protec_penet_mtd_afyp+" % of "+mtd_inforced_afyp
 										+" Cr of paid Business AFYP "+period+" and "+protec_penet_mtd_pol_cnt+" % of "+mtd_inforced_count+" Policies"
@@ -1312,8 +1299,7 @@ public class APIConsumerService {
 								finalresponse=msgChannel+" "+productType+" Penetration is "+ul_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
 										" Cr of paid Business and "+ul_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 										+ " issued on this year";
-							}
-							else
+							}else
 							{
 								finalresponse=msgChannel+" "+productType+" Penetration is "+ul_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
 										" Cr of paid Business AFYP "+period+" and "+ul_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
@@ -1327,8 +1313,7 @@ public class APIConsumerService {
 								finalresponse=msgChannel+" "+productType+" Penetration is "+trad_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
 										" Cr of paid business, and "+trad_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
 										+ " issued in this year";
-							}
-							else
+							}else
 							{
 								finalresponse=msgChannel+" "+productType+" Penetration is "+trad_penet_ytd_afyp+" % of "+ytd_inforced_afyp+
 										" Cr of paid Business AFYP "+period+" and "+trad_penet_ytd_pol_cnt+" % of "+ytd_inforced_count+" Policies"
@@ -1385,8 +1370,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + channel + " is " + mtd_inforced_count +
 									" If you want to see the zone/region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + channel + " is " + daily_inforced_count1 +
 									" If you want to see the zone/region wise business numbers, please specify";	
@@ -1398,13 +1382,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp + " Paid cases " + period + " for " + userzone+ " zone is " + ytd_inforced_count +
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " +real_tim_timstamp + " Paid cases " + period + " for " + userzone+ " zone is " + mtd_inforced_count +
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp + " Paid cases " + period + " for " + userzone+ " zone is " + daily_inforced_count1 +
 									" If you want to see the region wise business numbers, please specify";
@@ -1416,12 +1398,10 @@ public class APIConsumerService {
 						if("YTD".equalsIgnoreCase(period))
 						{	
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " region is " + ytd_inforced_count;
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " region is " + mtd_inforced_count;
-						}
-						else
+						}else
 						{
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " region is " + daily_inforced_count1;
 						}
@@ -1432,13 +1412,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for MLI is " + ytd_inforced_count +
 									" If you want to see the channel wise business numbers, please specify";
-						}
-						else if("YTD".equalsIgnoreCase(period))
+						}else if("YTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for MLI is " + mtd_inforced_count +
 									" If you want to see the channel wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for MLI is " + daily_inforced_count1 +
 									" If you want to see the channel wise business numbers, please specify";
@@ -1477,13 +1455,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " + real_tim_timstamp + " Applied Business AFYP " + period + " for " +channel+ " is " +ytd_applied_afyp+
 									" Cr. If you want to see the zone/region wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " + real_tim_timstamp + " Applied Business AFYP " + period + " for " +channel+ " is " +mtdAppliedAFYP+
 									" Cr. If you want to see the zone/region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " + real_tim_timstamp + " Applied Business AFYP " + period + " for " +channel+ " is " +daily_inforced_count+
 									" Cr. If you want to see the zone/region wise business numbers, please specify";
@@ -1494,13 +1470,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " +userzone+ " zone is " +ytd_applied_afyp+
 									" Cr. If you want to see the region wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " +userzone+ " zone is " +mtdAppliedAFYP+
 									" Cr. If you want to see the region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " +userzone+ " zone is " +daily_inforced_count+
 									" Cr. If you want to see the region wise business numbers, please specify";
@@ -1510,12 +1484,10 @@ public class APIConsumerService {
 						if("YTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +ytd_applied_afyp+ " Cr";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +mtdAppliedAFYP+ " Cr";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +daily_inforced_count+ " Cr";
 						}
@@ -1525,13 +1497,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for MLI is " +ytd_applied_afyp+ "Cr." 
 									+ " If you want to see the channel wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for MLI is " +ytd_applied_afyp+ "Cr." 
 									+ " If you want to see the channel wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for MLI is " +ytd_applied_afyp+ "Cr." 
 									+ " If you want to see the channel wise business numbers, please specify";
@@ -1573,13 +1543,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP " +period+ " for " +channel+ "is " + ytd_adj_mfyp+
 									"If you want to see the zone/region wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP " +period+ " for " +channel+ "is " + mtd_adj_mfyp+
 									"If you want to see the zone/region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP " +period+ " for " +channel+ "is " + daily_adj_mfyp+
 									"If you want to see the zone/region wise business numbers, please specify";
@@ -1591,13 +1559,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP " +period+ " for " +userzone+" zone is "+ytd_adj_mfyp+
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP " +period+ " for " +userzone+" zone is "+mtd_adj_mfyp+
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP " +period+ " for " +userzone+" zone is "+daily_adj_mfyp+
 									" If you want to see the region wise business numbers, please specify";
@@ -1813,12 +1779,10 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+" Applied cases "+period+" for "+channel+ " is "+ytd_applied_count+
 									" If you want to see the zone/region wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period)){
+						}else if("MTD".equalsIgnoreCase(period)){
 							finalresponse="As of " +real_tim_timstamp+" Applied cases "+period+" for "+channel+ " is "+mtd_applied_count+
 									" If you want to see the zone/region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+" Applied cases "+period+" for "+channel+ " is "+daily_applied_count+
 									" If you want to see the zone/region wise business numbers, please specify";
@@ -1830,13 +1794,11 @@ public class APIConsumerService {
 						{
 							finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+ " for "+userzone+" zone is "+ytd_applied_count+
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else if("MTD".equalsIgnoreCase(period))
+						}else if("MTD".equalsIgnoreCase(period))
 						{
 							finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+ " for "+userzone+" zone is "+mtd_applied_count+
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+ " for "+userzone+" zone is "+daily_applied_count+
 									" If you want to see the region wise business numbers, please specify";
@@ -1905,8 +1867,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+" LPC Applied Business Adj IFYP "+period+" for "+channel+ " is "+lpc_applied_adj_ifyp_ytd+
 									" If you want to see the zone/region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+" LPC Applied Business Adj IFYP "+period+" for "+channel+ " is "+lpc_applied_adj_ifyp_mtd+
 									" If you want to see the zone/region wise business numbers, please specify";		
@@ -1917,8 +1878,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of "+real_tim_timstamp+" LPC Applied Business Adj IFYP "+period+ " for "+userzone+" zone is "+lpc_applied_adj_ifyp_ytd+
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+" LPC Applied Business Adj IFYP "+period+ " for "+userzone+" zone is "+lpc_applied_adj_ifyp_mtd+
 									" If you want to see the region wise business numbers, please specify";
@@ -1928,8 +1888,7 @@ public class APIConsumerService {
 						if("YTD".equalsIgnoreCase(period))
 						{
 							finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business Adj IFYP "+period+" for "+ user_region+" region is "+lpc_applied_adj_ifyp_ytd+" Cr";
-						}
-						else
+						}else
 						{
 							finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business Adj IFYP "+period+" for "+ user_region+" region is "+lpc_applied_adj_ifyp_mtd+" Cr";	
 						}
@@ -1984,8 +1943,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+channel+ " is "+lpc_applied_afyp_ytd+
 									" If you want to see the zone/region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+channel+ " is "+lpc_applied_afyp_mtd+
 									" If you want to see the zone/region wise business numbers, please specify";
@@ -1997,8 +1955,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+ " for "+userzone+" is "+lpc_applied_afyp_ytd+
 									" If you want to see the region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+ " for "+userzone+" is "+lpc_applied_afyp_mtd+
 									" If you want to see the region wise business numbers, please specify";	
@@ -2009,8 +1966,7 @@ public class APIConsumerService {
 						if("YTD".equalsIgnoreCase(period))
 						{
 							finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " region is "+lpc_applied_afyp_ytd+" Cr";
-						}
-						else
+						}else
 						{
 							finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " region is "+lpc_applied_afyp_mtd+" Cr";	
 						}
@@ -2021,8 +1977,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for MLI is "+lpc_applied_afyp_ytd+
 									" If you want to see the channel wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for MLI is "+lpc_applied_afyp_mtd+
 									" If you want to see the channel wise business numbers, please specify";	
@@ -2065,8 +2020,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " + real_tim_timstamp + " LPC Applied cases " + period + " for " +channel+ " is " +lpc_applied_cases_ytd+
 									" Cr. If you want to see the zone/region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " + real_tim_timstamp + " LPC Applied cases " + period + " for " +channel+ " is " +lpc_applied_cases_mtd+
 									" Cr. If you want to see the zone/region wise business numbers, please specify";	
@@ -2078,8 +2032,7 @@ public class APIConsumerService {
 						{
 							finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " +userzone+ " zone is " +lpc_applied_cases_ytd+
 									" Cr. If you want to see the region wise business numbers, please specify";
-						}
-						else
+						}else
 						{
 							finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " +userzone+ " zone is " +lpc_applied_cases_mtd+
 									" Cr. If you want to see the region wise business numbers, please specify";	
@@ -2853,8 +2806,7 @@ public class APIConsumerService {
 							finalresponse= "MLI has witnessed applied Business growth of " +grth_applied_cases_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_applied_cases_ytd+ " of Applied Cases as compared to " +applied_cases_ytd+ " today "
 									+ " If you want to see the Channel wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "MLI has witnessed applied Business growth of " +grth_applied_cases_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_applied_cases_mtd+ " of Applied Cases as compared to " +applied_cases_mtd+ " today "
@@ -2906,8 +2858,7 @@ public class APIConsumerService {
 							finalresponse= channel+" has witnessed case size growth of " +grth_case_size_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_ytd+ " of cases size as compared to " +case_size_afyp_ytd_growth+ "K today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= channel+" has witnessed case size growth of " +grth_case_size_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_mtd+ " of cases size as compared to " +case_size_afyp_mtd_growth+ "K today "
@@ -2921,8 +2872,7 @@ public class APIConsumerService {
 							finalresponse= "Zone "+userzone+" has witnessed case size growth of " +grth_case_size_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_ytd+ " K of cases size as compared to " +case_size_afyp_ytd_growth+ "K today "
 									+ " If you want to see the region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "Zone "+userzone+" has witnessed case size growth of " +grth_case_size_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_mtd+ " K of cases size as compared to " +case_size_afyp_mtd_growth+ "K today "
@@ -2935,8 +2885,7 @@ public class APIConsumerService {
 						{
 							finalresponse= "Region"+user_region+" has witnessed case size growth of " +grth_case_size_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_ytd+ " of cases size as compared to " +case_size_afyp_ytd_growth+ "K today ";
-						}
-						else
+						}else
 						{
 							finalresponse= "Region"+user_region+" has witnessed case size growth of " +grth_case_size_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_mtd+ " of cases size as compared to " +case_size_afyp_mtd_growth+ "K today ";	
@@ -2949,8 +2898,7 @@ public class APIConsumerService {
 							finalresponse= channel+" has witnessed case size growth of " +grth_case_size_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_ytd+ " of cases size as compared to " +case_size_afyp_ytd_growth+ "K today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= channel+" has witnessed case size growth of " +grth_case_size_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_case_size_afyp_mtd+ " of cases size as compared to " +case_size_afyp_mtd_growth+ "K today "
@@ -3003,8 +2951,7 @@ public class APIConsumerService {
 							finalresponse= channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_ytd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_mtd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
@@ -3018,8 +2965,7 @@ public class APIConsumerService {
 							finalresponse= "Zone "+userzone+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_ytd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "Zone "+userzone+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_mtd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
@@ -3033,8 +2979,7 @@ public class APIConsumerService {
 							finalresponse= "Region "+channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_ytd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "Region "+channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_mtd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
@@ -3048,8 +2993,7 @@ public class APIConsumerService {
 							finalresponse= channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_ytd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_paid_adj_mfyp_mtd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
@@ -3102,8 +3046,7 @@ public class APIConsumerService {
 							finalresponse= channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_adj_ifyp_ytd+ " of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_adj_ifyp_mtd+ " of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today "
@@ -3117,8 +3060,7 @@ public class APIConsumerService {
 							finalresponse= "Zone "+userzone+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_adj_ifyp_ytd+ " of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "Zone "+userzone+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_adj_ifyp_mtd+ " of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today "
@@ -3132,8 +3074,7 @@ public class APIConsumerService {
 							finalresponse= "Region "+channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_adj_ifyp_ytd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "Region "+channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_adj_ifyp_mtd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
@@ -3200,8 +3141,7 @@ public class APIConsumerService {
 							finalresponse= channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_ytd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_ytd+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_mtd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_mtd+ "Cr today "
@@ -3215,8 +3155,7 @@ public class APIConsumerService {
 							finalresponse= "Zone "+userzone+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_ytd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_ytd+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "Zone "+userzone+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_mtd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_mtd+ "Cr today "
@@ -3230,8 +3169,7 @@ public class APIConsumerService {
 							finalresponse= "Region "+channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_ytd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_ytd+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= "Region "+channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_mtd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_mtd+ "Cr today "
@@ -3245,8 +3183,7 @@ public class APIConsumerService {
 							finalresponse= channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_ytd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_ytd+ "Cr today "
 									+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
-						}
-						else
+						}else
 						{
 							finalresponse= channel+" has witnessed LPC applied business growth of " +grth_lpc_applied_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 									prev_lpc_applied_afyp_mtd+ " of LPC applied AFYP as compared to " +curr_lpc_applied_afyp_mtd+ "Cr today "
