@@ -56,7 +56,7 @@ public class MliBotController{
 		String productType = ""; String planType = ""; String period = ""; String channel = "";	String sessionId = "";
 		String userOTP = ""; String speech = ""; String cachePeriod = ""; String cashplanType = ""; String cashchannel = "";
 		String cashproductType = ""; String ssoId = "";	String cashCircle = "";	String cashRegion=""; String cashZone="";
-		String circle=""; String region=""; String zone=""; String subChannel=""; String cash_Sub_Channel="";
+		String circle=""; String region=""; String zone=""; String subChannel=""; String cash_Sub_Channel=""; String source="";
 
 		WebhookResponse response = new WebhookResponse();
 		MliBotController mliBotController= new MliBotController();
@@ -64,6 +64,11 @@ public class MliBotController{
 		{
 			System.out.println("WebhookResponse API START");
 			JSONObject object = new JSONObject(obj);
+			try
+			{
+				source = object.getJSONObject("originalRequest").get("source")+"";
+			}catch(Exception ex)
+			{source="";}
 			String actionperformed = object.getJSONObject("result").get("action")+"";
 			String resolvedQuery = object.getJSONObject("result").get("resolvedQuery") + "";
 			sessionId = object.get("sessionId")+"";
@@ -1015,7 +1020,7 @@ public class MliBotController{
 								}
 								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType,
 										user_ssoid, cash_Sub_Channel, user_designation_desc, cashZone, cashRegion, cashCircle, 
-										user_clusters, user_go, user_cmo, user_amo);
+										user_clusters, user_go, user_cmo, user_amo, sessionId, source);
 							}
 						}
 						/*------------First Time when user comes with SessionId---------------------------------------------------------------------------------*/
@@ -1198,7 +1203,8 @@ public class MliBotController{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
 									}
 								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType, user_ssoid, 
-										subChannel, user_designation_desc, zone, region, circle, user_clusters, user_go, user_cmo, user_amo);
+										subChannel, user_designation_desc, zone, region, circle, user_clusters, user_go, 
+													user_cmo, user_amo, sessionId, source);
 							}
 						}
 					}
