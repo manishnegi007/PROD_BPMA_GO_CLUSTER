@@ -41,7 +41,7 @@ public class APIConsumerService {
 		{productType="Protection";}
 		if("".equalsIgnoreCase(period))
 		{period="MONTHLY";}
-		
+
 		for(int i=0; i<=0; i++)
 		{
 			if(!"".equalsIgnoreCase(user_circle))
@@ -56,24 +56,28 @@ public class APIConsumerService {
 				msgChannel="Region "+msgChannel;
 				break;
 			}
-			else if(!"".equalsIgnoreCase(user_getzone))
+			else if(!"".equalsIgnoreCase(userzone))
 			{
-				msgChannel=user_getzone;
+				msgChannel=userzone;
 				msgChannel="Zone "+msgChannel;
 				break;
 			}
 			else if(!"".equalsIgnoreCase(user_sub_channel))
 			{
-				msgChannel=user_sub_channel;
-				msgChannel="SubChannel "+msgChannel;
-				break;
+				if("google".equalsIgnoreCase(source)){
+					msgChannel=user_sub_channel;
+					break;
+				}
+				else{
+					msgChannel=user_sub_channel;
+					msgChannel="SubChannel "+msgChannel;
+					break;
+				}
 			}
-			else
-			{
-				msgChannel=channel;
+			else{
+				msgChannel = channel;
 			}
-		}
-		
+		}		
 		if("MLI".equalsIgnoreCase(channel)||"CAT".equalsIgnoreCase(channel))
 		{
 			channel=channel.toUpperCase();
@@ -83,8 +87,6 @@ public class APIConsumerService {
 			channel=convertToCamelCase(channel);
 		}
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
-		ResourceBundle mtd = ResourceBundle.getBundle("MTD");
-		ResourceBundle ytd = ResourceBundle.getBundle("YTD");	
 		String output = new String();
 		StringBuilder result = new StringBuilder();	
 		String DevMode = "N";
@@ -99,20 +101,22 @@ public class APIConsumerService {
 			{
 				if("".equalsIgnoreCase(channel) || "MLI".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel))
 				{
-					if("MLI".equalsIgnoreCase(channel) ||  "".equalsIgnoreCase(channel))
-					{
+					if("MLI".equalsIgnoreCase(channel) ||  "".equalsIgnoreCase(channel)){
 						segment = "paid,wip,applied";
 						serviceChannel = "";
-					}else{
+					}else
+					{
 						segment = "paid,wip,applied";
 						serviceChannel = "Axis Bank";
 					}
-				}else{
+				}else
+				{
 					segment = "paid,wip,applied";
 					serviceChannel = channel;
 				}
 			}
-			else if("AdjMFYP".equalsIgnoreCase(action))
+			else if("AdjMFYP".equalsIgnoreCase(action) || "NB.Paidcase".equalsIgnoreCase(action) 
+					|| "NB.AdjMFYP".equalsIgnoreCase(action))
 			{
 				if("MLI".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 				{
@@ -120,11 +124,13 @@ public class APIConsumerService {
 					{
 						segment="paid";
 						serviceChannel = "";
-					}else{
+					}else
+					{
 						segment="paid";
 						serviceChannel = "Axis Bank";
 					}
-				}else{
+				}else
+				{
 					segment="paid";
 					serviceChannel = channel;
 				}
@@ -137,7 +143,8 @@ public class APIConsumerService {
 					{
 						segment="wip";
 						serviceChannel = "";
-					}else{
+					}else
+					{
 						segment="wip";
 						serviceChannel = "Axis Bank";
 					}
@@ -146,40 +153,117 @@ public class APIConsumerService {
 					serviceChannel = channel;
 				}
 			}
-			else if("APPLIED".equalsIgnoreCase(action))
+			else if("APPLIED".equalsIgnoreCase(action) || "NB.Applied".equalsIgnoreCase(action) ||"NB.AppliedAdjIFYP".equalsIgnoreCase(action)
+					||"NB.AppliedCases".equalsIgnoreCase(action))
 			{
+
 				if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel))
 				{
 					if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 					{
 						segment="applied";
 						serviceChannel = "";
-					}else{
+					}else
+					{
 						segment="applied";
 						serviceChannel = "Axis Bank";
 					}
-				}else{
+				}else
+				{
 					segment="applied";
 					serviceChannel = channel;
 				}
 			}
-			else if("Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action))
+			else if("Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action)
+					|| "NB.casesize%".equalsIgnoreCase(action) || "NB.Growth".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
+					||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLCASES".equalsIgnoreCase(action)
+					||"NB.GROWTHCASESIZE".equalsIgnoreCase(action)||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action) ||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)
+					||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(channel)||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(channel)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(channel)
+					||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action)||"NB.ProductMix".equalsIgnoreCase(action))
 			{
 				if("MLI".equalsIgnoreCase(channel))
 				{
 					segment=action;
 					serviceChannel = "";
-				}
-				else
+				}else
 				{
 					if("Axis".equalsIgnoreCase(channel))
 					{
-					segment=action;
-					serviceChannel = "Axis Bank";
-					}
-					else
+						segment=action;
+						serviceChannel = "Axis Bank";
+					}else
 					{
 						segment=action;
+						serviceChannel = channel;
+					}
+				}
+			}
+			else if("NB.casesize".equalsIgnoreCase(action))
+			{
+				if("MLI".equalsIgnoreCase(channel)){
+					segment="CASE_SIZE";
+					serviceChannel = "";
+				}else
+				{
+					if("Axis".equalsIgnoreCase(channel)){
+						segment="CASE_SIZE";
+						serviceChannel = "Axis Bank";
+					}else
+					{
+						segment="CASE_SIZE";
+						serviceChannel = channel;
+					}
+				}
+			}
+			else if("NB.LPCAPPADJIFYP".equalsIgnoreCase(action) || "NB.LPCAPPADJAFYP".equalsIgnoreCase(action) 
+					|| "NB.LPCAPLCASES".equalsIgnoreCase(action) || "NB.LPCPAIDADJMFYP".equalsIgnoreCase(action)
+					|| "NB.LPCPAIDCASES".equalsIgnoreCase(action))
+			{
+				if("MLI".equalsIgnoreCase(channel)){
+					segment="LPC_PERFORMANCE";
+					serviceChannel = "";
+				}else
+				{
+					if("Axis".equalsIgnoreCase(channel)){
+						segment="LPC_PERFORMANCE";
+						serviceChannel = "Axis Bank";
+					}else
+					{
+						segment="LPC_PERFORMANCE";
+						serviceChannel = channel;
+					}
+				}
+			}
+			else if("NB.Recruitment".equalsIgnoreCase(action)) 
+			{
+				if("MLI".equalsIgnoreCase(channel)){
+					segment="REC";
+					serviceChannel = "";
+				}else
+				{
+					if("Axis".equalsIgnoreCase(channel)){
+						segment="REC";
+						serviceChannel = "Axis Bank";
+					}else
+					{
+						segment="REC";
+						serviceChannel = channel;
+					}
+				}
+			}
+			else if("NB.MODEMIX".equalsIgnoreCase(action)) 
+			{
+				if("MLI".equalsIgnoreCase(channel)){
+					segment="MODE_MIX";
+					serviceChannel = "";
+				}else
+				{
+					if("Axis".equalsIgnoreCase(channel)){
+						segment="MODE_MIX";
+						serviceChannel = "Axis Bank";
+					}else
+					{
+						segment="MODE_MIX";
 						serviceChannel = channel;
 					}
 				}
