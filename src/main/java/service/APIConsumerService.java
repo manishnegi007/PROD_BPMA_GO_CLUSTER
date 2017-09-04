@@ -28,8 +28,9 @@ import hello.InnerData;
 public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType,
-			String user_ssoid, String user_sub_channel, String user_designation_desc, String user_getzone, String user_region, 
-					     String user_circle, String user_clusters, String user_go, String user_cmo,	String user_amo)
+				String user_ssoid, String user_sub_channel, String user_designation_desc, 
+				String userzone, String user_region, String user_circle, String user_clusters, String user_go, String user_cmo, 
+				String user_amo, String kpiAsked, String sessionId, String source)
 	{
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
 		Facebook fb = new Facebook();
