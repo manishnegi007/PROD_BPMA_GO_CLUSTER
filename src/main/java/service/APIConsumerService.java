@@ -364,7 +364,10 @@ public class APIConsumerService {
 				double ho_wip_count=0;		double go_wip_count=0;	    double it_wip_count=0;
 				double fin_wip_count=0;		double misc_wip_count=0;    double welcome_wip_count=0;
 				double ytd_inforced_afyp1=0;double ytd_applied_afyp1=0; double mtd_inforced_afyp1=0;
-				double ytd_adj_mfyp1=0;
+				double ytd_adj_mfyp1=0; double daily_inforced_count_aaplied=0; double mtd_adj_mfyp1=0;
+				double daily_adj_mfyp1=0; double daily_applied_count1=0;
+				double daily_inforced_count1=0, ytd_applied_adj_ifyp1=0, mtd_applied_adj_ifyp1=0, mtd_applied_count1=0, ytd_applied_count1=0,
+				       mtd_inforced_count1=0,ytd_inforced_count1=0;
 				double sum = 0; double sum2=0; double sum3 = 0; double sum4 = 0;
 				String 	ul_penet_mtd_afyp="";	String 	ul_penet_ytd_afyp="";  String 	ul_penet_mtd_pol_cnt="";   String ul_penet_ytd_pol_cnt="";
 				String 	ul_mtd_afyp="";	String 	ul_ytd_afyp="";	String 	ul_mtd_pol_cnt="";	String 	ul_ytd_pol_cnt="";	String 	trad_penet_mtd_afyp="";
