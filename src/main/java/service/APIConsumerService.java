@@ -424,7 +424,7 @@ public class APIConsumerService {
 						if(real_tim_timstamp!=null){break;}
 					}catch(Exception e){}
 				}
-				try{
+				try	{
 					dailyAdjustMFYP1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("daily_adj_mfyp").toString());
 				}
 				catch(Exception ex)	{}
@@ -444,7 +444,20 @@ public class APIConsumerService {
 				{
 					ytd_inforced_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("ytd_inforced_afyp").toString());
 				}catch(Exception ex){}
-				String ytd_inforced_afyp_enforce = df.format(ytd_inforced_afyp1);
+				try
+				{
+					daily_inforced_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("daily_inforced_count").toString());
+				}catch(Exception ex){}
+				try
+				{
+					mtd_inforced_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("mtd_inforced_count").toString());
+					mtd_inforced_count = df.format(mtd_inforced_count1);
+				}catch(Exception ex){}
+				try
+				{
+					ytd_inforced_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("ytd_inforced_count").toString());
+					ytd_inforced_count = df.format(ytd_inforced_count1);
+				}catch(Exception ex){}
 				try{
 					ytd_adj_mfyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("ytd_adj_mfyp").toString());
 				}catch(Exception ex){}
@@ -461,6 +474,38 @@ public class APIConsumerService {
 					ytd_applied_afyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("ytd_applied_afyp").toString());
 				}catch(Exception e){}
 				String ytd_applied_afyp = df.format(ytd_applied_afyp1);
+				try{
+					mtd_adj_mfyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("mtd_adj_mfyp").toString());
+				}catch(Exception e){}
+				String mtd_adj_mfyp = df.format(mtd_adj_mfyp1);
+				try{
+					daily_adj_mfyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("daily_adj_mfyp").toString());
+				}catch(Exception e){}
+				String daily_adj_mfyp = df.format(daily_adj_mfyp1);
+				try{
+					ytd_applied_adj_ifyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("ytd_applied_adj_ifyp").toString());
+				}catch(Exception e){}
+				String ytd_applied_adj_ifyp = df.format(ytd_applied_adj_ifyp1);
+				try{
+					mtd_applied_adj_ifyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("mtd_applied_adj_ifyp").toString());
+				}catch(Exception e){}
+				String mtd_applied_adj_ifyp = df.format(mtd_applied_adj_ifyp1);
+				try{
+					mtd_applied_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("mtd_applied_count").toString());
+				}catch(Exception e){}
+				String mtd_applied_count = df.format(mtd_applied_count1);
+				try{
+					ytd_applied_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("ytd_applied_count").toString());
+				}catch(Exception e){}
+				String ytd_applied_count = df.format(ytd_applied_count1);
+				try{
+					daily_applied_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("daily_applied_count").toString());
+				}catch(Exception e){}
+				String daily_applied_count = df.format(daily_applied_count1);
+				try{
+					daily_inforced_count_aaplied = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("daily_inforced_count").toString());
+				}catch(Exception e){}
+				String daily_inforced_count = df.format(daily_inforced_count_aaplied);
 				try{
 					wipAFYP = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("wip_afyp").toString());
 				}catch(Exception e){}
@@ -588,6 +633,42 @@ public class APIConsumerService {
 					protec_ytd_pol_cnt = (object.getJSONObject("payload").getJSONObject("penetration").get("protec_ytd_pol_cnt").toString());
 				}catch(Exception e){}
 				try{
+					ul_penet_mtd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("ul_penet_mtd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					par_penet_mtd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("par_penet_mtd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					nonpar_penet_mtd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("nonpar_penet_mtd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					protec_penet_mtd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("protec_penet_mtd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					par_penet_mtd_pol_cnt = (object.getJSONObject("payload").getJSONObject("penetration").get("par_penet_mtd_pol_cnt").toString());
+				}catch(Exception e){}
+				try{
+					nonpar_penet_mtd_pol_cnt = (object.getJSONObject("payload").getJSONObject("penetration").get("nonpar_penet_mtd_pol_cnt").toString());
+				}catch(Exception e){}
+				try{
+					ul_penet_ytd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("ul_penet_ytd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					par_penet_ytd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("par_penet_ytd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					nonpar_penet_ytd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("nonpar_penet_ytd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					protec_penet_ytd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("penetration").get("protec_penet_ytd_adj_mfyp").toString());
+				}catch(Exception e){}
+				try{
+					par_penet_ytd_pol_cnt = (object.getJSONObject("payload").getJSONObject("penetration").get("par_penet_ytd_pol_cnt").toString());
+				}catch(Exception e){}
+				try{
+					nonpar_penet_ytd_pol_cnt = (object.getJSONObject("payload").getJSONObject("penetration").get("nonpar_penet_ytd_pol_cnt").toString());
+				}catch(Exception e){}
+				try{
 					grth_paid_adj_mfyp = (object.getJSONObject("payload").getJSONObject("growth").get("grth_paid_adj_mfyp").toString());
 				}catch(Exception e){}
 				try{
@@ -597,7 +678,214 @@ public class APIConsumerService {
 					mtd_inforced_adj_mfyp = (object.getJSONObject("payload").getJSONObject("growth").get("mtd_inforced_adj_mfyp").toString());
 				}catch(Exception e){}
 				try{
+					grth_lpc_applied_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_applied_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_applied_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_applied_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					curr_lpc_applied_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("curr_lpc_applied_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_applied_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_applied_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_applied_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_applied_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					curr_lpc_applied_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("curr_lpc_applied_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_applied_adj_ifyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_applied_adj_ifyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_applied_adj_ifyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_applied_adj_ifyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_adj_ifyp_ytd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_applied_adj_ifyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_applied_adj_ifyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_applied_adj_ifyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_applied_adj_ifyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_applied_adj_ifyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_adj_ifyp_mtd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_applied_adj_ifyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_case_size_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_case_size_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_case_size_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_case_size_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					case_size_afyp_ytd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("case_size_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_case_size_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_case_size_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_case_size_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_case_size_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					case_size_afyp_mtd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("case_size_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
 					grth_ovr_lst_yr_paid = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lst_yr_sm_adj_mfyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_recruitment_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_recruitment_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_recruitment_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_recruitment_ytd").toString());
+				}catch(Exception e){}
+				try{
+					recruitment_ytd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("recruitment_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_recruitment_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_recruitment_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_recruitment_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_recruitment_mtd").toString());
+				}catch(Exception e){}
+				try{
+					recruitment_mtd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("recruitment_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lst_yr_inforced_cnt_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lst_yr_inforced_cnt_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_year_inforced_cnt_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_year_inforced_cnt_ytd").toString());
+				}catch(Exception e){}
+				try{
+					ytd_inforced_cnt = (object.getJSONObject("payload").getJSONObject("growth").get("ytd_inforced_cnt").toString());
+				}catch(Exception e){}
+				try{
+					grth_lst_yr_inforced_cnt_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lst_yr_inforced_cnt_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_year_inforced_cnt_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_year_inforced_cnt_mtd").toString());
+				}catch(Exception e){}
+				try{
+					mtd_inforced_cnt = (object.getJSONObject("payload").getJSONObject("growth").get("mtd_inforced_cnt").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_paid_cases_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_paid_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_paid_cases_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_paid_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_cases_ytd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_paid_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_paid_cases_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_paid_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_paid_cases_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_paid_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_cases_mtd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_paid_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_applied_cases_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_applied_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_applied_cases_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_applied_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_cases_ytd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_applied_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_applied_cases_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_applied_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_applied_cases_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_applied_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_cases_mtd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_applied_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lst_yr_sm_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lst_yr_sm_adj_mfyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lst_yr_sm_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lst_yr_sm_adj_mfyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_year_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_year_adj_mfyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_year_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_year_adj_mfyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_applied_adj_ifyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_applied_adj_ifyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					rpev_applied_adj_ifyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("rpev_applied_adj_ifyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					applied_adj_ifyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("applied_adj_ifyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_applied_adj_ifyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_applied_adj_ifyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					rpev_applied_adj_ifyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("rpev_applied_adj_ifyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_applied_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_applied_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_applied_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_applied_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					applied_afyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("applied_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_applied_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_applied_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_applied_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_applied_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					applied_afyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("applied_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_applied_cases_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_applied_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_applied_cases_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_applied_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					applied_cases_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("applied_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_applied_cases_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_applied_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_applied_cases_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_applied_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					applied_cases_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("applied_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_paid_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_paid_adj_mfyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_paid_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_paid_adj_mfyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_adj_mfyp_ytd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_paid_adj_mfyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					grth_lpc_paid_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("grth_lpc_paid_adj_mfyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					prev_lpc_paid_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("prev_lpc_paid_adj_mfyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_adj_mfyp_mtd_growth = (object.getJSONObject("payload").getJSONObject("growth").get("lpc_paid_adj_mfyp_mtd").toString());
 				}catch(Exception e){}
 				try{
 					adj_mfyp_sam_ytd_lst_yr = (object.getJSONObject("payload").getJSONObject("growth").get("prev_year_adj_mfyp_ytd").toString());
@@ -606,10 +894,10 @@ public class APIConsumerService {
 					ytd_inforced_adj_mfyp = (object.getJSONObject("payload").getJSONObject("growth").get("ytd_inforced_adj_mfyp").toString());
 				}catch(Exception e){}
 				try{
-					ytd_adj_mfyp_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_adj_mfyp_pln").toString());
+					mtd_adj_mfyp_act = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_adj_mfyp_act").toString());
 				}catch(Exception e){}
 				try{
-					mtd_adj_mfyp_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_adj_mfyp_pln").toString());
+					ytd_adj_mfyp_act = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_adj_mfyp_act").toString());
 				}catch(Exception e){}
 				try{
 					achiev_mtd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_adj_mfyp").toString());
@@ -640,6 +928,93 @@ public class APIConsumerService {
 				}catch(Exception e){}
 				try{
 					ytd_afyp_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_afyp_pln").toString());
+				}catch(Exception e){}
+				try{
+					achiev_mtd_case_active_mtd = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_case_active_mtd").toString());
+				}catch(Exception e){}
+				try{
+					achiev_mtd_case_active_ytd = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_case_active_ytd").toString());
+				}catch(Exception e){}
+				try{
+					achiev_mtd_recruitment = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_recruitment").toString());
+				}catch(Exception e){}
+				try{
+					achiev_ytd_recruitment = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_ytd_recruitment").toString());
+				}catch(Exception e){}
+				try{
+					achiev_mtd_paid_case = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_paid_case").toString());
+				}catch(Exception e){}
+				try{
+					mtd_adj_afyp_act = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_adj_afyp_act").toString());
+				}catch(Exception e){}
+				try{
+					mtd_adj_afyp_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_adj_afyp_pln").toString());
+				}catch(Exception e){}
+				try{
+					mtd_paid_case_act = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_paid_case_act").toString());
+				}catch(Exception e){}
+				try{
+					mtd_paid_case_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_paid_case_pln").toString());
+				}catch(Exception e){}
+				try{
+					achiev_ytd_paid_case = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_ytd_paid_case").toString());
+				}catch(Exception e){}
+				try{
+					ytd_adj_mfyp_act = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_adj_mfyp_act").toString());
+				}catch(Exception e){}
+				try{
+					ytd_adj_mfyp_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_adj_mfyp_pln").toString());
+				}catch(Exception e){}
+				try{
+					mtd_adj_mfyp_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("mtd_adj_mfyp_pln").toString());
+				}catch(Exception e){}
+				try{
+					ytd_paid_case_act = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_paid_case_act").toString());
+				}catch(Exception e){}
+				try{
+					ytd_paid_case_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_paid_case_pln").toString());
+				}catch(Exception e){}
+				try{
+					case_size_afyp_mtd = (object.getJSONObject("payload").getJSONObject("casesize").get("case_size_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					case_size_afyp_ytd = (object.getJSONObject("payload").getJSONObject("casesize").get("case_size_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_adj_ifyp_mtd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_applied_adj_ifyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_adj_ifyp_ytd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_applied_adj_ifyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_afyp_mtd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_applied_afyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_afyp_ytd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_applied_afyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_cases_mtd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_applied_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_applied_cases_ytd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_applied_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_paid_adj_mfyp_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_paid_adj_mfyp_ytd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_cases_mtd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_paid_cases_mtd").toString());
+				}catch(Exception e){}
+				try{
+					lpc_paid_cases_ytd = (object.getJSONObject("payload").getJSONObject("lpcperformance").get("lpc_paid_cases_ytd").toString());
+				}catch(Exception e){}
+				try{
+					recruitment_mtd = (object.getJSONObject("payload").getJSONObject("rec").get("recruitment_mtd").toString());
+				}catch(Exception e){}
+				try{
+					recruitment_ytd = (object.getJSONObject("payload").getJSONObject("rec").get("recruitment_ytd").toString());
 				}catch(Exception e){}
 
 
