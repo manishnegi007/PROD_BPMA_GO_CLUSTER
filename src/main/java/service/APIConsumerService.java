@@ -175,26 +175,64 @@ public class APIConsumerService {
 					serviceChannel = channel;
 				}
 			}
-			else if("Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action)
-					|| "NB.casesize%".equalsIgnoreCase(action) || "NB.Growth".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
-					||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLCASES".equalsIgnoreCase(action)
-					||"NB.GROWTHCASESIZE".equalsIgnoreCase(action)||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action) ||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)
-					||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(channel)||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(channel)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(channel)
-					||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action)||"NB.ProductMix".equalsIgnoreCase(action))
+			else if("Penetration".equalsIgnoreCase(action) ||"NB.ProductMix".equalsIgnoreCase(action) 
+					|| "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action))
 			{
 				if("MLI".equalsIgnoreCase(channel))
 				{
-					segment=action;
+					segment="penetration";
 					serviceChannel = "";
 				}else
 				{
 					if("Axis".equalsIgnoreCase(channel))
 					{
-						segment=action;
+						segment="penetration";
 						serviceChannel = "Axis Bank";
 					}else
 					{
-						segment=action;
+						segment="penetration";
+						serviceChannel = channel;
+					}
+				}
+			}
+			else if("Achievement".equalsIgnoreCase(action) || "NB.casesize%".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
+					||"NB.Achievement".equalsIgnoreCase(action))
+			{
+				if("MLI".equalsIgnoreCase(channel))
+				{
+					segment="achievement";
+					serviceChannel = "";
+				}else
+				{
+					if("Axis".equalsIgnoreCase(channel))
+					{
+						segment="achievement";
+						serviceChannel = "Axis Bank";
+					}else
+					{
+						segment="achievement";
+						serviceChannel = channel;
+					}
+				}
+			}
+			else if("Growth".equalsIgnoreCase(action) || "NB.Growth".equalsIgnoreCase(action) ||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)
+					||"NB.GROWTHAPLCASES".equalsIgnoreCase(action) ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action)||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action) 
+					||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)	||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(channel)||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(channel)
+					||"GROWTHLPCPAIDCASES".equalsIgnoreCase(channel)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action))
+			{
+				if("MLI".equalsIgnoreCase(channel))
+				{
+					segment="growth";
+					serviceChannel = "";
+				}else
+				{
+					if("Axis".equalsIgnoreCase(channel))
+					{
+						segment="growth";
+						serviceChannel="Axis Bank";
+					}else
+					{
+						segment="growth";
 						serviceChannel = channel;
 					}
 				}
@@ -3774,97 +3812,97 @@ public class APIConsumerService {
 				}
 				else if("NB.ProductMix".equalsIgnoreCase(action))
 				{
-					if("MLI".equalsIgnoreCase(channel))
+							if("MLI".equalsIgnoreCase(channel))
 					{channel="";}
 					if("Monthly".equalsIgnoreCase(period))
 					{period="";}
 					if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 					{
-					      finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-					     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-					     " %. YTD product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-					     protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
-					     "If you want to see the channel wise business numbers, please specify";
+					      finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+"%, protection: "+
+					     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"% , par: "+par_penet_mtd_pol_cnt+"% , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
+					     "%. YTD product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"% , protection: "+
+					     protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"% , par: "+par_penet_ytd_pol_cnt+"% , Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+
+					     " If you want to see the channel wise business numbers, please specify";
 					}
 					else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for" +channel+ "is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-							     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-							     " %. YTD product mix ratio on Adj MFYP for "+channel+" is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-							     protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
+						finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for" +channel+ "is ULIP: "+ul_penet_mtd_adj_mfyp+"% , Par: "+par_penet_mtd_adj_mfyp+"% & Non-Par: "+nonpar_penet_mtd_adj_mfyp+"%, protection: "+
+							     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"%, par: "+par_penet_mtd_pol_cnt+"% , Non-par: "+nonpar_penet_mtd_pol_cnt+"% & protection: "+protec_penet_mtd_pol_cnt+
+							     "%. YTD product mix ratio on Adj MFYP for "+channel+" is ULIP: "+ul_penet_ytd_adj_mfyp+"% , Par: "+par_penet_ytd_adj_mfyp+"% & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"% , protection: "+
+							     protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, par: "+par_penet_ytd_pol_cnt+"% , Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+
 						         " If you want to see the zone/region wise business numbers, please specify";
 					}
 					else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for" +userzone+ " zone is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-							     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-							     " %. YTD product mix ratio on Adj MFYP for "+userzone+" zone is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-							     protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
+						finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for" +userzone+ " zone is ULIP: "+ul_penet_mtd_adj_mfyp+"%, Par: "+par_penet_mtd_adj_mfyp+"% & Non-Par: "+nonpar_penet_mtd_adj_mfyp+"%, protection: "+
+							     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"%, par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & protection: "+protec_penet_mtd_pol_cnt+
+							     "%. YTD product mix ratio on Adj MFYP for "+userzone+" zone is ULIP: "+ul_penet_ytd_adj_mfyp+"%, Par: "+par_penet_ytd_adj_mfyp+"% & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"%, protection: "+
+							     protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, par: "+par_penet_ytd_pol_cnt+"%, Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+
 						         " If you want to see the region wise business numbers, please specify";	
 					}
 					else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 					{
-						finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for" +user_region+ " region is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-							     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-							     " %. YTD product mix ratio on Adj MFYP for "+user_region+" region is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-							     protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+"";
+						finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for" +user_region+ " region is ULIP: "+ul_penet_mtd_adj_mfyp+"%, Par: "+par_penet_mtd_adj_mfyp+"% & Non-Par: "+nonpar_penet_mtd_adj_mfyp+"% , protection: "+
+							     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"% , par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & protection: "+protec_penet_mtd_pol_cnt+
+							     "%. YTD product mix ratio on Adj MFYP for "+user_region+" region is ULIP: "+ul_penet_ytd_adj_mfyp+"%, Par: "+par_penet_ytd_adj_mfyp+"% & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"% , protection: "+
+							     protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, par: "+par_penet_ytd_pol_cnt+"%, Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+"";
 					}
 					else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 					{
 						if("MTD".equalsIgnoreCase(period))
 						{
-						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +channel+ "is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-							     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-							     " % If you want to see the zone/region wise business numbers, please specify";	
+						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +channel+ "is ULIP: "+ul_penet_mtd_adj_mfyp+"% , Par: "+par_penet_mtd_adj_mfyp+"% & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
+							     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"%, par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & protection: "+protec_penet_mtd_pol_cnt+
+							     "% If you want to see the zone/region wise business numbers, please specify";	
 					}
 						else
 						{
-							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +channel+ "is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-									protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
-								     " % If you want to see the zone/region wise business numbers, please specify";	
+							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +channel+ "is ULIP: "+ul_penet_ytd_adj_mfyp+"% , Par: "+par_penet_ytd_adj_mfyp+"% & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"% , protection: "+
+									protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, par: "+par_penet_ytd_pol_cnt+"%, Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+
+								     "% If you want to see the zone/region wise business numbers, please specify";	
 						}
 					}
 					else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 					{
 						if("MTD".equalsIgnoreCase(period))
 						{
-						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +userzone+ " zone is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-							     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-					             " % If you want to see the region wise business numbers, please specify";
+						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +userzone+ " zone is ULIP: "+ul_penet_mtd_adj_mfyp+"%, Par: "+par_penet_mtd_adj_mfyp+"% & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
+							     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"%, par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & protection: "+protec_penet_mtd_pol_cnt+
+					             "% If you want to see the region wise business numbers, please specify";
 						}
 						else
 						{
-							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +userzone+ " zone is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-									protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
-						             " % If you want to see the region wise business numbers, please specify";	
+							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +userzone+ " zone is ULIP: "+ul_penet_ytd_adj_mfyp+"%, Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"%, protection: "+
+									protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, par: "+par_penet_ytd_pol_cnt+"%, Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+
+						             "% If you want to see the region wise business numbers, please specify";	
 						}
 				}
 					else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 					{
 						if("MTD".equalsIgnoreCase(period))
 						{
-						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +user_region+ " region is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-							     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+" %";
+						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +user_region+ " region is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+"% & Non-Par: "+nonpar_penet_mtd_adj_mfyp+"%, protection: "+
+							     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & protection: "+protec_penet_mtd_pol_cnt+" %";
 				}
 						else
 						{
-							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +user_region+ " region is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-									protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+" %";	
+							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for" +user_region+ " region is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+"% & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"% , protection: "+
+									protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+"%, Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+"%";	
 						}
 					}
 					else
 					{
 						if("MTD".equalsIgnoreCase(period))
 						{
-						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-							     protec_penet_mtd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-							     " % If you want to see the channel wise business numbers, please specify";
+						finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+"% & Non-Par: "+nonpar_penet_mtd_adj_mfyp+"%, protection: "+
+							     protec_penet_mtd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"%, par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & protection: "+protec_penet_mtd_pol_cnt+
+							     "% If you want to see the channel wise business numbers, please specify";
 					}
 						else
 						{
-							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
-									protec_penet_ytd_adj_mfyp+" %. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
-								     " % If you want to see the channel wise business numbers, please specify";	
+							finalresponse="As of "+real_tim_timstamp+" "+period+" product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_ytd_adj_mfyp+"% , Par: "+par_penet_ytd_adj_mfyp+"% & Non-Par: "+nonpar_penet_ytd_adj_mfyp+"%, protection: "+
+									protec_penet_ytd_adj_mfyp+"%. paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, par: "+par_penet_ytd_pol_cnt+"% , Non-par: "+nonpar_penet_ytd_pol_cnt+"% & protection: "+protec_penet_ytd_pol_cnt+
+								     "% If you want to see the channel wise business numbers, please specify";	
 						}
 					}
 				}
