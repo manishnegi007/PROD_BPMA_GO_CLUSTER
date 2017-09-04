@@ -278,7 +278,17 @@ public class APIConsumerService {
 			StringBuilder requestdata=new StringBuilder();
 			if("WIP".equalsIgnoreCase(action) || "WIP.YES".equalsIgnoreCase(action) || "NUMBERS".equalsIgnoreCase(action)
 					|| "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action) 
-					|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action))
+					|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action)
+					|| "NB.Paidcase".equalsIgnoreCase(action)|| "NB.AdjMFYP".equalsIgnoreCase(action)|| "NB.Applied".equalsIgnoreCase(action)
+					|| "NB.casesize".equalsIgnoreCase(action) ||"NB.AppliedAdjIFYP".equalsIgnoreCase(action)||"NB.AppliedCases".equalsIgnoreCase(action)
+					|| "NB.LPCAPPADJIFYP".equalsIgnoreCase(action) || "NB.LPCAPPADJAFYP".equalsIgnoreCase(action)|| "NB.LPCAPLCASES".equalsIgnoreCase(action) 
+					|| "NB.LPCPAIDADJMFYP".equalsIgnoreCase(action)	|| "NB.LPCPAIDCASES".equalsIgnoreCase(action) || "NB.casesize%".equalsIgnoreCase(action) 
+					||"NB.Growth".equalsIgnoreCase(action) || "NB.Recruitment".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
+					||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLCASES".equalsIgnoreCase(action)
+					||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(channel)
+					||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(channel)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(channel)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
+					||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
+					||"NB.ProductMix".equalsIgnoreCase(action))
 			{
 				System.out.println("External Java Service Called: ");
 				user_designation_desc="";
@@ -367,7 +377,29 @@ public class APIConsumerService {
 				String adj_mfyp_sam_ytd_lst_yr=""; String ytd_inforced_adj_mfyp=""; String achiev_mtd_adj_mfyp=""; String pln_mtd_basis_adj_mfyp="";
 				String achiev_ytd_adj_mfyp=""; String pln_ytd_basis_adj_mfyp=""; String mtd_inforced_adj_mfyp_achi="";
 				String ytd_inforced_adj_mfyp_achi=""; String real_tim_timstamp="";
-				String mtd_afyp_act=""; String ytd_afyp_act=""; String mtd_afyp_pln=""; String ytd_afyp_pln=""; String ytd_adj_mfyp_pln=""; String mtd_adj_mfyp_pln="";
+				String case_size_afyp_mtd="", case_size_afyp_ytd="", lpc_applied_adj_ifyp_mtd="", lpc_applied_adj_ifyp_ytd="", lpc_applied_afyp_mtd="",
+				       		lpc_applied_afyp_ytd="", lpc_applied_cases_mtd="", lpc_applied_cases_ytd="", lpc_paid_adj_mfyp_mtd="", lpc_paid_adj_mfyp_ytd="",
+						lpc_paid_cases_mtd="", lpc_paid_cases_ytd="", achiev_mtd_case_active_mtd="", achiev_mtd_case_active_ytd="",
+						grth_lst_yr_sm_adj_mfyp_mtd="", grth_lst_yr_sm_adj_mfyp_ytd="", prev_year_adj_mfyp_ytd="", prev_year_adj_mfyp_mtd="",
+						recruitment_mtd="",recruitment_ytd="", achiev_ytd_recruitment="", achiev_mtd_recruitment="",grth_applied_adj_ifyp_ytd="",
+						rpev_applied_adj_ifyp_ytd="",applied_adj_ifyp_ytd="", grth_applied_adj_ifyp_mtd="", rpev_applied_adj_ifyp_mtd="", applied_adj_ifyp_mtd="",
+						grth_applied_afyp_ytd="",prev_applied_afyp_ytd="",applied_afyp_ytd="",grth_applied_afyp_mtd="",prev_applied_afyp_mtd="",
+						applied_afyp_mtd="", grth_applied_cases_ytd="", prev_applied_cases_ytd="", applied_cases_ytd="", grth_applied_cases_mtd="",
+						prev_applied_cases_mtd="", applied_cases_mtd="", grth_case_size_afyp_ytd="",prev_case_size_afyp_ytd="",case_size_afyp_ytd_growth="",
+						grth_case_size_afyp_mtd="",prev_case_size_afyp_mtd="",case_size_afyp_mtd_growth="", grth_lpc_paid_adj_mfyp_ytd="",prev_lpc_paid_adj_mfyp_ytd="",
+						lpc_paid_adj_mfyp_ytd_growth="",grth_lpc_paid_adj_mfyp_mtd="",prev_lpc_paid_adj_mfyp_mtd="",lpc_paid_adj_mfyp_mtd_growth="",
+						grth_lpc_applied_adj_ifyp_ytd="",prev_lpc_applied_adj_ifyp_ytd="",lpc_applied_adj_ifyp_ytd_growth="",grth_lpc_applied_adj_ifyp_mtd="",
+						prev_lpc_applied_adj_ifyp_mtd="",lpc_applied_adj_ifyp_mtd_growth="", grth_lpc_applied_afyp_ytd="",prev_lpc_applied_afyp_ytd="",curr_lpc_applied_afyp_ytd="",grth_lpc_applied_afyp_mtd="",
+						prev_lpc_applied_afyp_mtd="",curr_lpc_applied_afyp_mtd="", grth_lpc_applied_cases_ytd="",prev_lpc_applied_cases_ytd="",lpc_applied_cases_ytd_growth="",grth_lpc_applied_cases_mtd="",
+						prev_lpc_applied_cases_mtd="",lpc_applied_cases_mtd_growth="", grth_lpc_paid_cases_ytd="",prev_lpc_paid_cases_ytd="",lpc_paid_cases_ytd_growth="",grth_lpc_paid_cases_mtd="",
+						prev_lpc_paid_cases_mtd="",lpc_paid_cases_mtd_growth="", grth_lst_yr_inforced_cnt_ytd="",prev_year_inforced_cnt_ytd="",ytd_inforced_cnt="",grth_lst_yr_inforced_cnt_mtd="",
+						prev_year_inforced_cnt_mtd="",mtd_inforced_cnt="", grth_recruitment_ytd="",prev_recruitment_ytd="",recruitment_ytd_growth="",grth_recruitment_mtd="",
+						prev_recruitment_mtd="",recruitment_mtd_growth="",mtd_afyp_act="",ytd_afyp_act="", mtd_afyp_pln="",ytd_afyp_pln="", ytd_adj_mfyp_pln="",mtd_adj_mfyp_pln="",
+						mtd_adj_mfyp_act="", ytd_adj_mfyp_act="",achiev_mtd_paid_case="", mtd_adj_afyp_act="", mtd_adj_afyp_pln="",	mtd_paid_case_act="", mtd_paid_case_pln="", achiev_ytd_paid_case="",
+						ytd_paid_case_act="", ytd_paid_case_pln="",	ul_penet_mtd_adj_mfyp="", par_penet_mtd_adj_mfyp="", nonpar_penet_mtd_adj_mfyp="", protec_penet_mtd_adj_mfyp="", par_penet_mtd_pol_cnt="",
+						nonpar_penet_mtd_pol_cnt="", ul_penet_ytd_adj_mfyp="",	par_penet_ytd_adj_mfyp="",	nonpar_penet_ytd_adj_mfyp="",protec_penet_ytd_adj_mfyp="",par_penet_ytd_pol_cnt="",	
+						nonpar_penet_ytd_pol_cnt="";
+				
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
 				LocalDateTime now = LocalDateTime.now();
 				for(int i=0;i<1;i++){
