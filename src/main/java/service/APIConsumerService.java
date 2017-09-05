@@ -116,7 +116,7 @@ public class APIConsumerService {
 					serviceChannel = channel;
 				}
 			}
-			else if("AdjMFYP".equalsIgnoreCase(action) || "NB.Paidcase".equalsIgnoreCase(action) 
+			else if("AdjMFYP".equalsIgnoreCase(action) || "NB.Paidcases".equalsIgnoreCase(action) 
 					|| "NB.AdjMFYP".equalsIgnoreCase(action))
 			{
 				if("MLI".equalsIgnoreCase(channel) || "Axis".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
@@ -317,7 +317,7 @@ public class APIConsumerService {
 			if("WIP".equalsIgnoreCase(action) || "WIP.YES".equalsIgnoreCase(action) || "NUMBERS".equalsIgnoreCase(action)
 					|| "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action) 
 					|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action)
-					|| "NB.Paidcase".equalsIgnoreCase(action)|| "NB.AdjMFYP".equalsIgnoreCase(action)|| "NB.Applied".equalsIgnoreCase(action)
+					|| "NB.Paidcases".equalsIgnoreCase(action)|| "NB.AdjMFYP".equalsIgnoreCase(action)|| "NB.Applied".equalsIgnoreCase(action)
 					|| "NB.casesize".equalsIgnoreCase(action) ||"NB.AppliedAdjIFYP".equalsIgnoreCase(action)||"NB.AppliedCases".equalsIgnoreCase(action)
 					|| "NB.LPCAPPADJIFYP".equalsIgnoreCase(action) || "NB.LPCAPPADJAFYP".equalsIgnoreCase(action)|| "NB.LPCAPLCASES".equalsIgnoreCase(action) 
 					|| "NB.LPCPAIDADJMFYP".equalsIgnoreCase(action)	|| "NB.LPCPAIDCASES".equalsIgnoreCase(action) || "NB.casesize%".equalsIgnoreCase(action) 
@@ -1368,7 +1368,7 @@ public class APIConsumerService {
 				/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 				//				Sprint-2
 				/*-----*/
-				else if("NB.Paidcase".equalsIgnoreCase(action))
+				else if("NB.Paidcases".equalsIgnoreCase(action))
 				{
 					if("MLI".equalsIgnoreCase(channel))
 					{channel="";}
