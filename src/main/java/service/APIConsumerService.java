@@ -3932,8 +3932,8 @@ public class APIConsumerService {
 				    }
 					else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 					{
-					      finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for " +user_region+ " region is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
-					       protec_penet_mtd_adj_mfyp+ " %. YTD product mix ratio on Adj MFYP for " +user_region+ " region is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
+					      finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for " +user_region+ " is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
+					       protec_penet_mtd_adj_mfyp+ " %. YTD product mix ratio on Adj MFYP for " +user_region+ " is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
 					       protec_penet_ytd_adj_mfyp+" %. If you want to see the channel wise business numbers, please specify";	
 				    }
 					else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -4015,8 +4015,8 @@ public class APIConsumerService {
 					}
 					else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 					{
-						 finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Paid Cases for "+user_region+" region is ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
-								       " %. YTD product mix ratio on Paid Cases for "+user_region+" region is ULIP:  "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
+						 finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Paid Cases for "+user_region+" is ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
+								       " %. YTD product mix ratio on Paid Cases for "+user_region+" is ULIP:  "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
 									   " % ";
 					}
 					else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -4049,12 +4049,12 @@ public class APIConsumerService {
 					{
 						if("MTD".equalsIgnoreCase(period))
 						{
-						 finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Paid Cases for "+user_region+" region is ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
+						 finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Paid Cases for "+user_region+" is ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
 								       " %.";
 					}
 						else
 						{
-							 finalresponse="As of "+real_tim_timstamp+" YTD product mix ratio on Paid Cases for "+user_region+" region is ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
+							 finalresponse="As of "+real_tim_timstamp+" YTD product mix ratio on Paid Cases for "+user_region+" is ULIP: "+ul_penet_ytd_pol_cnt+" % , par: "+par_penet_ytd_pol_cnt+" % , Non-par: "+nonpar_penet_ytd_pol_cnt+" % & protection: "+protec_penet_ytd_pol_cnt+
 								       " %.";	
 						}
 					}
