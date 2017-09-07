@@ -1384,10 +1384,12 @@ public class APIConsumerService {
 				break;
 				case "NB.MODEMIX":
 				{
+					System.out.println("START :: CASE NB.MODEMIX");
 					finalresponse=ModeMix.modeMixIntent(channel, period,  userzone,  user_region,  real_tim_timstamp,
 							 annual_adj_mfyp_mtd, semi_annual_adj_mfyp_mtd,  quarterly_adj_mfyp_mtd, monthly_adj_mfyp_mtd,
 							 single_adj_mfyp_mtd, annual_adj_mfyp_ytd,  semi_annual_adj_mfyp_ytd, quarterly_adj_mfyp_ytd,
 							 monthly_adj_mfyp_ytd, single_adj_mfyp_ytd, user_circle);
+					System.out.println("END :: CASE NB.MODEMIX");
 				}
 				break;
 				case "NB.ACHIEVEMENT":
