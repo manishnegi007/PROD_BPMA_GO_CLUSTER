@@ -1232,7 +1232,7 @@ public class APIConsumerService {
 				case "NB.CASESIZE":
 				{
 					finalresponse=NBCaseSize.nbCaseSizeIntent(serviceChannel, period, user_circle, user_region, userzone, 
-							real_tim_timstamp, case_size_afyp_mtd_growth, case_size_afyp_ytd_growth);
+							real_tim_timstamp, case_size_afyp_mtd, case_size_afyp_ytd);
 				}
 				break;
 				case "NB.APPLIEDADJIFYP":
@@ -1250,31 +1250,31 @@ public class APIConsumerService {
 				case "NB.LPCAPPADJIFYP":
 				{
 					finalresponse= LpcAPPAdJIFYP.lpcAppAdjIfypIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_applied_adj_ifyp_mtd_growth, lpc_applied_adj_ifyp_ytd_growth);
+							userzone, real_tim_timstamp, lpc_applied_adj_ifyp_mtd, lpc_applied_adj_ifyp_ytd);
 				}
 				break;
 				case "NB.LPCAPPADJAFYP":
 				{
 					finalresponse=Lpcappadjafyp.lpcAppAdjAfypIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, curr_lpc_applied_afyp_mtd, curr_lpc_applied_afyp_ytd);
+							userzone, real_tim_timstamp, lpc_applied_afyp_mtd, lpc_applied_afyp_ytd);
 				}
 				break;
 				case "NB.LPCAPLCASES":
 				{
 					finalresponse=Lpcaplcases.lpcAplCasesIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_applied_cases_mtd_growth, lpc_applied_cases_ytd_growth);
+							userzone, real_tim_timstamp, lpc_applied_cases_mtd, lpc_applied_cases_ytd);
 				}
 				break;
 				case "NB.LPCPAIDADJMFYP":
 				{
 					finalresponse=LpcPAIDADJMFYP.lpcPaidAdjMfypIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_paid_adj_mfyp_mtd_growth, lpc_paid_adj_mfyp_ytd_growth);
+							userzone, real_tim_timstamp, lpc_paid_adj_mfyp_mtd, lpc_paid_adj_mfyp_ytd);
 				}
 				break;
 				case "NB.LPCPAIDCASES":
 				{
 					finalresponse=LpcPAIDCASES.lpcPaidCasesIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_paid_cases_mtd_growth, lpc_paid_cases_ytd_growth);
+							userzone, real_tim_timstamp, lpc_paid_cases_mtd, lpc_paid_cases_ytd);
 				}
 				break;
 				case "NB.CASESIZE%":
@@ -1287,8 +1287,8 @@ public class APIConsumerService {
 				{
 					finalresponse=NBGrowth.growthIntent(serviceChannel, period, user_region, user_circle, 
 							userzone, real_tim_timstamp, prev_year_adj_mfyp_ytd, grth_lst_yr_sm_adj_mfyp_ytd, 
-							ytd_inforced_adj_mfyp_achi, grth_lst_yr_sm_adj_mfyp_mtd, prev_year_adj_mfyp_mtd, 
-							mtd_inforced_adj_mfyp_achi);
+							ytd_inforced_adj_mfyp, grth_lst_yr_sm_adj_mfyp_mtd, prev_year_adj_mfyp_mtd, 
+							mtd_inforced_adj_mfyp);
 				}
 				break;
 				case "NB.RECRUITMENT":
@@ -1307,22 +1307,22 @@ public class APIConsumerService {
 				{
 					finalresponse=NBGROWTHAPLADGIFYP.nbGROWTHAPLADGIFYPIntent(serviceChannel, period, user_circle, 
 							user_region, userzone, grth_applied_adj_ifyp_ytd, rpev_applied_adj_ifyp_ytd, 
-							lpc_applied_adj_ifyp_ytd_growth, grth_applied_adj_ifyp_mtd, 
-							rpev_applied_adj_ifyp_mtd, lpc_applied_adj_ifyp_mtd_growth);
+							applied_adj_ifyp_ytd, grth_applied_adj_ifyp_mtd, 
+							rpev_applied_adj_ifyp_mtd, applied_adj_ifyp_mtd);
 				}
 				break;
 				case "NB.GROWTHAPLAFYP":
 				{
 					finalresponse=NBGROWTHAPLAFYP.nbGROWTHAPLAFYPIntent(serviceChannel, period, user_circle, user_region, 
 							userzone, prev_applied_afyp_ytd, grth_applied_afyp_ytd, grth_applied_afyp_mtd, 
-							curr_lpc_applied_afyp_ytd, prev_applied_afyp_mtd, curr_lpc_applied_afyp_mtd);
+							applied_afyp_ytd, prev_applied_afyp_mtd, applied_afyp_mtd);
 				}
 				break;
 				case "NB.GROWTHAPLCASES":
 				{
 					finalresponse=NBGROWTHAPLCASES.nbGROWTHAPLCASESIntent(serviceChannel, period, user_circle, 
 							user_region, userzone, prev_applied_cases_ytd, grth_applied_cases_ytd, grth_applied_cases_mtd, 
-							lpc_applied_cases_ytd_growth, prev_applied_cases_mtd, lpc_applied_cases_mtd_growth);
+							applied_cases_ytd, prev_applied_cases_mtd, applied_cases_mtd);
 				}
 				break;
 				case "NB.GROWTHCASESIZE":
@@ -1330,7 +1330,7 @@ public class APIConsumerService {
 					finalresponse=GrowthCaseSize.growthCaseSizeIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, user_circle, grth_case_size_afyp_ytd, prev_case_size_afyp_ytd,
 							case_size_afyp_ytd_growth, grth_case_size_afyp_mtd, prev_case_size_afyp_mtd, 
-							prev_case_size_afyp_mtd, case_size_afyp_mtd_growth);
+							case_size_afyp_mtd, case_size_afyp_mtd_growth);
 				}
 				break;
 				case "NB.GROWTHLPCADJMFYP":
