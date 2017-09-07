@@ -2,8 +2,9 @@ package messageimpl;
 
 public class GrowthPaidcases 
 {
-	public static String growthPaidcasesIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String grth_lst_yr_inforced_cnt_ytd,
-			String prev_year_inforced_cnt_ytd,String ytd_inforced_cnt,String grth_lst_yr_inforced_cnt_mtd,String prev_year_inforced_cnt_mtd,String mtd_inforced_cnt)
+	public static String growthPaidcasesIntent(String channel,String period,String userzone,String user_region,
+			String real_tim_timstamp,String grth_lst_yr_inforced_cnt_ytd, String prev_year_inforced_cnt_ytd,
+			String ytd_inforced_cnt,String grth_lst_yr_inforced_cnt_mtd,String prev_year_inforced_cnt_mtd,String mtd_inforced_cnt)
 	{
 		String finalresponse="";
 
