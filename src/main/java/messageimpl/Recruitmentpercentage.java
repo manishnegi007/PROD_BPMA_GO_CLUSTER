@@ -1,4 +1,4 @@
-package com.qc.service.messageimpl;
+package messageimpl;
 
 public class Recruitmentpercentage {
 
