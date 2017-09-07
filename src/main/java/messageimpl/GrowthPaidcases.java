@@ -13,6 +13,10 @@ public class GrowthPaidcases
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		if(!"".equalsIgnoreCase(user_circle))
+		{
+			user_region="Circle "+user_circle;
+		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed paid cases growth of "+grth_lst_yr_inforced_cnt_ytd+" % on YTD basis, last year same time we had clocked "+
