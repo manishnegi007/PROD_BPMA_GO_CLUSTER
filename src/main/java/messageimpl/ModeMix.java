@@ -1,10 +1,10 @@
 package messageimpl;
 
 public class ModeMix {
-	public static String modeMixIntent(String channel,String period,String userzone,String user_region,
-				String real_tim_timstamp,String grth_recruitment_ytd,
-				String prev_recruitment_ytd,String recruitment_ytd_growth,String grth_recruitment_mtd,String prev_recruitment_mtd,
-				String recruitment_mtd_growth,String recruitment_ytd,String user_circle)
+	public static String modeMixIntent(String channel, String period, String userzone, String user_region, String real_tim_timstamp,
+			String annual_adj_mfyp_mtd, String semi_annual_adj_mfyp_mtd, String quarterly_adj_mfyp_mtd, String monthly_adj_mfyp_mtd,
+			String single_adj_mfyp_mtd, String annual_adj_mfyp_ytd, String semi_annual_adj_mfyp_ytd, String quarterly_adj_mfyp_ytd,
+			String monthly_adj_mfyp_ytd, String single_adj_mfyp_ytd, String user_circle)
 	{
 		String finalresponse="";
 		 
@@ -12,95 +12,112 @@ public class ModeMix {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
-		if(!"".equalsIgnoreCase(user_circle))
-		{
-			user_region="Circle "+user_circle;
-		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "MLI has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
-					prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today MTD business Growth of "+ 
-					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for MLI is Annual:"+
+					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
+					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%."+"YTD Mode mix ratio for MLI is Annual:"+
+					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
+					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%."
+					+ "If you want to see the channel wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= channel+" has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
-					prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today MTD business Growth of "+ 
-					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" channel is Annual:"+
+					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
+					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%."+"YTD Mode mix ratio for "+channel+" channel is Annual:"+
+					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
+					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%."
+					+ "If you want to see the zone/region wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "Zone "+userzone+" has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
-					prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today MTD business Growth of "+ 
-					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today."
-					+ " If you want to see region wise business numbers, please specIfy the same";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for Zone "+userzone+" is Annual:"+
+					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
+					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%."+"YTD Mode mix ratio for Zone "+userzone+" is Annual:"+
+					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
+					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%."
+					+ "If you want to see the region wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "Region "+user_region+" has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
-					prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today MTD business Growth of "+ 
-					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today.";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for Region "+user_region+" is Annual:"+
+					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
+					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%." +"YTD Mode mix ratio for Region "+user_region+" is Annual:"+
+					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
+					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%.";
 
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{	
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" channel is Annual:"+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_mtd+"& Monthly: "
+						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%."
+						+ " If you want to see the zone/region wise business numbers, please specify";
 			}
 			else
 			{
-				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for zone "+userzone+" is Annual:"+
+						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_ytd+"& Monthly: "
+						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%."
+						+ " If you want to see the zone/region wise business numbers, please specify";
 			}
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Zone "+userzone+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for zone "+userzone+" is Annual:"+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_mtd+"& Monthly: "
+						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%."
+						+ " If you want to see the region wise business numbers, please specify";
 
 			}else
 			{
-				finalresponse= "Zone "+userzone+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for zone "+userzone+" is Annual:"+
+						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_ytd+"& Monthly: "
+						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%."
+						+ " If you want to see the region wise business numbers, please specify";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for region "+user_region+" is Annual:"+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_mtd+"& Monthly: "
+						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%.";
 			}else
 			{
-				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for region "+user_region+" is Annual:"+
+						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_ytd+"& Monthly: "
+						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%.";
 			}
 		}
 		else
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+period+" is Annual:"+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_mtd+"& Monthly: "
+						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%."
+						+ " If you want to see the channel wise business numbers, please specify";
 			}else{
-				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+period+" is Annual:"+
+						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_ytd+"& Monthly: "
+						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%."
+						+ " If you want to see the channel wise business numbers, please specify";
 			}
 		}
-	
 		return finalresponse.toString();
 	}
 }
