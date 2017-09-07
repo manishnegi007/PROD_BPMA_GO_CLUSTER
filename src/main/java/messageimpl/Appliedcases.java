@@ -79,13 +79,13 @@ public class Appliedcases
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" Region is "+ytd_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+ytd_applied_count+" Cr";
 			}else if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" Region is "+mtd_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+mtd_applied_count+" Cr";
 			}else
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" Region is "+daily_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+daily_applied_count+" Cr";
 			}
 		}
 		else
