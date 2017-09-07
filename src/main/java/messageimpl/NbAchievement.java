@@ -14,6 +14,10 @@ public class NbAchievement
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		if(!"".equalsIgnoreCase(user_circle))
+		{
+			user_region="Circle "+user_circle;
+		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= " MLI MTD acheivement for Adj MFYP is "+achiev_mtd_adj_mfyp+" % , Paid case acheivement is "+achiev_mtd_paid_case+" % MTD acheivement for Adj MFYP is "+
