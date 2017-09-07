@@ -2,9 +2,11 @@ package messageimpl;
 
 public class GrowthLPCAPLCases 
 {
-	public static String growthLPCAPLCasesIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String user_circle,
-				String grth_lpc_applied_cases_ytd,String prev_lpc_applied_cases_ytd,String lpc_applied_cases_ytd_growth,String grth_lpc_applied_cases_mtd,
-				String prev_lpc_applied_cases_mtd,String lpc_applied_cases_mtd_growth)
+	public static String growthLPCAPLCasesIntent(String channel,String period,String userzone,String user_region,
+				String real_tim_timstamp,String user_circle,
+				String grth_lpc_applied_cases_ytd,String prev_lpc_applied_cases_ytd,String lpc_applied_cases_ytd_growth,
+				String grth_lpc_applied_cases_mtd,
+				String prev_lpc_applied_cases_mtd,String lpc_applied_cases_mtd_growth, String subchannel)
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
@@ -15,6 +17,10 @@ public class GrowthLPCAPLCases
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	        }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed LPC applied business growth of "+grth_lpc_applied_cases_ytd+" % on YTD basis, last year same time we had clocked "+
