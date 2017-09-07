@@ -1371,7 +1371,7 @@ public class APIConsumerService {
 				{ 
 					finalresponse=GrowthLPCPaidCases.growthLPCPaidcasesIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, user_circle, grth_lpc_paid_cases_ytd, prev_lpc_paid_cases_ytd, 
-							lpc_paid_cases_ytd_growth, grth_lpc_paid_cases_mtd,	prev_lpc_paid_cases_mtd, 
+							lpc_paid_cases_ytd_growth, grth_lpc_paid_cases_mtd, prev_lpc_paid_cases_mtd, 
 							lpc_paid_cases_mtd_growth);
 				}
 				break;
@@ -1379,30 +1379,33 @@ public class APIConsumerService {
 				{
 					finalresponse=GrowthPaidcases.growthPaidcasesIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, grth_lst_yr_inforced_cnt_ytd, prev_year_inforced_cnt_ytd, 
-							ytd_inforced_cnt, grth_lst_yr_inforced_cnt_mtd, prev_year_inforced_cnt_mtd, mtd_inforced_cnt);
+							ytd_inforced_cnt, grth_lst_yr_inforced_cnt_mtd, prev_year_inforced_cnt_mtd, mtd_inforced_cnt,
+							user_circle);
 				}
 				break;
 				case "NB.GROWTHRECRUITMENT":
 				{
 					finalresponse=GrowthRecruitment.growthRecruitmentIntent(serviceChannel, period, userzone, user_region,
 							real_tim_timstamp, grth_recruitment_ytd, prev_recruitment_ytd, recruitment_ytd_growth,
-							grth_recruitment_mtd, prev_recruitment_mtd, recruitment_mtd_growth, recruitment_ytd_growth);
+							grth_recruitment_mtd, prev_recruitment_mtd, recruitment_mtd_growth, recruitment_ytd_growth,
+							user_circle);
 				}
 				break;
 				case "NB.MODEMIX":
 				{
 					finalresponse=ModeMix.modeMixIntent(serviceChannel, period, userzone, user_region, real_tim_timstamp, 
 							grth_recruitment_ytd,prev_recruitment_ytd, recruitment_ytd_growth, grth_recruitment_mtd, 
-							prev_recruitment_mtd, recruitment_mtd_growth, recruitment_ytd_growth);
+							prev_recruitment_mtd, recruitment_mtd_growth, recruitment_ytd_growth, user_circle);
 				}
 				break;
 				case "NB.ACHIEVEMENT":
 
 				{
 					finalresponse=NbAchievement.achievementIntent(serviceChannel, period, userzone, user_region, 
-							real_tim_timstamp, achiev_mtd_adj_mfyp, achiev_mtd_paid_case, mtd_adj_afyp_act, mtd_adj_afyp_pln,
-							mtd_paid_case_act, mtd_paid_case_pln, achiev_ytd_adj_mfyp, achiev_ytd_paid_case, ytd_adj_mfyp_act, 
-							ytd_adj_mfyp_pln, ytd_paid_case_act, ytd_paid_case_pln);
+							real_tim_timstamp, achiev_mtd_adj_mfyp, achiev_mtd_paid_case, mtd_adj_afyp_act,
+							mtd_adj_afyp_pln, mtd_paid_case_act, mtd_paid_case_pln, achiev_ytd_adj_mfyp, 
+							achiev_ytd_paid_case, ytd_adj_mfyp_act, ytd_adj_mfyp_pln, ytd_paid_case_act, 
+							ytd_paid_case_pln, user_circle);
 
 				}
 				break;
@@ -1413,7 +1416,8 @@ public class APIConsumerService {
 							protec_penet_mtd_adj_mfyp, ul_penet_mtd_pol_cnt, par_penet_mtd_pol_cnt, 
 							nonpar_penet_mtd_pol_cnt, protec_penet_mtd_pol_cnt, protec_penet_ytd_adj_mfyp, 
 							ul_penet_ytd_adj_mfyp, par_penet_ytd_adj_mfyp, nonpar_penet_ytd_adj_mfyp, 
-							ul_penet_ytd_pol_cnt, par_penet_ytd_pol_cnt, nonpar_penet_ytd_pol_cnt, protec_penet_ytd_pol_cnt);
+							ul_penet_ytd_pol_cnt, par_penet_ytd_pol_cnt, nonpar_penet_ytd_pol_cnt, 
+							protec_penet_ytd_pol_cnt, user_circle);
 				}
 				break;
 				case "NB.PRODUCTMIXADJMFYP":
@@ -1422,7 +1426,7 @@ public class APIConsumerService {
 					finalresponse=ProductMixADJMFYP.productMixADJMFYPIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, ul_penet_mtd_adj_mfyp, par_penet_mtd_adj_mfyp, nonpar_penet_mtd_adj_mfyp, 
 							protec_penet_mtd_adj_mfyp, ul_penet_ytd_adj_mfyp, par_penet_ytd_adj_mfyp, 
-							nonpar_penet_ytd_adj_mfyp, protec_penet_ytd_adj_mfyp);
+							nonpar_penet_ytd_adj_mfyp, protec_penet_ytd_adj_mfyp, user_circle);
 				}
 				break;
 				case "NB.PRODUCTMIXPAIDCASE":
@@ -1430,7 +1434,7 @@ public class APIConsumerService {
 					finalresponse=ProductMixPaidCase.productMixPaidCaseIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, ul_penet_mtd_pol_cnt, par_penet_mtd_pol_cnt,
 							ul_penet_ytd_pol_cnt, par_penet_ytd_pol_cnt, nonpar_penet_mtd_pol_cnt,nonpar_penet_ytd_pol_cnt, 
-							protec_penet_mtd_pol_cnt, protec_penet_ytd_pol_cnt);
+							protec_penet_mtd_pol_cnt, protec_penet_ytd_pol_cnt,user_circle);
 				}
 				break;
 				default :
