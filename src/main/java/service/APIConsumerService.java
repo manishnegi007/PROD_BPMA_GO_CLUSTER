@@ -1206,73 +1206,85 @@ public class APIConsumerService {
 				case "NB.PAIDCASES":
 				{
 					finalresponse=PaidCases.paidCasesIntent(serviceChannel, period, user_circle, user_region, userzone, 
-							real_tim_timstamp, mtd_inforced_count, ytd_inforced_count, daily_inforced_count1);
+							real_tim_timstamp, mtd_inforced_count, ytd_inforced_count, daily_inforced_count1,
+										user_sub_channel);
 				}
 				break;
 				case "NB.APPLIED":
 				{
 					finalresponse=NBApplied.nbAppliedIntent(serviceChannel, period, user_circle, user_region, userzone,
-							real_tim_timstamp, mtdAppliedAFYP, ytd_applied_afyp, daily_inforced_count);
+							real_tim_timstamp, mtdAppliedAFYP, ytd_applied_afyp, daily_inforced_count,
+									        user_sub_channel);
 				}
 				break;
 				case "NB.ADJMFYP":
 				{
 					finalresponse=NBAdjMFYP.nbAdjMFYPIntent(serviceChannel, period, user_circle, user_region, userzone, 
-							real_tim_timstamp, mtdAdjustMFYP, ytd_adj_mfyp, mtd_adj_mfyp, daily_adj_mfyp);
+							real_tim_timstamp, mtdAdjustMFYP, ytd_adj_mfyp, mtd_adj_mfyp, daily_adj_mfyp,
+									       user_sub_channel);
 				}
 				break;
 				case "NB.CASESIZE":
 				{
 					finalresponse=NBCaseSize.nbCaseSizeIntent(serviceChannel, period, user_circle, user_region, userzone, 
-							real_tim_timstamp, case_size_afyp_mtd, case_size_afyp_ytd);
+							real_tim_timstamp, case_size_afyp_mtd, case_size_afyp_ytd,
+										 user_sub_channel);
 				}
 				break;
 				case "NB.APPLIEDADJIFYP":
 				{
 					finalresponse= AppliedADJIFYP.appliedAdjIfydIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, mtd_applied_adj_ifyp, ytd_applied_adj_ifyp);
+							userzone, real_tim_timstamp, mtd_applied_adj_ifyp, ytd_applied_adj_ifyp,
+											  user_sub_channel);
 				}
 				break;
 				case "NB.APPLIEDCASES":
 				{
 					finalresponse= Appliedcases.appliedCasesIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, mtd_applied_count, ytd_applied_count, daily_applied_count);
+							userzone, real_tim_timstamp, mtd_applied_count, ytd_applied_count, daily_applied_count,
+										      user_sub_channel);
 				}
 				break;
 				case "NB.LPCAPPADJIFYP":
 				{
 					finalresponse= LpcAPPAdJIFYP.lpcAppAdjIfypIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_applied_adj_ifyp_mtd, lpc_applied_adj_ifyp_ytd);
+							userzone, real_tim_timstamp, lpc_applied_adj_ifyp_mtd, lpc_applied_adj_ifyp_ytd,
+											user_sub_channel);
 				}
 				break;
 				case "NB.LPCAPPADJAFYP":
 				{
 					finalresponse=Lpcappadjafyp.lpcAppAdjAfypIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_applied_afyp_mtd, lpc_applied_afyp_ytd);
+							userzone, real_tim_timstamp, lpc_applied_afyp_mtd, lpc_applied_afyp_ytd,
+										       user_sub_channel);
 				}
 				break;
 				case "NB.LPCAPLCASES":
 				{
 					finalresponse=Lpcaplcases.lpcAplCasesIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_applied_cases_mtd, lpc_applied_cases_ytd);
+							userzone, real_tim_timstamp, lpc_applied_cases_mtd, lpc_applied_cases_ytd,
+										   user_sub_channel);
 				}
 				break;
 				case "NB.LPCPAIDADJMFYP":
 				{
 					finalresponse=LpcPAIDADJMFYP.lpcPaidAdjMfypIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_paid_adj_mfyp_mtd, lpc_paid_adj_mfyp_ytd);
+							userzone, real_tim_timstamp, lpc_paid_adj_mfyp_mtd, lpc_paid_adj_mfyp_ytd,
+											 user_sub_channel);
 				}
 				break;
 				case "NB.LPCPAIDCASES":
 				{
 					finalresponse=LpcPAIDCASES.lpcPaidCasesIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, lpc_paid_cases_mtd, lpc_paid_cases_ytd);
+							userzone, real_tim_timstamp, lpc_paid_cases_mtd, lpc_paid_cases_ytd,
+										     user_sub_channel);
 				}
 				break;
 				case "NB.CASESIZE%":
 				{
 					finalresponse=CaseSizePercentage.caseSizePercentageIntent(serviceChannel, period, user_region, 
-							user_circle, userzone, real_tim_timstamp, achiev_mtd_case_active_mtd, achiev_mtd_case_active_ytd);
+							user_circle, userzone, real_tim_timstamp, achiev_mtd_case_active_mtd, 
+							achiev_mtd_case_active_ytd, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTH":
@@ -1280,19 +1292,21 @@ public class APIConsumerService {
 					finalresponse=NBGrowth.growthIntent(serviceChannel, period, user_region, user_circle, 
 							userzone, real_tim_timstamp, prev_year_adj_mfyp_ytd, grth_lst_yr_sm_adj_mfyp_ytd, 
 							ytd_inforced_adj_mfyp, grth_lst_yr_sm_adj_mfyp_mtd, prev_year_adj_mfyp_mtd, 
-							mtd_inforced_adj_mfyp);
+							mtd_inforced_adj_mfyp, user_sub_channel);
 				}
 				break;
 				case "NB.RECRUITMENT":
 				{
 					finalresponse=Recruitment.recruitmentIntent(serviceChannel, period, user_region, user_circle,
-							userzone, real_tim_timstamp, recruitment_mtd, recruitment_ytd);
+							userzone, real_tim_timstamp, recruitment_mtd, recruitment_ytd,
+										   user_sub_channel);
 				}
 				break;
 				case "NB.RECRUITMENT%":
 				{
 					finalresponse=Recruitmentpercentage.recruitmentPercentageIntent(serviceChannel, period, user_region, 
-							user_circle, userzone, real_tim_timstamp, achiev_mtd_recruitment, achiev_ytd_recruitment);
+					user_circle, userzone, real_tim_timstamp, achiev_mtd_recruitment, achiev_ytd_recruitment,
+						user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHAPLADGIFYP":
@@ -1300,21 +1314,21 @@ public class APIConsumerService {
 					finalresponse=NBGROWTHAPLADGIFYP.nbGROWTHAPLADGIFYPIntent(serviceChannel, period, user_circle, 
 							user_region, userzone, grth_applied_adj_ifyp_ytd, rpev_applied_adj_ifyp_ytd, 
 							applied_adj_ifyp_ytd, grth_applied_adj_ifyp_mtd, 
-							rpev_applied_adj_ifyp_mtd, applied_adj_ifyp_mtd);
+							rpev_applied_adj_ifyp_mtd, applied_adj_ifyp_mtd, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHAPLAFYP":
 				{
 					finalresponse=NBGROWTHAPLAFYP.nbGROWTHAPLAFYPIntent(serviceChannel, period, user_circle, user_region, 
 							userzone, prev_applied_afyp_ytd, grth_applied_afyp_ytd, grth_applied_afyp_mtd, 
-							applied_afyp_ytd, prev_applied_afyp_mtd, applied_afyp_mtd);
+							applied_afyp_ytd, prev_applied_afyp_mtd, applied_afyp_mtd, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHAPLCASES":
 				{
 					finalresponse=NBGROWTHAPLCASES.nbGROWTHAPLCASESIntent(serviceChannel, period, user_circle, 
 							user_region, userzone, prev_applied_cases_ytd, grth_applied_cases_ytd, grth_applied_cases_mtd, 
-							applied_cases_ytd, prev_applied_cases_mtd, applied_cases_mtd);
+							applied_cases_ytd, prev_applied_cases_mtd, applied_cases_mtd, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHCASESIZE":
@@ -1322,7 +1336,7 @@ public class APIConsumerService {
 					finalresponse=GrowthCaseSize.growthCaseSizeIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, user_circle, grth_case_size_afyp_ytd, prev_case_size_afyp_ytd,
 							case_size_afyp_ytd_growth, grth_case_size_afyp_mtd, prev_case_size_afyp_mtd, 
-							case_size_afyp_mtd, case_size_afyp_mtd_growth);
+							case_size_afyp_mtd, case_size_afyp_mtd_growth, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHLPCADJMFYP":
@@ -1330,7 +1344,7 @@ public class APIConsumerService {
 					finalresponse=GrowthLPCADJMFYP.growthLPCADJMFYPIntent(serviceChannel, period, userzone, user_region,
 							real_tim_timstamp, user_circle,	grth_lpc_paid_adj_mfyp_ytd, prev_lpc_paid_adj_mfyp_ytd, 
 							lpc_paid_adj_mfyp_ytd_growth, grth_lpc_paid_adj_mfyp_mtd, prev_lpc_paid_adj_mfyp_mtd, 
-							lpc_paid_adj_mfyp_mtd_growth);
+							lpc_paid_adj_mfyp_mtd_growth, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHLPCAPLADJIFYP":
@@ -1340,7 +1354,7 @@ public class APIConsumerService {
 							lpc_applied_adj_ifyp_ytd_growth, grth_lpc_applied_adj_ifyp_mtd,	prev_lpc_applied_adj_ifyp_mtd, 
 							lpc_applied_adj_ifyp_mtd_growth, lpc_paid_adj_mfyp_ytd_growth, lpc_paid_adj_mfyp_mtd_growth, 
 							grth_lpc_paid_adj_mfyp_ytd, prev_lpc_paid_adj_mfyp_ytd, prev_lpc_paid_adj_mfyp_mtd, 
-							grth_lpc_paid_adj_mfyp_mtd);
+							grth_lpc_paid_adj_mfyp_mtd, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHLPCAPLAFYP":
@@ -1348,7 +1362,7 @@ public class APIConsumerService {
 					finalresponse=GrowthLPCAPLAFYP.growthLPCAPLAFYPIntent(serviceChannel, period, userzone, user_region,
 							real_tim_timstamp, user_circle, grth_lpc_applied_afyp_ytd, prev_lpc_applied_afyp_ytd, 
 							curr_lpc_applied_afyp_ytd, grth_lpc_applied_afyp_mtd, prev_lpc_applied_afyp_mtd, 
-							curr_lpc_applied_afyp_mtd);
+							curr_lpc_applied_afyp_mtd, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHLPCAPLCASES":
@@ -1356,7 +1370,7 @@ public class APIConsumerService {
 					finalresponse=GrowthLPCAPLCases.growthLPCAPLCasesIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, user_circle, grth_lpc_applied_cases_ytd, prev_lpc_applied_cases_ytd, 
 							lpc_applied_cases_ytd_growth, grth_lpc_applied_cases_mtd, prev_lpc_applied_cases_mtd,
-							lpc_applied_cases_mtd_growth);
+							lpc_applied_cases_mtd_growth, user_sub_channel);
 				}
 				break;
 				case "GROWTHLPCPAIDCASES":
@@ -1364,7 +1378,7 @@ public class APIConsumerService {
 					finalresponse=GrowthLPCPaidCases.growthLPCPaidcasesIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, user_circle, grth_lpc_paid_cases_ytd, prev_lpc_paid_cases_ytd, 
 							lpc_paid_cases_ytd_growth, grth_lpc_paid_cases_mtd, prev_lpc_paid_cases_mtd, 
-							lpc_paid_cases_mtd_growth);
+							lpc_paid_cases_mtd_growth, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHPAIDCASES":
@@ -1372,7 +1386,7 @@ public class APIConsumerService {
 					finalresponse=GrowthPaidcases.growthPaidcasesIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, grth_lst_yr_inforced_cnt_ytd, prev_year_inforced_cnt_ytd, 
 							ytd_inforced_cnt, grth_lst_yr_inforced_cnt_mtd, prev_year_inforced_cnt_mtd, mtd_inforced_cnt,
-							user_circle);
+							user_circle, user_sub_channel);
 				}
 				break;
 				case "NB.GROWTHRECRUITMENT":
@@ -1380,7 +1394,7 @@ public class APIConsumerService {
 					finalresponse=GrowthRecruitment.growthRecruitmentIntent(serviceChannel, period, userzone, user_region,
 							real_tim_timstamp, grth_recruitment_ytd, prev_recruitment_ytd, recruitment_ytd_growth,
 							grth_recruitment_mtd, prev_recruitment_mtd, recruitment_mtd_growth, recruitment_ytd_growth,
-							user_circle);
+							user_circle, user_sub_channel);
 				}
 				break;
 				case "NB.MODEMIX":
@@ -1389,7 +1403,7 @@ public class APIConsumerService {
 					finalresponse=ModeMix.modeMixIntent(channel, period,  userzone,  user_region,  real_tim_timstamp,
 							 annual_adj_mfyp_mtd, semi_annual_adj_mfyp_mtd,  quarterly_adj_mfyp_mtd, monthly_adj_mfyp_mtd,
 							 single_adj_mfyp_mtd, annual_adj_mfyp_ytd,  semi_annual_adj_mfyp_ytd, quarterly_adj_mfyp_ytd,
-							 monthly_adj_mfyp_ytd, single_adj_mfyp_ytd, user_circle);
+							 monthly_adj_mfyp_ytd, single_adj_mfyp_ytd, user_circle, user_sub_channel);
 					System.out.println("END :: CASE NB.MODEMIX");
 				}
 				break;
@@ -1400,7 +1414,7 @@ public class APIConsumerService {
 							real_tim_timstamp, achiev_mtd_adj_mfyp, achiev_mtd_paid_case, mtd_adj_afyp_act,
 							mtd_adj_afyp_pln, mtd_paid_case_act, mtd_paid_case_pln, achiev_ytd_adj_mfyp, 
 							achiev_ytd_paid_case, ytd_adj_mfyp_act, ytd_adj_mfyp_pln, ytd_paid_case_act, 
-							ytd_paid_case_pln, user_circle);
+							ytd_paid_case_pln, user_circle, user_sub_channel);
 
 				}
 				break;
@@ -1412,7 +1426,7 @@ public class APIConsumerService {
 							nonpar_penet_mtd_pol_cnt, protec_penet_mtd_pol_cnt, protec_penet_ytd_adj_mfyp, 
 							ul_penet_ytd_adj_mfyp, par_penet_ytd_adj_mfyp, nonpar_penet_ytd_adj_mfyp, 
 							ul_penet_ytd_pol_cnt, par_penet_ytd_pol_cnt, nonpar_penet_ytd_pol_cnt, 
-							protec_penet_ytd_pol_cnt, user_circle);
+							protec_penet_ytd_pol_cnt, user_circle, user_sub_channel);
 				}
 				break;
 				case "NB.PRODUCTMIXADJMFYP":
@@ -1421,7 +1435,7 @@ public class APIConsumerService {
 					finalresponse=ProductMixADJMFYP.productMixADJMFYPIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, ul_penet_mtd_adj_mfyp, par_penet_mtd_adj_mfyp, nonpar_penet_mtd_adj_mfyp, 
 							protec_penet_mtd_adj_mfyp, ul_penet_ytd_adj_mfyp, par_penet_ytd_adj_mfyp, 
-							nonpar_penet_ytd_adj_mfyp, protec_penet_ytd_adj_mfyp, user_circle);
+							nonpar_penet_ytd_adj_mfyp, protec_penet_ytd_adj_mfyp, user_circle, user_sub_channel);
 				}
 				break;
 				case "NB.PRODUCTMIXPAIDCASE":
@@ -1429,7 +1443,7 @@ public class APIConsumerService {
 					finalresponse=ProductMixPaidCase.productMixPaidCaseIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, ul_penet_mtd_pol_cnt, par_penet_mtd_pol_cnt,
 							ul_penet_ytd_pol_cnt, par_penet_ytd_pol_cnt, nonpar_penet_mtd_pol_cnt,nonpar_penet_ytd_pol_cnt, 
-							protec_penet_mtd_pol_cnt, protec_penet_ytd_pol_cnt,user_circle);
+							protec_penet_mtd_pol_cnt, protec_penet_ytd_pol_cnt,user_circle, user_sub_channel);
 				}
 				break;
 				default :
