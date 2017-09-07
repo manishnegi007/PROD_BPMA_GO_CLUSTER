@@ -1144,6 +1144,7 @@ public class APIConsumerService {
 				String convertsum4  =  df1.format(sum4);
 
 				String intent=action.toUpperCase();
+				System.out.println("SWITCH INTENT TO BE CALLED ::"+intent);
 
 				switch(intent)
 				{
