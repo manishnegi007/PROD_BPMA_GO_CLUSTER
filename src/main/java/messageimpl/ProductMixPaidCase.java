@@ -6,7 +6,8 @@ public class ProductMixPaidCase {
 			String user_region,String real_tim_timstamp,String ul_penet_mtd_pol_cnt,String par_penet_mtd_pol_cnt,
 			String ul_penet_ytd_pol_cnt,String par_penet_ytd_pol_cnt,String nonpar_penet_mtd_pol_cnt,
 			String nonpar_penet_ytd_pol_cnt, String protec_penet_mtd_pol_cnt,String protec_penet_ytd_pol_cnt,
-			String user_circle)
+			String user_circle, String subchannel)
+
 	{
 
 		String finalresponse="";
@@ -17,7 +18,11 @@ public class ProductMixPaidCase {
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
-		}
+		}if(!"".equalsIgnoreCase(subchannel))
+	{
+         channel = subchannel;
+	}
+
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Paid Cases for MLI is ULIP: "+ul_penet_mtd_pol_cnt+" % , par: "+par_penet_mtd_pol_cnt+" % , Non-par: "+nonpar_penet_mtd_pol_cnt+" % & protection: "+protec_penet_mtd_pol_cnt+
