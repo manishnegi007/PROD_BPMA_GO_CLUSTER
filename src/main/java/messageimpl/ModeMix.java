@@ -12,6 +12,10 @@ public class ModeMix {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		if(!"".equalsIgnoreCase(user_circle))
+		{
+			user_region="Circle "+user_circle;
+		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
