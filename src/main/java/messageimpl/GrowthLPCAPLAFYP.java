@@ -2,9 +2,11 @@ package messageimpl;
 
 public class GrowthLPCAPLAFYP 
 {
-	public static String growthLPCAPLAFYPIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String user_circle,
-							String grth_lpc_applied_afyp_ytd,String prev_lpc_applied_afyp_ytd,String curr_lpc_applied_afyp_ytd,String grth_lpc_applied_afyp_mtd,
-							String prev_lpc_applied_afyp_mtd,String curr_lpc_applied_afyp_mtd)
+	public static String growthLPCAPLAFYPIntent(String channel,String period,String userzone,
+	String user_region,String real_tim_timstamp,String user_circle,
+	String grth_lpc_applied_afyp_ytd,String prev_lpc_applied_afyp_ytd,
+	 String curr_lpc_applied_afyp_ytd,String grth_lpc_applied_afyp_mtd,
+	String prev_lpc_applied_afyp_mtd,String curr_lpc_applied_afyp_mtd, String subchannel)
 	{
 		String finalresponse="";
 		
@@ -16,6 +18,11 @@ public class GrowthLPCAPLAFYP
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	       {
+                channel = subchannel;
+	       }
+
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed LPC applied business growth of "+grth_lpc_applied_afyp_ytd+" % on YTD basis, last year same time we had clocked "+
