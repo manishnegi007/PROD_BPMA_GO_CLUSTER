@@ -2,9 +2,12 @@ package messageimpl;
 
 public class GrowthRecruitment {
 	
-	public static String growthRecruitmentIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String grth_recruitment_ytd,
-				String prev_recruitment_ytd,String recruitment_ytd_growth,String grth_recruitment_mtd,String prev_recruitment_mtd,String recruitment_mtd_growth,
-				String recruitment_ytd,String user_circle)
+	public static String growthRecruitmentIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,
+				 String grth_recruitment_ytd,
+				String prev_recruitment_ytd,String recruitment_ytd_growth,String grth_recruitment_mtd,String prev_recruitment_mtd,
+			        String recruitment_mtd_growth, String recruitment_ytd,String user_circle, String subchannel)
+
+				
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
@@ -15,6 +18,10 @@ public class GrowthRecruitment {
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	        }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
