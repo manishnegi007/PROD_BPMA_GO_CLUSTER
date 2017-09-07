@@ -1,67 +1,21 @@
 package service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.URL;
-import java.text.DecimalFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.ResourceBundle;
-import javax.net.ssl.HttpsURLConnection;
-import org.springframework.stereotype.Component;
-import org.json.JSONObject;
-import common.Commons;
-import common.XTrustProvider;
-import hello.WebhookResponse;
-import hello.InnerButton;
-import hello.Facebook;
-import hello.InnerData;
-import messageimpl.Achievement;
-import messageimpl.AdjMFYP;
-import messageimpl.Applied;
-import messageimpl.AppliedADJIFYP;
-import messageimpl.Appliedcases;
-import messageimpl.CaseSizePercentage;
-import messageimpl.Growth;
-import messageimpl.GrowthCaseSize;
-import messageimpl.GrowthLPCADJMFYP;
-import messageimpl.GrowthLPCAPLADJIFYP;
-import messageimpl.GrowthLPCAPLAFYP;
-import messageimpl.GrowthLPCAPLCases;
-import messageimpl.GrowthLPCPaidCases;
-import messageimpl.GrowthPaidcases;
-import messageimpl.GrowthRecruitment;
-import messageimpl.Lpcaplcases;
-import messageimpl.Lpcappadjafyp;
-import messageimpl.LpcAPPAdJIFYP;
-import messageimpl.LpcPAIDADJMFYP;
-import messageimpl.LpcPAIDCASES;
-import messageimpl.ModeMix;
-import messageimpl.NBAdjMFYP;
-import messageimpl.NBApplied;
-import messageimpl.NBCaseSize;
-import messageimpl.NBGROWTHAPLADGIFYP;
-import messageimpl.NBGROWTHAPLAFYP;
-import messageimpl.NBGROWTHAPLCASES;
-import messageimpl.NBGrowth;
-import messageimpl.NbAchievement;
-import messageimpl.Numbers;
-import messageimpl.PaidCases;
-import messageimpl.Penetration;
-import messageimpl.ProductMix;
-import messageimpl.ProductMixADJMFYP;
-import messageimpl.ProductMixPaidCase;
-import messageimpl.Recruitment;
-import messageimpl.Recruitmentpercentage;
-import messageimpl.WIP;
-import messageimpl.WIPYES;
+import java.util.ArrayList; import java.util.List; import java.io.BufferedReader; import java.io.InputStreamReader;
+import java.io.OutputStreamWriter; import java.net.HttpURLConnection; import java.net.InetSocketAddress; import java.net.Proxy;
+import java.net.URL; import java.text.DecimalFormat; import java.time.LocalDateTime; import java.time.format.DateTimeFormatter;
+import java.util.Date; import java.util.ResourceBundle; import javax.net.ssl.HttpsURLConnection; 
+import org.springframework.stereotype.Component; import org.json.JSONObject; import common.Commons; import common.XTrustProvider;
+import hello.WebhookResponse; import hello.InnerButton; import hello.Facebook; import hello.InnerData; import messageimpl.Achievement;
+import messageimpl.AdjMFYP;  import messageimpl.Applied; import messageimpl.AppliedADJIFYP; import messageimpl.Appliedcases;
+import messageimpl.CaseSizePercentage; import messageimpl.Growth; import messageimpl.GrowthCaseSize; import messageimpl.GrowthLPCADJMFYP;
+import messageimpl.GrowthLPCAPLADJIFYP; import messageimpl.GrowthLPCAPLAFYP; import messageimpl.GrowthLPCAPLCases;
+import messageimpl.GrowthLPCPaidCases; import messageimpl.GrowthPaidcases; import messageimpl.GrowthRecruitment;
+import messageimpl.Lpcaplcases; import messageimpl.Lpcappadjafyp; import messageimpl.LpcAPPAdJIFYP;
+import messageimpl.LpcPAIDADJMFYP; import messageimpl.LpcPAIDCASES; import messageimpl.ModeMix; import messageimpl.NBAdjMFYP;
+import messageimpl.NBApplied; import messageimpl.NBCaseSize; import messageimpl.NBGROWTHAPLADGIFYP; import messageimpl.NBGROWTHAPLAFYP;
+import messageimpl.NBGROWTHAPLCASES; import messageimpl.NBGrowth; import messageimpl.NbAchievement; import messageimpl.Numbers;
+import messageimpl.PaidCases; import messageimpl.Penetration; import messageimpl.ProductMix; import messageimpl.ProductMixADJMFYP;
+import messageimpl.ProductMixPaidCase; import messageimpl.Recruitment; import messageimpl.Recruitmentpercentage;
+import messageimpl.WIP; import messageimpl.WIPYES;
 
 @Component
 public class APIConsumerService {
@@ -482,6 +436,9 @@ public class APIConsumerService {
 						String  mtdAdjustMFYP="", dailyAppliedAFYP="", mtdAppliedAFYP="", ytd_applied_afyp="", mtd_adj_mfyp="",
 						daily_adj_mfyp="", ytd_applied_adj_ifyp="", mtd_applied_adj_ifyp="",mtd_applied_count="",
 						ytd_applied_count="", daily_applied_count="", daily_inforced_count="", dailyAdjustMFYP="", ytd_adj_mfyp="";
+	//				        --------------------ModeMix----------------------------------------------
+				                String annual_adj_mfyp_mtd="", semi_annual_adj_mfyp_mtd="", quarterly_adj_mfyp_mtd="", monthly_adj_mfyp_mtd="",single_adj_mfyp_mtd="",annual_adj_mfyp_ytd="",semi_annual_adj_mfyp_ytd="",
+							    quarterly_adj_mfyp_ytd="", monthly_adj_mfyp_ytd="", single_adj_mfyp_ytd="";
 				
 					for(int i=0;i<1;i++){
 					try{
@@ -1130,6 +1087,40 @@ public class APIConsumerService {
 						}catch(Exception e){}
 					}
 					break;
+					case "MODE_MIX":
+					{
+						try{
+							annual_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("modemix").get("annual_adj_mfyp_mtd").toString());
+						}catch(Exception e){}
+						try{
+							semi_annual_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("modemix").get("semi_annual_adj_mfyp_mtd").toString());
+						}catch(Exception e){}
+						try{
+							quarterly_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("modemix").get("quarterly_adj_mfyp_mtd").toString());
+						}catch(Exception e){}
+						try{
+							monthly_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("modemix").get("monthly_adj_mfyp_mtd").toString());
+						}catch(Exception e){}
+						try{
+							single_adj_mfyp_mtd = (object.getJSONObject("payload").getJSONObject("modemix").get("single_adj_mfyp_mtd").toString());
+						}catch(Exception e){}
+						try{
+							annual_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("modemix").get("annual_adj_mfyp_ytd").toString());
+						}catch(Exception e){}
+						try{
+							semi_annual_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("modemix").get("semi_annual_adj_mfyp_ytd").toString());
+						}catch(Exception e){}
+						try{
+							quarterly_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("modemix").get("quarterly_adj_mfyp_ytd").toString());
+						}catch(Exception e){}
+						try{
+							monthly_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("modemix").get("monthly_adj_mfyp_ytd").toString());
+						}catch(Exception e){}
+						try{
+							single_adj_mfyp_ytd = (object.getJSONObject("payload").getJSONObject("modemix").get("single_adj_mfyp_ytd").toString());
+						}catch(Exception e){}
+					}
+					break;
 					case "REC":
 					{
 						try{
@@ -1393,9 +1384,10 @@ public class APIConsumerService {
 				break;
 				case "NB.MODEMIX":
 				{
-					finalresponse=ModeMix.modeMixIntent(serviceChannel, period, userzone, user_region, real_tim_timstamp, 
-							grth_recruitment_ytd,prev_recruitment_ytd, recruitment_ytd_growth, grth_recruitment_mtd, 
-							prev_recruitment_mtd, recruitment_mtd_growth, recruitment_ytd_growth, user_circle);
+					finalresponse=ModeMix.modeMixIntent(channel, period,  userzone,  user_region,  real_tim_timstamp,
+							 annual_adj_mfyp_mtd, semi_annual_adj_mfyp_mtd,  quarterly_adj_mfyp_mtd, monthly_adj_mfyp_mtd,
+							 single_adj_mfyp_mtd, annual_adj_mfyp_ytd,  semi_annual_adj_mfyp_ytd, quarterly_adj_mfyp_ytd,
+							 monthly_adj_mfyp_ytd, single_adj_mfyp_ytd);
 				}
 				break;
 				case "NB.ACHIEVEMENT":
