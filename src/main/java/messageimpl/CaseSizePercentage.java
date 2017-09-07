@@ -5,7 +5,6 @@ public class CaseSizePercentage {
 	public static String caseSizePercentageIntent(String channel, String period, String user_region, String user_circle, 
 			String userzone , String real_tim_timstamp,
 			String achiev_mtd_case_active_mtd, String achiev_mtd_case_active_ytd)
-	{
 		{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
