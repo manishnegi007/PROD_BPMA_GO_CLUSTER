@@ -6,6 +6,7 @@ public class ModeMix {
 			String single_adj_mfyp_mtd, String annual_adj_mfyp_ytd, String semi_annual_adj_mfyp_ytd, String quarterly_adj_mfyp_ytd,
 			String monthly_adj_mfyp_ytd, String single_adj_mfyp_ytd, String user_circle)
 	{
+		System.out.println("Inside ModeMix");
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
 		{channel="";}
@@ -119,6 +120,7 @@ public class ModeMix {
 						+ " If you want to see the channel wise business numbers, please specify";
 			}
 		}
+		System.out.println("OutSide ModeMix");
 		return finalresponse.toString();
 	}
 }
