@@ -4,7 +4,7 @@ public class ModeMix {
 	public static String modeMixIntent(String channel,String period,String userzone,String user_region,
 				String real_tim_timstamp,String grth_recruitment_ytd,
 				String prev_recruitment_ytd,String recruitment_ytd_growth,String grth_recruitment_mtd,String prev_recruitment_mtd,
-				String recruitment_mtd_growth,String recruitment_ytd)
+				String recruitment_mtd_growth,String recruitment_ytd,String user_circle)
 	{
 		String finalresponse="";
 		 
