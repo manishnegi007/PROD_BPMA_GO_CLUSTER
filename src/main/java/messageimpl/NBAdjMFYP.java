@@ -3,7 +3,7 @@ package messageimpl;
 public class NBAdjMFYP 
 {
 	public static String nbAdjMFYPIntent(String channel, String period, String user_circle, String user_region, String userzone, 
-			String real_tim_timstamp, String mtdAdjustMFYP, String ytd_adj_mfyp, String mtd_adj_mfyp, String daily_adj_mfyp)
+			String real_tim_timstamp, String mtdAdjustMFYP, String ytd_adj_mfyp, String mtd_adj_mfyp, String daily_adj_mfyp, String subchannel)
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
@@ -14,6 +14,10 @@ public class NBAdjMFYP
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	         }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for MLI is  "
