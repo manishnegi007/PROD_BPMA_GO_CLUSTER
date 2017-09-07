@@ -2,10 +2,11 @@ package messageimpl;
 
 public class NbAchievement 
 {
-	public static String achievementIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String achiev_mtd_adj_mfyp,
-										String achiev_mtd_paid_case,String mtd_adj_afyp_act,String mtd_adj_afyp_pln,String mtd_paid_case_act,String mtd_paid_case_pln,
-										String achiev_ytd_adj_mfyp,String achiev_ytd_paid_case,String ytd_adj_mfyp_act,String ytd_adj_mfyp_pln,String ytd_paid_case_act,
-										String ytd_paid_case_pln)
+	public static String achievementIntent(String channel,String period, String userzone,String user_region,String real_tim_timstamp,
+		String achiev_mtd_adj_mfyp, String achiev_mtd_paid_case,String mtd_adj_afyp_act,
+		String mtd_adj_afyp_pln,String mtd_paid_case_act,String mtd_paid_case_pln, String achiev_ytd_adj_mfyp,
+		String achiev_ytd_paid_case,String ytd_adj_mfyp_act, String ytd_adj_mfyp_pln,String ytd_paid_case_act,
+		String ytd_paid_case_pln, String user_circle)
 	{
 
 		String finalresponse="";
