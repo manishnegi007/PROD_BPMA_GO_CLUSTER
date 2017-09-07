@@ -4,8 +4,9 @@ public class ProductMixPaidCase {
 	
 	public static String productMixPaidCaseIntent(String channel, String period,String userzone,
 			String user_region,String real_tim_timstamp,String ul_penet_mtd_pol_cnt,String par_penet_mtd_pol_cnt,
-			String ul_penet_ytd_pol_cnt,String par_penet_ytd_pol_cnt,String nonpar_penet_mtd_pol_cnt,String nonpar_penet_ytd_pol_cnt,
-			String protec_penet_mtd_pol_cnt,String protec_penet_ytd_pol_cnt)
+			String ul_penet_ytd_pol_cnt,String par_penet_ytd_pol_cnt,String nonpar_penet_mtd_pol_cnt,
+			String nonpar_penet_ytd_pol_cnt, String protec_penet_mtd_pol_cnt,String protec_penet_ytd_pol_cnt,
+			String user_circle)
 	{
 
 		String finalresponse="";
