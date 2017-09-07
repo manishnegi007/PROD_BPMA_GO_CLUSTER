@@ -3,7 +3,8 @@ package messageimpl;
 public class LpcAPPAdJIFYP {
 
 	public static String lpcAppAdjIfypIntent(String channel, String period, String user_region, String user_circle,
-			String userzone, String real_tim_timstamp, String lpc_applied_adj_ifyp_mtd, String lpc_applied_adj_ifyp_ytd)
+			String userzone, String real_tim_timstamp, String lpc_applied_adj_ifyp_mtd,
+			 String lpc_applied_adj_ifyp_ytd, String subchannel)
 
 	{
 		String finalresponse = "";
@@ -17,6 +18,10 @@ public class LpcAPPAdJIFYP {
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                  channel = subchannel;
+	         }
 		if ("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
 				&& "".equalsIgnoreCase(period)) {
 			finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP MTD for MLI is "
