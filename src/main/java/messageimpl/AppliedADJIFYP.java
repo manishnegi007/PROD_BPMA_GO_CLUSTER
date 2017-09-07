@@ -3,7 +3,7 @@ package messageimpl;
 public class AppliedADJIFYP 
 {
 	public static String appliedAdjIfydIntent(String channel, String period, String user_region, String user_circle, String userzone , String real_tim_timstamp,
-			String mtd_applied_adj_ifyp , String ytd_applied_adj_ifyp )
+			String mtd_applied_adj_ifyp , String ytd_applied_adj_ifyp, String subchannel )
 
 	{
 		String finalresponse="";
@@ -14,6 +14,10 @@ public class AppliedADJIFYP
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
+		}
+		if(!"".equalsIgnoreCase(subchannel))
+		{
+		        channel = subchannel;
 		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
