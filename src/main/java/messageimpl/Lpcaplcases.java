@@ -2,8 +2,9 @@ package messageimpl;
 
 public class Lpcaplcases {
 
-	public static String lpcAplCasesIntent(String channel, String period, String user_region, String user_circle, String userzone , String real_tim_timstamp,
-	String lpc_applied_cases_mtd, String lpc_applied_cases_ytd) 
+	public static String lpcAplCasesIntent(String channel, String period, String user_region, String user_circle, String userzone ,
+	String real_tim_timstamp,
+	String lpc_applied_cases_mtd, String lpc_applied_cases_ytd, String subchannel)
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
@@ -14,6 +15,11 @@ public class Lpcaplcases {
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                 channel = subchannel;
+	        }
+
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " LPC Applied cases MTD for MLI is  "
