@@ -4,7 +4,7 @@ public class ModeMix {
 	public static String modeMixIntent(String channel, String period, String userzone, String user_region, String real_tim_timstamp,
 			String annual_adj_mfyp_mtd, String semi_annual_adj_mfyp_mtd, String quarterly_adj_mfyp_mtd, String monthly_adj_mfyp_mtd,
 			String single_adj_mfyp_mtd, String annual_adj_mfyp_ytd, String semi_annual_adj_mfyp_ytd, String quarterly_adj_mfyp_ytd,
-			String monthly_adj_mfyp_ytd, String single_adj_mfyp_ytd, String user_circle)
+			String monthly_adj_mfyp_ytd, String single_adj_mfyp_ytd, String user_circle, String subchannel)
 	{
 		System.out.println("Inside ModeMix");
 		String finalresponse="";
@@ -14,6 +14,10 @@ public class ModeMix {
 		{period="";}
 		if(!"".equalsIgnoreCase(user_circle))
 		{user_region="Circle "+user_circle;}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	         }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for MLI is Annual:"+
