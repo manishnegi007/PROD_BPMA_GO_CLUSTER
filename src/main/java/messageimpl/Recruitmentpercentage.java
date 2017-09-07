@@ -14,6 +14,11 @@ public class Recruitmentpercentage {
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	{
+         channel = subchannel;
+	}
+
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI recruitment acheivement MTD: "+achiev_mtd_recruitment+" % YTD "+achiev_ytd_recruitment+" % till "+real_tim_timstamp+
