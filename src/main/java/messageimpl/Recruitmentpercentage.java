@@ -3,7 +3,8 @@ package messageimpl;
 public class Recruitmentpercentage {
 
 	public static String recruitmentPercentageIntent(String channel, String period, String user_region, String user_circle, String userzone , String real_tim_timstamp,
-			String achiev_mtd_recruitment, String achiev_ytd_recruitment)
+			String achiev_mtd_recruitment, String achiev_ytd_recruitment, String subchannel)
+
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
