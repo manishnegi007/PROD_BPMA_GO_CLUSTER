@@ -102,7 +102,7 @@ public class PaidCases
 				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for MLI is " + ytd_inforced_count +
 						" If you want to see the channel wise business numbers, please specify";
 			}
-			else if("YTD".equalsIgnoreCase(period))
+			else if("MTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for MLI is " + mtd_inforced_count +
 						" If you want to see the channel wise business numbers, please specify";
