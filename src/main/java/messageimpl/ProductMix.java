@@ -2,11 +2,13 @@ package messageimpl;
 
 public class ProductMix
 {
-	public static String productMixIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String ul_penet_mtd_adj_mfyp,
-									String par_penet_mtd_adj_mfyp,String nonpar_penet_mtd_adj_mfyp,String protec_penet_mtd_adj_mfyp,String ul_penet_mtd_pol_cnt,
-									String par_penet_mtd_pol_cnt,String nonpar_penet_mtd_pol_cnt,String protec_penet_mtd_pol_cnt,String protec_penet_ytd_adj_mfyp,
-									String ul_penet_ytd_adj_mfyp,String par_penet_ytd_adj_mfyp,String nonpar_penet_ytd_adj_mfyp,String ul_penet_ytd_pol_cnt,
-									String par_penet_ytd_pol_cnt,String nonpar_penet_ytd_pol_cnt,String protec_penet_ytd_pol_cnt)
+	public static String productMixIntent(String channel,String period,String userzone,String user_region,
+		String real_tim_timstamp,String ul_penet_mtd_adj_mfyp,
+		String par_penet_mtd_adj_mfyp,String nonpar_penet_mtd_adj_mfyp,String protec_penet_mtd_adj_mfyp,
+		String ul_penet_mtd_pol_cnt, String par_penet_mtd_pol_cnt,String nonpar_penet_mtd_pol_cnt,
+		String protec_penet_mtd_pol_cnt,String protec_penet_ytd_adj_mfyp,
+		String ul_penet_ytd_adj_mfyp,String par_penet_ytd_adj_mfyp,String nonpar_penet_ytd_adj_mfyp,String ul_penet_ytd_pol_cnt,
+		String par_penet_ytd_pol_cnt,String nonpar_penet_ytd_pol_cnt,String protec_penet_ytd_pol_cnt, String user_circle)
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
