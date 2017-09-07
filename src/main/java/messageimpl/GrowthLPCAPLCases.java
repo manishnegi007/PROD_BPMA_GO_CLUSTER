@@ -3,18 +3,15 @@ package messageimpl;
 public class GrowthLPCAPLCases 
 {
 	public static String growthLPCAPLCasesIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String user_circle,
-						String grth_lpc_applied_cases_ytd,String prev_lpc_applied_cases_ytd,String lpc_applied_cases_ytd_growth,String grth_lpc_applied_cases_mtd,
-						String prev_lpc_applied_cases_mtd,String lpc_applied_cases_mtd_growth)
+				String grth_lpc_applied_cases_ytd,String prev_lpc_applied_cases_ytd,String lpc_applied_cases_ytd_growth,String grth_lpc_applied_cases_mtd,
+				String prev_lpc_applied_cases_mtd,String lpc_applied_cases_mtd_growth)
 	{
 		String finalresponse="";
-		
-
 		if("MLI".equalsIgnoreCase(channel))
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
-		
-		if("AXIS".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(user_circle))
+		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
 		}
