@@ -8,7 +8,7 @@ public class Penetration
 			String protec_penet_mtd_afyp, String protec_penet_mtd_pol_cnt, String ul_penet_ytd_afyp, 
 			String ytd_inforced_afyp, String ul_penet_ytd_pol_cnt, String ytd_inforced_count, 
 			String trad_penet_ytd_afyp, String trad_penet_ytd_pol_cnt, String protec_penet_ytd_afyp, 
-			String protec_penet_ytd_pol_cnt, String user_circle)
+			String protec_penet_ytd_pol_cnt)
 	{
 		String finalresponse="";
 		if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)||"MONTH".equalsIgnoreCase(period))
