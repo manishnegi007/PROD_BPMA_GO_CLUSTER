@@ -6,7 +6,7 @@ public class NbAchievement
 		String achiev_mtd_adj_mfyp, String achiev_mtd_paid_case,String mtd_adj_afyp_act,
 		String mtd_adj_afyp_pln,String mtd_paid_case_act,String mtd_paid_case_pln, String achiev_ytd_adj_mfyp,
 		String achiev_ytd_paid_case,String ytd_adj_mfyp_act, String ytd_adj_mfyp_pln,String ytd_paid_case_act,
-		String ytd_paid_case_pln, String user_circle)
+		String ytd_paid_case_pln, String user_circle, String subchannel)
 	{
 
 		String finalresponse="";
@@ -18,6 +18,10 @@ public class NbAchievement
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	         }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= " MLI MTD acheivement for Adj MFYP is "+achiev_mtd_adj_mfyp+" % , Paid case acheivement is "+achiev_mtd_paid_case+" % MTD acheivement for Adj MFYP is "+
