@@ -4,7 +4,7 @@ public class NBGROWTHAPLADGIFYP
 {
 	public static String nbGROWTHAPLADGIFYPIntent(String channel, String period, String user_circle, String user_region, String userzone, 
 			String grth_applied_adj_ifyp_ytd, String rpev_applied_adj_ifyp_ytd, String applied_adj_ifyp_ytd, String grth_applied_adj_ifyp_mtd,
-			String rpev_applied_adj_ifyp_mtd, String applied_adj_ifyp_mtd)
+			String rpev_applied_adj_ifyp_mtd, String applied_adj_ifyp_mtd, String subchannel)
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
@@ -15,6 +15,10 @@ public class NBGROWTHAPLADGIFYP
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	         }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
