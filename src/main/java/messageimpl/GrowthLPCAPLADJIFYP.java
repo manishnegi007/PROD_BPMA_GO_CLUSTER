@@ -14,7 +14,7 @@ public class GrowthLPCAPLADJIFYP {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
-		if("AXIS".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(user_circle))
+		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
 		}
