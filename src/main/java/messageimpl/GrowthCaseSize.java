@@ -7,13 +7,11 @@ public class GrowthCaseSize
 				String prev_case_size_afyp_mtd,String case_size_afyp_mtd,String case_size_afyp_mtd_growth)
 	{
 		String finalresponse="";
-		
-
 		if("MLI".equalsIgnoreCase(channel))
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
-		if("AXIS".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(user_circle))
+		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
 		}
