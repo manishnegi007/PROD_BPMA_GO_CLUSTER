@@ -4,7 +4,7 @@ public class NBGrowth {
 
 	public static String growthIntent(String channel, String period, String user_region, String user_circle, String userzone , String real_tim_timstamp,
 			String prev_year_adj_mfyp_ytd, String grth_lst_yr_sm_adj_mfyp_ytd, String ytd_inforced_adj_mfyp, String grth_lst_yr_sm_adj_mfyp_mtd,
-			String prev_year_adj_mfyp_mtd, String mtd_inforced_adj_mfyp)
+			String prev_year_adj_mfyp_mtd, String mtd_inforced_adj_mfyp, String subchannel)
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
@@ -15,6 +15,10 @@ public class NBGrowth {
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	         }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed paid Business growth of " +grth_lst_yr_sm_adj_mfyp_ytd+" % on YTD basis, last year same time we had clocked "+
