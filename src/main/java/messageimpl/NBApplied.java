@@ -1,0 +1,106 @@
+package messageimpl;
+
+public class NBApplied 
+{
+	public static String nbAppliedIntent(String channel, String period, String user_circle, String user_region, String userzone, 
+			String real_tim_timstamp, String mtdAppliedAFYP, String ytd_applied_afyp, String daily_inforced_count)
+	{
+		String finalresponse="";
+
+		if("MLI".equalsIgnoreCase(channel))
+		{channel="";}
+		if("Monthly".equalsIgnoreCase(period))
+		{period="";}
+		if("AXIS".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(user_circle))
+		{
+			user_region="Circle "+user_circle;
+		}
+		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for MLI is  "
+					+ mtdAppliedAFYP + " Cr Applied Business AFYP YTD for MLI is " + ytd_applied_afyp + 
+					" If you want to see the channel wise business numbers, please specify";
+		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for " + channel +
+					" is " + mtdAppliedAFYP + " Cr Applied Business AFYP YTD for " +channel + " is "+ ytd_applied_afyp +
+					" If you want to see the zone/region wise business numbers, please specify";
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for " + userzone + " zone is "
+					+ mtdAppliedAFYP + " Cr Applied Business AFYP YTD for " + userzone + " zone is " + ytd_applied_afyp +
+					" Cr. If you want to see the region wise business numbers, please specify";
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for " + user_region + " region is " 
+					+ mtdAppliedAFYP + " Applied Business AFYP YTD for " + user_region + " region is " + ytd_applied_afyp + " Cr";
+
+		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " + real_tim_timstamp + " Applied Business AFYP " + period + " for " +channel+ " is " +ytd_applied_afyp+
+						" Cr. If you want to see the zone/region wise business numbers, please specify";
+			}
+			else if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " + real_tim_timstamp + " Applied Business AFYP " + period + " for " +channel+ " is " +mtdAppliedAFYP+
+						" Cr. If you want to see the zone/region wise business numbers, please specify";
+			}
+			else
+			{
+				finalresponse="As of " + real_tim_timstamp + " Applied Business AFYP " + period + " for " +channel+ " is " +daily_inforced_count+
+						" Cr. If you want to see the zone/region wise business numbers, please specify";
+			}
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " +userzone+ " zone is " +ytd_applied_afyp+
+						" Cr. If you want to see the region wise business numbers, please specify";
+			}
+			else if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " +userzone+ " zone is " +mtdAppliedAFYP+
+						" Cr. If you want to see the region wise business numbers, please specify";
+			}
+			else
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " +userzone+ " zone is " +daily_inforced_count+
+						" Cr. If you want to see the region wise business numbers, please specify";
+			}
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +ytd_applied_afyp+ " Cr";
+			}
+			else if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +mtdAppliedAFYP+ " Cr";
+			}
+			else
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +daily_inforced_count+ " Cr";
+			}
+		}else
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for MLI is " +ytd_applied_afyp+ "Cr." 
+						+ " If you want to see the channel wise business numbers, please specify";
+			}
+			else if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for MLI is " +ytd_applied_afyp+ "Cr." 
+						+ " If you want to see the channel wise business numbers, please specify";
+			}
+			else
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for MLI is " +ytd_applied_afyp+ "Cr." 
+						+ " If you want to see the channel wise business numbers, please specify";
+			}
+		}
+		return finalresponse.toString();
+	}
+}
