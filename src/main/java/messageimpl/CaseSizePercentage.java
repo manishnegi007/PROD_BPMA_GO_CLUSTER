@@ -4,7 +4,7 @@ public class CaseSizePercentage {
 
 	public static String caseSizePercentageIntent(String channel, String period, String user_region, String user_circle, 
 			String userzone , String real_tim_timstamp,
-			String achiev_mtd_case_active_mtd, String achiev_mtd_case_active_ytd)
+			String achiev_mtd_case_active_mtd, String achiev_mtd_case_active_ytd, String subchannel)
 		{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
@@ -15,6 +15,11 @@ public class CaseSizePercentage {
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+		{
+		        channel = subchannel;
+		}
+
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI Case Size acheivement MTD: "+achiev_mtd_case_active_mtd+"%, YTD " +achiev_mtd_case_active_ytd+"% till "+real_tim_timstamp+
