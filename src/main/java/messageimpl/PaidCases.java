@@ -3,8 +3,8 @@ package messageimpl;
 public class PaidCases 
 {
 	public static String paidCasesIntent(String channel, String period, String user_circle, String user_region, String userzone,
-			String real_tim_timstamp, String mtd_inforced_count, String ytd_inforced_count, double daily_inforced_count1,
-			String user_circle)
+			String real_tim_timstamp, String mtd_inforced_count, String ytd_inforced_count, double daily_inforced_count1
+			)
 	{
 		String finalresponse="";
 
