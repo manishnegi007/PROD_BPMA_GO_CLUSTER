@@ -3,7 +3,7 @@ package messageimpl;
 public class NBCaseSize 
 {
 	public static String nbCaseSizeIntent(String channel, String period, String user_circle, String user_region, String userzone, 
-			String real_tim_timstamp, String case_size_afyp_mtd, String case_size_afyp_ytd)
+			String real_tim_timstamp, String case_size_afyp_mtd, String case_size_afyp_ytd, String subchannel)
 	{
 		String finalresponse="";
 
@@ -15,6 +15,10 @@ public class NBCaseSize
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	         }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Case Size MTD for MLI is "
