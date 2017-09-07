@@ -2,9 +2,11 @@ package messageimpl;
 
 public class ProductMixADJMFYP {
 	
-	public static String productMixADJMFYPIntent(String channel,String period,String userzone,String user_region,String real_tim_timstamp,String ul_penet_mtd_adj_mfyp,String par_penet_mtd_adj_mfyp,
-												String nonpar_penet_mtd_adj_mfyp,String protec_penet_mtd_adj_mfyp,String ul_penet_ytd_adj_mfyp,String par_penet_ytd_adj_mfyp,
-												String nonpar_penet_ytd_adj_mfyp,String protec_penet_ytd_adj_mfyp)
+	public static String productMixADJMFYPIntent(String channel,String period,String userzone,String user_region,
+		String real_tim_timstamp,String ul_penet_mtd_adj_mfyp,String par_penet_mtd_adj_mfyp,
+		String nonpar_penet_mtd_adj_mfyp,String protec_penet_mtd_adj_mfyp,String ul_penet_ytd_adj_mfyp,
+		String par_penet_ytd_adj_mfyp, String nonpar_penet_ytd_adj_mfyp,String protec_penet_ytd_adj_mfyp,
+		String user_circle)
 	{
 		String finalresponse="";
 		if("MLI".equalsIgnoreCase(channel))
