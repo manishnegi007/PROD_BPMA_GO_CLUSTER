@@ -5,7 +5,7 @@ public class GrowthPaidcases
 	public static String growthPaidcasesIntent(String channel,String period,String userzone,String user_region,
 			String real_tim_timstamp,String grth_lst_yr_inforced_cnt_ytd, String prev_year_inforced_cnt_ytd,
 			String ytd_inforced_cnt,String grth_lst_yr_inforced_cnt_mtd,String prev_year_inforced_cnt_mtd,
-			String mtd_inforced_cnt, String user_circle)
+			String mtd_inforced_cnt, String user_circle, String subchannel)
 	{
 		String finalresponse="";
 
@@ -17,6 +17,10 @@ public class GrowthPaidcases
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+               channel = subchannel;
+	        }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed paid cases growth of "+grth_lst_yr_inforced_cnt_ytd+" % on YTD basis, last year same time we had clocked "+
