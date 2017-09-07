@@ -7,11 +7,12 @@ public class ModeMix {
 			String monthly_adj_mfyp_ytd, String single_adj_mfyp_ytd, String user_circle)
 	{
 		String finalresponse="";
-		 
 		if("MLI".equalsIgnoreCase(channel))
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		if(!"".equalsIgnoreCase(user_circle))
+		{user_region="Circle "+user_circle;}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for MLI is Annual:"+
