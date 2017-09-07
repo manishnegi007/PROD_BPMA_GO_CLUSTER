@@ -6,7 +6,7 @@ public class GrowthLPCADJMFYP {
 			String real_tim_timstamp,String user_circle,
 			String grth_lpc_paid_adj_mfyp_ytd,String prev_lpc_paid_adj_mfyp_ytd,
 			String lpc_paid_adj_mfyp_ytd_growth,String grth_lpc_paid_adj_mfyp_mtd,
-			String prev_lpc_paid_adj_mfyp_mtd,String lpc_paid_adj_mfyp_mtd_growth)
+			String prev_lpc_paid_adj_mfyp_mtd,String lpc_paid_adj_mfyp_mtd_growth, String subchannel)
 	{
 	String finalresponse="";
 	
@@ -18,6 +18,11 @@ public class GrowthLPCADJMFYP {
 	{
 	 user_region="Circle "+user_circle;
 	}
+	if(!"".equalsIgnoreCase(subchannel))
+	{
+         channel = subchannel;
+	}
+	
 	if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 	{
 		finalresponse= "MLI has witnessed paid business growth of "+grth_lpc_paid_adj_mfyp_ytd+"% on YTD basis, last year same time we had clocked "+
