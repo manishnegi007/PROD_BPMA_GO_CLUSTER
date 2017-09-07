@@ -3,7 +3,7 @@ package messageimpl;
 public class NBApplied 
 {
 	public static String nbAppliedIntent(String channel, String period, String user_circle, String user_region, String userzone, 
-			String real_tim_timstamp, String mtdAppliedAFYP, String ytd_applied_afyp, String daily_inforced_count)
+			String real_tim_timstamp, String mtdAppliedAFYP, String ytd_applied_afyp, String daily_inforced_count, String subchannel)
 	{
 		String finalresponse="";
 
@@ -15,6 +15,10 @@ public class NBApplied
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(subchannel))
+	        {
+                channel = subchannel;
+	         }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for MLI is  "
