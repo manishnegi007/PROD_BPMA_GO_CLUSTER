@@ -316,8 +316,8 @@ public class APIConsumerService {
 					|| "NB.LPCPAIDADJMFYP".equalsIgnoreCase(action)	|| "NB.LPCPAIDCASES".equalsIgnoreCase(action) || "NB.casesize%".equalsIgnoreCase(action) 
 					||"NB.Growth".equalsIgnoreCase(action) || "NB.Recruitment".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
 					||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLCASES".equalsIgnoreCase(action)
-					||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(channel)
-					||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(channel)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(channel)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
+					||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(action)
+					||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
 					||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
 					||"NB.ProductMix".equalsIgnoreCase(action))
 			{
