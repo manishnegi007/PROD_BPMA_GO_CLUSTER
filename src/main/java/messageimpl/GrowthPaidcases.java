@@ -85,7 +85,7 @@ public class GrowthPaidcases
 			{
 				finalresponse= "Zone "+userzone+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 
 		}
