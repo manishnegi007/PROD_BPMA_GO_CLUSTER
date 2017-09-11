@@ -11,6 +11,10 @@ public class NBGrowth {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -76,6 +80,19 @@ public class NBGrowth {
 				finalresponse= "Zone "+userzone+" has witnessed paid Business growth of  " +grth_lst_yr_sm_adj_mfyp_mtd+" % on MTD basis, last year same time we had clocked "+
 						prev_year_adj_mfyp_mtd+ " Cr of Adj MFYP as compared to " +mtd_inforced_adj_mfyp+ " Cr today "
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period)){
+				finalresponse= "Region " +user_region+" has witnessed paid Business growth of " +grth_lst_yr_sm_adj_mfyp_ytd+" % on YTD basis, last year same time we had clocked "+
+						prev_year_adj_mfyp_ytd+ " Cr of Adj MFYP as compared to " +ytd_inforced_adj_mfyp+ " Cr today "
+						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+			}else
+			{
+				finalresponse= "Region " +user_region+" has witnessed paid Business growth of " +grth_lst_yr_sm_adj_mfyp_mtd+" % on MTD basis, last year same time we had clocked "+
+						prev_year_adj_mfyp_mtd+ " Cr of Adj MFYP as compared to " +mtd_inforced_adj_mfyp+ " Cr today "
+						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
