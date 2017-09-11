@@ -11,6 +11,10 @@ public class Recruitmentpercentage {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -60,6 +64,17 @@ public class Recruitmentpercentage {
 			else
 			{
 				finalresponse= "Zone "+userzone+" recruitment acheivement " +period+" : "+achiev_mtd_recruitment+" % till " +real_tim_timstamp+
+						" If you want to see the region wise business numbers please specify";	
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period)){
+				finalresponse= "Region "+user_region+" recruitment acheivement " +period+" : "+achiev_ytd_recruitment+" % till " +real_tim_timstamp+
+						" If you want to see the region wise business numbers please specify";
+			}else
+			{
+				finalresponse= "Region "+user_region+" recruitment acheivement " +period+" : "+achiev_mtd_recruitment+" % till " +real_tim_timstamp+
 						" If you want to see the region wise business numbers please specify";	
 			}
 		}
