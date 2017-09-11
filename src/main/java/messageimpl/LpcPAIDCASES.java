@@ -98,11 +98,11 @@ public class LpcPAIDCASES {
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for MLI is " +lpc_paid_cases_ytd+ "" 
-						+ " If you want to see the channel wise business numbers, please specify.";
+						+ ". If you want to see the channel wise business numbers, please specify.";
 			}else
 			{
 				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for MLI is " +lpc_paid_cases_mtd+ "" 
-						+ " If you want to see the channel wise business numbers, please specify.";	
+						+ ". If you want to see the channel wise business numbers, please specify.";	
 			}
 		}
 		return finalresponse.toString();
