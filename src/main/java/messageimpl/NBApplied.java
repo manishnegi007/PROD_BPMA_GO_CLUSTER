@@ -11,6 +11,10 @@ public class NBApplied
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -73,19 +77,34 @@ public class NBApplied
 				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " +userzone+ " zone is " +daily_inforced_count+
 						" Cr. If you want to see the region wise business numbers, please specify";
 			}
-		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +ytd_applied_afyp+ " Cr";
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " is " +ytd_applied_afyp+ " Cr";
 			}
 			else if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +mtdAppliedAFYP+ " Cr";
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " is " +mtdAppliedAFYP+ " Cr";
 			}
 			else
 			{
-				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " region is " +daily_inforced_count+ " Cr";
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " is " +daily_inforced_count+ " Cr";
+			}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " is " +ytd_applied_afyp+ " Cr";
+			}
+			else if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " is " +mtdAppliedAFYP+ " Cr";
+			}
+			else
+			{
+				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " is " +daily_inforced_count+ " Cr";
 			}
 		}else
 		{
