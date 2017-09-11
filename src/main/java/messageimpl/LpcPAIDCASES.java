@@ -40,7 +40,7 @@ public class LpcPAIDCASES {
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " + userzone + " zone is "
-					+ lpc_paid_cases_mtd + " Cr. LPC Paid cases YTD for " + userzone + " zone is " + lpc_paid_cases_ytd+
+					+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + userzone + " zone is " + lpc_paid_cases_ytd+
 					". If you want to see the region wise business numbers, please specify.";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
