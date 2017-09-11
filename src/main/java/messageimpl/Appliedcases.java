@@ -87,26 +87,26 @@ public class Appliedcases
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+ytd_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+ytd_applied_count+" ";
 			}else if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+mtd_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+mtd_applied_count+" ";
 			}else
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+daily_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+daily_applied_count+" ";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+ytd_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+ytd_applied_count+" ";
 			}else if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+mtd_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+mtd_applied_count+" ";
 			}else
 			{
-				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+daily_applied_count+" Cr";
+				finalresponse=" As of "+real_tim_timstamp+" Applied cases "+period+" for "+ user_region+" is "+daily_applied_count+" ";
 			}
 		}
 		else
