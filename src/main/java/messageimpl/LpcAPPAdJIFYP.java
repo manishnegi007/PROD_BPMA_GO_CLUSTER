@@ -14,6 +14,10 @@ public class LpcAPPAdJIFYP {
 		if ("Monthly".equalsIgnoreCase(period)) {
 			period = "";
 		}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -31,20 +35,20 @@ public class LpcAPPAdJIFYP {
 		} else if (!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
 				&& "".equalsIgnoreCase(period)) {
 			finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP MTD for " + channel + " is "
-					+ lpc_applied_adj_ifyp_mtd + " LPC Applied Business Adj IFYP YTD for " + channel + " is "
+					+ lpc_applied_adj_ifyp_mtd + ". LPC Applied Business Adj IFYP YTD for " + channel + " is "
 					+ lpc_applied_adj_ifyp_ytd
-					+ " If you want to see the zone/region wise business numbers, please specify";
+					+ ". If you want to see the zone/region wise business numbers, please specify";
 		} else if (!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
 				&& "".equalsIgnoreCase(period)) {
 			finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP MTD for " + userzone
-					+ " zone is " + lpc_applied_adj_ifyp_mtd + " LPC Applied Business Adj IFYP YTD for " + userzone
+					+ " zone is " + lpc_applied_adj_ifyp_mtd + ". LPC Applied Business Adj IFYP YTD for " + userzone
 					+ " zone is " + lpc_applied_adj_ifyp_ytd
-					+ " If you want to see the region wise business numbers, please specify";
+					+ ". If you want to see the region wise business numbers, please specify";
 		} else if (!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
 				&& "".equalsIgnoreCase(period)) {
 			finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP MTD for " + user_region
-					+ " region is " + lpc_applied_adj_ifyp_mtd + " LPC Applied Business Adj IFYP YTD for " + user_region
-					+ " region is " + lpc_applied_adj_ifyp_ytd;
+					+ " is " + lpc_applied_adj_ifyp_mtd + ". LPC Applied Business Adj IFYP YTD for " + user_region
+					+ " is " + lpc_applied_adj_ifyp_ytd;
 
 		} else if (!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
 				&& !"".equalsIgnoreCase(period)) {
@@ -55,7 +59,7 @@ public class LpcAPPAdJIFYP {
 			} else {
 				finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period + " for "
 						+ channel + " is " + lpc_applied_adj_ifyp_mtd
-						+ " If you want to see the zone/region wise business numbers, please specify";
+						+ ". If you want to see the zone/region wise business numbers, please specify";
 			}
 		} else if (!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
 				&& !"".equalsIgnoreCase(period)) {
@@ -66,9 +70,20 @@ public class LpcAPPAdJIFYP {
 			} else {
 				finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period + " for "
 						+ userzone + " zone is " + lpc_applied_adj_ifyp_mtd
-						+ " If you want to see the region wise business numbers, please specify";
+						+ ". If you want to see the region wise business numbers, please specify";
 			}
-		} else if (!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+		} 
+		else if (!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+				&& !"".equalsIgnoreCase(period)) {
+			if ("YTD".equalsIgnoreCase(period)) {
+				finalresponse = " As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period + " for "
+						+ user_region + " is " + lpc_applied_adj_ifyp_ytd + " Cr";
+			} else {
+				finalresponse = " As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period + " for "
+						+ user_region + " is " + lpc_applied_adj_ifyp_mtd + " Cr";
+			}
+		} 
+		else if (!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
 				&& !"".equalsIgnoreCase(period)) {
 			if ("YTD".equalsIgnoreCase(period)) {
 				finalresponse = " As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period + " for "
@@ -77,15 +92,16 @@ public class LpcAPPAdJIFYP {
 				finalresponse = " As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period + " for "
 						+ user_region + " region is " + lpc_applied_adj_ifyp_mtd + " Cr";
 			}
-		} else {
+		} 
+		else {
 			if ("YTD".equalsIgnoreCase(period)) {
 				finalresponse = "As of" + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period
 						+ " for MLI is " + lpc_applied_adj_ifyp_ytd
-						+ " If you want to see the channel wise business numbers, please specify";
+						+ ". If you want to see the channel wise business numbers, please specify";
 			} else {
 				finalresponse = "As of" + real_tim_timstamp + " LPC Applied Business Adj IFYP " + period
 						+ " for MLI is " + lpc_applied_adj_ifyp_ytd
-						+ " If you want to see the channel wise business numbers, please specify";
+						+ ". If you want to see the channel wise business numbers, please specify";
 			}
 		}
 		return finalresponse.toString();
