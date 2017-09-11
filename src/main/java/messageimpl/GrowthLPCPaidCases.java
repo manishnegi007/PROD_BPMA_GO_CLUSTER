@@ -22,7 +22,7 @@ public class GrowthLPCPaidCases
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
-					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ "Cr today MTD business Growth of "+ 
+					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
 					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
@@ -30,7 +30,7 @@ public class GrowthLPCPaidCases
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= channel+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
-					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ "Cr today MTD business Growth of "+ 
+					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ " % on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
 					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
@@ -38,7 +38,7 @@ public class GrowthLPCPaidCases
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "Zone "+userzone+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
-					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ "Cr today MTD business Growth of "+ 
+					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ " % on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
 					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
@@ -46,7 +46,7 @@ public class GrowthLPCPaidCases
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "Region "+user_region+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
-					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ "Cr today MTD business Growth of "+ 
+					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
 					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
