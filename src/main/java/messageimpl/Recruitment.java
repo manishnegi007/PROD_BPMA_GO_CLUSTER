@@ -11,6 +11,10 @@ public class Recruitment {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -61,13 +65,22 @@ public class Recruitment {
 						" If you want to see the region wise business numbers, please specify";	
 			}
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period)){
+				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for "+user_region+" is Rs "+recruitment_ytd;
+			}else
+			{
+				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for "+user_region+" is Rs "+recruitment_mtd;	
+			}
+		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period)){
-				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for Region "+user_region+" is Rs "+recruitment_ytd;
+				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for "+user_region+" is Rs "+recruitment_ytd;
 			}else
 			{
-				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for Region "+user_region+" is Rs "+recruitment_mtd;	
+				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for "+user_region+" is Rs "+recruitment_mtd;	
 			}
 		}
 		else
