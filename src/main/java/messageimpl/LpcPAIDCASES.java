@@ -45,8 +45,8 @@ public class LpcPAIDCASES {
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " +user_region+ " region is " 
-					+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + user_region + " region is " + lpc_paid_cases_ytd+ " Cr";
+			finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " +user_region+ " is " 
+					+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + user_region + " is " + lpc_paid_cases_ytd+ "";
 
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -77,31 +77,31 @@ public class LpcPAIDCASES {
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_ytd+ " Cr";
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_ytd+ "";
 			}else
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_mtd+ " Cr";	
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_mtd+ "";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_ytd+ " Cr";
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_ytd+ "";
 			}else
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_mtd+ " Cr";	
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " + user_region+ " is " +lpc_paid_cases_mtd+ "";	
 			}
 		}
 		else
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for MLI is " +lpc_paid_cases_ytd+ "Cr." 
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for MLI is " +lpc_paid_cases_ytd+ "" 
 						+ " If you want to see the channel wise business numbers, please specify.";
 			}else
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for MLI is " +lpc_paid_cases_mtd+ "Cr." 
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for MLI is " +lpc_paid_cases_mtd+ "" 
 						+ " If you want to see the channel wise business numbers, please specify.";	
 			}
 		}
