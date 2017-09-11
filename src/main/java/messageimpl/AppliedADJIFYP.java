@@ -11,6 +11,10 @@ public class AppliedADJIFYP
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -60,6 +64,16 @@ public class AppliedADJIFYP
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+userzone+" zone is "+mtd_applied_adj_ifyp+
 						"If you want to see the region wise business numbers, please specify";
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+user_region+" is "+ytd_applied_adj_ifyp+" Cr";
+			}else
+			{
+				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+user_region+" is "+mtd_applied_adj_ifyp+" Cr";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
