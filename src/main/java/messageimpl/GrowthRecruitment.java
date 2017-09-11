@@ -14,6 +14,10 @@ public class GrowthRecruitment {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -56,13 +60,13 @@ public class GrowthRecruitment {
 			{
 				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 			else
 			{
 				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
@@ -70,13 +74,27 @@ public class GrowthRecruitment {
 			{
 				finalresponse= "Zone "+userzone+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 
 			}else
 			{
 				finalresponse= "Zone "+userzone+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
+						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
+			}else
+			{
+				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
+						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -85,12 +103,12 @@ public class GrowthRecruitment {
 			{
 				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}else
 			{
 				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 		}
 		else
@@ -99,11 +117,11 @@ public class GrowthRecruitment {
 			{
 				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}else{
 				finalresponse= channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 		}
 	
