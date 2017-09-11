@@ -12,6 +12,10 @@ public class ModeMix {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{user_region="Circle "+user_circle;}
 		if(!"".equalsIgnoreCase(subchannel))
@@ -91,17 +95,33 @@ public class ModeMix {
 						+ " If you want to see the region wise business numbers, please specify";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for region "+user_region+" is Annual:"+
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual:"+
 						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
 						quarterly_adj_mfyp_mtd+"& Monthly: "
 						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%.";
 			}else
 			{
-				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for region "+user_region+" is Annual:"+
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+user_region+" is Annual:"+
+						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_ytd+"& Monthly: "
+						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%.";
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual:"+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
+						quarterly_adj_mfyp_mtd+"& Monthly: "
+						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%.";
+			}else
+			{
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+user_region+" is Annual:"+
 						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
 						quarterly_adj_mfyp_ytd+"& Monthly: "
 						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%.";
