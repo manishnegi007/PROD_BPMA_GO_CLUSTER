@@ -23,9 +23,9 @@ public class ProductMixADJMFYP {
 			user_region="Circle "+user_circle;
 		}
 		if(!"".equalsIgnoreCase(subchannel))
-	{
-         channel = subchannel;
-	}
+		{
+       		  channel = subchannel;
+		}
 
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
