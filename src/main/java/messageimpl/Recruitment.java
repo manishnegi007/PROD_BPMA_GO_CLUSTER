@@ -27,17 +27,17 @@ public class Recruitment {
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for MLI is Rs." +recruitment_mtd+" Recruitment YTD for MLI is Rs. " +recruitment_ytd+
-					". If you want to see the channel wise business numbers, please specify";
+					". If you want to see the channel wise business numbers, please specify.";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for "+channel+" is Rs. " +recruitment_mtd+" Recruitment YTD for "+channel+" is Rs." +recruitment_ytd+
-					". If you want to see the zone/region wise business numbers, please specify";
+					". If you want to see the zone/region wise business numbers, please specify.";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for Zone "+userzone+" is Rs." +recruitment_mtd+" Recruitment YTD for Zone "+userzone+" is Rs." +recruitment_ytd+
-					". If you want to see the region wise business numbers, please specify";
+					". If you want to see the region wise business numbers, please specify.";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
@@ -47,22 +47,22 @@ public class Recruitment {
 		{
 			if("YTD".equalsIgnoreCase(period)){
 				finalresponse= "As of " +real_tim_timstamp+" Recruitment " +period+ " for "+channel+" is Rs." +recruitment_ytd+
-						". If you want to see the zone/region wise business numbers, please specify";
+						". If you want to see the zone/region wise business numbers, please specify.";
 			}else
 			{
 				finalresponse= "As of " +real_tim_timstamp+" Recruitment " +period+ " for "+channel+" is Rs." +recruitment_mtd+
-						". If you want to see the zone/region wise business numbers, please specify";	
+						". If you want to see the zone/region wise business numbers, please specify.";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period)){
 				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for "+channel+" is Rs. "+recruitment_ytd+
-						". If you want to see the region wise business numbers, please specify";
+						". If you want to see the region wise business numbers, please specify.";
 			}else
 			{
 				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for "+channel+" is Rs. "+recruitment_mtd+
-						". If you want to see the region wise business numbers, please specify";	
+						". If you want to see the region wise business numbers, please specify.";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -87,11 +87,11 @@ public class Recruitment {
 		{
 			if("YTD".equalsIgnoreCase(period)){
 				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for MLI is Rs. " +recruitment_ytd+
-						". If you want to see the channel wise business numbers, please specify";
+						". If you want to see the channel wise business numbers, please specify.";
 			}else
 			{
 				finalresponse= "As of " +real_tim_timstamp+" Recruitment "+period+" for MLI is Rs. " +recruitment_mtd+
-						". If you want to see the channel wise business numbers, please specify";	
+						". If you want to see the channel wise business numbers, please specify.";	
 			}
 		}
 	
