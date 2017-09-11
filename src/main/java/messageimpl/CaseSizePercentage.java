@@ -11,6 +11,10 @@ public class CaseSizePercentage {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -64,6 +68,18 @@ public class CaseSizePercentage {
 			{
 				finalresponse= "Zone "+userzone+" Case Size acheivement "+period+" : "+achiev_mtd_case_active_mtd+"% till "+real_tim_timstamp+
 						" If you want to see the region wise business numbers please specIfy";
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse= "Region "+user_region+" Case Size acheivement " +period+" : "+achiev_mtd_case_active_ytd+"% till "+real_tim_timstamp+
+						" If you want to see the region wise business numbers please specIfy.";
+			}else
+			{
+				finalresponse= "Region "+user_region+" Case Size acheivement " +period+" : "+achiev_mtd_case_active_mtd+"% till "+real_tim_timstamp+
+						" If you want to see the region wise business numbers please specIfy.";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
