@@ -11,6 +11,10 @@ public class LpcPAIDADJMFYP {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -68,14 +72,24 @@ public class LpcPAIDADJMFYP {
 						" Cr. If you want to see the region wise business numbers, please specify";	
 			}
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for " + user_region+ " is " +lpc_paid_adj_mfyp_ytd+ " Cr";
+			}else
+			{
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for " + user_region+ " is " +lpc_paid_adj_mfyp_mtd+ " Cr";	
+			}
+		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for " + user_region+ " region is " +lpc_paid_adj_mfyp_ytd+ " Cr";
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for " + user_region+ " is " +lpc_paid_adj_mfyp_ytd+ " Cr";
 			}else
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for " + user_region+ " region is " +lpc_paid_adj_mfyp_mtd+ " Cr";	
+				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for " + user_region+ " is " +lpc_paid_adj_mfyp_mtd+ " Cr";	
 			}
 		}
 		else
@@ -83,11 +97,11 @@ public class LpcPAIDADJMFYP {
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for MLI is " +lpc_paid_adj_mfyp_ytd+ "Cr." 
-						+ " If you want to see the channel wise business numbers, please specify";
+						+ ". If you want to see the channel wise business numbers, please specify";
 			}else
 			{
 				finalresponse="As of " +real_tim_timstamp+ " LPC Paid Adj MFYP " +period+ " for MLI is " +lpc_paid_adj_mfyp_mtd+ "Cr." 
-						+ " If you want to see the channel wise business numbers, please specify";	
+						+ ". If you want to see the channel wise business numbers, please specify";	
 			}
 		}
 	
