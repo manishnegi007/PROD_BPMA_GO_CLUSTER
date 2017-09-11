@@ -1,10 +1,8 @@
 package messageimpl;
 
 public class LpcPAIDADJMFYP {
-
 	public static String lpcPaidAdjMfypIntent(String channel, String period, String user_region, String user_circle, String userzone , String real_tim_timstamp,
 			String lpc_paid_adj_mfyp_mtd, String lpc_paid_adj_mfyp_ytd, String subchannel )
-
 	{
 		String finalresponse="";
 		if("Agency".equalsIgnoreCase(channel))
@@ -25,7 +23,6 @@ public class LpcPAIDADJMFYP {
 			{
 				channel = subchannel;
 			}
-
 			if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid Adj MFYP MTD for MLI is  "
