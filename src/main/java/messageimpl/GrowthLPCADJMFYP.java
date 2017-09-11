@@ -33,7 +33,7 @@ public class GrowthLPCADJMFYP {
 				prev_lpc_paid_adj_mfyp_ytd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 				grth_lpc_paid_adj_mfyp_mtd+ "% on MTD basis, last year same month we have clocked "+
 				prev_lpc_paid_adj_mfyp_mtd+"Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today."
-				+ " If you want to see the Channel wise business numbers, please specIfy the same";
+				+ " If you want to see the Channel wise business numbers, please specIfy the same.";
 	}
 	else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 	{
@@ -41,7 +41,7 @@ public class GrowthLPCADJMFYP {
 				prev_lpc_paid_adj_mfyp_ytd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 				grth_lpc_paid_adj_mfyp_mtd+ "% on MTD basis, last year same month we have clocked "+
 				prev_lpc_paid_adj_mfyp_mtd+"Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today."
-				+" If you want to see the Zone/region wise business numbers, please specIfy the same";
+				+" If you want to see the Zone/region wise business numbers, please specIfy the same.";
 	}
 	else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 	{
@@ -49,7 +49,7 @@ public class GrowthLPCADJMFYP {
 				prev_lpc_paid_adj_mfyp_ytd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 				grth_lpc_paid_adj_mfyp_mtd+ "% on MTD basis, last year same month we have clocked "+
 				prev_lpc_paid_adj_mfyp_mtd+"Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today."
-				+ " If you want to see region wise business numbers, please specIfy the same";
+				+ " If you want to see region wise business numbers, please specIfy the same.";
 	}
 	else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 	{
@@ -57,7 +57,7 @@ public class GrowthLPCADJMFYP {
 				prev_lpc_paid_adj_mfyp_ytd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 				grth_lpc_paid_adj_mfyp_mtd+ "% on MTD basis, last year same month we have clocked "+
 				prev_lpc_paid_adj_mfyp_mtd+"Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today."
-				+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+				+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
 	}
 	else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 	{
@@ -65,13 +65,13 @@ public class GrowthLPCADJMFYP {
 		{
 			finalresponse= channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+"% on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_ytd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 		}
 		else
 		{
 			finalresponse= channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+"% on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_mtd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 		}
 	}
 	else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -80,13 +80,13 @@ public class GrowthLPCADJMFYP {
 		{
 			finalresponse= "Zone "+userzone+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+"% on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_ytd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 		}
 		else
 		{
 			finalresponse= "Zone "+userzone+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_mtd+ " of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 		}
 	}
 	else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -95,13 +95,13 @@ public class GrowthLPCADJMFYP {
 		{
 			finalresponse= "Region "+channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_ytd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 		}
 		else
 		{
 			finalresponse= "Region "+channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_mtd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";	
 		}
 	}
 	else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -110,13 +110,13 @@ public class GrowthLPCADJMFYP {
 		{
 			finalresponse= "Region "+channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_ytd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 		}
 		else
 		{
 			finalresponse= "Region "+channel+" has witnessed paid business growth of " +grth_lpc_paid_adj_mfyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 					prev_lpc_paid_adj_mfyp_mtd+ "Cr of LPC paid Adj MFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
+					+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";	
 		}
 	}
 	else
