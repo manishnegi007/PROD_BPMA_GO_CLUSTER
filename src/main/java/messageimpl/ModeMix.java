@@ -51,10 +51,10 @@ public class ModeMix {
 					+ "If you want to see the region wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for Region "+user_region+" is Annual:"+
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual:"+
 					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
 					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
-					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%." +"YTD Mode mix ratio for Region "+user_region+" is Annual:"+
+					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%." +"YTD Mode mix ratio for "+user_region+" is Annual:"+
 					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
 					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%.";
 
