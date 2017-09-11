@@ -92,6 +92,7 @@ public class NBApplied
 			{
 				finalresponse="As of " +real_tim_timstamp+ " Applied Business AFYP " +period+ " for " + user_region+ " is " +daily_inforced_count+ " Cr";
 			}
+		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
