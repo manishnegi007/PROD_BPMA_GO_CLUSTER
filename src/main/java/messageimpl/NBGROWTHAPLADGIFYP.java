@@ -11,6 +11,10 @@ public class NBGROWTHAPLADGIFYP
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -65,7 +69,7 @@ public class NBGROWTHAPLADGIFYP
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -75,6 +79,20 @@ public class NBGROWTHAPLADGIFYP
 			}else
 			{
 				finalresponse= "Zone "+userzone+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+						rpev_applied_adj_ifyp_mtd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_mtd+ " Cr today "
+						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse= "Region " +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+						rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today "
+						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+			}else
+			{
+				finalresponse= "Region " +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_mtd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_mtd+ " Cr today "
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";	
 			}
