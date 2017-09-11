@@ -59,11 +59,11 @@ public class AppliedADJIFYP
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+userzone+" zone is "+ytd_applied_adj_ifyp+
-						"If you want to see the region wise business numbers, please specify";
+						". If you want to see the region wise business numbers, please specify";
 			}else
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+userzone+" zone is "+mtd_applied_adj_ifyp+
-						"If you want to see the region wise business numbers, please specify";
+						". If you want to see the region wise business numbers, please specify";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
