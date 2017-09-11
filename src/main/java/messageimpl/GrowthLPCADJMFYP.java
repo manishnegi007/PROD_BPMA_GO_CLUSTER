@@ -15,17 +15,11 @@ public class GrowthLPCADJMFYP {
 	if("Monthly".equalsIgnoreCase(period))
 	{period="";}
 	else
-	{
-	   period=period.toUpperCase();
-	}
+	{period=period.toUpperCase();}
 	if(!"".equalsIgnoreCase(user_circle))
-	{
-	 user_region="Circle "+user_circle;
-	}
+	{user_region="Circle "+user_circle;}
 	if(!"".equalsIgnoreCase(subchannel))
-	{
-         channel = subchannel;
-	}
+	{channel = subchannel;}
 	
 	if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 	{
