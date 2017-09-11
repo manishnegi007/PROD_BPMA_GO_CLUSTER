@@ -11,6 +11,10 @@ public class Lpcaplcases {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -70,14 +74,24 @@ public class Lpcaplcases {
 						" Cr. If you want to see the region wise business numbers, please specify";	
 			}
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " + user_region+ " is " +lpc_applied_cases_ytd+ " Cr";
+			}else
+			{
+				finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " + user_region+ " is " +lpc_applied_cases_mtd+ " Cr";	
+			}
+		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " + user_region+ " region is " +lpc_applied_cases_ytd+ " Cr";
+				finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " + user_region+ " is " +lpc_applied_cases_ytd+ " Cr";
 			}else
 			{
-				finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " + user_region+ " region is " +lpc_applied_cases_mtd+ " Cr";	
+				finalresponse="As of " +real_tim_timstamp+ " LPC Applied cases " +period+ " for " + user_region+ " is " +lpc_applied_cases_mtd+ " Cr";	
 			}
 		}
 		else
