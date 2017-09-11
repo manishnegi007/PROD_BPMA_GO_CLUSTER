@@ -1295,16 +1295,9 @@ public class APIConsumerService {
 				break;
 				case "NB.LPCPAIDCASES":
 				{
-					if("Agency".equalsIgnoreCase(serviceChannel))
-					{
 					finalresponse=LpcPAIDCASES.lpcPaidCasesIntent(serviceChannel, period, user_region, user_circle,
 							userzone, real_tim_timstamp, lpc_paid_cases_mtd, lpc_paid_cases_ytd,
 										     user_sub_channel);
-					}
-					else
-					{
-						finalresponse="Invalid Channel For LPC.";
-					}
 				}
 				break;
 				case "NB.CASESIZE%":
