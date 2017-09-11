@@ -27,20 +27,20 @@ public class Appliedcases
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for MLI is "
-					+mtd_applied_count+" Applied cases YTD for MLI is "+ytd_applied_count+ 
-					" If you want to see the channel wise business numbers, please specify";
+					+mtd_applied_count+". Applied cases YTD for MLI is "+ytd_applied_count+ 
+					". If you want to see the channel wise business numbers, please specify";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for "+channel+
-					" is "+mtd_applied_count+" Applied cases YTD for "+channel+" is "+ytd_applied_count+
-					" If you want to see the zone/region wise business numbers, please specify";
+					" is "+mtd_applied_count+". Applied cases YTD for "+channel+" is "+ytd_applied_count+
+					". If you want to see the zone/region wise business numbers, please specify";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for "+user_region+" is "
-					+mtd_applied_count+" Applied cases YTD for "+user_region+" is " +ytd_applied_count+
-					" If you want to see the region wise business numbers, please specify";
+					+mtd_applied_count+". Applied cases YTD for "+user_region+" is " +ytd_applied_count+
+					". If you want to see the region wise business numbers, please specify";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
@@ -53,16 +53,16 @@ public class Appliedcases
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of " +real_tim_timstamp+" Applied cases "+period+" for "+channel+ " is "+ytd_applied_count+
-						" If you want to see the zone/region wise business numbers, please specify";
+						". If you want to see the zone/region wise business numbers, please specify";
 			}
 			else if("MTD".equalsIgnoreCase(period)){
 				finalresponse="As of " +real_tim_timstamp+" Applied cases "+period+" for "+channel+ " is "+mtd_applied_count+
-						" If you want to see the zone/region wise business numbers, please specify";
+						". If you want to see the zone/region wise business numbers, please specify";
 			}
 			else
 			{
 				finalresponse="As of " +real_tim_timstamp+" Applied cases "+period+" for "+channel+ " is "+daily_applied_count+
-						" If you want to see the zone/region wise business numbers, please specify";
+						". If you want to see the zone/region wise business numbers, please specify";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -70,17 +70,17 @@ public class Appliedcases
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+ " for "+userzone+" zone is "+ytd_applied_count+
-						" If you want to see the region wise business numbers, please specify";
+						". If you want to see the region wise business numbers, please specify";
 			}
 			else if("MTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+ " for "+userzone+" zone is "+mtd_applied_count+
-						" If you want to see the region wise business numbers, please specify";
+						". If you want to see the region wise business numbers, please specify";
 			}
 			else
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+ " for "+userzone+" zone is "+daily_applied_count+
-						" If you want to see the region wise business numbers, please specify";
+						". If you want to see the region wise business numbers, please specify";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -114,15 +114,15 @@ public class Appliedcases
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+" for MLI is "+ytd_applied_count+
-						" If you want to see the channel wise business numbers, please specify";
+						". If you want to see the channel wise business numbers, please specify";
 			}else if("MTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+" for MLI is "+mtd_applied_count+
-						" If you want to see the channel wise business numbers, please specify";
+						". If you want to see the channel wise business numbers, please specify";
 			}else
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied cases "+period+" for MLI is "+daily_applied_count+
-						" If you want to see the channel wise business numbers, please specify";
+						". If you want to see the channel wise business numbers, please specify";
 			}
 		}
 	
