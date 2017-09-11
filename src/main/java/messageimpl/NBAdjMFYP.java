@@ -42,7 +42,7 @@ public class NBAdjMFYP
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_region+ " region is " +mtdAdjustMFYP+
+			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_region+ " is " +mtdAdjustMFYP+
 					" Paid Adj MFYP YTD for "+userzone+ " zone is " +ytd_adj_mfyp;
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
