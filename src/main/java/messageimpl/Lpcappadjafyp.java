@@ -39,8 +39,8 @@ public class Lpcappadjafyp {
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 			{
-				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+user_region+ " region is " 
-						+lpc_applied_afyp_mtd+ ". LPC Applied Business AFYP YTD for "+user_region+" region is "+ lpc_applied_afyp_ytd;
+				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+user_region+ " is " 
+						+lpc_applied_afyp_mtd+ ". LPC Applied Business AFYP YTD for "+user_region+" is "+ lpc_applied_afyp_ytd;
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
