@@ -13,6 +13,10 @@ public class GrowthPaidcases
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -59,13 +63,13 @@ public class GrowthPaidcases
 			{
 				finalresponse= channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 			else
 			{
 				finalresponse= channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 
 		}
@@ -75,13 +79,29 @@ public class GrowthPaidcases
 			{
 				finalresponse= "Zone "+userzone+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 			else
 			{
 				finalresponse= "Zone "+userzone+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
+			}
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse= "Region "+channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_mtd+" % on "+period+" basis, last year same time we had clocked "+
+						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today "
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
+			}
+			else
+			{
+				finalresponse= "Region "+channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+" % on "+period+" basis, last year same time we had clocked "+
+						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 
 		}
@@ -91,13 +111,13 @@ public class GrowthPaidcases
 			{
 				finalresponse= "Region "+channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 			else
 			{
 				finalresponse= "Region "+channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 
 		}
@@ -107,12 +127,12 @@ public class GrowthPaidcases
 			{
 				finalresponse= channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}else
 			{
 				finalresponse= channel+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same";
+						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
 		}
 		return finalresponse.toString();
