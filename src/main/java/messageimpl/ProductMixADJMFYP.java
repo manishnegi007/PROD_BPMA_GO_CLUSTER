@@ -14,6 +14,10 @@ public class ProductMixADJMFYP {
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -71,6 +75,19 @@ public class ProductMixADJMFYP {
 			{
 				finalresponse="As of "+real_tim_timstamp+" YTD product mix ratio on Adj MFYP for " +userzone+ " zone is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
 						protec_penet_ytd_adj_mfyp+ " %. If you want to see the region wise business numbers, please specify";		
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of "+real_tim_timstamp+" MTD product mix ratio on Adj MFYP for " +user_region+ " is ULIP: "+ul_penet_mtd_adj_mfyp+" % , Par: "+par_penet_mtd_adj_mfyp+" % & Non-Par: "+nonpar_penet_mtd_adj_mfyp+" % , protection: "+
+						protec_penet_mtd_adj_mfyp+ " %.";	
+			}
+			else
+			{
+				finalresponse="As of "+real_tim_timstamp+" YTD product mix ratio on Adj MFYP for " +user_region+ " is ULIP: "+ul_penet_ytd_adj_mfyp+" % , Par: "+par_penet_ytd_adj_mfyp+" % & Non-Par: "+nonpar_penet_ytd_adj_mfyp+" % , protection: "+
+						protec_penet_ytd_adj_mfyp+ " %.";		
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
