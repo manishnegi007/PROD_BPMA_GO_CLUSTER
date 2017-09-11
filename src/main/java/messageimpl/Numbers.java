@@ -29,7 +29,7 @@ public class Numbers
 			{
 				if("".equalsIgnoreCase(user_sub_channel))
 				{
-					finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, Cat, Ecomm, IM, IMF";
+					finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, CAT, Ecomm, IM, IMF";
 				}
 			}
 		}
@@ -71,7 +71,7 @@ public class Numbers
 			{
 				if("".equalsIgnoreCase(user_sub_channel))
 				{
-					finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, Cat, Ecomm, IM, IMF";
+					finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, CAT, Ecomm, IM, IMF";
 				}
 			}
 		}
