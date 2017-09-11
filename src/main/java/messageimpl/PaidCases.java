@@ -88,15 +88,15 @@ public class PaidCases
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{	
-				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " region is " + ytd_inforced_count;
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " is " + ytd_inforced_count;
 			}
 			else if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " region is " + mtd_inforced_count;
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " is " + mtd_inforced_count;
 			}
 			else
 			{
-				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " region is " + daily_inforced_count1;
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " is " + daily_inforced_count1;
 			}
 		}
 		else
