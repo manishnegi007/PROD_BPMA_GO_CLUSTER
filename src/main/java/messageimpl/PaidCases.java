@@ -22,8 +22,8 @@ public class PaidCases
 		}
 		if(!"".equalsIgnoreCase(subchannel))
 	        {
-                channel = subchannel;
-	         }
+                	channel = subchannel;
+	        }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " Paid cases MTD for MLI is "
