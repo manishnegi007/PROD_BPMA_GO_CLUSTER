@@ -11,6 +11,10 @@ public class NBCaseSize
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -50,7 +54,7 @@ public class NBCaseSize
 						" If you want to see the zone/region wise business numbers, please specify";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -60,6 +64,16 @@ public class NBCaseSize
 			{
 				finalresponse="As of " +real_tim_timstamp+" Case Size "+period+" for "+userzone+" zone is "+case_size_afyp_mtd+
 						" If you want to see the region wise business numbers, please specify";
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " +real_tim_timstamp+" Case Size "+period+" for "+user_region+" region is "+case_size_afyp_ytd;
+			}else
+			{
+				finalresponse="As of " +real_tim_timstamp+" Case Size "+period+" for "+user_region+" region is "+case_size_afyp_mtd;
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
