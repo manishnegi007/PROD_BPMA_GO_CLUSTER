@@ -41,7 +41,7 @@ public class LpcPAIDCASES {
 		{
 			finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " + userzone + " zone is "
 					+ lpc_paid_cases_mtd + " Cr. LPC Paid cases YTD for " + userzone + " zone is " + lpc_paid_cases_ytd+
-					" Cr. If you want to see the region wise business numbers, please specify.";
+					". If you want to see the region wise business numbers, please specify.";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
@@ -54,11 +54,11 @@ public class LpcPAIDCASES {
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of " + real_tim_timstamp + " LPC Paid cases " + period + " for " +channel+ " is " +lpc_paid_cases_ytd+
-						" Cr. If you want to see the zone/region wise business numbers, please specify.";
+						". If you want to see the zone/region wise business numbers, please specify.";
 			}else
 			{
 				finalresponse="As of " + real_tim_timstamp + " LPC Paid cases " + period + " for " +channel+ " is " +lpc_paid_cases_mtd+
-						" Cr. If you want to see the zone/region wise business numbers, please specify.";	
+						". If you want to see the zone/region wise business numbers, please specify.";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -66,11 +66,11 @@ public class LpcPAIDCASES {
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " +userzone+ " zone is " +lpc_paid_cases_ytd+
-						" Cr. If you want to see the region wise business numbers, please specify.";
+						". If you want to see the region wise business numbers, please specify.";
 			}else
 			{
 				finalresponse="As of " +real_tim_timstamp+ " LPC Paid cases " +period+ " for " +userzone+ " zone is " +lpc_paid_cases_mtd+
-						" Cr. If you want to see the region wise business numbers, please specify.";	
+						". If you want to see the region wise business numbers, please specify.";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
