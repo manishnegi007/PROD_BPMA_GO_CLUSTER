@@ -2,7 +2,11 @@ package messageimpl;
 
 public class Lpcaplcases 
 {
-	String finalresponse="";
+	public static String lpcAplCasesIntent(String channel, String period, String user_region, String user_circle, String userzone ,
+			String real_tim_timstamp,
+			String lpc_applied_cases_mtd, String lpc_applied_cases_ytd, String subchannel)
+	{
+		String finalresponse="";
 		if("Agency".equalsIgnoreCase(channel))
 		{
 			if("MLI".equalsIgnoreCase(channel))
@@ -101,7 +105,7 @@ public class Lpcaplcases
 		}
 		else
 		{
-			finalresponse="Invalid Channel For LPC! Only Agency Accepted";
+			finalresponse="Invalid Channel For LPC ! Only Agency Accepted";
 		}
 		return finalresponse.toString();
 	}
