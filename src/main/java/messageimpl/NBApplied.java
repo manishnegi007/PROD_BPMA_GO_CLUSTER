@@ -40,8 +40,8 @@ public class NBApplied
 					" Cr. If you want to see the region wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for " + user_region + " region is " 
-					+ mtdAppliedAFYP + " Applied Business AFYP YTD for " + user_region + " region is " + ytd_applied_afyp + " Cr";
+			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for " + user_region + " is " 
+					+ mtdAppliedAFYP + " Applied Business AFYP YTD for " + user_region + " is " + ytd_applied_afyp + " Cr";
 
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
