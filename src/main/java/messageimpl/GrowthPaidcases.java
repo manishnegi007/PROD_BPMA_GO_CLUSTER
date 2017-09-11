@@ -16,7 +16,7 @@ public class GrowthPaidcases
 		else
 		{
 			period=period.toUpperCase();
-		
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
