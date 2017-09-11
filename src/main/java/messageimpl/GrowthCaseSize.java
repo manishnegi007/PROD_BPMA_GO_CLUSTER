@@ -12,6 +12,10 @@ public class GrowthCaseSize
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
 		{period="";}
+		else
+		{
+			period=period.toUpperCase();
+		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
 			user_region="Circle "+user_circle;
@@ -79,6 +83,19 @@ public class GrowthCaseSize
 				finalresponse= "Zone "+userzone+" has witnessed case size growth of " +grth_case_size_afyp_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_case_size_afyp_mtd+ "K of cases size as compared to " +case_size_afyp_mtd_growth+ "K today "
 						+" If you want to see the region wise business numbers, please specIfy the same";	
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{
+				finalresponse= "Region "+user_region+" has witnessed case size growth of " +grth_case_size_afyp_ytd+"% on "+period+" basis, last year same time we had clocked "+
+						prev_case_size_afyp_ytd+" of cases size as compared to " +case_size_afyp_ytd_growth+ "K today ";
+			}
+			else
+			{
+				finalresponse= "Region "+user_region+" has witnessed case size growth of " +grth_case_size_afyp_mtd+"% on "+period+" basis, last year same time we had clocked "+
+						prev_case_size_afyp_mtd+" of cases size as compared to " +case_size_afyp_mtd_growth+ "K today ";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
