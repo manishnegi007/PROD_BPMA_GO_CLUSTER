@@ -27,25 +27,25 @@ public class Lpcaplcases {
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " LPC Applied cases MTD for MLI is  "
-					+ lpc_applied_cases_mtd + " Cr LPC Applied cases YTD for MLI is  " + lpc_applied_cases_ytd + 
-					" If you want to see the channel wise business numbers, please specify";
+					+ lpc_applied_cases_mtd + " Cr. LPC Applied cases YTD for MLI is  " + lpc_applied_cases_ytd + 
+					". If you want to see the channel wise business numbers, please specify";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " LPC Applied cases MTD for " + channel +
-					" is " + lpc_applied_cases_mtd + " Cr LPC Applied cases YTD for " +channel + " is "+ lpc_applied_cases_ytd+
-					" If you want to see the zone/region wise business numbers, please specify";
+					" is " + lpc_applied_cases_mtd + " Cr. LPC Applied cases YTD for " +channel + " is "+ lpc_applied_cases_ytd+
+					". If you want to see the zone/region wise business numbers, please specify";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " LPC Applied cases MTD for" + userzone + " zone is "
-					+ lpc_applied_cases_mtd + " Cr LPC Applied cases YTD for " + userzone + " zone is " + lpc_applied_cases_ytd+
+					+ lpc_applied_cases_mtd + " Cr. LPC Applied cases YTD for " + userzone + " zone is " + lpc_applied_cases_ytd+
 					" Cr. If you want to see the region wise business numbers, please specify";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " LPC Applied cases MTD " + user_region + " region is " 
-					+ lpc_applied_cases_mtd + " LPC Applied cases YTD for " + user_region + " region is " + lpc_applied_cases_ytd+ " Cr";
+					+ lpc_applied_cases_mtd + ". LPC Applied cases YTD for " + user_region + " region is " + lpc_applied_cases_ytd+ " Cr";
 
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
