@@ -105,7 +105,7 @@ public class LpcPAIDADJMFYP {
 			}
 		}else
 		{
-			finalresponse="Invalid Channel For LPC ! Only Agency Accepted";
+			finalresponse="Invalid Channel For LPC";
 		}
 		return finalresponse.toString();
 	}
