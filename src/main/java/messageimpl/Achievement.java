@@ -8,17 +8,17 @@ public class Achievement
 		String finalresponse="";
 		if("google".equalsIgnoreCase(source))
 		{
-			finalresponse="At Monthly level "+msgChannel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Our plan is "
+			finalresponse="At Monthly level "+msgChannel+" has achieved "+achiev_mtd_adj_mfyp+"% of Plan, our plan is "
 					+mtd_adj_mfyp_pln+" Cr, and till now we have achieved "+mtd_adj_mfyp_act+" Cr, At Yearly level "
-					+msgChannel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Our plan is "
+					+msgChannel+" has achieved "+achiev_ytd_adj_mfyp+"% of Plan, our plan is "
 					+ytd_adj_mfyp_pln+"Cr and till now we have achieved "+ytd_adj_mfyp_act+" Cr";
 		}
 		else
 		{
-			finalresponse="At MTD level "+msgChannel+" has achieved "+achiev_mtd_adj_mfyp+"% of Management Plan, Our monthly plan is "
-					+mtd_adj_mfyp_pln+" Cr and till "+real_tim_timstamp+" We have achieved "+mtd_adj_mfyp_act+" Cr, At YTD level "
-					+msgChannel+" has achieved "+achiev_ytd_adj_mfyp+"% of Management Plan, Our YTD plan is "
-					+ytd_adj_mfyp_pln+" Cr and till "+real_tim_timstamp+" We have achieved "+ytd_adj_mfyp_act+" Cr";
+			finalresponse="At MTD level "+msgChannel+" has achieved "+achiev_mtd_adj_mfyp+"% of Plan, our monthly plan is "
+					+mtd_adj_mfyp_pln+" Cr and till "+real_tim_timstamp+" we have achieved "+mtd_adj_mfyp_act+" Cr. At YTD level "
+					+msgChannel+" has achieved "+achiev_ytd_adj_mfyp+"% of Plan, our YTD plan is "
+					+ytd_adj_mfyp_pln+" Cr and till "+real_tim_timstamp+" we have achieved "+ytd_adj_mfyp_act+" Cr";
 		}
 		return finalresponse.toString();
 	}
