@@ -26,22 +26,22 @@ public class NBCaseSize
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Case Size MTD for MLI is Rs. "
-					+ case_size_afyp_mtd+ " Case Size YTD for MLI is Rs. " +case_size_afyp_ytd+ 
+					+ case_size_afyp_mtd+ ". Case Size YTD for MLI is Rs. " +case_size_afyp_ytd+ 
 					". If you want to see the channel wise business numbers, please specify.";
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Case Size MTD for "+channel+" is Rs. "+case_size_afyp_mtd+
-					" Case Size YTD for "+channel+" is Rs. "+case_size_afyp_ytd+
+					". Case Size YTD for "+channel+" is Rs. "+case_size_afyp_ytd+
 					". If you want to see the zone/region wise business numbers, please specify.";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse="As of " +real_tim_timstamp+" Case Size MTD for "+userzone+ " zone is Rs. "+ case_size_afyp_mtd+" Case Size YTD for "+
+			finalresponse="As of " +real_tim_timstamp+" Case Size MTD for "+userzone+ " zone is Rs. "+ case_size_afyp_mtd+". Case Size YTD for "+
 					userzone+" zone is Rs. "+case_size_afyp_ytd+". If you want to see the region wise business numbers, please specify.";
 
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+userzone+" zone is Rs. "+case_size_afyp_mtd+
-					" Case Size YTD for"+userzone+" zone is Rs. "+case_size_afyp_ytd;
+					". Case Size YTD for"+userzone+" zone is Rs. "+case_size_afyp_ytd;
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
