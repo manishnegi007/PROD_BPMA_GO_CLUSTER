@@ -19,44 +19,43 @@ public class ModeMix {
 		if(!"".equalsIgnoreCase(user_circle))
 		{user_region="Circle "+user_circle;}
 		if(!"".equalsIgnoreCase(subchannel))
-	        {
-                channel = subchannel;
-	         }
+		{
+			channel = subchannel;
+		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for MLI is Annual:"+
-					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
-					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
-					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%."+"YTD Mode mix ratio for MLI is Annual:"+
-					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
-					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%."
-					+ "If you want to see the channel wise business numbers, please specify";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for MLI is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ "%, Monthly: "+
+					monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+ "%."+" YTD Mode mix ratio for MLI is Annual: "+
+					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%,  Monthly: "+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+"%."
+					+ " If you want to see the channel wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" channel is Annual:"+
-					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
-					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
-					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%."+"YTD Mode mix ratio for "+channel+" channel is Annual:"+
-					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
-					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%."
-					+ "If you want to see the zone/region wise business numbers, please specify";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" channel is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ "%, Monthly: "+	monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+ "%."
+					+" YTD Mode mix ratio for "+channel+" channel is Annual: "+annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+"%."
+					+ " If you want to see the zone/region wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for Zone "+userzone+" is Annual:"+
-					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
-					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
-					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%."+"YTD Mode mix ratio for Zone "+userzone+" is Annual:"+
-					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
-					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%."
-					+ "If you want to see the region wise business numbers, please specify";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for Zone "+userzone+" is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ "%, Monthly: "+
+					monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+ "%."+" YTD Mode mix ratio for Zone "+userzone+" is Annual: "+
+					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+" & Single Premium:"+single_adj_mfyp_ytd+"%."
+					+ " If you want to see the region wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual:"+
-					annual_adj_mfyp_mtd+ "% , Semi Annual: " +semi_annual_adj_mfyp_mtd+ " %, Quarterly: "+ 
-					quarterly_adj_mfyp_mtd+ " % & Monthly: "+
-					monthly_adj_mfyp_mtd+" , Single: " +single_adj_mfyp_mtd+ "%." +"YTD Mode mix ratio for "+user_region+" is Annual:"+
-					annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly:"+
-					quarterly_adj_mfyp_ytd+"% & Monthly:"+monthly_adj_mfyp_ytd+", Single:"+single_adj_mfyp_ytd+"%.";
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " %, Monthly: "+
+					monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+"%." +" YTD Mode mix ratio for "+user_region+" is Annual: "+
+					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
 
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{	
@@ -64,34 +63,34 @@ public class ModeMix {
 			{
 				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" channel is Annual:"+
 						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_mtd+"& Monthly: "
-						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%."
+						quarterly_adj_mfyp_mtd+", Monthly: "
+						+monthly_adj_mfyp_mtd+" & Single Premium: "+single_adj_mfyp_mtd+ "%."
 						+ " If you want to see the zone/region wise business numbers, please specify";
 			}
 			else
 			{
-				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for zone "+userzone+" is Annual:"+
-						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_ytd+"& Monthly: "
-						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%."
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for zone "+userzone+" is Annual: "+
+						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly: "+
+						quarterly_adj_mfyp_ytd+", Monthly: "
+						+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+ "%."
 						+ " If you want to see the zone/region wise business numbers, please specify";
 			}
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for zone "+userzone+" is Annual:"+
-						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_mtd+"& Monthly: "
-						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%."
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for zone "+userzone+" is Annual: "+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+
+						quarterly_adj_mfyp_mtd+", Monthly: "
+						+monthly_adj_mfyp_mtd+" & Single Premium: "+single_adj_mfyp_mtd+ "%."
 						+ " If you want to see the region wise business numbers, please specify";
 
 			}else
 			{
-				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for zone "+userzone+" is Annual:"+
-						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_ytd+"& Monthly: "
-						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%."
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for zone "+userzone+" is Annual: "+
+						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly: "+
+						quarterly_adj_mfyp_ytd+", Monthly: "
+						+monthly_adj_mfyp_ytd+" & Single: "+single_adj_mfyp_ytd+ "%."
 						+ " If you want to see the region wise business numbers, please specify";
 			}
 		}
@@ -99,48 +98,48 @@ public class ModeMix {
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual:"+
-						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_mtd+"& Monthly: "
-						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%.";
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual: "+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+
+						quarterly_adj_mfyp_mtd+", Monthly: "
+						+monthly_adj_mfyp_mtd+" & Single Premium: "+single_adj_mfyp_mtd+ "%.";
 			}else
 			{
-				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+user_region+" is Annual:"+
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+user_region+" is Annual: "+
 						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_ytd+"& Monthly: "
-						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%.";
+						quarterly_adj_mfyp_ytd+", Monthly: "
+						+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+ "%.";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual:"+
-						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_mtd+"& Monthly: "
-						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%.";
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual: "+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+
+						quarterly_adj_mfyp_mtd+", Monthly: "
+						+monthly_adj_mfyp_mtd+" & Single Premium: "+single_adj_mfyp_mtd+ "%.";
 			}else
 			{
-				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+user_region+" is Annual:"+
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+user_region+" is Annual: "+
 						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_ytd+"& Monthly: "
-						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%.";
+						quarterly_adj_mfyp_ytd+", Monthly: "
+						+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+ "%.";
 			}
 		}
 		else
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+period+" is Annual:"+
-						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_mtd+"& Monthly: "
-						+monthly_adj_mfyp_mtd+", Single: "+single_adj_mfyp_mtd+ "%."
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+period+" is Annual: "+
+						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+
+						quarterly_adj_mfyp_mtd+", Monthly: "
+						+monthly_adj_mfyp_mtd+" & Single Premium: "+single_adj_mfyp_mtd+"%."
 						+ " If you want to see the channel wise business numbers, please specify";
 			}else{
-				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+period+" is Annual:"+
-						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly:"+
-						quarterly_adj_mfyp_ytd+"& Monthly: "
-						+monthly_adj_mfyp_ytd+", Single: "+single_adj_mfyp_ytd+ "%."
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+period+" is Annual: "+
+						annual_adj_mfyp_ytd+ "%, Semi Annual : "+semi_annual_adj_mfyp_ytd+ "%, Quarterly :"+
+						quarterly_adj_mfyp_ytd+" Monthly: "
+						+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+"%."
 						+ " If you want to see the channel wise business numbers, please specify";
 			}
 		}
