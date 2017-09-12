@@ -18,29 +18,28 @@ public class Lpcappadjafyp {
 			{user_region="Circle "+user_circle;}
 			if(!"".equalsIgnoreCase(subchannel))
 			{channel = subchannel;}
-
 			if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for MLI is "
-						+lpc_applied_afyp_mtd+". LPC Applied Business AFYP YTD for MLI is "+lpc_applied_afyp_ytd+ 
-						" If you want to see the channel wise business numbers, please specify";
+						+lpc_applied_afyp_mtd+" Cr. LPC Applied Business AFYP YTD for MLI is "+lpc_applied_afyp_ytd+ 
+						"Cr. If you want to see the channel wise business numbers, please specify";
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+channel+
-						" is "+lpc_applied_afyp_mtd+". LPC Applied Business AFYP YTD for "+channel+" is "+lpc_applied_afyp_ytd+
-						" If you want to see the zone/region wise business numbers, please specify";
+						" is "+lpc_applied_afyp_mtd+" Cr. LPC Applied Business AFYP YTD for "+channel+" is "+lpc_applied_afyp_ytd+
+						" Cr. If you want to see the zone/region wise business numbers, please specify";
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+userzone+" zone is "
-						+lpc_applied_afyp_mtd+". LPC Applied Business AFYP YTD for "+userzone+" zone is " +lpc_applied_afyp_ytd+
-						" If you want to see the region wise business numbers, please specify";
+						+lpc_applied_afyp_mtd+" Cr. LPC Applied Business AFYP YTD for "+userzone+" zone is " +lpc_applied_afyp_ytd+
+						" Cr. If you want to see the region wise business numbers, please specify";
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+user_region+ " is " 
-						+lpc_applied_afyp_mtd+ ". LPC Applied Business AFYP YTD for "+user_region+" is "+ lpc_applied_afyp_ytd;
+						+lpc_applied_afyp_mtd+ " Cr. LPC Applied Business AFYP YTD for "+user_region+" is "+ lpc_applied_afyp_ytd+" Cr.";
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -48,12 +47,12 @@ public class Lpcappadjafyp {
 				if("YTD".equalsIgnoreCase(period))
 				{
 					finalresponse="As of " +real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+channel+ " is "+lpc_applied_afyp_ytd+
-							". If you want to see the zone/region wise business numbers, please specify";
+							" Cr. If you want to see the zone/region wise business numbers, please specify";
 				}
 				else
 				{
 					finalresponse="As of " +real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+channel+ " is "+lpc_applied_afyp_mtd+
-							". If you want to see the zone/region wise business numbers, please specify";
+							" Cr. If you want to see the zone/region wise business numbers, please specify";
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
@@ -66,29 +65,29 @@ public class Lpcappadjafyp {
 				else
 				{
 					finalresponse="As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+ " for "+userzone+" is "+lpc_applied_afyp_mtd+
-							". If you want to see the region wise business numbers, please specify";	
+							" Cr. If you want to see the region wise business numbers, please specify";	
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
-					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_ytd+" Cr";
+					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_ytd+" Cr.";
 				}
 				else
 				{
-					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_mtd+" Cr";	
+					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_mtd+" Cr.";	
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
-					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_ytd+" Cr";
+					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_ytd+" Cr.";
 				}
 				else
 				{
-					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_mtd+" Cr";	
+					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_mtd+" Cr.";	
 				}
 			}
 			else
@@ -96,18 +95,18 @@ public class Lpcappadjafyp {
 				if("YTD".equalsIgnoreCase(period))
 				{
 					finalresponse="As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for MLI is "+lpc_applied_afyp_ytd+
-							". If you want to see the channel wise business numbers, please specify";
+							" Cr. If you want to see the channel wise business numbers, please specify";
 				}
 				else
 				{
 					finalresponse="As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for MLI is "+lpc_applied_afyp_mtd+
-							". If you want to see the channel wise business numbers, please specify";	
+							" Cr. If you want to see the channel wise business numbers, please specify";	
 				}
 			}
 		}
 		else
 		{
-			finalresponse="Invalid Channel For LPC ! Only Agency Accepted";
+			finalresponse="Invalid Channel For LPC";
 		}
 		return finalresponse.toString();
 	}
