@@ -25,6 +25,7 @@ public class APIConsumerService {
 				String userzone, String user_region, String user_circle, String user_clusters, String user_go, 
 				String user_cmo, String user_amo, String sessionId, String source)
 	{
+		System.out.println("Inside APIConsumerService");
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
 		Facebook fb = new Facebook();
 		InnerData innerData= new InnerData();
