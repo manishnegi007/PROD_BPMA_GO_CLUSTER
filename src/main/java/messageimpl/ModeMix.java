@@ -33,10 +33,10 @@ public class ModeMix {
 					+ " If you want to see the channel wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" channel is Annual: "+
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
 					quarterly_adj_mfyp_mtd+ "%, Monthly: "+	monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+ "%."
-					+" YTD Mode mix ratio for "+channel+" channel is Annual: "+annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					+" YTD Mode mix ratio for "+channel+" is Annual: "+annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+"%."
 					+ " If you want to see the zone/region wise business numbers, please specify";
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
@@ -61,7 +61,7 @@ public class ModeMix {
 		{	
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" channel is Annual:"+
+				finalresponse= "As of "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" is Annual:"+
 						annual_adj_mfyp_mtd+ "%, Semi Annual: "+semi_annual_adj_mfyp_mtd+ "%, Quarterly:"+
 						quarterly_adj_mfyp_mtd+", Monthly: "
 						+monthly_adj_mfyp_mtd+" & Single Premium: "+single_adj_mfyp_mtd+ "%."
