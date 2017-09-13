@@ -208,7 +208,7 @@ public class APIConsumerService {
 					}
 				}
 			}
-			else if("Growth".equalsIgnoreCase(action) || "NB.Growth".equalsIgnoreCase(action) ||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)
+			else if("Growth".equalsIgnoreCase(action) || "NB.Growth".equalsIgnoreCase(action) ||"NB.GROWTHAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)
 					||"NB.GROWTHAPLCASES".equalsIgnoreCase(action) ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action)||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action) 
 					||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)	||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(channel)||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(channel)
 					||"GROWTHLPCPAIDCASES".equalsIgnoreCase(channel)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action))
@@ -1325,7 +1325,7 @@ public class APIConsumerService {
 						user_sub_channel);
 				}
 				break;
-				case "NB.GROWTHAPLADGIFYP":
+				case "NB.GROWTHAPLADJIFYP":
 				{
 					finalresponse=NBGROWTHAPLADGIFYP.nbGROWTHAPLADGIFYPIntent(serviceChannel, period, user_circle, 
 							user_region, userzone, grth_applied_adj_ifyp_ytd, rpev_applied_adj_ifyp_ytd, 
