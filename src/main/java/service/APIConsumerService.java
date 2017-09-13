@@ -312,18 +312,18 @@ public class APIConsumerService {
 			StringBuilder requestdata=new StringBuilder();
 			System.out.println("XTRUST PROVIDER START-1");
 			if("WIP".equalsIgnoreCase(action) || "WIP.YES".equalsIgnoreCase(action) || "NUMBERS".equalsIgnoreCase(action)
-					|| "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action) 
-					|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action)
-					|| "NB.Paidcases".equalsIgnoreCase(action)|| "NB.AdjMFYP".equalsIgnoreCase(action)|| "NB.Applied".equalsIgnoreCase(action)
-					|| "NB.casesize".equalsIgnoreCase(action) ||"NB.AppliedAdjIFYP".equalsIgnoreCase(action)||"NB.AppliedCases".equalsIgnoreCase(action)
-					|| "NB.LPCAPPADJIFYP".equalsIgnoreCase(action) || "NB.LPCAPPADJAFYP".equalsIgnoreCase(action)|| "NB.LPCAPLCASES".equalsIgnoreCase(action) 
-					|| "NB.LPCPAIDADJMFYP".equalsIgnoreCase(action)	|| "NB.LPCPAIDCASES".equalsIgnoreCase(action) || "NB.casesize%".equalsIgnoreCase(action) 
-					||"NB.Growth".equalsIgnoreCase(action) || "NB.Recruitment".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
-					||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLCASES".equalsIgnoreCase(action)
-					||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(action)
-					||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
-					||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
-					||"NB.ProductMix".equalsIgnoreCase(action))
+				|| "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action) 
+				|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action)
+				|| "NB.Paidcases".equalsIgnoreCase(action)|| "NB.AdjMFYP".equalsIgnoreCase(action)|| "NB.Applied".equalsIgnoreCase(action)
+				|| "NB.casesize".equalsIgnoreCase(action) ||"NB.AppliedAdjIFYP".equalsIgnoreCase(action)||"NB.AppliedCases".equalsIgnoreCase(action)
+				|| "NB.LPCAPPADJIFYP".equalsIgnoreCase(action) || "NB.LPCAPPADJAFYP".equalsIgnoreCase(action)|| "NB.LPCAPLCASES".equalsIgnoreCase(action) 
+				|| "NB.LPCPAIDADJMFYP".equalsIgnoreCase(action)	|| "NB.LPCPAIDCASES".equalsIgnoreCase(action) || "NB.casesize%".equalsIgnoreCase(action) 
+				||"NB.Growth".equalsIgnoreCase(action) || "NB.Recruitment".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
+				||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLCASES".equalsIgnoreCase(action)
+				||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(action)
+				||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
+				||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
+				||"NB.ProductMix".equalsIgnoreCase(action) || "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action))
 			{
 				System.out.println("XTRUST PROVIDER START-2");
 				System.out.println("External Java Service Called: ");
