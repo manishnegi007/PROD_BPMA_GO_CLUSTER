@@ -45,7 +45,7 @@ public class Appliedcases
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for "+user_region+ " is " 
-					+mtd_applied_count+ " Applied cases YTD for for "+user_region+" is "+ ytd_applied_count;
+					+mtd_applied_count+ ". Applied cases YTD for "+user_region+" is "+ ytd_applied_count;
 
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
