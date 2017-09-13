@@ -310,6 +310,7 @@ public class APIConsumerService {
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
+			System.out.println("XTRUST PROVIDER START-1");
 			if("WIP".equalsIgnoreCase(action) || "WIP.YES".equalsIgnoreCase(action) || "NUMBERS".equalsIgnoreCase(action)
 					|| "AdjMFYP".equalsIgnoreCase(action) || "APPLIED".equalsIgnoreCase(action) 
 					|| "Achievement".equalsIgnoreCase(action) ||"Growth".equalsIgnoreCase(action) || "Penetration".equalsIgnoreCase(action)
@@ -324,6 +325,7 @@ public class APIConsumerService {
 					||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
 					||"NB.ProductMix".equalsIgnoreCase(action))
 			{
+				System.out.println("XTRUST PROVIDER START-2");
 				System.out.println("External Java Service Called: ");
 				user_designation_desc="";
 				String serviceurl = res.getString("servicegetUserDetail");
