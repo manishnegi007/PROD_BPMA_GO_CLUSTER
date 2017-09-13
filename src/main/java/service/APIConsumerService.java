@@ -212,8 +212,8 @@ public class APIConsumerService {
 			}
 			else if("Growth".equalsIgnoreCase(action) || "NB.Growth".equalsIgnoreCase(action) ||"NB.GROWTHAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)
 					||"NB.GROWTHAPLCASES".equalsIgnoreCase(action) ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action)||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action) 
-					||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)	||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(channel)||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(channel)
-					||"GROWTHLPCPAIDCASES".equalsIgnoreCase(channel)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action))
+					||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action) ||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)
+					||"GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action))
 			{
 				if("MLI".equalsIgnoreCase(channel))
 				{
