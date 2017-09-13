@@ -172,6 +172,7 @@ public class APIConsumerService {
 			else if("Penetration".equalsIgnoreCase(action) ||"NB.ProductMix".equalsIgnoreCase(action) 
 					|| "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action))
 			{
+				System.out.println("Action to be called before JavaService Call :"+action);
 				if("MLI".equalsIgnoreCase(channel))
 				{
 					segment="penetration";
@@ -305,6 +306,7 @@ public class APIConsumerService {
 			{
 				finalresponse="Invalid Intent Called by User";
 			}
+			System.out.println("XTRUST PROVIDER START");
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
@@ -380,6 +382,7 @@ public class APIConsumerService {
 				}else{
 					System.out.println("Unable to call External API Java Service");
 				}
+				System.out.println("XTRUST PROVIDER END");
 			}
 			else{
 				finalresponse="Invalid Intent Called by User";
