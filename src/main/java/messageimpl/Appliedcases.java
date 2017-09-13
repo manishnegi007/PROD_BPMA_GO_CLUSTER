@@ -38,8 +38,8 @@ public class Appliedcases
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for "+user_region+" is "
-					+mtd_applied_count+". Applied cases YTD for "+user_region+" is " +ytd_applied_count+
+			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for "+userzone+" is "
+					+mtd_applied_count+". Applied cases YTD for "+userzone+" is " +ytd_applied_count+
 					". If you want to see the region wise business numbers, please specify";
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
