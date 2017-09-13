@@ -562,21 +562,17 @@ public class APIConsumerService {
 						}catch(Exception e){}
 						mtd_applied_adj_ifyp = df.format(mtd_applied_adj_ifyp1);
 						try{
-							mtd_applied_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("mtd_applied_count").toString());
+							mtd_applied_count = (object.getJSONObject("payload").getJSONObject("applied").get("mtd_applied_count").toString());
 						}catch(Exception e){}
-						mtd_applied_count = df.format(mtd_applied_count1);
 						try{
-							ytd_applied_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("ytd_applied_count").toString());
+							ytd_applied_count = (object.getJSONObject("payload").getJSONObject("applied").get("ytd_applied_count").toString());
 						}catch(Exception e){}
-						ytd_applied_count = df.format(ytd_applied_count1);
 						try{
-							daily_applied_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("daily_applied_count").toString());
+							daily_applied_count = (object.getJSONObject("payload").getJSONObject("applied").get("daily_applied_count").toString());
 						}catch(Exception e){}
-						daily_applied_count = df.format(daily_applied_count1);
 						try{
-							daily_inforced_count_aaplied = Double.parseDouble(object.getJSONObject("payload").getJSONObject("applied").get("daily_inforced_count").toString());
+							daily_inforced_count = (object.getJSONObject("payload").getJSONObject("applied").get("daily_inforced_count").toString());
 						}catch(Exception e){}
-						daily_inforced_count = df.format(daily_inforced_count_aaplied);
 					}
 					break;
 					case "WIP":
