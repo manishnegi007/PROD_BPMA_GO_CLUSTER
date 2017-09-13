@@ -1008,16 +1008,17 @@ public class MliBotController{
 							}
 							if (!actionperformed.equalsIgnoreCase("") && actionperformed != null && "".equalsIgnoreCase(speech)) 
 							{
-								try
+								/*try
 								{
 									HttpUrlConnectionMlabInsert mlab = new HttpUrlConnectionMlabInsert();
 									String status=mlab.httpConnection_response_mlab_Insert(sessionId, ssoId, actionperformed, resolvedQuery, cachePeriod, 
 															       cashproductType, cashplanType);
 									System.out.println(status);
-								}catch(Exception ex)
+								}
+								catch(Exception ex)
 								{
 									System.out.println("Something goes wrong to connect Mlab:MongoDb");
-								}
+								}*/
 								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType,
 										user_ssoid, cash_Sub_Channel, user_designation_desc, cashZone, cashRegion, cashCircle, 
 										user_clusters, user_go, user_cmo, user_amo, sessionId, source);
@@ -1192,7 +1193,7 @@ public class MliBotController{
 							}
 							if(!actionperformed.equalsIgnoreCase("") && actionperformed!=null)
 							{
-								try
+								/*try
 									{
 										HttpUrlConnectionMlabInsert mlab = new HttpUrlConnectionMlabInsert();
 										String status=mlab.httpConnection_response_mlab_Insert(sessionId, ssoId, actionperformed,
@@ -1201,7 +1202,7 @@ public class MliBotController{
 									}catch(Exception ex)
 									{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
-									}
+									}*/
 								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType, user_ssoid, 
 										subChannel, user_designation_desc, zone, region, circle, user_clusters, user_go, 
 													user_cmo, user_amo, sessionId, source);
