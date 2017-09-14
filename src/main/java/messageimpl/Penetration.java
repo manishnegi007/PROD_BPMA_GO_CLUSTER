@@ -11,6 +11,10 @@ public class Penetration
 			String protec_penet_ytd_pol_cnt)
 	{
 		String finalresponse="";
+		if(!"Monthly".equalsIgnoreCase(period))
+		{
+			period=period.toUpperCase();
+		}
 		if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)||"MONTH".equalsIgnoreCase(period))
 		{
 			if("ULIP".equalsIgnoreCase(productType))
