@@ -69,7 +69,7 @@ public class ModeMix {
 			}
 			else
 			{
-				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for zone "+userzone+" is Annual: "+
+				finalresponse= "As of "+real_tim_timstamp+" YTD Mode mix ratio for "+channel+" is Annual: "+
 						annual_adj_mfyp_ytd+ "%, Semi Annual: "+semi_annual_adj_mfyp_ytd+ "%, Quarterly: "+
 						quarterly_adj_mfyp_ytd+", Monthly: "
 						+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+ "%."
