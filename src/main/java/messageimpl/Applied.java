@@ -5,10 +5,6 @@ public class Applied
 	public static String appliedIntent(String period, String source, String msgChannel, String mtdAppliedAFYP, String real_tim_timstamp,
 			String channel, String dailyAppliedAFYP, String ytd_applied_afyp)
 	{
-		if(!"Monthly".equalsIgnoreCase(period))
-		{
-			period=period.toUpperCase();
-		}
 		String finalresponse="";
 		if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 		{
