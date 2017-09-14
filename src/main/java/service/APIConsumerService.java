@@ -1204,7 +1204,7 @@ public class APIConsumerService {
 				case "GROWTH":
 				{
 					finalresponse=Growth.growthIntent(source, msgChannel, grth_ovr_lst_yr_paid, adj_mfyp_sam_ytd_lst_yr, 
-							ytd_inforced_adj_mfyp_achi, period, grth_lst_yr_sm_adj_mfyp_mtd, prev_year_adj_mfyp_mtd, 
+							ytd_inforced_adj_mfyp, period, grth_lst_yr_sm_adj_mfyp_mtd, prev_year_adj_mfyp_mtd, 
 							mtd_inforced_adj_mfyp);
 				}
 				break;
