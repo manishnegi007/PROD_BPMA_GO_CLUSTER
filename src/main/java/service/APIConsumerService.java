@@ -522,13 +522,11 @@ public class APIConsumerService {
 						}catch(Exception ex){}
 						try
 						{
-							mtd_inforced_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("mtd_inforced_count").toString());
-							mtd_inforced_count = df.format(mtd_inforced_count1);
+							mtd_inforced_count = (object.getJSONObject("payload").getJSONObject("paid").get("mtd_inforced_count").toString());
 						}catch(Exception ex){}
 						try
 						{
-							ytd_inforced_count1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("ytd_inforced_count").toString());
-							ytd_inforced_count = df.format(ytd_inforced_count1);
+							ytd_inforced_count = (object.getJSONObject("payload").getJSONObject("paid").get("ytd_inforced_count").toString());
 						}catch(Exception ex){}
 						try{
 							ytd_adj_mfyp1 = Double.parseDouble(object.getJSONObject("payload").getJSONObject("paid").get("ytd_adj_mfyp").toString());
