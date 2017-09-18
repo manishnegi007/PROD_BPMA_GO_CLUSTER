@@ -40,8 +40,8 @@ public class NBCaseSize
 
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
 		{
-			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+userzone+" zone is Rs. "+case_size_afyp_mtd+
-					". Case Size YTD for"+userzone+" zone is Rs. "+case_size_afyp_ytd;
+			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_region+" is Rs. "+case_size_afyp_mtd+
+					". Case Size YTD for"+user_region+" is Rs. "+case_size_afyp_ytd;
 		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
