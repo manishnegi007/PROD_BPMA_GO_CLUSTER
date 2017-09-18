@@ -47,11 +47,11 @@ public class AppliedADJIFYP
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse="As of" +real_tim_timstamp+ " Applied Business Adj IFYP " +period+" for "+channel+ "is"+ ytd_applied_adj_ifyp+
+				finalresponse="As of" +real_tim_timstamp+ " Applied Business Adj IFYP " +period+" for "+channel+ " is "+ ytd_applied_adj_ifyp+
 						"Cr. If you want to see the zone/region wise business numbers, please specify";
 			}else
 			{
-				finalresponse="As of" +real_tim_timstamp+ " Applied Business Adj IFYP " +period+" for "+channel+ "is"+ mtd_applied_adj_ifyp+
+				finalresponse="As of" +real_tim_timstamp+ " Applied Business Adj IFYP " +period+" for "+channel+ " is "+ mtd_applied_adj_ifyp+
 						"Cr. If you want to see the zone/region wise business numbers, please specify";
 			}
 		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
