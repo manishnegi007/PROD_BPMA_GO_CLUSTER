@@ -323,7 +323,8 @@ public class APIConsumerService {
 				||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(action)
 				||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
 				||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
-				||"NB.ProductMix".equalsIgnoreCase(action) || "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action))
+				||"NB.ProductMix".equalsIgnoreCase(action) || "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action)
+			        ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action))
 			{
 				System.out.println("XTRUST PROVIDER START-2");
 				System.out.println("External Java Service Called: ");
