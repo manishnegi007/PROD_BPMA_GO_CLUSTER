@@ -1072,6 +1072,12 @@ public class APIConsumerService {
 						try{
 							case_size_afyp_ytd = (object.getJSONObject("payload").getJSONObject("casesize").get("case_size_afyp_ytd").toString());
 						}catch(Exception e){}
+						try{
+							achiev_mtd_case_active_mtd = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_case_active_mtd").toString());
+						}catch(Exception e){}
+						try{
+							achiev_mtd_case_active_ytd = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_case_active_ytd").toString());
+						}catch(Exception e){}
 					}
 					break;
 					case "LPC_PERFORMANCE":
