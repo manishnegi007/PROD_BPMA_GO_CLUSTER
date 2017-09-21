@@ -213,7 +213,7 @@ public class APIConsumerService {
 			else if("Growth".equalsIgnoreCase(action) || "NB.Growth".equalsIgnoreCase(action) ||"NB.GROWTHAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)
 					||"NB.GROWTHAPLCASES".equalsIgnoreCase(action) ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action)||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action) 
 					||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action) ||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)
-					||"GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action))
+					||"NB.GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action))
 			{
 				if("MLI".equalsIgnoreCase(channel))
 				{
@@ -321,7 +321,7 @@ public class APIConsumerService {
 				||"NB.Growth".equalsIgnoreCase(action) || "NB.Recruitment".equalsIgnoreCase(action) ||"NB.Recruitment%".equalsIgnoreCase(action)
 				||"NB.GROWTHAPLADGIFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLAFYP".equalsIgnoreCase(action)||"NB.GROWTHAPLCASES".equalsIgnoreCase(action)
 				||"NB.GROWTHLPCADJMFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLADJIFYP".equalsIgnoreCase(action)||"NB.GROWTHLPCAPLAFYP".equalsIgnoreCase(action)
-				||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)||"GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
+				||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)||"NB.GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
 				||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
 				||"NB.ProductMix".equalsIgnoreCase(action) || "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action)
 			        ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action) ||"NB.GROWTHAPLADJIFYP".equalsIgnoreCase(action))
@@ -1395,7 +1395,7 @@ public class APIConsumerService {
 							lpc_applied_cases_mtd_growth, user_sub_channel);
 				}
 				break;
-				case "GROWTHLPCPAIDCASES":
+				case "NB.GROWTHLPCPAIDCASES":
 				{ 
 					finalresponse=GrowthLPCPaidCases.growthLPCPaidcasesIntent(serviceChannel, period, userzone, user_region, 
 							real_tim_timstamp, user_circle, grth_lpc_paid_cases_ytd, prev_lpc_paid_cases_ytd, 
