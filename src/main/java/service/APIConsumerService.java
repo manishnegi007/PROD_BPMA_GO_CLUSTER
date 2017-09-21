@@ -1062,6 +1062,12 @@ public class APIConsumerService {
 						try{
 							ytd_paid_case_pln = (object.getJSONObject("payload").getJSONObject("achievement").get("ytd_paid_case_pln").toString());
 						}catch(Exception e){}
+						try{
+							achiev_mtd_case_size = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_case_size").toString());
+						}catch(Exception e){}
+						try{
+							achiev_ytd_case_size = (object.getJSONObject("payload").getJSONObject("achievement").get("achiev_ytd_case_size").toString());
+						}catch(Exception e){}
 					}
 					break;
 					case "CASE_SIZE":
@@ -1305,8 +1311,8 @@ public class APIConsumerService {
 				case "NB.CASESIZE%":
 				{
 					finalresponse=CaseSizePercentage.caseSizePercentageIntent(serviceChannel, period, user_region, 
-							user_circle, userzone, real_tim_timstamp, achiev_mtd_case_active_mtd, 
-							achiev_mtd_case_active_ytd, user_sub_channel);
+							user_circle, userzone, real_tim_timstamp,  achiev_mtd_case_size, achiev_ytd_case_size, 
+							user_sub_channel);
 				}
 				break;
 				case "NB.GROWTH":
