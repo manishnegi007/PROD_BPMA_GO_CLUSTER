@@ -446,7 +446,7 @@ public class APIConsumerService {
 	//				        --------------------ModeMix----------------------------------------------
 				                String annual_adj_mfyp_mtd="", semi_annual_adj_mfyp_mtd="", quarterly_adj_mfyp_mtd="", monthly_adj_mfyp_mtd="",single_adj_mfyp_mtd="",annual_adj_mfyp_ytd="",semi_annual_adj_mfyp_ytd="",
 							    quarterly_adj_mfyp_ytd="", monthly_adj_mfyp_ytd="", single_adj_mfyp_ytd="";
-				
+				                String achiev_mtd_case_size="", achiev_ytd_case_size="";
 					for(int i=0;i<1;i++){
 					try{
 						real_tim_timstamp = object.getJSONObject("payload").getJSONObject("paid").get("real_tim_timstamp").toString();
