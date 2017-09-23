@@ -58,6 +58,7 @@ public class MliBotController{
 		String userOTP = ""; String speech = ""; String cachePeriod = ""; String cashplanType = ""; String cashchannel = "";
 		String cashproductType = ""; String ssoId = "";	String cashCircle = "";	String cashRegion=""; String cashZone="";
 		String circle=""; String region=""; String zone=""; String subChannel=""; String cash_Sub_Channel=""; String source="";
+		String nbvalidate_source = ""; String nbvalidateplatform="";
 
 		WebhookResponse response = new WebhookResponse();
 		MliBotController mliBotController= new MliBotController();
@@ -76,10 +77,32 @@ public class MliBotController{
 			try{
 				userOTP = object.getJSONObject("result").getJSONObject("parameters").get("number")+"";
 			}catch(Exception e){System.out.println("Not getting OTP");}
-			if("SSO.Validation".equalsIgnoreCase(actionperformed) || "nb.validate".equalsIgnoreCase(actionperformed))
+			if("SSO.Validation".equalsIgnoreCase(actionperformed) || "nb.validate".equalsIgnoreCase(actionperformed)
+			    	|| "nb.integrate".equalsIgnoreCase(actionperformed))
 			{
 				System.out.println("SSOValidation API START");
-				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+"";
+				try{
+				ssoId = object.getJSONObject("result").getJSONObject("parameters").get("SSOID")+ "";
+				}catch(Exception ex)
+				{ssoId="";}
+				if("nb.integrate".equalsIgnoreCase(actionperformed))
+				{
+					String resolvedQuery2 = object.getJSONObject("result").get("resolvedQuery") + "";
+					String [] part = resolvedQuery2.split(" ");
+					String part2=part[1];
+					ssoId=part2;
+					System.out.println("Nb.Integrate--"+ssoId);
+				}
+				try{
+					nbvalidate_source = object.getJSONObject("result").getJSONObject("parameters").get("source")+"";
+				}
+				catch(Exception ex)
+				{nbvalidate_source="";}
+				try{
+					nbvalidateplatform = object.getJSONObject("result").getJSONObject("parameters").get("platform")+"";
+				}
+				catch(Exception ex)
+				{nbvalidateplatform="";}
 				sessionId=object.get("sessionId")+"";
 				Map otpsessionMap = sessionMapcontainssoinfo.get(sessionId);
 				if (otpsessionMap == null) {
@@ -87,13 +110,18 @@ public class MliBotController{
 					String SoaStatus = "";
 					String PhoneStatus = "";
 					String mnylstatus="";
-					String agentName ="";
+					String agentName ="", IntegrateStatus;
 					Map<String, String> cashMap = returnmap.get(sessionId);
+					IntegrateStatus = cashMap.get("Validation");
 					SoaStatus = cashMap.get("SoaStatus")+"";
 					PhoneStatus = cashMap.get("PhoneStatus")+"";
 					mnylstatus=cashMap.get("mnylStatus")+"";
 					agentName=cashMap.get("AgentName")+"";
-					if("N".equalsIgnoreCase(mnylstatus)){
+					if("Success".equalsIgnoreCase(IntegrateStatus))
+					{
+						speech="how can i help you with business KPI's.";
+					}
+					else if("N".equalsIgnoreCase(mnylstatus)){
 						speech="This UserID Is InActive";
 					}
 					else if ("success".equalsIgnoreCase(SoaStatus)) 
@@ -1247,10 +1275,13 @@ public class MliBotController{
 		String output = new String();
 		StringBuilder result = new StringBuilder();
 		Map<String, Map<String,String>> cashData=null;
+		int apiResponseCode3=0;
+		MliBotController mliBotController = new MliBotController();
 		Map<String,String> blankmessage= new HashMap<String,String>();
 		try 
 		{
-			MliBotController mliBotController= new MliBotController();
+		     if(!"nb.integrate".equalsIgnoreCase(actionperformed))
+			{
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
@@ -1298,7 +1329,16 @@ public class MliBotController{
 			writer3.write(requestdata.toString());
 			writer3.flush();
 			try {writer3.close(); } catch (Exception e1) {}
-			int apiResponseCode3 = conn.getResponseCode();
+			apiResponseCode3 = conn.getResponseCode();
+		     }
+		      else
+			{
+				blankmessage.put("Validation", "Success");
+				blankmessage.put("validSSOID",  ssoId);
+				sessionMapcontainssoinfo.put(sessionId, blankmessage);
+				cashData = sessionMapcontainssoinfo;
+				return cashData;
+			}
 			if(apiResponseCode3 == 200)
 			{
 				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
