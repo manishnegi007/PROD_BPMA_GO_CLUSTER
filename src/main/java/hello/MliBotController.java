@@ -18,9 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 import utils.HttpUrlConnectionMlabInsert;
 import utils.HttpUrlConnection_GetDetails;
 import common.Commons;
-import  service.APIConsumerService;
-import  common.XTrustProvider;	
+import service.APIConsumerService;
+import common.XTrustProvider;	
 import java.net.URL;
+import Adoptionlogs;
 import java.net.Proxy;
 import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
@@ -43,6 +44,8 @@ public class MliBotController{
 	
 	@Autowired
 	APIConsumerService aPIConsumerService;
+	@Autowired
+	private Adoptionlogs adoption;
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) 
@@ -1057,6 +1060,15 @@ public class MliBotController{
 								{
 									System.out.println("Something goes wrong to connect Mlab:MongoDb");
 								}*/
+								try
+								{
+									String status = adoption.adoptionlogsCall(sessionId, ssoId, actionperformed,
+											resolvedQuery);
+									System.out.println(status);
+								}catch(Exception ex)
+								{
+									System.out.println("Something goes wrong to connect adoption Logs :: MLIEnvironment");
+								}
 								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType,
 										user_ssoid, cash_Sub_Channel, user_designation_desc, cashZone, cashRegion, cashCircle, 
 										user_clusters, user_go, user_cmo, user_amo, sessionId, source);
@@ -1241,6 +1253,15 @@ public class MliBotController{
 									{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
 									}*/
+								try
+								{
+									String status = adoption.adoptionlogsCall(sessionId, ssoId, actionperformed,
+											resolvedQuery);
+									System.out.println(status+ssoId);
+								}catch(Exception ex)
+								{
+									System.out.println("Something goes wrong to connect adoption Logs :: MLIEnvironment");
+								}
 								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType, user_ssoid, 
 										subChannel, user_designation_desc, zone, region, circle, user_clusters, user_go, 
 													user_cmo, user_amo, sessionId, source);
