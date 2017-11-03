@@ -45,7 +45,7 @@ public class MliBotController{
 	@Autowired
 	APIConsumerService aPIConsumerService;
 	@Autowired
-	private Adoptionlogs adoption;
+	Adoptionlogs adoption;
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) 
