@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableCaching
 @SpringBootApplication
-@ComponentScan({"service","hello"})
+@ComponentScan({"service","hello","common"})
 public class HelloWorldConfiguration {
 
 	public static void main(String[] args) {
