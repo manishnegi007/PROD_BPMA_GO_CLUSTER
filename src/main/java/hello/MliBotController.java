@@ -21,7 +21,7 @@ import common.Commons;
 import service.APIConsumerService;
 import common.XTrustProvider;	
 import java.net.URL;
-import Adoptionlogs;
+import common.Adoptionlogs;
 import java.net.Proxy;
 import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
