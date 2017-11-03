@@ -62,6 +62,7 @@ public class MliBotController{
 		String cashproductType = ""; String ssoId = "";	String cashCircle = "";	String cashRegion=""; String cashZone="";
 		String circle=""; String region=""; String zone=""; String subChannel=""; String cash_Sub_Channel=""; String source="";
 		String nbvalidate_source = ""; String nbvalidateplatform="";
+		final String status="";
 
 		WebhookResponse response = new WebhookResponse();
 		MliBotController mliBotController= new MliBotController();
@@ -1060,14 +1061,24 @@ public class MliBotController{
 								{
 									System.out.println("Something goes wrong to connect Mlab:MongoDb");
 								}*/
-								try
-								{
-									String status = adoption.adoptionlogsCall(sessionId, ssoId, actionperformed,
-											resolvedQuery);
-									System.out.println(status);
+								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery;
+								try{
+									Thread t1=new Thread(new Runnable() 
+									{
+										public void run() 
+										{
+											System.out.println("Run Method Start");
+											final String status=adoption.adoptionlogsCall(dbSessionId, dbSSOId, dbActionPerformed,
+													dbResolveQuery);
+										}
+									});
+									t1.start();
+									t1.join();
+									System.out.println("Run Method END");
+									System.out.println("Thread Status"+ status+dbSSOId);
 								}catch(Exception ex)
 								{
-									System.out.println("Something goes wrong to connect adoption Logs :: MLIEnvironment");
+									System.out.println("Excption Occoured while saving data in to the database");
 								}
 								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod, cashproductType, cashplanType,
 										user_ssoid, cash_Sub_Channel, user_designation_desc, cashZone, cashRegion, cashCircle, 
@@ -1253,14 +1264,24 @@ public class MliBotController{
 									{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
 									}*/
-								try
-								{
-									String status = adoption.adoptionlogsCall(sessionId, ssoId, actionperformed,
-											resolvedQuery);
-									System.out.println(status+ssoId);
+								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery;
+								try{
+									Thread t1=new Thread(new Runnable() 
+									{
+										public void run() 
+										{
+											System.out.println("Run Method Start");
+											final String status=adoption.adoptionlogsCall(dbSessionId, dbSSOId, dbActionPerformed,
+													dbResolveQuery);
+										}
+									});
+									t1.start();
+									t1.join();
+									System.out.println("Run Method END");
+									System.out.println("Thread Status"+ status+dbSSOId);
 								}catch(Exception ex)
 								{
-									System.out.println("Something goes wrong to connect adoption Logs :: MLIEnvironment");
+									System.out.println("Excption Occoured while saving data in to the database");
 								}
 								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType, planType, user_ssoid, 
 										subChannel, user_designation_desc, zone, region, circle, user_clusters, user_go, 
