@@ -20,7 +20,7 @@ public class Adoptionlogs
 {
 	public String adoptionlogsCall(String sessionId, String ssoId, String action, String resolvedQuery)
 	{
-		String platform="BPMABOT";
+		String platform="BPMABOTDEV";
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		HttpURLConnection conn = null;
 		StringBuilder result = new StringBuilder();
