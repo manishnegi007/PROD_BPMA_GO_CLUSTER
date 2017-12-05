@@ -12,12 +12,12 @@ public class Applied
 			if("google".equalsIgnoreCase(source))
 			{
 				finalresponse=" Monthly Applied Business for "+msgChannel+
-						" as of now is : "+mtdAppliedAFYP+" Cr. "+"Applied Business Adj IFYP MTD is "+mtd_applied_adj_ifyp+"Cr.";
+						" as of now is : "+mtdAppliedAFYP+" Cr. "+"Applied Business Adj IFYP MTD is "+mtd_applied_adj_ifyp+" Cr.";
 			}
 			else
 			{
 				finalresponse="As of "+real_tim_timstamp+" Applied Business AFYP MTD For "+msgChannel+
-						": "+mtdAppliedAFYP+" Cr. "+"Applied Business Adj IFYP MTD is "+mtd_applied_adj_ifyp+"Cr.";
+						": "+mtdAppliedAFYP+" Cr. "+"Applied Business Adj IFYP MTD is "+mtd_applied_adj_ifyp+" Cr.";
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel))
