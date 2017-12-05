@@ -1203,7 +1203,7 @@ public class APIConsumerService {
 				case "APPLIED":
 				{
 					finalresponse=Applied.appliedIntent(period, source, msgChannel, mtdAppliedAFYP, real_tim_timstamp, 
-							serviceChannel, dailyAppliedAFYP, ytd_applied_afyp);
+							serviceChannel, dailyAppliedAFYP, ytd_applied_afyp, mtd_applied_adj_ifyp, ytd_applied_adj_ifyp);
 				}
 				break;
 				case "GROWTH":
