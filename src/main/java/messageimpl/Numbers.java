@@ -30,6 +30,48 @@ public class Numbers
 				if("".equalsIgnoreCase(user_sub_channel))
 				{
 					finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, CAT, Ecomm, IM, IMF";
+					
+					InnerButton innerButton1 = new InnerButton();
+					innerButton1.setText("Axis Bank");
+					innerButton1.setPostback("AxisBank");
+							//For Second button
+					InnerButton innerButton2 = new InnerButton();
+					innerButton2.setText("Agency");
+					innerButton2.setPostback("Agency");
+							
+					InnerButton innerButton3 = new InnerButton();
+					innerButton3.setText("Banca");
+					innerButton3.setPostback("Banca");
+							
+					InnerButton innerButton4 = new InnerButton();
+					innerButton4.setText("CAT");
+					innerButton4.setPostback("CAT");
+					
+					InnerButton innerButton5 = new InnerButton();
+					innerButton4.setText("Ecomm");
+					innerButton4.setPostback("Ecomm");
+					
+					InnerButton innerButton6 = new InnerButton();
+					innerButton4.setText("IM");
+					innerButton4.setPostback("IM");
+					
+					InnerButton innerButton7 = new InnerButton();
+					innerButton4.setText("IMF");
+					innerButton4.setPostback("IMF");
+							
+					innerbuttonlist.add(innerButton1);
+					innerbuttonlist.add(innerButton2);
+					innerbuttonlist.add(innerButton3);
+					innerbuttonlist.add(innerButton4);
+					innerbuttonlist.add(innerButton5);
+					innerbuttonlist.add(innerButton6);
+					innerbuttonlist.add(innerButton7);
+					fb.setButtons(innerbuttonlist);
+					fb.setTitle("MLIChatBot");
+					fb.setPlatform("API.AI");
+					fb.setType("Chatbot");
+					fb.setImageUrl("BOT");
+					innerData.setFacebook(fb);
 				}
 			}
 		}
@@ -72,6 +114,48 @@ public class Numbers
 				if("".equalsIgnoreCase(user_sub_channel))
 				{
 					finalresponse = finalresponse+" Do you want to see the Data For any Channel. Please Enter the Channel Name like :\n\n Agency, Axis Bank, Banca, CAT, Ecomm, IM, IMF";
+					
+					InnerButton innerButton1 = new InnerButton();
+					innerButton1.setText("Axis Bank");
+					innerButton1.setPostback("AxisBank");
+							//For Second button
+					InnerButton innerButton2 = new InnerButton();
+					innerButton2.setText("Agency");
+					innerButton2.setPostback("Agency");
+							
+					InnerButton innerButton3 = new InnerButton();
+					innerButton3.setText("Banca");
+					innerButton3.setPostback("Banca");
+							
+					InnerButton innerButton4 = new InnerButton();
+					innerButton4.setText("CAT");
+					innerButton4.setPostback("CAT");
+					
+					InnerButton innerButton5 = new InnerButton();
+					innerButton4.setText("Ecomm");
+					innerButton4.setPostback("Ecomm");
+					
+					InnerButton innerButton6 = new InnerButton();
+					innerButton4.setText("IM");
+					innerButton4.setPostback("IM");
+					
+					InnerButton innerButton7 = new InnerButton();
+					innerButton4.setText("IMF");
+					innerButton4.setPostback("IMF");
+							
+					innerbuttonlist.add(innerButton1);
+					innerbuttonlist.add(innerButton2);
+					innerbuttonlist.add(innerButton3);
+					innerbuttonlist.add(innerButton4);
+					innerbuttonlist.add(innerButton5);
+					innerbuttonlist.add(innerButton6);
+					innerbuttonlist.add(innerButton7);
+					fb.setButtons(innerbuttonlist);
+					fb.setTitle("MLIChatBot");
+					fb.setPlatform("API.AI");
+					fb.setType("Chatbot");
+					fb.setImageUrl("BOT");
+					innerData.setFacebook(fb);
 				}
 			}
 		}
