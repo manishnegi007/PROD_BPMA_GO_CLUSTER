@@ -55,16 +55,16 @@ public class Numbers
 					innerButton4.setPostback("CAT");
 					
 					InnerButton innerButton5 = new InnerButton();
-					innerButton4.setText("Ecomm");
-					innerButton4.setPostback("Ecomm");
+					innerButton5.setText("Ecomm");
+					innerButton5.setPostback("Ecomm");
 					
 					InnerButton innerButton6 = new InnerButton();
-					innerButton4.setText("IM");
-					innerButton4.setPostback("IM");
+					innerButton6.setText("IM");
+					innerButton6.setPostback("IM");
 					
 					InnerButton innerButton7 = new InnerButton();
-					innerButton4.setText("IMF");
-					innerButton4.setPostback("IMF");
+					innerButton7.setText("IMF");
+					innerButton7.setPostback("IMF");
 							
 					innerbuttonlist.add(innerButton1);
 					innerbuttonlist.add(innerButton2);
@@ -139,16 +139,16 @@ public class Numbers
 					innerButton4.setPostback("CAT");
 					
 					InnerButton innerButton5 = new InnerButton();
-					innerButton4.setText("Ecomm");
-					innerButton4.setPostback("Ecomm");
+					innerButton5.setText("Ecomm");
+					innerButton5.setPostback("Ecomm");
 					
 					InnerButton innerButton6 = new InnerButton();
-					innerButton4.setText("IM");
-					innerButton4.setPostback("IM");
+					innerButton6.setText("IM");
+					innerButton6.setPostback("IM");
 					
 					InnerButton innerButton7 = new InnerButton();
-					innerButton4.setText("IMF");
-					innerButton4.setPostback("IMF");
+					innerButton7.setText("IMF");
+					innerButton7.setPostback("IMF");
 							
 					innerbuttonlist.add(innerButton1);
 					innerbuttonlist.add(innerButton2);
