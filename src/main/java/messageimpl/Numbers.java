@@ -6,6 +6,9 @@ public class Numbers
 			String convertsum3, String real_tim_timstamp, String channel, String user_sub_channel, String dailyAdjustMFYP, 
 			String ytd_adj_mfyp, String dailyAppliedAFYP, String ytd_applied_afyp)
 	{
+		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
+		Facebook fb = new Facebook();
+		InnerData innerData= new InnerData();
 		String finalresponse="";
 		if("MONTHLY".equalsIgnoreCase(period) ||"MTD".equalsIgnoreCase(period) ||"MONTH".equalsIgnoreCase(period))
 		{
