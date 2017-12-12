@@ -1491,31 +1491,46 @@ public class APIConsumerService {
 		}
 		
 		InnerButton innerButton1 = new InnerButton();
-		innerButton1.setText("Axis");
-		innerButton1.setPostback("PostBack");
-				//For Second button
-		InnerButton innerButton2 = new InnerButton();
-		innerButton2.setText("Agency");
-		innerButton2.setPostback("CallBack");
-				
-		InnerButton innerButton3 = new InnerButton();
-		innerButton3.setText("Banca");
-		innerButton3.setPostback("PostBack");
-				
-		InnerButton innerButton4 = new InnerButton();
-		innerButton4.setText("CAT");
-		innerButton4.setPostback("PostBack");
-				
-		innerbuttonlist.add(innerButton1);
-		innerbuttonlist.add(innerButton2);
-		innerbuttonlist.add(innerButton3);
-		innerbuttonlist.add(innerButton4);
-		fb.setButtons(innerbuttonlist);
-		fb.setTitle("MLIChatBot");
-		fb.setPlatform("API.AI");
-		fb.setType("Chatbot");
-		fb.setImageUrl("BOT");
-		innerData.setFacebook(fb);
+					innerButton1.setText("Axis Bank");
+					innerButton1.setPostback("AxisBank");
+							//For Second button
+					InnerButton innerButton2 = new InnerButton();
+					innerButton2.setText("Agency");
+					innerButton2.setPostback("Agency");
+							
+					InnerButton innerButton3 = new InnerButton();
+					innerButton3.setText("Banca");
+					innerButton3.setPostback("Banca");
+							
+					InnerButton innerButton4 = new InnerButton();
+					innerButton4.setText("CAT");
+					innerButton4.setPostback("CAT");
+					
+					InnerButton innerButton5 = new InnerButton();
+					innerButton5.setText("Ecomm");
+					innerButton5.setPostback("Ecomm");
+					
+					InnerButton innerButton6 = new InnerButton();
+					innerButton6.setText("IM");
+					innerButton6.setPostback("IM");
+					
+					InnerButton innerButton7 = new InnerButton();
+					innerButton7.setText("IMF");
+					innerButton7.setPostback("IMF");
+							
+					innerbuttonlist.add(innerButton1);
+					innerbuttonlist.add(innerButton2);
+					innerbuttonlist.add(innerButton3);
+					innerbuttonlist.add(innerButton4);
+					innerbuttonlist.add(innerButton5);
+					innerbuttonlist.add(innerButton6);
+					innerbuttonlist.add(innerButton7);
+					fb.setButtons(innerbuttonlist);
+					fb.setTitle("MLIChatBot");
+					fb.setPlatform("API.AI");
+					fb.setType("Chatbot");
+					fb.setImageUrl("BOT");
+					innerData.setFacebook(fb);
 		WebhookResponse responseObj = new WebhookResponse(speech, speech, innerData);
 		System.out.println("End : Response"+ speech);
 		return responseObj;
