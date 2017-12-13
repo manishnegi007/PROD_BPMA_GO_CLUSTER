@@ -1489,8 +1489,9 @@ public class APIConsumerService {
 		{
 			System.out.println("Exception In Outer Catch"+ex);
 		}
-		
-		InnerButton innerButton1 = new InnerButton();
+		if("NUMBERS".equalsIgnoreCase(action))
+		{
+		                        InnerButton innerButton1 = new InnerButton();
 					innerButton1.setText("Axis Bank");
 					innerButton1.setPostback("AxisBank");
 							//For Second button
@@ -1531,6 +1532,7 @@ public class APIConsumerService {
 					fb.setType("Chatbot");
 					fb.setImageUrl("BOT");
 					innerData.setFacebook(fb);
+		}
 		WebhookResponse responseObj = new WebhookResponse(speech, speech, innerData);
 		System.out.println("End : Response"+ speech);
 		return responseObj;
