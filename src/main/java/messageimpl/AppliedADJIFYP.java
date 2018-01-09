@@ -13,7 +13,14 @@ public class AppliedADJIFYP
 		{period="";}
 		else
 		{
-			period=period.toUpperCase();
+		     if("FTD".equalsIgnoreCase(period))
+			{
+				period="MTD";
+			}
+			else
+			{
+				period=period.toUpperCase();
+			}
 		}
 		if(!"".equalsIgnoreCase(user_circle))
 		{
