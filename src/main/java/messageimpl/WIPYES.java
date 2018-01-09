@@ -19,13 +19,13 @@ public class WIPYES
 		}
 		else
 		{
-			finalresponse="WIP AFYP :" +convertsum3+
-					"\n\n HO WIP AFYP :"+hoWIPAFYP+
-					"\n\n GO WIP AFYP :"+goWIPAFYP+
-					"\n\n IT WIP AFYP :"+itWIPAFYP+
-					"\n\n FIN WIP AFYP :"+finWIPAFYP+
-					"\n\n MISC WIP AFYP :"+miscWIPAFYP+
-					"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"";
+			finalresponse="WIP AFYP :" +convertsum3+"Cr."
+					+"\n\n HO WIP AFYP :"+hoWIPAFYP+"Cr."
+					+"\n\n GO WIP AFYP :"+goWIPAFYP+"Cr."
+					+"\n\n IT WIP AFYP :"+itWIPAFYP+"Cr."
+					+"\n\n FIN WIP AFYP :"+finWIPAFYP+"Cr."
+					+"\n\n MISC WIP AFYP :"+miscWIPAFYP+"Cr."
+					+"\n\n WELCOME WIP AFYP :"+welcomeWIPAFYP+"Cr.";
 		}
 		return finalresponse.toString();
 	}
