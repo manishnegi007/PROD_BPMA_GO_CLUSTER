@@ -57,13 +57,10 @@ public class MliBotController{
 		System.out.println("Size of the CashHashMap: No.of User Enter: "+ sessionMapcontainssoinfo.size());
 		//	------------------------For Development Purpose Only--------------------------------
 		
-		String productType = ""; String planType = ""; String period = ""; String channel = "";	String sessionId = "";
-		String userOTP = ""; String speech = ""; String cachePeriod = ""; String cashplanType = ""; String cashchannel = "";
-		String cashproductType = ""; String ssoId = "";	String cashCircle = "";	String cashRegion=""; String cashZone="";
-		String circle=""; String region=""; String zone=""; String subChannel=""; String cash_Sub_Channel=""; String source="";
-		String nbvalidate_source = ""; String nbvalidateplatform="";
-		final String status="";
-
+		String productType = "" , planType = "", period = "", channel = "", sessionId = "", userOTP = "", speech = "";
+		String cachePeriod = "",  cashplanType = "", cashchannel = "", cashproductType = "", ssoId = "", cashCircle = "";
+		String cashRegion = "", cashZone = "", circle = "", region = "", zone = "", subChannel = "", cash_Sub_Channel = "";
+		String source="",  nbvalidate_source = "", nbvalidateplatform="", cluster="", go="", cashCluster="", cashGo="";
 		WebhookResponse response = new WebhookResponse();
 		MliBotController mliBotController= new MliBotController();
 		try 
@@ -213,8 +210,9 @@ public class MliBotController{
 			}else
 			{
 				if(sessionMapcontainssoinfo.containsKey(sessionId)){
-					String user_ssoid="", user_channel="", user_sub_channel="", user_designation_desc="", user_getzone="", user_region="", user_circle="", 
-							user_clusters="", user_go="", user_cmo="", user_amo="";
+					String user_ssoid = "", user_channel = "", user_sub_channel = "", user_designation_desc = "",
+							user_getzone = "", user_region = "", user_circle = "", user_clusters = "", user_go = "",
+							user_cmo = "", user_amo = "";
 					String Validation="";
 					Map<String,String> cashMap= sessionMapcontainssoinfo.get(sessionId);
 					Validation=cashMap.get("Validation");
