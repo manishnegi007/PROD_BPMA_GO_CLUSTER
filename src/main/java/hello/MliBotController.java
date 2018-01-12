@@ -219,7 +219,7 @@ public class MliBotController{
 					ssoId = cashMap.get("validSSOID");
 					if("success".equalsIgnoreCase(Validation))
 					{
-						logger.info("Action Call START : SessionId"+sessionId);
+						
 						try {
 							channel = object.getJSONObject("result").getJSONObject("parameters").getString("Channel");
 						} catch (Exception e) {
@@ -1472,13 +1472,11 @@ public class MliBotController{
 						else 
 						{
 							try {
-								logger.info("First Call START :- SSOId"+ssoId+ "SessionId:-"+sessionId);
+								
 								String segment = "SSO_VALIDATION";
 								HttpUrlConnection_GetDetails getdetail = new HttpUrlConnection_GetDetails();
 								//String ssoId2 = "kpkpun0139";// hvhom1028/vsbby0105/kpkpun0139/smbby0236
-								logger.info("START : GETUSERDETAIL Method");
 								String getdetailresult = getdetail.getUserDetail(segment, ssoId);
-								logger.info("END : GETUSERDETAIL Method");
 								JSONObject getUserDetailObject = new JSONObject(getdetailresult);
 								try {
 									user_ssoid = getUserDetailObject.getJSONObject("payload").getJSONObject("ssovalidation").get("ssoid") + "";
