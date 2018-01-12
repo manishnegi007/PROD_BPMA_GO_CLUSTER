@@ -1894,8 +1894,8 @@ public class MliBotController{
 			requestdata.append("	         }	");
 			requestdata.append("	      },	");
 			requestdata.append("	      \"requestBody\": {	");
-			requestdata.append("	         \"appAccId\": \"SRV_BOTS\",	");
-			requestdata.append("	         \"appAccPass\": \"t(9Kp~8P\",	");
+			requestdata.append("	         \"appAccId\": \"PROMO_SOA\",	");
+			requestdata.append("	         \"appAccPass\": \"y!7Ej@9C\",	");
 			requestdata.append("	         \"appId\": \"MAXLIT\",	");
 			requestdata.append("	         \"msgTo\": \""+phoneno+"\",	");
 			requestdata.append("	         \"msgText\": \"Your Maxlife Assistant OTP is:"+randomotp+"\"	");
