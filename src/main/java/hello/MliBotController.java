@@ -343,9 +343,11 @@ public class MliBotController{
 										|| actionperformed.equalsIgnoreCase("nb.paid") || actionperformed.equalsIgnoreCase("nb.Producttype")
 										|| actionperformed.equalsIgnoreCase("nb.Cluster") || actionperformed.equalsIgnoreCase("nb.GO")) 
 								{
+									kpiAsked=actionperformed;
 									diffIntent=actionperformed;
 									actionperformed = sessionMap.get(sessionId).get("action") + "";
 								} else {
+									kpiAsked=actionperformed;
 									diffIntent = sessionMap.get(sessionId).get("action") + "";
 									Map map = sessionMap.get(sessionId);
 									map.put("action", actionperformed);	
@@ -1643,6 +1645,7 @@ public class MliBotController{
 									map.put("employeeIdentification", "CH");
 								}
 							}
+							String kpiAsked=actionperformed;
 							if (actionperformed.equalsIgnoreCase("nb.channel")
 									|| actionperformed.equalsIgnoreCase("nb.period")
 									|| actionperformed.equalsIgnoreCase("nb.circle")
