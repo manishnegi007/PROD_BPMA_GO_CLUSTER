@@ -3,7 +3,8 @@ package messageimpl;
 public class PaidCases 
 {
 	public static String paidCasesIntent(String channel, String period, String user_circle, String user_region, String userzone,
-			String real_tim_timstamp, String mtd_inforced_count, String ytd_inforced_count, double daily_inforced_count1, String subchannel)
+			String real_tim_timstamp, String mtd_inforced_count, String ytd_inforced_count, double daily_inforced_count1, String subchannel,
+			String user_clusters, String user_go)
 			
 	{
 		String finalresponse="";
@@ -20,34 +21,43 @@ public class PaidCases
 		{
 			user_region="Circle "+user_circle;
 		}
+		if(!"".equalsIgnoreCase(user_go))
+		{
+			user_clusters="Go "+user_go;
+		}
 		if(!"".equalsIgnoreCase(subchannel))
 	        {
                 	channel = subchannel;
 	        }
-		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " Paid cases MTD for MLI is "
 					+ mtd_inforced_count+ ". Paid cases YTD for MLI is " + ytd_inforced_count + 
 					". If you want to see the channel wise business numbers, please specify.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= "As of " + real_tim_timstamp + " Paid cases MTD for " + channel + " is " + mtd_inforced_count +
 					". Paid cases YTD for " +channel + " is " + ytd_inforced_count +
 					". If you want to see the zone/region wise business numbers, please specify.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse="As of " + real_tim_timstamp + " Paid cases MTD for " + userzone + " zone is " + mtd_inforced_count + ". Paid cases YTD for " +
 					userzone + " zone is " + ytd_inforced_count + ". If you want to see the region wise business numbers, please specify.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse="As of " +real_tim_timstamp + " Paid cases MTD for " + user_region + " is " + mtd_inforced_count +
 					". Paid cases YTD for " + user_region + " is " + ytd_inforced_count;
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of " +real_tim_timstamp + " Paid cases MTD for " + user_clusters + " is " + mtd_inforced_count +
+					". Paid cases YTD for " + user_clusters + " is " + ytd_inforced_count;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -65,7 +75,7 @@ public class PaidCases
 						". If you want to see the zone/region wise business numbers, please specify.";	
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -84,7 +94,7 @@ public class PaidCases
 			}
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{	
@@ -99,7 +109,22 @@ public class PaidCases
 				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " is " + daily_inforced_count1;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{	
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_clusters + " is " + ytd_inforced_count;
+			}
+			else if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_clusters + " is " + mtd_inforced_count;
+			}
+			else
+			{
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_clusters + " is " + daily_inforced_count1;
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{	
@@ -112,6 +137,21 @@ public class PaidCases
 			else
 			{
 				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_region + " is " + daily_inforced_count1;
+			}
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		{
+			if("YTD".equalsIgnoreCase(period))
+			{	
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_clusters + " is " + ytd_inforced_count;
+			}
+			else if("MTD".equalsIgnoreCase(period))
+			{
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_clusters + " is " + mtd_inforced_count;
+			}
+			else
+			{
+				finalresponse="As of " + real_tim_timstamp + " Paid cases " + period + " for " + user_clusters + " is " + daily_inforced_count1;
 			}
 		}
 		else
