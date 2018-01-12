@@ -1538,7 +1538,7 @@ public class MliBotController{
 							} 
 							catch (Exception ex) 
 							{
-								logger.info("Exception Occured while while calling External API GetUserDetail");
+								System.out.println("Exception Occured while while calling External API GetUserDetail");
 							}
 							Map<String, String> map = new HashMap<String, String>();
 							if (!user_ssoid.equalsIgnoreCase("")) {
