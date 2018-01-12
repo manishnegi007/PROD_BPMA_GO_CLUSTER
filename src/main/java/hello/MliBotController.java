@@ -341,7 +341,7 @@ public class MliBotController{
 										|| actionperformed.equalsIgnoreCase("nb.zonencircle")|| actionperformed.equalsIgnoreCase("nb.channelnregion")
 										|| actionperformed.equalsIgnoreCase("nb.channelnzonenregion")|| actionperformed.equalsIgnoreCase("nb.channelnzonencircle")
 										|| actionperformed.equalsIgnoreCase("nb.paid") || actionperformed.equalsIgnoreCase("nb.Producttype")
-										|| actionperformed.equalsIgnoreCase("nb.Cluster") || actionperformed.equalsIgnoreCase("nb.GO")) 
+										|| actionperformed.equalsIgnoreCase("nb.Cluster") || actionperformed.equalsIgnoreCase("nb.Go")) 
 								{
 									kpiAsked=actionperformed;
 									diffIntent=actionperformed;
@@ -1185,7 +1185,7 @@ public class MliBotController{
 										|| actionperformed.equalsIgnoreCase("nb.subchannelnregion")|| actionperformed.equalsIgnoreCase("nb.zonencircle")
 										|| actionperformed.equalsIgnoreCase("nb.channelnregion")|| actionperformed.equalsIgnoreCase("nb.channelnzonenregion")
 										|| actionperformed.equalsIgnoreCase("nb.channelnzonencircle")|| actionperformed.equalsIgnoreCase("NB.Producttype")
-										|| actionperformed.equalsIgnoreCase("nb.Cluster") || actionperformed.equalsIgnoreCase("nb.GO"))
+										|| actionperformed.equalsIgnoreCase("nb.Cluster") || actionperformed.equalsIgnoreCase("nb.Go"))
 								{
 									/*diffIntent=actionperformed;*/
 									kpiAsked=actionperformed;
