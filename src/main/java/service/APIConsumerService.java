@@ -21,10 +21,22 @@ import messageimpl.WIP; import messageimpl.WIPYES;
 public class APIConsumerService {
 	
 	public WebhookResponse getWipDataAll(String action, String channel, String period, String productType, String planType,
-				String user_ssoid, String user_sub_channel, String user_designation_desc, 
-				String userzone, String user_region, String user_circle, String user_clusters, String user_go, 
-				String user_cmo, String user_amo, String sessionId, String source)
+			String user_ssoid, String user_sub_channel, String user_designation_desc, 
+			String userzone, String user_region, String user_circle, String user_clusters, String user_go, String user_cmo, 
+			String user_amo, String kpiAsked, String sessionId, String source)
 	{
+		System.out.println("Action             :-"+action);
+		System.out.println("Channel            :-"+channel);
+		System.out.println("Period             :-"+action);
+		System.out.println("ProductType        :-"+productType);
+		System.out.println("PlanType           :-"+planType);
+		System.out.println("User_SSOID         :-"+user_ssoid);
+		System.out.println("User_Sub_Channel   :-"+user_sub_channel);
+		System.out.println("UserZone           :-"+userzone);
+		System.out.println("User_Region        :-"+user_region);
+		System.out.println("User_Circle        :-"+user_circle);
+		System.out.println("User_Clusters      :-"+user_clusters);
+		System.out.println("User_Go            :-"+user_go);
 		System.out.println("Inside APIConsumerService");
 		List<InnerButton> innerbuttonlist = new ArrayList<InnerButton>();
 		Facebook fb = new Facebook();
