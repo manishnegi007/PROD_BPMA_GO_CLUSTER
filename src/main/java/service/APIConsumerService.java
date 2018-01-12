@@ -51,6 +51,18 @@ public class APIConsumerService {
 
 		for(int i=0; i<=0; i++)
 		{
+			if(!"".equalsIgnoreCase(user_clusters))
+			{
+				msgChannel=user_clusters;
+				msgChannel="Cluster "+msgChannel;
+				break;
+			}
+			if(!"".equalsIgnoreCase(user_go))
+			{
+				msgChannel=user_go;
+				msgChannel="GO "+msgChannel;
+				break;
+			}
 			if(!"".equalsIgnoreCase(user_circle))
 			{
 				msgChannel=user_circle;
