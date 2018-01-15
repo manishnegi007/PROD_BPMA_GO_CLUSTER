@@ -17,8 +17,7 @@ public class GrowthLPCPaidCases
 			if("FTD".equalsIgnoreCase(period))
 			{
 				period="YTD";
-			}
-			else
+			}else
 			{
 				period=period.toUpperCase();
 			}
@@ -28,11 +27,13 @@ public class GrowthLPCPaidCases
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(subchannel))
-		{channel = subchannel;}
+		{
+			channel = subchannel;
+		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "MLI has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
