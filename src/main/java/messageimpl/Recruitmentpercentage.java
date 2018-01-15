@@ -17,8 +17,7 @@ public class Recruitmentpercentage {
 			if("FTD".equalsIgnoreCase(period))
 			{
 				period="MTD";
-			}
-			else
+			}else
 			{
 				period=period.toUpperCase();
 			}
@@ -29,13 +28,12 @@ public class Recruitmentpercentage {
 		}
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		if(!"".equalsIgnoreCase(subchannel))
 		{
-        	 channel = subchannel;
+        	 	channel = subchannel;
 		}
-
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= "MLI recruitment acheivement MTD: "+achiev_mtd_recruitment+" % YTD "+achiev_ytd_recruitment+" % till "+real_tim_timstamp+
