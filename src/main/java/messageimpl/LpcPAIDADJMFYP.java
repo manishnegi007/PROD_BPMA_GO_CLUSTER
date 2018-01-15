@@ -17,8 +17,7 @@ public class LpcPAIDADJMFYP {
 				if("FTD".equalsIgnoreCase(period))
 				{
 					period="MTD";
-				}
-				else
+				}else
 				{
 					period=period.toUpperCase();
 				}
@@ -29,7 +28,7 @@ public class LpcPAIDADJMFYP {
 			}
 			if(!"".equalsIgnoreCase(user_go))
 			{
-				user_clusters="Go "+user_go;
+				user_clusters="Office "+user_go;
 			}
 			if(!"".equalsIgnoreCase(subchannel))
 			{
