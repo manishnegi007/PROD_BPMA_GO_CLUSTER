@@ -19,8 +19,7 @@ public class GrowthLPCAPLCases
 			if("FTD".equalsIgnoreCase(period))
 			{
 				period="MTD";
-			}
-			else
+			}else
 			{
 				period=period.toUpperCase();
 			}
@@ -29,10 +28,12 @@ public class GrowthLPCAPLCases
 		{user_region="Circle "+user_circle;}
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		if(!"".equalsIgnoreCase(subchannel))
-		{channel = subchannel;}
+		{
+			channel = subchannel;
+		}
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= "MLI has witnessed LPC applied business growth of "+grth_lpc_applied_cases_ytd+"% on YTD basis, last year same time we had clocked "+
