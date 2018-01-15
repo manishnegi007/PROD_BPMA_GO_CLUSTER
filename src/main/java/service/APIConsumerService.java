@@ -60,7 +60,7 @@ public class APIConsumerService {
 			if(!"".equalsIgnoreCase(user_go))
 			{
 				msgChannel=user_go;
-				msgChannel="GO "+msgChannel;
+				msgChannel="Office "+msgChannel;
 				break;
 			}
 			if(!"".equalsIgnoreCase(user_circle))
