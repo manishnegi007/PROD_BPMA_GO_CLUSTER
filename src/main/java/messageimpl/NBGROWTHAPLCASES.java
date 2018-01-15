@@ -30,12 +30,12 @@ public class NBGROWTHAPLCASES
 		}
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		if(!"".equalsIgnoreCase(subchannel))
 	        {
-                channel = subchannel;
-	         }
+                	channel = subchannel;
+	        }
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= "MLI has witnessed applied Business growth of "+grth_applied_cases_ytd+" % on YTD basis, last year same time we had clocked "+
