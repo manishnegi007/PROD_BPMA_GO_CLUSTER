@@ -30,13 +30,12 @@ public class LpcPAIDCASES {
 			}
 			if(!"".equalsIgnoreCase(user_go))
 			{
-				user_clusters="Go "+user_go;
+				user_clusters="Office "+user_go;
 			}
 			if(!"".equalsIgnoreCase(subchannel))
 			{
 				channel = subchannel;
 			}
-
 			if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for MLI is  "
