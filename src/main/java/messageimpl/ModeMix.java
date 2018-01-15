@@ -18,8 +18,7 @@ public class ModeMix {
 			if("FTD".equalsIgnoreCase(period))
 			{
 				period="YTD";
-			}
-			else
+			}else
 			{
 				period=period.toUpperCase();
 			}
@@ -29,7 +28,7 @@ public class ModeMix {
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(subchannel))
