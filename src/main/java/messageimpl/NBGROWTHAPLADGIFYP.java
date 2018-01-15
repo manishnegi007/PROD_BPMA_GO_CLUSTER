@@ -16,8 +16,7 @@ public class NBGROWTHAPLADGIFYP
 			if("FTD".equalsIgnoreCase(period))
 			{
 				period="MTD";
-			}
-			else
+			}else
 			{
 				period=period.toUpperCase();
 			}
@@ -28,7 +27,7 @@ public class NBGROWTHAPLADGIFYP
 		}
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Circle "+user_go;
 		}
 		if(!"".equalsIgnoreCase(subchannel))
 	        {
