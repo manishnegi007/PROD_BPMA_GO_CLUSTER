@@ -22,8 +22,7 @@ public class ProductMix
 			if("FTD".equalsIgnoreCase(period))
 			{
 				period="YTD";
-			}
-			else
+			}else
 			{
 				period=period.toUpperCase();
 			}
@@ -35,14 +34,13 @@ public class ProductMix
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(subchannel))
 		{
 			channel = subchannel;
 		}
-
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of "+real_tim_timstamp+" MTD Product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_mtd_adj_mfyp+" %, Par: "+par_penet_mtd_adj_mfyp+" % Non-Par: "+nonpar_penet_mtd_adj_mfyp+"% & Protection: "+
