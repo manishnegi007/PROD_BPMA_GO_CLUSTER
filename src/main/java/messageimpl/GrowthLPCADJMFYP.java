@@ -30,7 +30,7 @@ public class GrowthLPCADJMFYP {
 		{user_region="Circle "+user_circle;}
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Go "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		if(!"".equalsIgnoreCase(subchannel))
 		{channel = subchannel;}
