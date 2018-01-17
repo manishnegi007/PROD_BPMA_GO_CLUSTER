@@ -22,7 +22,8 @@ public class ProductMix
 			if("FTD".equalsIgnoreCase(period))
 			{
 				period="YTD";
-			}else
+			}
+			else
 			{
 				period=period.toUpperCase();
 			}
@@ -34,13 +35,14 @@ public class ProductMix
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Office "+user_go;
+			user_clusters="Go "+user_go;
 		}
 		/*------------------------------------------------*/
 		if(!"".equalsIgnoreCase(subchannel))
 		{
 			channel = subchannel;
 		}
+
 		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of "+real_tim_timstamp+" MTD Product mix ratio on Adj MFYP for MLI is ULIP: "+ul_penet_mtd_adj_mfyp+" %, Par: "+par_penet_mtd_adj_mfyp+" % Non-Par: "+nonpar_penet_mtd_adj_mfyp+"% & Protection: "+
@@ -70,6 +72,13 @@ public class ProductMix
 			finalresponse="As of "+real_tim_timstamp+" MTD Product mix ratio on Adj MFYP for" +user_region+ " is ULIP: "+ul_penet_mtd_adj_mfyp+"%, Par: "+par_penet_mtd_adj_mfyp+"%, Non-Par: "+nonpar_penet_mtd_adj_mfyp+"% & Protection: "+
 					protec_penet_mtd_adj_mfyp+"%. Paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"%, Par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & Protection: "+protec_penet_mtd_pol_cnt+
 					"%. YTD Product mix ratio on Adj MFYP for "+user_region+" is ULIP: "+ul_penet_ytd_adj_mfyp+"%, Par: "+par_penet_ytd_adj_mfyp+"%, Non-Par: "+nonpar_penet_ytd_adj_mfyp+"% & Protection: "+
+					protec_penet_ytd_adj_mfyp+"%. Paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, Par: "+par_penet_ytd_pol_cnt+"%, Non-par: "+nonpar_penet_ytd_pol_cnt+"% & Protection: "+protec_penet_ytd_pol_cnt+"";
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of "+real_tim_timstamp+" MTD Product mix ratio on Adj MFYP for" +user_clusters+ " is ULIP: "+ul_penet_mtd_adj_mfyp+"%, Par: "+par_penet_mtd_adj_mfyp+"%, Non-Par: "+nonpar_penet_mtd_adj_mfyp+"% & Protection: "+
+					protec_penet_mtd_adj_mfyp+"%. Paid case ratio: ULIP: "+ul_penet_mtd_pol_cnt+"%, Par: "+par_penet_mtd_pol_cnt+"%, Non-par: "+nonpar_penet_mtd_pol_cnt+"% & Protection: "+protec_penet_mtd_pol_cnt+
+					"%. YTD Product mix ratio on Adj MFYP for "+user_clusters+" is ULIP: "+ul_penet_ytd_adj_mfyp+"%, Par: "+par_penet_ytd_adj_mfyp+"%, Non-Par: "+nonpar_penet_ytd_adj_mfyp+"% & Protection: "+
 					protec_penet_ytd_adj_mfyp+"%. Paid case ratio: ULIP: "+ul_penet_ytd_pol_cnt+"%, Par: "+par_penet_ytd_pol_cnt+"%, Non-par: "+nonpar_penet_ytd_pol_cnt+"% & Protection: "+protec_penet_ytd_pol_cnt+"";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
