@@ -62,14 +62,14 @@ public class NBCaseSize
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
 				&& "".equalsIgnoreCase(period))
 		{
-			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_region+" zone is "+case_size_afyp_mtd+
+			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_region+" is "+case_size_afyp_mtd+
 					" Case Size YTD for"+user_region+" is "+case_size_afyp_ytd;
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
 				&& "".equalsIgnoreCase(period))
 		{
-			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_clusters+" zone is "+case_size_afyp_mtd+
-					" Case Size YTD for"+user_clusters+" zone is "+case_size_afyp_ytd;
+			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_clusters+" is "+case_size_afyp_mtd+
+					" Case Size YTD for"+user_clusters+" is "+case_size_afyp_ytd;
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
 				&& !"".equalsIgnoreCase(period))
