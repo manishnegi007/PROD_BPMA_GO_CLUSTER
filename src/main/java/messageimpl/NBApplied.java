@@ -26,11 +26,6 @@ public class NBApplied
 		{
 			user_clusters="Go "+user_go;
 		}
-		if(!"".equalsIgnoreCase(user_clusters))
-		{
-			user_clusters="Cluster "+user_clusters;
-		/*------------------------------------------------*/
-		}
 		if(!"".equalsIgnoreCase(subchannel))
 		{
 			channel = subchannel;
