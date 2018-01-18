@@ -63,6 +63,30 @@ public class NbAchievement
 					" for Adj MFYP and till "+real_tim_timstamp+" We have achieved "+ytd_adj_mfyp_act+" Cr & "+ytd_paid_case_act+" paid cases against "+ytd_paid_case_pln+
 					". If you want to see the zone/region wise business numbers, please specify.";	
 		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="At MTD level "+user_clusters+" has achieved "+achiev_mtd_adj_mfyp+" % of Management Plan for Adj MFYP & "+achiev_mtd_paid_case+" % of Paid Cases, Monthly plan for Adj MFYP is "+mtd_adj_afyp_act+
+					" till "+real_tim_timstamp+" We have achieved "+mtd_adj_afyp_pln+" Cr & "+mtd_paid_case_act+" paid cases against "+mtd_paid_case_pln+"At YTD level "+user_clusters+" region has achieved "+achiev_ytd_adj_mfyp+
+					" % of Management Plan for Adj MFYP & "+achiev_ytd_paid_case+" % of Paid Cases, Our YTD plan is "+ytd_adj_mfyp_pln+
+					" for Adj MFYP and till "+real_tim_timstamp+" We have achieved "+ytd_adj_mfyp_act+" Cr & "+ytd_paid_case_act+" paid cases against "+ytd_paid_case_pln+
+					". If you want to see the zone/region wise business numbers, please specify.";	
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="At MTD level "+user_clusters+" has achieved "+achiev_mtd_adj_mfyp+" % of Management Plan for Adj MFYP & "+achiev_mtd_paid_case+" % of Paid Cases, Monthly plan for Adj MFYP is "+mtd_adj_afyp_act+
+					" till "+real_tim_timstamp+" We have achieved "+mtd_adj_afyp_pln+" Cr & "+mtd_paid_case_act+" paid cases against "+mtd_paid_case_pln+"At YTD level "+user_clusters+" region has achieved "+achiev_ytd_adj_mfyp+
+					" % of Management Plan for Adj MFYP & "+achiev_ytd_paid_case+" % of Paid Cases, Our YTD plan is "+ytd_adj_mfyp_pln+
+					" for Adj MFYP and till "+real_tim_timstamp+" We have achieved "+ytd_adj_mfyp_act+" Cr & "+ytd_paid_case_act+" paid cases against "+ytd_paid_case_pln+
+					". If you want to see the zone/region wise business numbers, please specify.";	
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="At MTD level "+user_region+" has achieved "+achiev_mtd_adj_mfyp+" % of Management Plan for Adj MFYP & "+achiev_mtd_paid_case+" % of Paid Cases, Monthly plan for Adj MFYP is "+mtd_adj_afyp_act+
+					" till "+real_tim_timstamp+" We have achieved "+mtd_adj_afyp_pln+" Cr & "+mtd_paid_case_act+" paid cases against "+mtd_paid_case_pln+"At YTD level "+user_region+" region has achieved "+achiev_ytd_adj_mfyp+
+					" % of Management Plan for Adj MFYP & "+achiev_ytd_paid_case+" % of Paid Cases, Our YTD plan is "+ytd_adj_mfyp_pln+
+					" for Adj MFYP and till "+real_tim_timstamp+" We have achieved "+ytd_adj_mfyp_act+" Cr & "+ytd_paid_case_act+" paid cases against "+ytd_paid_case_pln+
+					". If you want to see the zone/region wise business numbers, please specify.";	
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
