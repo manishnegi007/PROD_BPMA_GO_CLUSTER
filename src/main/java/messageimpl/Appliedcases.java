@@ -59,6 +59,18 @@ public class Appliedcases
 					+mtd_applied_count+ ". Applied cases YTD for "+user_clusters+" is "+ ytd_applied_count;
 
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for "+user_clusters+ " is " 
+					+mtd_applied_count+ ". Applied cases YTD for "+user_clusters+" is "+ ytd_applied_count;
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "As of "+real_tim_timstamp+" Applied cases MTD for "+user_region+ " is " 
+					+mtd_applied_count+ ". Applied cases YTD for "+user_region+" is "+ ytd_applied_count;
+
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
