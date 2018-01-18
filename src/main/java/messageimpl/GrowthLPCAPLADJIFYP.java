@@ -68,7 +68,7 @@ public class GrowthLPCAPLADJIFYP {
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "Region "+user_region+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+			finalresponse= ""+user_region+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
 					prev_lpc_applied_adj_ifyp_ytd+ "Cr LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 					grth_lpc_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
 					prev_lpc_applied_adj_ifyp_mtd+"Cr of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today."
@@ -76,7 +76,7 @@ public class GrowthLPCAPLADJIFYP {
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "Cluster "+user_clusters+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+			finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
 					prev_lpc_applied_adj_ifyp_ytd+ "Cr LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 					grth_lpc_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
 					prev_lpc_applied_adj_ifyp_mtd+"Cr of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today."
@@ -84,7 +84,7 @@ public class GrowthLPCAPLADJIFYP {
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "Cluster "+user_clusters+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+			finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
 					prev_lpc_applied_adj_ifyp_ytd+ "Cr LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 					grth_lpc_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
 					prev_lpc_applied_adj_ifyp_mtd+"Cr of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today."
@@ -92,7 +92,7 @@ public class GrowthLPCAPLADJIFYP {
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "Region "+user_region+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+			finalresponse= ""+user_region+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
 					prev_lpc_applied_adj_ifyp_ytd+ "Cr LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today MTD business Growth of "+ 
 					grth_lpc_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
 					prev_lpc_applied_adj_ifyp_mtd+"Cr of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today."
@@ -132,13 +132,13 @@ public class GrowthLPCAPLADJIFYP {
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_ytd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Region "+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_mtd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
@@ -147,13 +147,13 @@ public class GrowthLPCAPLADJIFYP {
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Cluster "+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_ytd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Cluster "+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_mtd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
@@ -162,13 +162,13 @@ public class GrowthLPCAPLADJIFYP {
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_ytd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Region "+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_mtd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
@@ -177,13 +177,13 @@ public class GrowthLPCAPLADJIFYP {
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Cluster "+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_ytd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_ytd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Cluster "+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_applied_adj_ifyp_mtd+ " of LPC applied Adj IFYP as compared to " +lpc_paid_adj_mfyp_mtd_growth+ "Cr today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
