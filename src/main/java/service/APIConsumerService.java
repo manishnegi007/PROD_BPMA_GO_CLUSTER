@@ -354,6 +354,12 @@ public class APIConsumerService {
 				{
 					user_circle=user_circle.replaceAll("\\s","");
 				}
+				if(!"".equalsIgnoreCase(user_clusters))
+				{
+					user_clusters = user_clusters.replaceAll("Cluster","");
+					user_clusters = user_clusters.replaceAll("cluster","");
+					user_clusters=user_clusters.replaceAll("\\s","");
+				}
 				System.out.println("XTRUST PROVIDER START-2");
 				System.out.println("External Java Service Called: ");
 				user_designation_desc="";
