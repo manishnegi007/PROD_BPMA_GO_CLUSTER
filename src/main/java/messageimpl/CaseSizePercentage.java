@@ -58,6 +58,18 @@ public class CaseSizePercentage {
 					". If you want to see the region wise business numbers, please specIfy.";
 
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "Cluster "+user_clusters+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
+					". If you want to see the region wise business numbers, please specIfy.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "Region "+user_region+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
+					". If you want to see the region wise business numbers, please specIfy.";
+
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{	
 
