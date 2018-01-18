@@ -68,6 +68,20 @@ public class ProductMixPaidCase {
 
 		}
 		/*--------------------------------------------------------------------------------------------------*/
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of "+real_tim_timstamp+" MTD Product mix ratio on Paid Cases for "+user_clusters+" is ULIP: "+ul_penet_mtd_pol_cnt+"% , Par: "+par_penet_mtd_pol_cnt+"% , Non-par: "+nonpar_penet_mtd_pol_cnt+"% & Protection: "+protec_penet_mtd_pol_cnt+
+					"%. YTD Product mix ratio on Paid Cases for "+user_clusters+" is ULIP:  "+ul_penet_ytd_pol_cnt+"% , Par: "+par_penet_ytd_pol_cnt+"% , Non-par: "+nonpar_penet_ytd_pol_cnt+"% & Protection: "+protec_penet_ytd_pol_cnt+
+					"%.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of "+real_tim_timstamp+" MTD Product mix ratio on Paid Cases for "+user_region+" is ULIP: "+ul_penet_mtd_pol_cnt+"% , Par: "+par_penet_mtd_pol_cnt+"% , Non-par: "+nonpar_penet_mtd_pol_cnt+"% & Protection: "+protec_penet_mtd_pol_cnt+
+					"%. YTD Product mix ratio on Paid Cases for "+user_region+" is ULIP:  "+ul_penet_ytd_pol_cnt+"% , Par: "+par_penet_ytd_pol_cnt+"% , Non-par: "+nonpar_penet_ytd_pol_cnt+"% & Protection: "+protec_penet_ytd_pol_cnt+
+					"%.";
+
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
