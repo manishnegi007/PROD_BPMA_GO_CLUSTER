@@ -70,7 +70,38 @@ public class ModeMix {
 					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
 
-		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_clusters+" is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " %, Monthly: "+
+					monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+"%." +" YTD Mode mix ratio for "+user_clusters+" is Annual: "+
+					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_clusters+" is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " %, Monthly: "+
+					monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+"%." +" YTD Mode mix ratio for "+user_clusters+" is Annual: "+
+					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " %, Monthly: "+
+					monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+"%." +" YTD Mode mix ratio for "+user_region+" is Annual: "+
+					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{	
 			if("MTD".equalsIgnoreCase(period))
 			{
