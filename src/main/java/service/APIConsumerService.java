@@ -350,6 +350,10 @@ public class APIConsumerService {
 				||"NB.ProductMix".equalsIgnoreCase(action) || "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action)
 			        ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action) ||"NB.GROWTHAPLADJIFYP".equalsIgnoreCase(action))
 			{
+				if("West Bengal".equalsIgnoreCase(user_circle))
+				{
+					user_circle=user_circle.replaceAll("\\s","");
+				}
 				System.out.println("XTRUST PROVIDER START-2");
 				System.out.println("External Java Service Called: ");
 				user_designation_desc="";
