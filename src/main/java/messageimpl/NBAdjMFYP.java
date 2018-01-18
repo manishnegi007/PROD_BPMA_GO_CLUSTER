@@ -59,13 +59,25 @@ public class NBAdjMFYP
 				&& "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_region+ " is " +mtdAdjustMFYP+
-					" Paid Adj MFYP YTD for "+userzone+ " zone is " +ytd_adj_mfyp;
+					" Paid Adj MFYP YTD for "+user_region+ " is " +ytd_adj_mfyp;
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
 				&& "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_clusters+ " is " +mtdAdjustMFYP+
-					" Paid Adj MFYP YTD for "+userzone+ " zone is " +ytd_adj_mfyp;
+					" Paid Adj MFYP YTD for "+user_clusters+ " is " +ytd_adj_mfyp;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
+				&& "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_clusters+ " is " +mtdAdjustMFYP+
+					" Paid Adj MFYP YTD for "+user_clusters+ " is " +ytd_adj_mfyp;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
+				&& "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_region+ " is " +mtdAdjustMFYP+
+					" Paid Adj MFYP YTD for "+user_region+ " is " +ytd_adj_mfyp;
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
 				&& !"".equalsIgnoreCase(period))
