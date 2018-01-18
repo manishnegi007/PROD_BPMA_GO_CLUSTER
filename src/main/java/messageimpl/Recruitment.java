@@ -48,11 +48,19 @@ public class Recruitment {
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for "+user_region+" is " +recruitment_mtd+". Recruitment YTD for Region "+user_region+" is " +recruitment_ytd;
+			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for "+user_region+" is " +recruitment_mtd+". Recruitment YTD for "+user_region+" is " +recruitment_ytd;
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for "+user_clusters+" is " +recruitment_mtd+". Recruitment YTD for Region "+user_region+" is " +recruitment_ytd;
+			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for "+user_clusters+" is " +recruitment_mtd+". Recruitment YTD for "+user_clusters+" is " +recruitment_ytd;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for "+user_clusters+" is " +recruitment_mtd+". Recruitment YTD for "+user_clusters+" is " +recruitment_ytd;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "As of " +real_tim_timstamp+" Recruitment MTD for "+user_clusters+" is " +recruitment_mtd+". Recruitment YTD for "+user_region+" is " +recruitment_ytd;
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
