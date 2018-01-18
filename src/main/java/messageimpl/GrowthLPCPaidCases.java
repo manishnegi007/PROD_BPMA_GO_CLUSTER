@@ -60,7 +60,31 @@ public class GrowthLPCPaidCases
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
-			finalresponse= "Region "+user_region+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
+			finalresponse= ""+user_region+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
+					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
+					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
+					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
+					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
+					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
+					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
+					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
+					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= ""+user_region+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
+					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
+					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
+					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
+					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of "+grth_lpc_paid_cases_ytd+"% on YTD basis, last year same time we had clocked "+
 					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
@@ -101,13 +125,13 @@ public class GrowthLPCPaidCases
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+channel+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_mtd+ " of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Region "+channel+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_ytd+ " of LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
@@ -117,13 +141,13 @@ public class GrowthLPCPaidCases
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+channel+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+channel+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_mtd+ " of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Region "+channel+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+channel+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_ytd+ " of LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
@@ -133,13 +157,13 @@ public class GrowthLPCPaidCases
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Cluster "+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_mtd+ " of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Clusters "+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_ytd+ " of LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
@@ -149,13 +173,13 @@ public class GrowthLPCPaidCases
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+user_region+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_mtd+ " of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Region "+user_region+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_ytd+ " of LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
@@ -165,13 +189,13 @@ public class GrowthLPCPaidCases
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Cluster "+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_mtd+ " of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
 			else
 			{
-				finalresponse= "Cluster "+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_ytd+ " of LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}
