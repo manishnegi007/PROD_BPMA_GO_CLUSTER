@@ -66,6 +66,18 @@ public class Lpcaplcases
 						+ lpc_applied_cases_mtd + ". LPC Applied cases YTD for " + user_clusters + " is " + lpc_applied_cases_ytd+ "";
 
 			}
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+			{
+				finalresponse= "As of " + real_tim_timstamp + " LPC Applied cases MTD " + user_clusters + " is " 
+						+ lpc_applied_cases_mtd + ". LPC Applied cases YTD for " + user_clusters + " is " + lpc_applied_cases_ytd+ "";
+
+			}
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			{
+				finalresponse= "As of " + real_tim_timstamp + " LPC Applied cases MTD " + user_region + " is " 
+						+ lpc_applied_cases_mtd + ". LPC Applied cases YTD for " + user_region + " is " + lpc_applied_cases_ytd+ "";
+
+			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
