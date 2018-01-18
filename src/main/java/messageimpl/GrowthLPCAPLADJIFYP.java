@@ -82,6 +82,22 @@ public class GrowthLPCAPLADJIFYP {
 					prev_lpc_applied_adj_ifyp_mtd+"Cr of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today."
 					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "Cluster "+user_clusters+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+					prev_lpc_applied_adj_ifyp_ytd+ "Cr LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today MTD business Growth of "+ 
+					grth_lpc_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
+					prev_lpc_applied_adj_ifyp_mtd+"Cr of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today."
+					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "Region "+user_region+" has witnessed LPC applied business growth of "+grth_lpc_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+					prev_lpc_applied_adj_ifyp_ytd+ "Cr LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_ytd_growth+ "Cr today MTD business Growth of "+ 
+					grth_lpc_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
+					prev_lpc_applied_adj_ifyp_mtd+"Cr of LPC applied Adj IFYP as compared to " +lpc_applied_adj_ifyp_mtd_growth+ "Cr today."
+					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
