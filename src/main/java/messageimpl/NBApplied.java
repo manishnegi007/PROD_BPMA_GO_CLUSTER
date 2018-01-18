@@ -65,6 +65,20 @@ public class NBApplied
 
 		}
 		/*--------------------------------------------------------------------------------------------------*/
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
+				&& "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for " + user_clusters + " is " 
+					+ mtdAppliedAFYP + " Applied Business AFYP YTD for " + user_clusters + " is " + ytd_applied_afyp + " Cr";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
+				&& "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of " + real_tim_timstamp + " Applied Business AFYP MTD for " + user_region + " is " 
+					+ mtdAppliedAFYP + " Applied Business AFYP YTD for " + user_region + " is " + ytd_applied_afyp + " Cr";
+
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
 				&& !"".equalsIgnoreCase(period))
 		{
