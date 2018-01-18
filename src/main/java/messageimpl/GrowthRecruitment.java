@@ -125,12 +125,12 @@ public class GrowthRecruitment {
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}else
 			{
-				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
@@ -140,12 +140,12 @@ public class GrowthRecruitment {
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Clusters "+channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}else
 			{
-				finalresponse= "Clusters "+channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
@@ -155,12 +155,12 @@ public class GrowthRecruitment {
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}else
 			{
-				finalresponse= "Region "+channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_region+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
@@ -170,12 +170,12 @@ public class GrowthRecruitment {
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Clusters "+channel+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed recruitment growth of " +grth_recruitment_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_mtd+ " recruitments as compared to " +recruitment_mtd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}else
 			{
-				finalresponse= "Clusters "+channel+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= ""+user_clusters+" has witnessed recruitment growth of " +grth_recruitment_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today "
 						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same";
 			}
