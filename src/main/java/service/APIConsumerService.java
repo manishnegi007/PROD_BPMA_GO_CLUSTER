@@ -360,6 +360,17 @@ public class APIConsumerService {
 					user_clusters = user_clusters.replaceAll("cluster","");
 					user_clusters=user_clusters.replaceAll("\\s","");
 				}
+				/*---------------------------For testing----------------------*/
+				System.out.println("Action             :-"+action);
+				System.out.println("Channel            :-"+serviceChannel);
+				System.out.println("ProductType        :-"+productType);
+				System.out.println("User_Sub_Channel   :-"+user_sub_channel);
+				System.out.println("UserZone           :-"+userzone);
+				System.out.println("User_Region        :-"+user_region);
+				System.out.println("User_Circle        :-"+user_circle);
+				System.out.println("User_Clusters      :-"+user_clusters);
+				System.out.println("User_Go            :-"+user_go);
+				/*---------------------------For testing----------------------*/
 				System.out.println("XTRUST PROVIDER START-2");
 				System.out.println("External Java Service Called: ");
 				user_designation_desc="";
