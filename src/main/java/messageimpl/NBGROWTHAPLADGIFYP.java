@@ -59,7 +59,7 @@ public class NBGROWTHAPLADGIFYP
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "Region "+ user_region+ " has witnessed applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+			finalresponse= ""+ user_region+ " has witnessed applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
 					rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today MTD business Growth of "+ 
 					grth_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
 					rpev_applied_adj_ifyp_mtd+" Cr of Applied Adj IFYP as compared to " + applied_adj_ifyp_mtd+ " Cr today."
@@ -67,7 +67,23 @@ public class NBGROWTHAPLADGIFYP
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
-			finalresponse= "Cluster "+ user_clusters+ " has witnessed applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+			finalresponse= ""+ user_clusters+ " has witnessed applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+					rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today MTD business Growth of "+ 
+					grth_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
+					rpev_applied_adj_ifyp_mtd+" Cr of Applied Adj IFYP as compared to " + applied_adj_ifyp_mtd+ " Cr today."
+					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= ""+ user_clusters+ " has witnessed applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
+					rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today MTD business Growth of "+ 
+					grth_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
+					rpev_applied_adj_ifyp_mtd+" Cr of Applied Adj IFYP as compared to " + applied_adj_ifyp_mtd+ " Cr today."
+					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= ""+ user_region+ " has witnessed applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on YTD basis, last year same time we had clocked "+
 					rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today MTD business Growth of "+ 
 					grth_applied_adj_ifyp_mtd+ " % on MTD basis, last year same month we have clocked "+
 					rpev_applied_adj_ifyp_mtd+" Cr of Applied Adj IFYP as compared to " + applied_adj_ifyp_mtd+ " Cr today."
@@ -105,12 +121,12 @@ public class NBGROWTHAPLADGIFYP
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region " +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}else
 			{
-				finalresponse= "Region " +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_mtd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_mtd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
@@ -119,12 +135,12 @@ public class NBGROWTHAPLADGIFYP
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Cluster " +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}else
 			{
-				finalresponse= "Cluster " +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_mtd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_mtd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
@@ -133,12 +149,12 @@ public class NBGROWTHAPLADGIFYP
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Region " +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}else
 			{
-				finalresponse= "Region " +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_region+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_mtd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_mtd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
@@ -147,12 +163,12 @@ public class NBGROWTHAPLADGIFYP
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
-				finalresponse= "Cluster " +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_ytd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_ytd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
 			}else
 			{
-				finalresponse= "Cluster " +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
+				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_adj_ifyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
 						rpev_applied_adj_ifyp_mtd+ " Cr of Applied Adj IFYP as compared to " +applied_adj_ifyp_mtd+ " Cr today."
 						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";	
 			}
