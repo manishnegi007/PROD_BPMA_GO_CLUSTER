@@ -67,7 +67,32 @@ public class GrowthRecruitment {
 					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
 					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today.";
 
-		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		}
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= ""+user_clusters+" has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
+					prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today MTD business Growth of "+ 
+					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
+					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= ""+user_clusters+" has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
+					prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today MTD business Growth of "+ 
+					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
+					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= ""+user_region+" has witnessed recruitment growth of "+grth_recruitment_ytd+" % on YTD basis, last year same time we had clocked "+
+					prev_recruitment_ytd+ " recruitments as compared to " +recruitment_ytd_growth+ " today MTD business Growth of "+ 
+					grth_recruitment_mtd+ " % on MTD basis, last year same month we have clocked "+
+					prev_recruitment_mtd+" recruitments as compared to " +recruitment_mtd_growth+ " today.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{	
 			if("MTD".equalsIgnoreCase(period))
 			{
