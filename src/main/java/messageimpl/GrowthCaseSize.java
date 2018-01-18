@@ -74,6 +74,20 @@ public class GrowthCaseSize
 					grth_case_size_afyp_mtd+ "% on MTD basis, last year same month we have clocked "+
 					prev_case_size_afyp_mtd+" of Case Size as compared to " +case_size_afyp_mtd+ "K today.";
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "Cluster "+user_clusters+" MLI has witnessed case size growth of "+grth_case_size_afyp_ytd+"% on YTD basis, last year same time we had clocked "+
+					prev_case_size_afyp_ytd+ "K of Case Size as compared to " +case_size_afyp_ytd_growth+ "K today MTD business Growth of "+ 
+					grth_case_size_afyp_mtd+ "% on MTD basis, last year same month we have clocked "+
+					prev_case_size_afyp_mtd+" of Case Size as compared to " +case_size_afyp_mtd+ "K today.";
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		{
+			finalresponse= "Region "+user_region+" MLI has witnessed case size growth of "+grth_case_size_afyp_ytd+"% on YTD basis, last year same time we had clocked "+
+					prev_case_size_afyp_ytd+ "K of Case Size as compared to " +case_size_afyp_ytd_growth+ "K today MTD business Growth of "+ 
+					grth_case_size_afyp_mtd+ "% on MTD basis, last year same month we have clocked "+
+					prev_case_size_afyp_mtd+" of Case Size as compared to " +case_size_afyp_mtd+ "K today.";
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{	
 			if("YTD".equalsIgnoreCase(period))
