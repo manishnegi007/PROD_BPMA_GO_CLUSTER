@@ -20,7 +20,8 @@ public class Adoptionlogs
 {
 	public String adoptionlogsCall(String sessionId, String ssoId, String action, String resolvedQuery)
 	{
-		String platform="BPMABOTDEV";
+		String platform="BPMABOTPROD";
+		String speech="NOTREQUIRED";
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		HttpURLConnection conn = null;
 		StringBuilder result = new StringBuilder();
@@ -67,7 +68,8 @@ public class Adoptionlogs
 			requestdata.append("			\"kpiAsked\": \""+action+"\",		");
 			requestdata.append("			\"intentCalled\": \""+resolvedQuery+"\",");
 			requestdata.append("			\"platform\": \""+platform+"\",		");
-			requestdata.append("			\"loginTime\": \""+dateFormat.format(cal.getTime())+"\"		");
+			requestdata.append("			\"loginTime\": \""+dateFormat.format(cal.getTime())+"\",");
+			requestdata.append("			\"apiResponse\": \""+speech+"\" ");
 			requestdata.append("		     }]			");
 			requestdata.append("		}	");
 			requestdata.append("	}	");
