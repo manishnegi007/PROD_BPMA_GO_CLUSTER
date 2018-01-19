@@ -1459,7 +1459,6 @@ public class MliBotController{
 									t1.start();
 									t1.join();
 									System.out.println("Run Method END");
-									System.out.println("Thread Status"+ status+dbSSOId);
 								}catch(Exception ex)
 								{
 									System.out.println("Excption Occoured while saving data in to the database");
@@ -1697,7 +1696,6 @@ public class MliBotController{
 									t1.start();
 									t1.join();
 									System.out.println("Run Method END");
-									System.out.println("Thread Status"+ status+dbSSOId);
 								}catch(Exception ex)
 								{
 									System.out.println("Excption Occoured while saving data in to the database");
