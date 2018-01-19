@@ -34,53 +34,60 @@ public class NBCaseSize
 		{
 			channel = subchannel;
 		}
-		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+		   && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Case Size MTD for MLI is Rs. "
 					+ case_size_afyp_mtd+ " Case Size YTD for MLI is Rs. " +case_size_afyp_ytd+ 
 					". If you want to see the channel wise business numbers, please specify.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Case Size MTD for "+channel+" is Rs. "+case_size_afyp_mtd+
 					" Case Size YTD for "+channel+" is Rs. "+case_size_afyp_ytd+
 					". If you want to see the zone/region wise business numbers, please specify.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+" Case Size MTD for "+userzone+ " zone is Rs. "+ case_size_afyp_mtd+" Case Size YTD for "+
 					userzone+" zone is Rs. "+case_size_afyp_ytd+". If you want to see the region wise business numbers, please specify.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_region+"  is Rs. "+case_size_afyp_mtd+
 					" Case Size YTD for"+user_region+" is Rs. "+case_size_afyp_ytd;
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_clusters+" is Rs. "+case_size_afyp_mtd+
+					" Case Size YTD for"+user_clusters+" is Rs. "+case_size_afyp_ytd;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_clusters+" is Rs. "+case_size_afyp_mtd+
+					" Case Size YTD for"+user_clusters+" is Rs. "+case_size_afyp_ytd;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
+			&& !"".equalsIgnoreCase(user_clusters)
 				&& "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_clusters+" is Rs. "+case_size_afyp_mtd+
 					" Case Size YTD for"+user_clusters+" is Rs. "+case_size_afyp_ytd;
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
-		{
-			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_clusters+" is Rs. "+case_size_afyp_mtd+
-					" Case Size YTD for"+user_clusters+" is Rs. "+case_size_afyp_ytd;
-		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Case Size MTD for "+user_region+" is Rs. "+case_size_afyp_mtd+
 					" Case Size YTD for"+user_region+" is Rs. "+case_size_afyp_ytd;
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -92,8 +99,8 @@ public class NBCaseSize
 						". If you want to see the zone/region wise business numbers, please specify.";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -105,8 +112,8 @@ public class NBCaseSize
 						". If you want to see the region wise business numbers, please specify.";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -116,8 +123,8 @@ public class NBCaseSize
 				finalresponse="As of " +real_tim_timstamp+" Case Size "+period+" for "+user_region+" is Rs. "+case_size_afyp_mtd;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
+			&& !"".equalsIgnoreCase(user_clusters)&& !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -127,8 +134,8 @@ public class NBCaseSize
 				finalresponse="As of " +real_tim_timstamp+" Case Size "+period+" for "+user_clusters+" is Rs. "+case_size_afyp_mtd;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -138,8 +145,8 @@ public class NBCaseSize
 				finalresponse="As of " +real_tim_timstamp+" Case Size "+period+" for "+user_region+" is Rs. "+case_size_afyp_mtd;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
