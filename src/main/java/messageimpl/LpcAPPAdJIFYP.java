@@ -59,13 +59,22 @@ public class LpcAPPAdJIFYP {
 						+ " is " + lpc_applied_adj_ifyp_ytd+" Cr";
 
 			}
-			 else if (!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
-						&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters)) {
+			else if (!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+						&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters)) 
+			{
 					finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP MTD for " + user_clusters
 							+ " is " + lpc_applied_adj_ifyp_mtd + " Cr. LPC Applied Business Adj IFYP YTD for " + user_clusters
 							+ " is " + lpc_applied_adj_ifyp_ytd+" Cr";
 
-				}
+			}
+			else if (!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+						&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters)) 
+			{
+					finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP MTD for " + user_clusters
+							+ " is " + lpc_applied_adj_ifyp_mtd + " Cr. LPC Applied Business Adj IFYP YTD for " + user_clusters
+							+ " is " + lpc_applied_adj_ifyp_ytd+" Cr";
+
+			}
 			else if (!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
 						&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters)) {
 					finalresponse = "As of " + real_tim_timstamp + " LPC Applied Business Adj IFYP MTD for " + user_clusters
