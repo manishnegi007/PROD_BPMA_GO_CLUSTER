@@ -27,7 +27,7 @@ public class NBGROWTHAPLADGIFYP
 		}
 		if(!"".equalsIgnoreCase(user_go))
 		{
-			user_clusters="Circle "+user_go;
+			user_clusters="Office "+user_go;
 		}
 		if(!"".equalsIgnoreCase(subchannel))
 	        {
