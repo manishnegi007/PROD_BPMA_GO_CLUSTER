@@ -80,8 +80,8 @@ public class GrowthPaidcases
 			finalresponse=  ""+user_clusters+" has witnessed paid cases growth of "+grth_lst_yr_inforced_cnt_ytd+"% on YTD basis, last year same time we had clocked "+
 					prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today MTD business Growth of "+ 
 					grth_lst_yr_inforced_cnt_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_year_inforced_cnt_mtd+" of paid cases as compared to " +mtd_inforced_cnt+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+					prev_year_inforced_cnt_mtd+" of paid cases as compared to " +mtd_inforced_cnt+ " today.";
+					
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
 			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -89,8 +89,8 @@ public class GrowthPaidcases
 			finalresponse=  ""+user_clusters+" has witnessed paid cases growth of "+grth_lst_yr_inforced_cnt_ytd+"% on YTD basis, last year same time we had clocked "+
 					prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today MTD business Growth of "+ 
 					grth_lst_yr_inforced_cnt_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_year_inforced_cnt_mtd+" of paid cases as compared to " +mtd_inforced_cnt+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+					prev_year_inforced_cnt_mtd+" of paid cases as compared to " +mtd_inforced_cnt+ " today.";
+					
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
 			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -98,8 +98,8 @@ public class GrowthPaidcases
 			finalresponse=  ""+user_clusters+" has witnessed paid cases growth of "+grth_lst_yr_inforced_cnt_ytd+"% on YTD basis, last year same time we had clocked "+
 					prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today MTD business Growth of "+ 
 					grth_lst_yr_inforced_cnt_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_year_inforced_cnt_mtd+" of paid cases as compared to " +mtd_inforced_cnt+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+					prev_year_inforced_cnt_mtd+" of paid cases as compared to " +mtd_inforced_cnt+ " today.";
+					
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
 			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -168,14 +168,14 @@ public class GrowthPaidcases
 			if("MTD".equalsIgnoreCase(period))
 			{
 				finalresponse= ""+user_clusters+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_mtd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today.";
+						
 			}
 			else
 			{
 				finalresponse= ""+user_clusters+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today."
+						
 			}
 		}
 		/*----------------------------------------------------------------------------------------start*/
@@ -203,14 +203,14 @@ public class GrowthPaidcases
 			if("MTD".equalsIgnoreCase(period))
 			{
 				finalresponse= ""+user_clusters+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_mtd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						prev_year_inforced_cnt_mtd+ " of paid cases as compared to " +mtd_inforced_cnt+ " today.";
+						
 			}
 			else
 			{
 				finalresponse= ""+user_clusters+" has witnessed paid cases growth of " +grth_lst_yr_inforced_cnt_ytd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						prev_year_inforced_cnt_ytd+ " of paid cases as compared to " +ytd_inforced_cnt+ " today.";
+						
 			}
 
 		}
