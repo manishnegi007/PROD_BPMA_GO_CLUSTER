@@ -34,53 +34,59 @@ public class NBAdjMFYP
 			channel = subchannel;
 		}
 		
-		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) 
-				&& "".equalsIgnoreCase(period))
+		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+		  	 && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for MLI is  "
 					+ mtdAdjustMFYP+ " Paid AdjMFYP YTD for MLI is " +ytd_adj_mfyp+ 
 					" If you want to see the channel wise business numbers, please specify";
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters)&& "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +channel+ " is " +mtdAdjustMFYP+
 					" Paid cases YTD for " +channel+ " is " +ytd_adj_mfyp;
 					
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +userzone+ " zone is " + mtdAdjustMFYP+ " Paid Adj MFYP YTD for " +
 					userzone+ " zone is " +ytd_adj_mfyp;
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_region+ " is " +mtdAdjustMFYP+
 					" Paid Adj MFYP YTD for "+user_region+ " is " +ytd_adj_mfyp;
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_clusters+ " is " +mtdAdjustMFYP+
 					" Paid Adj MFYP YTD for "+user_clusters+ " is " +ytd_adj_mfyp;
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_clusters+ " is " +mtdAdjustMFYP+
 					" Paid Adj MFYP YTD for "+user_clusters+ " is " +ytd_adj_mfyp;
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_clusters+ " is " +mtdAdjustMFYP+
+					" Paid Adj MFYP YTD for "+user_clusters+ " is " +ytd_adj_mfyp;
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP MTD for " +user_region+ " is " +mtdAdjustMFYP+
 					" Paid Adj MFYP YTD for "+user_region+ " is " +ytd_adj_mfyp;
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -97,8 +103,8 @@ public class NBAdjMFYP
 						
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -113,8 +119,8 @@ public class NBAdjMFYP
 				finalresponse="As of " +real_tim_timstamp+ " Paid Adj MFYP " +period+ " for " +userzone+" zone is "+daily_adj_mfyp;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)&& "".equalsIgnoreCase(user_clusters)
-				 && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -127,8 +133,8 @@ public class NBAdjMFYP
 				finalresponse="As of " +real_tim_timstamp+" Paid Adj MFYP "+period+" for "+user_region+" is "+daily_adj_mfyp;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -141,8 +147,8 @@ public class NBAdjMFYP
 				finalresponse="As of " +real_tim_timstamp+" Paid Adj MFYP "+period+" for "+user_clusters+" is "+daily_adj_mfyp;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -155,8 +161,8 @@ public class NBAdjMFYP
 				finalresponse="As of " +real_tim_timstamp+" Paid Adj MFYP "+period+" for "+user_region+" is "+daily_adj_mfyp;
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters)
-				&& !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
