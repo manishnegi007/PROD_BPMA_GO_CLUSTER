@@ -76,8 +76,8 @@ public class GrowthLPCAPLCases
 			finalresponse= ""+user_clusters+" MLI has witnessed LPC applied business growth of "+grth_lpc_applied_cases_ytd+"% on YTD basis, last year same time we had clocked "+
 					prev_lpc_applied_cases_ytd+ " LPC applied cases as compared to " +lpc_applied_cases_ytd_growth+ "Cr today MTD business Growth of "+ 
 					grth_lpc_applied_cases_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_lpc_applied_cases_mtd+" of LPC applied cases as compared to " +lpc_applied_cases_mtd_growth+ " today."
-					+ ".";
+					prev_lpc_applied_cases_mtd+" of LPC applied cases as compared to " +lpc_applied_cases_mtd_growth+ " today.";
+					
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
 			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -85,8 +85,8 @@ public class GrowthLPCAPLCases
 			finalresponse= ""+user_clusters+" MLI has witnessed LPC applied business growth of "+grth_lpc_applied_cases_ytd+"% on YTD basis, last year same time we had clocked "+
 					prev_lpc_applied_cases_ytd+ " LPC applied cases as compared to " +lpc_applied_cases_ytd_growth+ "Cr today MTD business Growth of "+ 
 					grth_lpc_applied_cases_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_lpc_applied_cases_mtd+" of LPC applied cases as compared to " +lpc_applied_cases_mtd_growth+ " today."
-					+ ".";
+					prev_lpc_applied_cases_mtd+" of LPC applied cases as compared to " +lpc_applied_cases_mtd_growth+ " today.";
+					
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
 			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -94,8 +94,8 @@ public class GrowthLPCAPLCases
 			finalresponse= ""+user_clusters+" MLI has witnessed LPC applied business growth of "+grth_lpc_applied_cases_ytd+"% on YTD basis, last year same time we had clocked "+
 					prev_lpc_applied_cases_ytd+ " LPC applied cases as compared to " +lpc_applied_cases_ytd_growth+ "Cr today MTD business Growth of "+ 
 					grth_lpc_applied_cases_mtd+ " % on MTD basis, last year same month we have clocked "+
-					prev_lpc_applied_cases_mtd+" of LPC applied cases as compared to " +lpc_applied_cases_mtd_growth+ " today."
-					+ ".";
+					prev_lpc_applied_cases_mtd+" of LPC applied cases as compared to " +lpc_applied_cases_mtd_growth+ " today.";
+					
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
 			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -160,14 +160,14 @@ public class GrowthLPCAPLCases
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_lpc_applied_cases_ytd+ " of LPC applied Cases as compared to " +lpc_applied_cases_ytd_growth+ "Cr today "
-						+ ".";
+						prev_lpc_applied_cases_ytd+ " of LPC applied Cases as compared to " +lpc_applied_cases_ytd_growth+ "Cr today.";
+						
 			}
 			else
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_lpc_applied_cases_mtd+ " of LPC applied Cases as compared to " +lpc_applied_cases_mtd_growth+ "Cr today "
-						+ ".";	
+						prev_lpc_applied_cases_mtd+ " of LPC applied Cases as compared to " +lpc_applied_cases_mtd_growth+ "Cr today.";
+						
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
@@ -192,14 +192,14 @@ public class GrowthLPCAPLCases
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_lpc_applied_cases_ytd+ " of LPC applied Cases as compared to " +lpc_applied_cases_ytd_growth+ "Cr today "
-						+ ".";
+						prev_lpc_applied_cases_ytd+ " of LPC applied Cases as compared to " +lpc_applied_cases_ytd_growth+ "Cr today.";
+						
 			}
 			else
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC applied business growth of " +grth_lpc_applied_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
-						prev_lpc_applied_cases_mtd+ " of LPC applied Cases as compared to " +lpc_applied_cases_mtd_growth+ "Cr today "
-						+ ".";	
+						prev_lpc_applied_cases_mtd+ " of LPC applied Cases as compared to " +lpc_applied_cases_mtd_growth+ "Cr today. ";
+						
 			}
 		}
 		else
