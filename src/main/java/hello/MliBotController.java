@@ -127,8 +127,8 @@ public class MliBotController{
 					}
 					else if ("success".equalsIgnoreCase(SoaStatus)) 
 					{
-						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here : "
-								+ cashMap.get("otp") + "";
+						speech = "I need to verify the OTP which was sent on your registered mobile number. Please enter it here";
+						System.out.println("--------------"+cashMap.get("otp"));
 					} else if ("".equalsIgnoreCase(PhoneStatus) || PhoneStatus==null) {
 						speech = "Your MobileNo not registered with us, Please Enter a registered MobileNo";
 					} else if ("Failure_API_1".equalsIgnoreCase(SoaStatus)
@@ -1444,7 +1444,7 @@ public class MliBotController{
 								catch(Exception ex)
 								{
 									System.out.println("Something goes wrong to connect Mlab:MongoDb");
-								}
+								}*/
 								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery;
 								try{
 									Thread t1=new Thread(new Runnable() 
@@ -1463,7 +1463,7 @@ public class MliBotController{
 								}catch(Exception ex)
 								{
 									System.out.println("Excption Occoured while saving data in to the database");
-								}*/
+								}
 								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod,
 										cashproductType, cashplanType, user_ssoid, cash_Sub_Channel, user_designation_desc, 
 										cashZone, cashRegion, cashCircle, cashCluster, cashGo, user_cmo, user_amo, 
@@ -1682,7 +1682,7 @@ public class MliBotController{
 									}catch(Exception ex)
 									{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
-									}
+									}*/
 								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery;
 								try{
 									Thread t1=new Thread(new Runnable() 
@@ -1701,7 +1701,7 @@ public class MliBotController{
 								}catch(Exception ex)
 								{
 									System.out.println("Excption Occoured while saving data in to the database");
-								}*/
+								}
 								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType,
 										planType, ssoId, subChannel, user_designation_desc, zone, region, circle,
 										cluster, go, user_cmo, user_amo, kpiAsked, sessionId, source);
@@ -1867,7 +1867,7 @@ public class MliBotController{
 			XTrustProvider trustProvider=new XTrustProvider();
 			trustProvider.install();
 			StringBuilder requestdata=new StringBuilder();
-			String serviceurl = resProp.getString("servicesendotp");
+			String serviceurl = resProp.getString("servicesendprodotp");
 			URL url = new URL(serviceurl);
 			UUID uniqueId3 = UUID.randomUUID();
 			if(DevMode!=null && !"".equalsIgnoreCase(DevMode) && "Y".equalsIgnoreCase(DevMode))
@@ -1894,8 +1894,8 @@ public class MliBotController{
 			requestdata.append("	         }	");
 			requestdata.append("	      },	");
 			requestdata.append("	      \"requestBody\": {	");
-			requestdata.append("	         \"appAccId\": \"PROMO_SOA\",	");
-			requestdata.append("	         \"appAccPass\": \"y!7Ej@9C\",	");
+			requestdata.append("	         \"appAccId\": \"SRV_BOTS\",	");
+			requestdata.append("	         \"appAccPass\": \"t(9Kp~8P\",	");
 			requestdata.append("	         \"appId\": \"MAXLIT\",	");
 			requestdata.append("	         \"msgTo\": \""+phoneno+"\",	");
 			requestdata.append("	         \"msgText\": \"Your Maxlife Assistant OTP is:"+randomotp+"\"	");
