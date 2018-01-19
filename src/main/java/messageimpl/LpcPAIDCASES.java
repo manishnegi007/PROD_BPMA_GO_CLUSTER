@@ -51,49 +51,49 @@ public class LpcPAIDCASES {
 						". If you want to see the zone/region wise business numbers, please specify.";
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " + userzone + " zone is "
 						+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + userzone + " zone is " + lpc_paid_cases_ytd+
 						". If you want to see the region wise business numbers, please specify.";
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " +user_region+ " is " 
 						+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + user_region + " is " + lpc_paid_cases_ytd+ "";
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && !"".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " +user_clusters+ " is " 
 						+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + user_clusters + " is " + lpc_paid_cases_ytd+ "";
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && !"".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " +user_clusters+ " is " 
 						+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + user_clusters + " is " + lpc_paid_cases_ytd+ "";
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && !"".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " +user_clusters+ " is " 
 						+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + user_clusters + " is " + lpc_paid_cases_ytd+ "";
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid cases MTD for " +user_region+ " is " 
 						+ lpc_paid_cases_mtd + ". LPC Paid cases YTD for " + user_region + " is " + lpc_paid_cases_ytd+ "";
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{	
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -106,7 +106,7 @@ public class LpcPAIDCASES {
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -119,7 +119,7 @@ public class LpcPAIDCASES {
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -141,7 +141,7 @@ public class LpcPAIDCASES {
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -152,7 +152,7 @@ public class LpcPAIDCASES {
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && !"".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
