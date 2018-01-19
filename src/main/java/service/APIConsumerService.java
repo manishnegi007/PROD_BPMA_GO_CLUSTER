@@ -54,7 +54,7 @@ public class APIConsumerService {
 			if(!"".equalsIgnoreCase(user_clusters))
 			{
 				msgChannel=user_clusters;
-				msgChannel=""+msgChannel;
+				msgChannel="Cluster "+msgChannel;
 				break;
 			}
 			if(!"".equalsIgnoreCase(user_go))
