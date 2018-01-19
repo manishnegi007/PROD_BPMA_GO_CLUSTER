@@ -354,12 +354,13 @@ public class APIConsumerService {
 				{
 					user_circle=user_circle.replaceAll("\\s","");
 				}
-				/*if(!"".equalsIgnoreCase(user_clusters))
+				if("Achievement".equalsIgnoreCase(action))
 				{
-					user_clusters = user_clusters.replaceAll("Cluster","");
-					user_clusters = user_clusters.replaceAll("cluster","");
-					user_clusters=user_clusters.replaceAll("\\s","");
-				}*/
+					if("Agency".equalsIgnoreCase(serviceChannel) || "Axis Bank".equalsIgnoreCase(serviceChannel))
+					{
+						user_sub_channel=serviceChannel;
+					}
+				}
 				/*---------------------------For testing----------------------*/
 				System.out.println("Action             :-"+action);
 				System.out.println("Channel            :-"+serviceChannel);
