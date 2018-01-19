@@ -60,6 +60,12 @@ public class PaidCases
 			finalresponse="As of " +real_tim_timstamp + " Paid cases MTD for " + user_clusters + " is " + mtd_inforced_count +
 					". Paid cases YTD for " + user_clusters + " is " + ytd_inforced_count;
 		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse="As of " +real_tim_timstamp + " Paid cases MTD for " + user_clusters + " is " + mtd_inforced_count +
+					". Paid cases YTD for " + user_clusters + " is " + ytd_inforced_count;
+		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)&& !"".equalsIgnoreCase(user_clusters) 
 				&& "".equalsIgnoreCase(period))
 		{
