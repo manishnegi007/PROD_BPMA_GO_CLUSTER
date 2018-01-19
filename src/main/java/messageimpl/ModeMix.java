@@ -35,7 +35,8 @@ public class ModeMix {
 		{
 			channel = subchannel;
 		}
-		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+		   	&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for MLI is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
@@ -44,7 +45,8 @@ public class ModeMix {
 					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
 					quarterly_adj_mfyp_ytd+"%,  Monthly: "+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+"%."
 					+ " If you want to see the channel wise business numbers, please specify";
-		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		}else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
+			 && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+channel+" is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
@@ -52,7 +54,8 @@ public class ModeMix {
 					+" YTD Mode mix ratio for "+channel+" is Annual: "+annual_adj_mfyp_ytd+"%, Semi Annual:"+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+"%."
 					+ " If you want to see the zone/region wise business numbers, please specify";
-		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region)
+			 && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for Zone "+userzone+" is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
@@ -61,7 +64,8 @@ public class ModeMix {
 					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+" & Single Premium:"+single_adj_mfyp_ytd+"%."
 					+ " If you want to see the region wise business numbers, please specify";
-		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+			 && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
@@ -71,7 +75,8 @@ public class ModeMix {
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_clusters+" is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
@@ -81,7 +86,8 @@ public class ModeMix {
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_clusters+" is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
@@ -91,7 +97,19 @@ public class ModeMix {
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_clusters+" is Annual: "+
+					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
+					quarterly_adj_mfyp_mtd+ " %, Monthly: "+
+					monthly_adj_mfyp_mtd+", Single Premium: " +single_adj_mfyp_mtd+"%." +" YTD Mode mix ratio for "+user_clusters+" is Annual: "+
+					annual_adj_mfyp_ytd+"%, Semi Annual: "+semi_annual_adj_mfyp_ytd+"%, Quarterly: "+
+					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "As of  "+real_tim_timstamp+" MTD Mode mix ratio for "+user_region+" is Annual: "+
 					annual_adj_mfyp_mtd+ "%, Semi Annual: " +semi_annual_adj_mfyp_mtd+ "%, Quarterly: "+ 
@@ -101,7 +119,8 @@ public class ModeMix {
 					quarterly_adj_mfyp_ytd+"%, Monthly: "+monthly_adj_mfyp_ytd+", & Single Premium:"+single_adj_mfyp_ytd+"%.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{	
 			if("MTD".equalsIgnoreCase(period))
 			{
@@ -119,7 +138,8 @@ public class ModeMix {
 						+monthly_adj_mfyp_ytd+" & Single Premium: "+single_adj_mfyp_ytd+ "%."
 						+ " If you want to see the zone/region wise business numbers, please specify";
 			}
-		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			 && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
@@ -138,7 +158,8 @@ public class ModeMix {
 						+ " If you want to see the region wise business numbers, please specify";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
@@ -155,7 +176,8 @@ public class ModeMix {
 			}
 		}
 		/*---------------------------------------------------------------start*/
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
@@ -172,7 +194,8 @@ public class ModeMix {
 			}
 		}
 		/*---------------------------------------------------------------End*/
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
@@ -189,7 +212,8 @@ public class ModeMix {
 			}
 		}
 		/*---------------------------------------------start*/
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("MTD".equalsIgnoreCase(period))
 			{
