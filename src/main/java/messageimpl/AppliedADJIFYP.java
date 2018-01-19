@@ -83,7 +83,8 @@ public class AppliedADJIFYP
 			finalresponse="As of "+real_tim_timstamp+ " Applied Business Adj IFYP MTD for "+user_region+" is "+mtd_applied_adj_ifyp+
 					"Cr. Applied Business Adj IFYP YTD for "+user_region+" is "+ytd_applied_adj_ifyp+" Cr.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -94,7 +95,8 @@ public class AppliedADJIFYP
 				finalresponse="As of" +real_tim_timstamp+ " Applied Business Adj IFYP " +period+" for "+channel+ "is"+ mtd_applied_adj_ifyp+
 						"Cr. If you want to see the zone/region wise business numbers, please specify";
 			}
-		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		}else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			 && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -106,7 +108,8 @@ public class AppliedADJIFYP
 						". If you want to see the region wise business numbers, please specify";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -116,7 +119,8 @@ public class AppliedADJIFYP
 				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+user_region+" is "+mtd_applied_adj_ifyp+" Cr";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -126,7 +130,8 @@ public class AppliedADJIFYP
 				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+user_clusters+" is "+mtd_applied_adj_ifyp+" Cr";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -136,7 +141,8 @@ public class AppliedADJIFYP
 				finalresponse="As of "+real_tim_timstamp+" Applied Business Adj IFYP "+period+" for "+user_region+" is "+mtd_applied_adj_ifyp+" Cr";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
