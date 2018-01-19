@@ -31,46 +31,61 @@ public class CaseSizePercentage {
 		if(!"".equalsIgnoreCase(subchannel))
 		{channel = subchannel;}
 
-		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+		   && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= "MLI Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
 					". If you want to see the channel wise business numbers, please specIfy.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= channel+" channel Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
 					". If you want to see the zone/region wise business numbers, please specIfy.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= "Zone "+userzone+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
 					". If you want to see the region wise business numbers, please specIfy.";
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= ""+user_region+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
 					". If you want to see the region wise business numbers, please specIfy.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= ""+user_clusters+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
 					". If you want to see the region wise business numbers, please specIfy.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= ""+user_clusters+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
 					". If you want to see the region wise business numbers, please specIfy.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
+		{
+			finalresponse= ""+user_clusters+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
+					". If you want to see the region wise business numbers, please specIfy.";
+
+		}
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
 		{
 			finalresponse= ""+user_region+" Case Size acheivement MTD: "+achiev_mtd_case_size+"%, YTD " +achiev_ytd_case_size+"% till "+real_tim_timstamp+
 					". If you want to see the region wise business numbers, please specIfy.";
 
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{	
 
 			if("YTD".equalsIgnoreCase(period))
@@ -83,7 +98,8 @@ public class CaseSizePercentage {
 						". If you want to see the zone/region wise business numbers please specIfy. ";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -95,7 +111,8 @@ public class CaseSizePercentage {
 						". If you want to see the region wise business numbers please specIfy";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -107,7 +124,8 @@ public class CaseSizePercentage {
 						". If you want to see the region wise business numbers please specIfy.";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -119,7 +137,8 @@ public class CaseSizePercentage {
 						". If you want to see the region wise business numbers please specIfy.";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
@@ -131,7 +150,8 @@ public class CaseSizePercentage {
 						". If you want to see the region wise business numbers please specIfy.";
 			}
 		}
-		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+			&& !"".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
 		{
 			if("YTD".equalsIgnoreCase(period))
 			{
