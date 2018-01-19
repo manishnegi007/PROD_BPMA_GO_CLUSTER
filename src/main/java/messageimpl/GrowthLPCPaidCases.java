@@ -77,7 +77,7 @@ public class GrowthLPCPaidCases
 					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+					+ ".";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
 			&& !"".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -86,7 +86,7 @@ public class GrowthLPCPaidCases
 					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+					+ ".";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
 			&& "".equalsIgnoreCase(user_clusters) && "".equalsIgnoreCase(period))
@@ -104,7 +104,7 @@ public class GrowthLPCPaidCases
 					prev_lpc_paid_cases_ytd+ ". LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today MTD business Growth of "+ 
 					grth_lpc_paid_cases_mtd+ "% on MTD basis, last year same month we have clocked "+
 					prev_lpc_paid_cases_mtd+" of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today."
-					+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+					+ ".";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
 			&& "".equalsIgnoreCase(user_clusters) && !"".equalsIgnoreCase(period))
@@ -180,13 +180,13 @@ public class GrowthLPCPaidCases
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_mtd+ " of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						+ ".";
 			}
 			else
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_ytd+ " of LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						+ ".";
 			}
 		}
 		/*--------------------------------------------------------------------------end*/
@@ -214,13 +214,13 @@ public class GrowthLPCPaidCases
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_mtd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_mtd+ " of LPC paid cases as compared to " +lpc_paid_cases_mtd_growth+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						+ ".";
 			}
 			else
 			{
 				finalresponse= ""+user_clusters+" has witnessed LPC paid cases growth of " +grth_lpc_paid_cases_ytd+"% on "+period+" basis, last year same time we had clocked "+
 						prev_lpc_paid_cases_ytd+ " of LPC paid cases as compared to " +lpc_paid_cases_ytd_growth+ " today "
-						+ ". If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						+ ".";
 			}
 		}
 		/*------------------------------------------------------------------end*/
