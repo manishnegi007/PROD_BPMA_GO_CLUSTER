@@ -157,14 +157,14 @@ public class NBGROWTHAPLAFYP
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_applied_afyp_ytd+ " Cr of Applied AFYP as compared to " +applied_afyp_ytd+ " Cr today."
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						prev_applied_afyp_ytd+ " Cr of Applied AFYP as compared to " +applied_afyp_ytd+ " Cr today.";
+						
 			}
 			else
 			{
 				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_applied_afyp_mtd+ " Cr of Applied AFYP as compared to " +applied_afyp_mtd+ " Cr today."
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";	
+						prev_applied_afyp_mtd+ " Cr of Applied AFYP as compared to " +applied_afyp_mtd+ " Cr today.";
+							
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
@@ -189,14 +189,14 @@ public class NBGROWTHAPLAFYP
 			if("YTD".equalsIgnoreCase(period))
 			{
 				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_afyp_ytd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_applied_afyp_ytd+ " Cr of Applied AFYP as compared to " +applied_afyp_ytd+ " Cr today."
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";
+						prev_applied_afyp_ytd+ " Cr of Applied AFYP as compared to " +applied_afyp_ytd+ " Cr today.";
+						
 			}
 			else
 			{
 				finalresponse= "" +user_clusters+" has witnessed Applied Business growth of " +grth_applied_afyp_mtd+" % on "+period+" basis, last year same time we had clocked "+
-						prev_applied_afyp_mtd+ " Cr of Applied AFYP as compared to " +applied_afyp_mtd+ " Cr today."
-						+ " If you want to see the Zone/region wise business numbers, please specIfy the same.";	
+						prev_applied_afyp_mtd+ " Cr of Applied AFYP as compared to " +applied_afyp_mtd+ " Cr today.";
+							
 			}
 		}
 		else
