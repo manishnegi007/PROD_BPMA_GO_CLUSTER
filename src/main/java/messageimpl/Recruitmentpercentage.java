@@ -57,18 +57,18 @@ public class Recruitmentpercentage {
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= ""+user_clusters+" recruitment acheivement MTD: "+achiev_mtd_recruitment+" % YTD "+achiev_ytd_recruitment+" % till "+real_tim_timstamp+
-					". If you want to see the region wise business numbers, please specify.";
+					".";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(user_clusters) 
 			&& "".equalsIgnoreCase(period))
 		{
 			finalresponse= ""+user_clusters+" recruitment acheivement MTD: "+achiev_mtd_recruitment+" % YTD "+achiev_ytd_recruitment+" % till "+real_tim_timstamp+
-					". If you want to see the region wise business numbers, please specify.";
+					".";
 		}
 		else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 		{
 			finalresponse= ""+user_clusters+" recruitment acheivement MTD: "+achiev_mtd_recruitment+" % YTD "+achiev_ytd_recruitment+" % till "+real_tim_timstamp+
-					". If you want to see the region wise business numbers, please specify.";
+					".";
 		}
 				else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 		{
@@ -113,11 +113,11 @@ public class Recruitmentpercentage {
 		{
 			if("YTD".equalsIgnoreCase(period)){
 				finalresponse= ""+user_clusters+" recruitment acheivement " +period+" : "+achiev_ytd_recruitment+" % till " +real_tim_timstamp+
-						". If you want to see the region wise business numbers please specify.";
+						".";
 			}else
 			{
 				finalresponse= ""+user_clusters+" recruitment acheivement " +period+" : "+achiev_mtd_recruitment+" % till " +real_tim_timstamp+
-						". If you want to see the region wise business numbers please specify.";	
+						".";	
 			}
 		}
 		else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
@@ -135,11 +135,11 @@ public class Recruitmentpercentage {
 		{
 			if("YTD".equalsIgnoreCase(period)){
 				finalresponse= ""+user_clusters+" recruitment acheivement " +period+" : "+achiev_ytd_recruitment+" % till " +real_tim_timstamp+
-						". If you want to see the region wise business numbers please specify.";
+						".";
 			}else
 			{
 				finalresponse= ""+user_clusters+" recruitment acheivement " +period+" : "+achiev_mtd_recruitment+" % till " +real_tim_timstamp+
-						". If you want to see the region wise business numbers please specify.";	
+						".";	
 			}
 		}
 		else
