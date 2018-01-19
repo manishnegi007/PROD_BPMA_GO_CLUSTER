@@ -32,37 +32,50 @@ public class Lpcappadjafyp {
 			{
 				channel = subchannel;
 			}
-			if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			if("".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+			   && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for MLI is "
 						+lpc_applied_afyp_mtd+" Cr. LPC Applied Business AFYP YTD for MLI is "+lpc_applied_afyp_ytd+ 
 						"Cr. If you want to see the channel wise business numbers, please specify";
 			}
-			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+channel+
 						" is "+lpc_applied_afyp_mtd+" Cr. LPC Applied Business AFYP YTD for "+channel+" is "+lpc_applied_afyp_ytd+
 						" Cr. If you want to see the zone/region wise business numbers, please specify";
 			}
-			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+userzone+" zone is "
 						+lpc_applied_afyp_mtd+" Cr. LPC Applied Business AFYP YTD for "+userzone+" zone is " +lpc_applied_afyp_ytd+
 						" Cr. If you want to see the region wise business numbers, please specify";
 			}
-			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+user_region+ " is " 
 						+lpc_applied_afyp_mtd+ " Cr. LPC Applied Business AFYP YTD for "+user_region+" is "+ lpc_applied_afyp_ytd+" Cr.";
 
 			}
-			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+				&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+user_clusters+ " is " 
 						+lpc_applied_afyp_mtd+ " Cr. LPC Applied Business AFYP YTD for "+user_clusters+" is "+ lpc_applied_afyp_ytd+" Cr.";
 
 			}
-			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+				&& "".equalsIgnoreCase(period) && !"".equalsIgnoreCase(user_clusters))
+			{
+				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+user_clusters+ " is " 
+						+lpc_applied_afyp_mtd+ " Cr. LPC Applied Business AFYP YTD for "+user_clusters+" is "+ lpc_applied_afyp_ytd+" Cr.";
+
+			}
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+				&& "".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of "+real_tim_timstamp+" LPC Applied Business AFYP MTD for "+user_clusters+ " is " 
 						+lpc_applied_afyp_mtd+ " Cr. LPC Applied Business AFYP YTD for "+user_clusters+" is "+ lpc_applied_afyp_ytd+" Cr.";
@@ -74,7 +87,8 @@ public class Lpcappadjafyp {
 						+lpc_applied_afyp_mtd+ " Cr. LPC Applied Business AFYP YTD for "+user_region+" is "+ lpc_applied_afyp_ytd+" Cr.";
 
 			}
-			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -87,7 +101,8 @@ public class Lpcappadjafyp {
 							" Cr. If you want to see the zone/region wise business numbers, please specify";
 				}
 			}
-			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -100,7 +115,8 @@ public class Lpcappadjafyp {
 							" Cr. If you want to see the region wise business numbers, please specify";	
 				}
 			}
-			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
+				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -111,7 +127,8 @@ public class Lpcappadjafyp {
 					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_mtd+" Cr.";	
 				}
 			}
-			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
+				&& !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -122,7 +139,8 @@ public class Lpcappadjafyp {
 					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_clusters+ " is "+lpc_applied_afyp_mtd+" Cr.";	
 				}
 			}
-			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -133,7 +151,8 @@ public class Lpcappadjafyp {
 					finalresponse=" As of "+real_tim_timstamp+" LPC Applied Business AFYP "+period+" for "+ user_region+ " is "+lpc_applied_afyp_mtd+" Cr.";	
 				}
 			}
-			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) && !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
+			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region)
+				&& !"".equalsIgnoreCase(period)&& !"".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
