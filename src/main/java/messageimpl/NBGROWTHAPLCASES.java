@@ -8,7 +8,6 @@ public class NBGROWTHAPLCASES
 			String user_clusters, String user_go)
 	{
 		String finalresponse="";
-
 		if("MLI".equalsIgnoreCase(channel))
 		{channel="";}
 		if("Monthly".equalsIgnoreCase(period))
