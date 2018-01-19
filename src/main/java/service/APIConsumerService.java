@@ -354,12 +354,12 @@ public class APIConsumerService {
 				{
 					user_circle=user_circle.replaceAll("\\s","");
 				}
-				if(!"".equalsIgnoreCase(user_clusters))
+				/*if(!"".equalsIgnoreCase(user_clusters))
 				{
 					user_clusters = user_clusters.replaceAll("Cluster","");
 					user_clusters = user_clusters.replaceAll("cluster","");
 					user_clusters=user_clusters.replaceAll("\\s","");
-				}
+				}*/
 				/*---------------------------For testing----------------------*/
 				System.out.println("Action             :-"+action);
 				System.out.println("Channel            :-"+serviceChannel);
