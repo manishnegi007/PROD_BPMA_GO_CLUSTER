@@ -42,7 +42,7 @@ public class LpcPAIDADJMFYP {
 						". If you want to see the channel wise business numbers, please specify.";
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid Adj MFYP MTD for " + channel +
 						" is " + lpc_paid_adj_mfyp_mtd + " Cr. LPC Paid Adj MFYP YTD for " +channel + " is "+ lpc_paid_adj_mfyp_ytd+
@@ -56,7 +56,7 @@ public class LpcPAIDADJMFYP {
 						" Cr. If you want to see the region wise business numbers, please specify.";
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& "".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& "".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				finalresponse= "As of " + real_tim_timstamp + " LPC Paid Adj MFYP MTD for " +user_region+ " is " 
 						+ lpc_paid_adj_mfyp_mtd + ". LPC Paid Adj MFYP YTD for " + user_region + " is " + lpc_paid_adj_mfyp_ytd+ " Cr";
@@ -91,7 +91,7 @@ public class LpcPAIDADJMFYP {
 
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -104,7 +104,7 @@ public class LpcPAIDADJMFYP {
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && "".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -117,7 +117,7 @@ public class LpcPAIDADJMFYP {
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && "".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
@@ -139,7 +139,7 @@ public class LpcPAIDADJMFYP {
 				}
 			}
 			else if(!"".equalsIgnoreCase(channel) && !"".equalsIgnoreCase(userzone) && !"".equalsIgnoreCase(user_region) 
-				&& !"".equalsIgnoreCase(period)&& "".equalsIgnoreCase(user_clusters))
+				&& !"".equalsIgnoreCase(period) && "".equalsIgnoreCase(user_clusters))
 			{
 				if("YTD".equalsIgnoreCase(period))
 				{
