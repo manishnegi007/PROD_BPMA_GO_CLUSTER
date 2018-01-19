@@ -1814,7 +1814,6 @@ public class MliBotController{
 				try{
 					phoneNo	 = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnylpreferredmobile")+"";
 					mnylstatus=object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("mnylstatus")+ "";
-					phoneNo="9891596808";
 					agentName = object.getJSONObject("response").getJSONObject("responseData").getJSONArray("Transactions").getJSONObject(0).get("givenname")+"";
 						if("nb.validate".equalsIgnoreCase(actionperformed)){
 						cashData = mliBotController.OTPVarification(sessionId, phoneNo, agentName, ssoId, actionperformed);
