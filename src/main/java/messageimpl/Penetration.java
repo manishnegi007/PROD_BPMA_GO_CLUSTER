@@ -15,6 +15,10 @@ public class Penetration
 		{
 			period=period.toUpperCase();
 		}
+		if("FTD".equalsIgnoreCase(period))
+		{
+			period="YTD";
+		}
 		if("Monthly".equalsIgnoreCase(period) || "".equalsIgnoreCase(period) || "MTD".equalsIgnoreCase(period)||"MONTH".equalsIgnoreCase(period))
 		{
 			if("ULIP".equalsIgnoreCase(productType))
