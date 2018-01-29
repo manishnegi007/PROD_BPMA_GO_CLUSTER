@@ -40,6 +40,7 @@ public class MliBotController{
 	public static Map<String, Map<String,String>> sessionMapcontainssoinfo = new ConcurrentHashMap<String, Map<String,String>>();
 	public static Map<String, Map<String,String>> kpilevel = new HashMap<String, Map<String,String>>();
 	Map<String, String> innermap = new HashMap<String,String>();
+	public Map<String, String> adoptionMap = new HashMap<String,String>();
 	
 	
 	@Autowired
@@ -1612,36 +1613,43 @@ public class MliBotController{
 								if(!"".equalsIgnoreCase(user_clusters))
 								{
 									map.put("employeeIdentification", "CL");
+									adoptionMap.put("designation", user_clusters);
 									break;
 								}
 								else if(!"".equalsIgnoreCase(user_go))
 								{
 									map.put("employeeIdentification", "GO");
+									adoptionMap.put("designation", user_go);
 									break;
 								}
 								else if(!"".equalsIgnoreCase(user_circle))
 								{
 									map.put("employeeIdentification", "CR");
+									adoptionMap.put("designation", user_circle);
 									break;
 								}
 								else if(!"".equalsIgnoreCase(user_region))
 								{
 									map.put("employeeIdentification", "RE");
+									adoptionMap.put("designation", user_region);
 									break;
 								}
 								else if(!"".equalsIgnoreCase(user_getzone))
 								{
 									map.put("employeeIdentification", "ZN");
+									adoptionMap.put("designation", user_getzone);
 									break;
 								}
 								else if(!"".equalsIgnoreCase(user_sub_channel))
 								{
 									map.put("employeeIdentification", "SB");
+									adoptionMap.put("designation", user_sub_channel);
 									break;
 								}
 								else
 								{
 									map.put("employeeIdentification", "CH");
+									adoptionMap.put("designation", user_channel);
 								}
 							}
 							String kpiAsked=actionperformed;
@@ -1682,7 +1690,8 @@ public class MliBotController{
 									{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
 									}*/
-								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery;
+								String designation=adoptionMap.get("designation");
+								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery,dbDesignation=designation ;
 								try{
 									Thread t1=new Thread(new Runnable() 
 									{
@@ -1690,7 +1699,7 @@ public class MliBotController{
 										{
 											System.out.println("Run Method Start");
 											final String status=adoption.adoptionlogsCall(dbSessionId, dbSSOId, dbActionPerformed,
-													dbResolveQuery);
+													dbResolveQuery, dbDesignation);
 										}
 									});
 									t1.start();
