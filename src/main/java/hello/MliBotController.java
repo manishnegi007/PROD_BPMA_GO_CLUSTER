@@ -1445,7 +1445,7 @@ public class MliBotController{
 								catch(Exception ex)
 								{
 									System.out.println("Something goes wrong to connect Mlab:MongoDb");
-								}*/
+								}
 								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery;
 								try{
 									Thread t1=new Thread(new Runnable() 
@@ -1463,7 +1463,7 @@ public class MliBotController{
 								}catch(Exception ex)
 								{
 									System.out.println("Excption Occoured while saving data in to the database");
-								}
+								}*/
 								return aPIConsumerService.getWipDataAll(actionperformed, cashchannel, cachePeriod,
 										cashproductType, cashplanType, user_ssoid, cash_Sub_Channel, user_designation_desc, 
 										cashZone, cashRegion, cashCircle, cashCluster, cashGo, user_cmo, user_amo, 
