@@ -1689,7 +1689,7 @@ public class MliBotController{
 									}catch(Exception ex)
 									{
 										System.out.println("Something goes wrong to connect Mlab:MongoDb");
-									}*/
+									}
 								String designation=adoptionMap.get("designation");
 								String dbSessionId=sessionId, dbSSOId=ssoId, dbActionPerformed=actionperformed, dbResolveQuery=resolvedQuery,dbDesignation=designation ;
 								try{
@@ -1708,7 +1708,7 @@ public class MliBotController{
 								}catch(Exception ex)
 								{
 									System.out.println("Excption Occoured while saving data in to the database");
-								}
+								}*/
 								return aPIConsumerService.getWipDataAll(actionperformed, channel, period, productType,
 										planType, ssoId, subChannel, user_designation_desc, zone, region, circle,
 										cluster, go, user_cmo, user_amo, kpiAsked, sessionId, source);
