@@ -18,10 +18,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class Adoptionlogs 
 {
-	public String adoptionlogsCall(String sessionId, String ssoId, String action, String resolvedQuery, String designation)
+	public String adoptionlogsCall(String sessionId, String ssoId, String action, String resolvedQuery)
 	{
 		String platform="BPMABOTPROD";
-		String speech=designation;
+		String speech="NOTREQUIRED";
 		ResourceBundle res = ResourceBundle.getBundle("errorMessages");
 		HttpURLConnection conn = null;
 		StringBuilder result = new StringBuilder();
