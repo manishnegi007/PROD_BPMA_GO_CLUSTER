@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class WIP 
 {
-	public static String wipIntent(String channel, String msgChannel, String convertsum4, String convertsum3, String real_tim_timstamp)
+	public static String wipIntent(String channel, String msgChannel, String convertsum4, String convertsum3)
 	{
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
 		LocalDateTime now = LocalDateTime.now();
