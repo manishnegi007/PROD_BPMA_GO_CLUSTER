@@ -29,7 +29,7 @@ public class Numbers
 						", the Business update for "+msgChannel+ " is :\n"
 						+"Adj MFYP MTD : "+mtdAdjustMFYP+" Cr \n\n"
 						+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr \n\n "
-						+"WIP Adj MFYP: " +convertsum3+" Cr. \n\n ";
+						+"WIP AFYP: " +convertsum3+" Cr. \n\n ";
 
 			}
 			if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
@@ -52,7 +52,7 @@ public class Numbers
 						+"Applied value for the Day is, : " +dailyAppliedAFYP+" Cr, \n\n"
 						+"Applied value for the Month is, : " +mtdAppliedAFYP+" Cr, \n\n"
 						+"Applied value for the Year is, : "+ytd_applied_afyp+" Cr, \n\n"
-						+"WIP Adj MFYP, : " +convertsum3+" Cr.";	
+						+"WIP AFYP, : " +convertsum3+" Cr.";	
 			}
 			else
 			{
@@ -60,10 +60,10 @@ public class Numbers
 						", the Business update for "+msgChannel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 						+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 						+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
-						+"Applied Adj MFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
-						+"Applied Adj MFYP MTD: " +mtdAppliedAFYP+" Cr, \n\n"
-						+"Applied Adj MFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
-						+"WIP Adj MFYP: " +convertsum3+" Cr.";
+						+"Applied AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
+						+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr, \n\n"
+						+"Applied AFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
+						+"WIP AFYP: " +convertsum3+" Cr.";
 			}
 		}
 		else 
@@ -72,10 +72,10 @@ public class Numbers
 					", the Business update for "+msgChannel+" is : \n Adj MFYP FTD:"+dailyAdjustMFYP+" Cr, \n\n"
 					+"Adj MFYP MTD: " +mtdAdjustMFYP+" Cr, \n\n"
 					+"Adj MFYP YTD : "+ytd_adj_mfyp+" Cr, \n\n"
-					+"Applied Adj MFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
-					+"Applied Adj MFYP MTD: " +mtdAppliedAFYP+" Cr, \n\n"
-					+"Applied Adj MFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
-					+"WIP Adj MFYP: " +convertsum3+" Cr.";
+					+"Applied AFYP FTD: " +dailyAppliedAFYP+" Cr, \n\n"
+					+"Applied AFYP MTD: " +mtdAppliedAFYP+" Cr, \n\n"
+					+"Applied AFYP YTD: "+ytd_applied_afyp+" Cr, \n\n"
+					+"WIP AFYP: " +convertsum3+" Cr.";
 			if("MLI".equalsIgnoreCase(channel) || "".equalsIgnoreCase(channel))
 			{
 				if("".equalsIgnoreCase(user_sub_channel))
