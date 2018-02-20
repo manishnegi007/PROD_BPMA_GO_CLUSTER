@@ -674,7 +674,7 @@ public class APIConsumerService {
 						try{
 							welcome_wip_count = Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("welcome_wip_count").toString());
 						}catch(Exception e){}
-						/*----------------------------------------------------New Change 15-02-2018--------by Manish Negi-------------------------------------------
+						/*----------------------------------------------------New Change 15-02-2018--------by Manish Negi-------------------------------------------*/
 						try{
 							ho_wip_adj_mfyp =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("ho_wip_adj_mfyp").toString());
 						}catch(Exception e){}
@@ -693,7 +693,7 @@ public class APIConsumerService {
 						try{
 							welcome_wip_adj_mfyp =Double.parseDouble(object.getJSONObject("payload").getJSONObject("wip").get("welcome_wip_adj_mfyp").toString());
 						}catch(Exception e){}
-						-----------------------------------------------------------------------------------------------------------------------------*/
+						/*-----------------------------------------------------------------------------------------------------------------------------*/
 					}
 					break;
 					case "PENETRATION":
@@ -1233,7 +1233,7 @@ public class APIConsumerService {
 					}
 				}
 
-				sum3 = sum+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
+				sum3 = sum+ho_wip_adj_mfyp+go_wip_adj_mfyp+it_wip_adj_mfyp+fin_wip_adj_mfyp+misc_wip_adj_mfyp+welcome_wip_adj_mfyp;
 				sum = sum+wipAFYP+hoWIPAFYP+goWIPAFYP+itWIPAFYP+finWIPAFYP+miscWIPAFYP+welcomeWIPAFYP;
 				String convertsum  =  df.format(sum);
 				String convertsum3  =  df.format(sum3);
@@ -1260,14 +1260,15 @@ public class APIConsumerService {
 				break;
 				case "WIP":
 				{
-					finalresponse=WIP.wipIntent(serviceChannel, msgChannel, convertsum4, convertsum3, real_tim_timstamp);
+					finalresponse=WIP.wipIntent(serviceChannel, msgChannel, convertsum4, convertsum3);
 				}
 				break;
 				case "WIP.YES":
 				{
 					finalresponse=WIPYES.wipyesIntent(serviceChannel, msgChannel, convertsum3, convertsum4, hoWIPAFYP, 
 							ho_wip_count, goWIPAFYP, go_wip_count, itWIPAFYP, it_wip_count, finWIPAFYP, fin_wip_count,	
-							miscWIPAFYP, misc_wip_count, welcomeWIPAFYP, welcome_wip_count);
+							miscWIPAFYP, misc_wip_count, welcomeWIPAFYP, welcome_wip_count, ho_wip_adj_mfyp, go_wip_adj_mfyp,
+							it_wip_adj_mfyp, fin_wip_adj_mfyp, misc_wip_adj_mfyp, welcome_wip_adj_mfyp);
 				}
 				break;
 				case "APPLIED":
