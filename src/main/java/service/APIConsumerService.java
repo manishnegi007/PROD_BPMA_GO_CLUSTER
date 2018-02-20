@@ -1260,7 +1260,7 @@ public class APIConsumerService {
 				break;
 				case "WIP":
 				{
-					finalresponse=WIP.wipIntent(serviceChannel, msgChannel, convertsum4, convertsum3);
+					finalresponse=WIP.wipIntent(serviceChannel, msgChannel, convertsum4, convertsum3, real_tim_timstamp);
 				}
 				break;
 				case "WIP.YES":
