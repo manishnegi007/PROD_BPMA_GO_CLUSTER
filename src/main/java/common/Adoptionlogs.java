@@ -83,6 +83,7 @@ public class Adoptionlogs
 				System.out.println(e1);
 			}
 			int apiResponseCode = conn.getResponseCode();
+			System.out.println("API Response Code Adoption logs"+apiResponseCode);
 			if(apiResponseCode == 200)
 			{
 				BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
