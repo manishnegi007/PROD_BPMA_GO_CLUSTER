@@ -29,7 +29,7 @@ import javax.net.ssl.HttpsURLConnection;
 import java.io.OutputStreamWriter;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import common.Achievement;
+
 
 @Controller
 @RequestMapping("/webhook")
@@ -48,8 +48,7 @@ public class MliBotController{
 	APIConsumerService aPIConsumerService;
 	@Autowired
 	Adoptionlogs adoption;
-	@Autowired 
-	private Achievement achievement;
+	
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody WebhookResponse webhook(@RequestBody String obj, Model model, HttpSession httpSession) 
@@ -124,40 +123,7 @@ public class MliBotController{
 					agentName=cashMap.get("AgentName")+"";
 					if("Success".equalsIgnoreCase(IntegrateStatus))
 					{
-						String achResponse_3=achievement.idStatusCall(ssoId);
-						JSONObject object3 = new JSONObject(achResponse_3);
-						String achiev_mtd_adj_mfyp="";
-						String achiev_ytd_adj_mfyp="";
-						double achievMTDNumber=0;
-						double achievYTDNumber=0;
-						try{
-							achiev_mtd_adj_mfyp = (object3.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_adj_mfyp").toString());
-							if(!"".equalsIgnoreCase(achiev_mtd_adj_mfyp))
-							{
-								achievMTDNumber=Double.parseDouble(achiev_mtd_adj_mfyp);
-							}
-
-						}catch(Exception e){
-							achiev_mtd_adj_mfyp="";
-						}
-						try{
-							achiev_ytd_adj_mfyp = (object3.getJSONObject("payload").getJSONObject("achievement").get("achiev_ytd_adj_mfyp").toString());
-							if(!"".equalsIgnoreCase(achiev_ytd_adj_mfyp))
-							{
-								achievYTDNumber=Double.parseDouble(achiev_ytd_adj_mfyp);
-							}
-						}catch(Exception e){
-							achiev_ytd_adj_mfyp="";
-						}
-						//achievMTDNumber=100.00;
-						if(achievMTDNumber > 99.99 || achievYTDNumber >99.99 )
-						{
-							speech="how can i help you with business KPI's.";
-						}
-						else
-						{
-							speech="how can i help you with business KPI's";
-						}
+					     speech="how can i help you with business KPI's.";
 					}
 					else if("N".equalsIgnoreCase(mnylstatus)){
 						speech="This UserID Is InActive";
@@ -173,39 +139,7 @@ public class MliBotController{
 						speech = "Invalid Credentials! Please Enter a Valid Credentials";
 					}
 					else if("partial_content".equalsIgnoreCase(SoaStatus)){
-						String achResponse_2=achievement.idStatusCall(ssoId);
-						JSONObject object2 = new JSONObject(achResponse_2);
-						String achiev_mtd_adj_mfyp="";
-						String achiev_ytd_adj_mfyp="";
-						double achievMTDNumber=0;
-						double achievYTDNumber=0;
-						try{
-							achiev_mtd_adj_mfyp = (object2.getJSONObject("payload").getJSONObject("achievement").get("achiev_mtd_adj_mfyp").toString());
-							if(!"".equalsIgnoreCase(achiev_mtd_adj_mfyp))
-							{
-								achievMTDNumber=Double.parseDouble(achiev_mtd_adj_mfyp);
-							}
-						}catch(Exception e){
-							achiev_mtd_adj_mfyp="";
-						}
-						try{
-							achiev_ytd_adj_mfyp = (object2.getJSONObject("payload").getJSONObject("achievement").get("achiev_ytd_adj_mfyp").toString());
-							if(!"".equalsIgnoreCase(achiev_ytd_adj_mfyp))
-							{
-								achievYTDNumber=Double.parseDouble(achiev_ytd_adj_mfyp);
-							}
-						}catch(Exception e){
-							achiev_ytd_adj_mfyp="";
-						}
-						//achievMTDNumber=100.00;
-						if(achievMTDNumber > 99.99 || achievYTDNumber >99.99 )
-						{
-							speech = "Hi "+agentName + ", How can i help you today.";
-						}
-						else
-						{
-							speech = "Hi "+agentName + ", How can i help you today?";
-						}
+						speech = "Hi "+agentName + ", How can i help you today?";
 						cashMap.put("Validation", "success");
 						sessionMapcontainssoinfo.put(sessionId, cashMap);
 					}
