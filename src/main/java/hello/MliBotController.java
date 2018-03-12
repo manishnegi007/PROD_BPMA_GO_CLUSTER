@@ -1422,8 +1422,6 @@ public class MliBotController{
 									map.put("cluster", cashCluster);
 									cashGo="";
 									map.put("go", cashGo);
-									cachePeriod="";
-									map.put("period", cachePeriod);
 								}
 								/*//								---------------This funcation not tested---------------------
 								if(diffIntent.equalsIgnoreCase(actionperformed))
