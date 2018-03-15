@@ -823,6 +823,9 @@ public class APIConsumerService {
 					case "GROWTH":
 					{
 						try{
+							applied_adj_ifyp_mtd = (object.getJSONObject("payload").getJSONObject("growth").get("applied_adj_ifyp_mtd").toString());
+						}catch(Exception e){}
+						try{
 							grth_paid_adj_mfyp = (object.getJSONObject("payload").getJSONObject("growth").get("grth_paid_adj_mfyp").toString());
 						}catch(Exception e){}
 						try{
