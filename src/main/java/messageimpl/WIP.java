@@ -17,13 +17,13 @@ public class WIP
 		String finalresponse="";
 		if(!"".equalsIgnoreCase(channel))
 		{
-			finalresponse="Current WIP as of "+dtf.format(now)+
+			finalresponse="Current WIP as of "+dateFormat.format(cal.getTime())+
 					" for "+msgChannel+" is "+convertsum4+" Policies with "+convertsum3+" "
 					+ " Cr. Adj MFYP. Do you wish to see the stage wise snapshot.";
 		}
 		else
 		{
-			finalresponse="Current WIP as of "+dtf.format(now)+
+			finalresponse="Current WIP as of "+dateFormat.format(cal.getTime())+
 					" for MLI is "+convertsum4+" Policies with "+convertsum3+" "
 					+ "Cr. Adj MFYP. Do you wish to see the stage wise snapshot.";
 		}
