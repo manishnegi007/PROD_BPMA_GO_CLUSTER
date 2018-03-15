@@ -1,14 +1,19 @@
 package messageimpl;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class WIP 
 {
 	public static String wipIntent(String channel, String msgChannel, String convertsum4, String convertsum3)
 	{
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
-		LocalDateTime now = LocalDateTime.now();
+		Calendar cal = Calendar.getInstance(); // creates calendar
+	   	cal.setTime(new Date()); // sets calendar time/date
+	   	cal.add(Calendar.HOUR_OF_DAY, 5); // adds one hour
+	   	cal.add(Calendar.MINUTE, 30);
+	   	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String finalresponse="";
 		if(!"".equalsIgnoreCase(channel))
 		{
