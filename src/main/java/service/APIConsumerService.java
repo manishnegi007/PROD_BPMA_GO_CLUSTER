@@ -16,6 +16,7 @@ import messageimpl.NBGROWTHAPLCASES; import messageimpl.NBGrowth; import message
 import messageimpl.PaidCases; import messageimpl.Penetration; import messageimpl.ProductMix; import messageimpl.ProductMixADJMFYP;
 import messageimpl.ProductMixPaidCase; import messageimpl.Recruitment; import messageimpl.Recruitmentpercentage;
 import messageimpl.WIP; import messageimpl.WIPYES;
+import messageimpl.Renewal;
 
 @Component
 public class APIConsumerService {
@@ -326,6 +327,23 @@ public class APIConsumerService {
 					}
 				}
 			}
+			else if("NB.RENEWAL".equalsIgnoreCase(action)) 
+			{
+				if("MLI".equalsIgnoreCase(channel)){
+					segment="RENEWAL";
+					serviceChannel = "";
+				}else
+				{
+					if("Axis".equalsIgnoreCase(channel)){
+						segment="RENEWAL";
+						serviceChannel = "Axis Bank";
+					}else
+					{
+						segment="RENEWAL";
+						serviceChannel = channel;
+					}
+				}
+			}
 			else
 			{
 				finalresponse="Invalid Intent Called by User";
@@ -348,7 +366,7 @@ public class APIConsumerService {
 				||"NB.GROWTHLPCAPLCASES".equalsIgnoreCase(action)||"NB.GROWTHLPCPAIDCASES".equalsIgnoreCase(action)||"NB.GROWTHPAIDCASES".equalsIgnoreCase(action)
 				||"NB.GROWTHRECRUITMENT".equalsIgnoreCase(action)||"NB.Achievement".equalsIgnoreCase(action) ||"NB.MODEMIX".equalsIgnoreCase(action) 
 				||"NB.ProductMix".equalsIgnoreCase(action) || "NB.ProductMixADJMFYP".equalsIgnoreCase(action) || "NB.Productmixpaidcase".equalsIgnoreCase(action)
-			        ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action) ||"NB.GROWTHAPLADJIFYP".equalsIgnoreCase(action))
+			        ||"NB.GROWTHCASESIZE".equalsIgnoreCase(action) ||"NB.GROWTHAPLADJIFYP".equalsIgnoreCase(action) ||"NB.RENEWAL".equalsIgnoreCase(action))
 			{
 				if("West Bengal".equalsIgnoreCase(user_circle))
 				{
@@ -1231,6 +1249,22 @@ public class APIConsumerService {
 						}catch(Exception e){}
 					}
 					break;
+					case "RENEWAL":
+					{
+						try{
+							daily_adj_mfyp = (object.getJSONObject("payload").getJSONObject("renewal").get("daily_adj_mfyp").toString());
+						}catch(Exception e){}
+						try{
+							mtd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("renewal").get("mtd_adj_mfyp").toString());
+						}catch(Exception e){}
+						try{
+							ytd_adj_mfyp = (object.getJSONObject("payload").getJSONObject("renewal").get("ytd_adj_mfyp").toString());
+						}catch(Exception e){}
+						try{
+							real_tim_timstamp = (object.getJSONObject("payload").getJSONObject("renewal").get("real_tim_timstamp").toString());
+						}catch(Exception e){}
+					}
+					break;
 					default :
 						finalresponse="No Action Matched";
 					}
@@ -1546,6 +1580,11 @@ public class APIConsumerService {
 							real_tim_timstamp, ul_penet_mtd_pol_cnt, par_penet_mtd_pol_cnt,
 							ul_penet_ytd_pol_cnt, par_penet_ytd_pol_cnt, nonpar_penet_mtd_pol_cnt,nonpar_penet_ytd_pol_cnt, 
 							protec_penet_mtd_pol_cnt, protec_penet_ytd_pol_cnt,user_circle, user_sub_channel, user_clusters, user_go);
+				}
+				break;
+				case "NB.RENEWAL":
+				{
+					finalresponse=Renewal.renewalIntent(daily_adj_mfyp, mtd_adj_mfyp, ytd_adj_mfyp, real_tim_timstamp);
 				}
 				break;
 				default :
